@@ -1,0 +1,6 @@
+.env
+parser_session.session
+parser_session.session-journal
+bot.log
+__pycache__/
+*.pyc

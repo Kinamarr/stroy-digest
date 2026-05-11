@@ -1,0 +1,10 @@
+# Каналы для мониторинга строительства
+# Добавляй по одному на строчку
+# Строки начинающиеся с # — это комментарии, они игнорируются
+
+@stroi_news
+@domostroynn
+@prommoscow
+@dprunews
+@radiuswood
+@investmoscowru

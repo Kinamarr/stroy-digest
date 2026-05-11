@@ -1,0 +1,42 @@
+name: Стройдайджест — ежедневный запуск
+
+on:
+  schedule:
+    # 06:30 UTC = 09:30 Москва (UTC+3), пн-пт
+    - cron: '30 6 * * 1-5'
+  workflow_dispatch:   # ручной запуск через кнопку на GitHub
+
+permissions:
+  contents: write   # нужно для git push в docs/
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Настройка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Установка зависимостей
+        run: pip install httpx beautifulsoup4
+
+      - name: Запуск парсера
+        env:
+          BITRIX_WEBHOOK:  ${{ secrets.BITRIX_WEBHOOK }}
+          BITRIX_GROUP_ID: ${{ secrets.BITRIX_GROUP_ID }}
+          PAGES_URL:       ${{ secrets.PAGES_URL }}
+        run: python telegram_bot/scraper_ci.py
+
+      - name: Публикация в GitHub Pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "digest: $(date +'%Y-%m-%d')"
+          git push

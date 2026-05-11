@@ -1,0 +1,2819 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стройдайджест — 07.05.2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f0f2f5; color: #333; }
+.header { background: #1a1a2e; color: white; padding: 18px 28px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.3); }
+.header h1 { font-size: 1.35rem; margin-bottom: 3px; }
+.header .sub { font-size: .82rem; opacity: .65; }
+.archive-bar { background: #16213e; padding: 8px 28px; font-size: .8rem; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; color: #aaa; }
+.arch-link { color: #7eb8f7; text-decoration: none; }
+.arch-link:hover { text-decoration: underline; }
+.filters { background: white; padding: 12px 28px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #e4e4e4; position: sticky; top: 64px; z-index: 99; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+.filters label { font-size: .78rem; color: #888; margin-right: 3px; }
+.filters select { padding: 6px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: .83rem; background: #fafafa; cursor: pointer; }
+.filters button { padding: 6px 14px; background: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: .83rem; }
+.filters button:hover { background: #c0392b; }
+.stats { padding: 10px 28px; font-size: .83rem; color: #777; }
+.stats b { color: #333; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 14px; padding: 0 28px 32px; }
+.card { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 1px 4px rgba(0,0,0,.07); border-left: 4px solid #3498db; }
+.card.has-contacts { border-left-color: #27ae60; }
+.card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+.card-header { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; flex-wrap: wrap; }
+.channel-badge { background: #ebf5fb; color: #2471a3; font-size: .73rem; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+.category-badge { font-size: .7rem; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+.catЖильё { background: #eafaf1; color: #1e8449; }
+.catПромышленность { background: #fef9e7; color: #b7770d; }
+.catКоммерция { background: #fdf2f8; color: #a93226; }
+.catЛогистика { background: #f4ecf7; color: #7d3c98; }
+.catИнфраструктура { background: #eaf2ff; color: #1a5276; }
+.catОбщее { background: #f2f3f4; color: #616a6b; }
+.has-contacts-badge { font-size: .68rem; background: #d5f5e3; color: #1e8449; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+.date { margin-left: auto; font-size: .73rem; color: #aaa; white-space: nowrap; }
+.contacts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; padding: 10px 12px; background: #f0faf4; border-radius: 8px; border: 1px solid #a9dfbf; }
+.contact { font-size: .82rem; padding: 4px 10px; border-radius: 6px; font-weight: 600; text-decoration: none; }
+.contact.phone { background: #d5f5e3; color: #1a5276; }
+.contact.email { background: #d6eaf8; color: #1a5276; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.tag { font-size: .7rem; padding: 2px 8px; border-radius: 10px; }
+.tag.city { background: #d6eaf8; color: #1a5276; }
+.tag.kw { background: #fdebd0; color: #6e2f0a; }
+.card-text { font-size: .86rem; line-height: 1.6; color: #444; white-space: pre-wrap; word-break: break-word; margin-bottom: 10px; }
+.source-link { display: inline-block; font-size: .8rem; color: #3498db; text-decoration: none; }
+.source-link:hover { text-decoration: underline; }
+.hidden { display: none !important; }
+.empty { text-align: center; padding: 60px; color: #aaa; font-size: 1rem; grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🏗 Стройдайджест</h1>
+  <div class="sub">07.05.2026 &nbsp;·&nbsp; 99 объектов из 5 каналов</div>
+</div>
+<div class="archive-bar">📁 Архив: <a href="2026-05-07.html" class="arch-link">2026-05-07</a></div>
+<div class="filters">
+  <div><label>Канал:</label>
+    <select id="fCh" onchange="filter()">
+      <option value="">Все каналы</option><option value="@domostroynn">@domostroynn</option><option value="@dprunews">@dprunews</option><option value="@investmoscowru">@investmoscowru</option><option value="@prommoscow">@prommoscow</option><option value="@stroi_news">@stroi_news</option>
+    </select></div>
+  <div><label>Тип объекта:</label>
+    <select id="fCat" onchange="filter()">
+      <option value="">Все типы</option><option value="Жильё">Жильё</option><option value="Инфраструктура">Инфраструктура</option><option value="Коммерция">Коммерция</option><option value="Логистика">Логистика</option><option value="Общее">Общее</option><option value="Промышленность">Промышленность</option>
+    </select></div>
+  <div><label>Город:</label>
+    <select id="fCity" onchange="filter()">
+      <option value="">Все города</option><option value="Архангельск">Архангельск</option><option value="Владимир">Владимир</option><option value="Ижевск">Ижевск</option><option value="Иркутск">Иркутск</option><option value="Киров">Киров</option><option value="Краснодар">Краснодар</option><option value="Москва">Москва</option><option value="Нижний Новгород">Нижний Новгород</option><option value="Новокузнецк">Новокузнецк</option><option value="Подольск">Подольск</option><option value="Санкт-Петербург">Санкт-Петербург</option><option value="Серпухов">Серпухов</option><option value="Смоленск">Смоленск</option><option value="Сочи">Сочи</option>
+    </select></div>
+  
+  <div>
+    <label>Только с контактами:</label>
+    <input type="checkbox" id="fContacts" onchange="filter()" style="width:16px;height:16px;cursor:pointer;vertical-align:middle;">
+  </div>
+  <button onclick="reset()">Сбросить</button>
+</div>
+<div class="stats">Показано: <b id="cnt">99</b> из 99</div>
+<div class="grid" id="grid">
+
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-03</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">возводится</span><span class="tag kw">девелопер</span><span class="tag kw">монолитные работы</span></div>
+          <p class="card-text">Воскресная московская стройка: ЖК «Преображенская площадь» от Regions Development
+Жилой комплекс возводится на улице Бухвостова в районе Преображенское на востоке Москвы, в шаговой доступности от станции метро «Преображенская площадь».
+Проект включает девять жилых корпусов переменной этажности от 6 до 17 этажей, рассчитанных на 2026 квартир. В состав инфраструктуры войдут современная школа с IT-полигоном на 430 учеников и детский сад на 200 мест.
+Строительство комплекса реализуется в два этапа. 
+Первая
+ очередь, состоящая из трех корпусов высотой от 6 до 17 этажей и рассчитанная на 735 квартир, сдана в 2025 году.
+Сейчас ведется строительство второй очереди, которая включает шесть жилых корпу...</p>
+          <a href="https://t.me/stroi_news/10465" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Коммерция"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Коммерция">Коммерция</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">возведут</span><span class="tag kw">торгово-развлекательный</span></div>
+          <p class="card-text">Столичные власти пересмотрели проект застройки территории торгового комплекса «Савеловский»
+Столичные власти одобрили увеличение 
+параметров
+ застройки территории торгового комплекса «Савеловский» рядом с Савеловским вокзалом. Общая площадь нового многофункционального комплекса вырастет с 187 340 до 207 000 м².
+Ключевым изменением проекта стало существенное расширение деловой составляющей: площадь административно-делового центра увеличится более чем втрое и составит 110 000 м². В составе комплекса также появится торгово-развлекательный центр площадью 70 000 м², где разместятся спортивный и медико-косметологический центр. Гостиничная часть проекта будет реализована в меньшем масштабе: вместо ...</p>
+          <a href="https://t.me/stroi_news/10475" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">РЖД не удалось продать комплекс зданий бывшего локомотивного депо «Лихоборы» на севере Москвы
+Аукцион, на котором планировалось продать комплекс зданий бывшего депо, был признан несостоявшимся. Причиной стало отсутствие заявок от потенциальных инвесторов. Стартовая цена лота составляла 3,5 миллиарда рублей.
+Стартовая цена объекта составляла 3,5 миллиарда рублей. В состав лота входило более 40 объектов недвижимости общей площадью 20 000 м², в том числе историческое веерное депо, построенное в 1902–1907 годах, а также мастерские и административные здания. Покупатель также получил бы право пользования земельным участком площадью 9,2 гектара.
+Депо «Лихоборы» было введено в эксплуатацию в 1908 го...</p>
+          <a href="https://t.me/stroi_news/10477" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">мост</span></div>
+          <p class="card-text">На территории «Красного Октября» может появиться новая площадь с башней-доминантой
+Предлагаю так
+Архитектурная мастерская Сергея Скуратова стала участницей внутреннего конкурса на разработку градостроительной идеи для третьей очереди застройки территории бывшего предприятия «Красный Октябрь». Также в конкурсе участвовали команды бюро «Меганом», «Сага» и «ЦЛП».
+Проект от бюро Скуратова предполагает создание новой площади с жилой башней в северной части острова, рядом с пешеходным мостом. В новом мастер-плане парк на стрелке острова останется, а новая улица соединит его с мостом и культурным центром ГЭС-2. Площадь станет композиционным центром квартала, напоминая по масштабу уютные европейские...</p>
+          <a href="https://t.me/stroi_news/10478" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Коммерция"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Коммерция">Коммерция</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Инвестхолдинг «Экто», ранее принадлежавший Юсуфу Алекперову, сыну экс-президента ЛУКОЙЛа Вагита Алекперова, расширяет свое присутствие в Большом Сити.
+Через аффилированную компанию «Бизнес Компонент» холдинг приобрел в собственность земельный участок площадью 0,4 га на 2-й Магистральной улице, рядом с территорией, где «Экто» реализует проект строительства «
+шишкообразного
+» офисного комплекса. 
+В настоящее время на этом участке одобрено возведение чуть более 7 000 м² общественно-деловой недвижимости. Однако в 2023 году 
+рассматривалась
+ возможность строительства здесь офисного здания площадью порядка 28 000 м².
+Вполне вероятно, что в ближайшее время параметры застройки будут пересмотрены, и ...</p>
+          <a href="https://t.me/stroi_news/10485" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Логистика"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Логистика">Логистика</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">складской комплекс</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Девелоперская компания главы «Россетей» купила участок у метро «Нагорная»
+Компания «Проектные технологии», входящая в девелоперскую группу «Сигнум», 
+созданную
+ генеральным директором «Россетей» Андреем Рюминым и его партнером Андреем Бокшей, стала владельцем компании «Ремезова 18».
+В собственности приобретенной компании находится земельный участок площадью 1,5 га и производственно-складской комплекс 1956 года постройки общей площадью 4330 м² на улице Ремезова, вблизи станции метро «Нагорная».
+Ранее актив предлагался к продаже по цене порядка 720 млн рублей с условием содействия в согласовании строительства офисного комплекса. В текущем году стоимость складского комплекса была снижена до 200...</p>
+          <a href="https://t.me/stroi_news/10486" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">жилой комплекс</span></div>
+          <p class="card-text">«Эталон» построит премиальный жилой комплекс в Хамовниках
+Столичные власти одобрили строительство жилого комплекса площадью 8 000 м² на месте АТС в Земледельческом переулке, вл. 15. Проект реализует компания «Эталон».
+В доме будет 77 квартир и коммерческие помещения, в которых разместятся объекты культурной и спортивной инфраструктуры.
+С высокой долей вероятности проект будет реализован под 
+премиальным
+ брендом Aurix, принадлежащим девелоперу.
+❗
+ 
+«Стройки — и точка» в MAX
+ и 
+Telegram!</p>
+          <a href="https://t.me/stroi_news/10489" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">РЖД не удалось продать грузовой двор «Ярославский» на северо-востоке Москвы: аукцион по его продаже был признан несостоявшимся из-за отсутствия заявок от потенциальных инвесторов. Стартовая цена лота составляла 2 миллиарда рублей.
+В состав лота входили 10 объектов недвижимости общей площадью около 16 300 м², а также право пользования земельным участком площадью 26,8 га. Территория двора расположена на ул. Красная Сосна, рядом со станцией «Ростокино», МЦК и национальным парком «Лосиный остров».
+Ожидается, что актив вскоре будет повторно выставлен на торги.
+❗
+ 
+«Стройки — и точка» в MAX
+ и 
+Telegram!</p>
+          <a href="https://t.me/stroi_news/10491" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Коммерция"
+             data-cities="Серпухов"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Коммерция">Коммерция</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Серпухов</span><span class="tag kw">ввод в эксплуатацию</span><span class="tag kw">бизнес-центр</span></div>
+          <p class="card-text">Новый бизнес-центр в Замоскворечье
+Компания «Галс-Девелопмент» получила разрешение на ввод в эксплуатацию БЦ «Дубининский».
+Проект состоит из двух 24-этажных башен. На фоне дефицита качественных офисных площадей объект был полностью законтрактован еще за год до ввода в эксплуатацию.
+Общая площадь бизнес-центра составляет более 106 тыс. кв. м. На втором этаже расположен премиальный фитнес-центр от Crocus Fitness с 25-метровым бассейном.
+Из особенностей БЦ:
+— открытые террасы с 3-го по 5-й, на 7-м и 23-м этажах;
+— расположение в пешей доступности от станции метро «Павелецкая» и «Серпуховская», а также удобный выезд на Садовое кольцо;
+— подземный паркинг на 413 мест с зарядками для электромобил...</p>
+          <a href="https://t.me/stroi_news/10492" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities="Москва,Сочи,Новокузнецк"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-29</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Сочи</span><span class="tag city">Новокузнецк</span><span class="tag kw">девелопер</span><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">Рейтинг ЖК для жизни: что эксперты считают важным!?
+Читайте в 
+Ведомости
+ и в 
+ТАСС.
+ 
+Московский Бизнес Клуб и оргкомитет премии «Рекорды Рынка Недвижимости» опубликовали 
+рейтинг «ТОП-10 ЖК для жизни»
+.
+При его составлении учитывались пять критериев: характеристики самого жилого комплекса, его расположение, транспортная доступность, наличие социальной инфраструктуры и объектов для повседневной жизни. 
+Исследование призвано выделить проекты, которые в наибольшей степени соответствуют запросам будущих жильцов.
+В ТОП-ЖК ДЛЯ ЖИЗНИ ВОШЛИ: 
+ЖК «Симоновский вал». ГК ФСК
+Москва, Южнопортовый район
+– ЖК в тихом квартале, 600 квартир
+– Закрытая территория с ландшафтным парком, 5-метровым водопадом. ...</p>
+          <a href="https://t.me/stroi_news/10438" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-29</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw">жилой комплекс</span></div>
+          <p class="card-text">16‑этажный жилой комплекс появится у дома Гиппиуса в Тимирязевском районе
+Власти Москвы одобрили архитектурно-градостроительные решения нового жилого комплекса рядом с историческим зданием архитектора Карла Гиппиуса на Тимирязевской улице. Комплекс будет построен сбоку от дома Гиппиуса и представляет собой многосекционный дом переменной этажности — от 5 до 16 этажей. В проекте предусмотрено 257 квартир.
+Архитекторы сделали акцент на бережном включении новой застройки в исторический контекст: фасад комплекса выполнен в изумрудных тонах, а само историческое здание будет реконструировано. В нем разместятся фитнес-центр и ресторанный комплекс.
+Застройщиком выступает компания MR ORION.3, совместн...</p>
+          <a href="https://t.me/stroi_news/10448" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Коммерция"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Коммерция">Коммерция</span>
+            
+            <span class="date">2026-04-30</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">отель</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Группа компаний «Развитие» представила два новых премиальных клубных дома в центре Москвы — «Резиденции Воронцова» и «Аристарховский», устроив для гостей необычный формат презентации: тест-драйв жизни в будущих проектах.
+Вместо стандартных презентаций участники лично прошли ключевые сценарии проживания — от встречи с консьержем и использования паркинга до знакомства с архитектурой и сервисом. Мероприятие собрало более 250 профессионалов рынка недвижимости, брокеров и журналистов.
+«Резиденции Воронцова» (Обуха, 3) — это сочетание классики и современности у Воронцова Поля. В доме 75 квартир, 3 пентхауса с террасами, виды на Кремль и Котельническую набережную, а также спа, фитнес и подземный па...</p>
+          <a href="https://t.me/stroi_news/10454" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Коммерция"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Коммерция">Коммерция</span>
+            
+            <span class="date">2026-04-30</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">бизнес-центр</span></div>
+          <p class="card-text">Новое исследование лидеров офисного рынка
+К чему привел бум спроса на офисы и кто сегодня в лидерах — рассказывает 
+масштабное исследование
+ РБК. По традиции, без главного списка крупнейших игроков офисного рынка никуда. 
+Если коротко: состав лидеров меняется не так уж и сильно. По совокупности ключевых индикаторов (портфель проектов, объемы продаж за 2022-2025 гг., заявленные объемы ввода до 2030 г.) 
+лидерство
+ 
+в сегмете продаж четвертый год подряд удерживает Stone.
+ В портфеле девелопера на сегодняшний день насчитывается 18 бизнес-центров класса А. Второе место у MR, третье занимает Pioneer, также в топ-5 вошли Forma и Sezar Group. 
+Если смотреть только по объемам продаж в 2022-2025 гг.,...</p>
+          <a href="https://t.me/stroi_news/10458" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-02</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">жилой комплекс</span></div>
+          <p class="card-text">Тюменский девелопер построит высотный жилой комплекс в Хорошево-Мневниках
+Компания «Север Инвест МСК 2», входящая в структуру тюменского девелопера «Север», стала владельцем фирмы «Восток», которой принадлежит земельный участок на улице Мневники, вл. 8.
+На этой территории 
+одобрено
+ строительство высотного жилого комплекса площадью 22 030 м², рассчитанного на 210 квартир.
+Для участка 
+существует
+ концепция небоскреба с «дыркой» от бюро Kamen. Однако пока неизвестно, финальный это проект или на участке появится что-то другое.
+Продавцом актива выступила компания R4S, которая в 2024 году 
+приобрела
+ площадку за 361 млн рублей.
+❗
+ 
+«Стройки — и точка» в MAX
+ и 
+Telegram!</p>
+          <a href="https://t.me/stroi_news/10461" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-28</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">Зарядная станция на территории — новый источник дохода для коммерческой недвижимости с парковками и жилых комплексов.
+Яндекс Электро устанавливает зарядные станции под ключ и берет на себя весь цикл работы: финансы, монтаж, подключение, круглосуточный мониторинг, оплату электричества и страхование.
+Владельцы локаций не вкладывают собственные средства, а получают:
+— разовую выплату до 300 000 руб. за установку (сумма зависит от города, заезда и парковочных мест);
+— до 6 000 руб. за каждый киловатт выделенной мощности;
+— новый платежеспособный трафик владельцев электромобилей.
+Локации подбираются по гео-аналитике Яндекса — модель учитывает больше 50 параметров, в том числе загрузку соседних ст...</p>
+          <a href="https://t.me/stroi_news/10427" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-28</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">жилой комплекс</span><span class="tag kw">бизнес-центр</span></div>
+          <p class="card-text">Жилой комплекс с высотными башнями-«спиралями» в «Большом Сити» получил положительное заключение экспертизы.
+Проект, разработанный архитектурным бюро 
+ADM
+, включает семь корпусов на едином стилобате. Доминантами станут две башни высотой 41 и 60 этажей, фасады которых смещены, создавая эффект спирали. В состав комплекса также войдут один 12-этажный, три 6-этажных дома и 9-этажный бизнес-центр.
+Общее количество квартир в комплексе составит 1257.
+Фасады будут отделаны алюминиевыми кассетами, витражным остеклением с шелкографией, клинкерной плиткой, архитектурным бетоном и гранитом.
+Девелопером проекта выступает компания Sezar Group.
+Комплекс будет построен по адресу: 2-й Хорошёвский проезд, вл...</p>
+          <a href="https://t.me/stroi_news/10428" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@stroi_news"
+             data-category="Общее"
+             data-cities="Ижевск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@stroi_news</span>
+            <span class="category-badge cat-Общее">Общее</span>
+            
+            <span class="date">2026-04-29</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Ижевск</span><span class="tag kw">застройщик</span><span class="tag kw">девелопер</span><span class="tag kw">ввод в эксплуатацию</span></div>
+          <p class="card-text">«Пионер» вошел в проект строительства офисного комплекса у метро «Полежаевская»
+Компания «ССП», принадлежащая девелоперской компании «Пионер», приобрела контрольный пакет (51%) в фирме «СЗ «Аспейс Хорошевская», которая выступает застройщиком офисного комплекса у метро «Полежаевская».
+Вероятно, сделка может быть связана с перераспределением льгот по программе создания мест приложения труда (МПТ), что позволит «Пионеру» получить дополнительные преференции для своих будущих жилых проектов.
+Проект офисного комплекса у метро «Полежаевская» реализуется в рамках 
+программы
+ комплексного развития территории. Девелопером комплекса 
+выступает
+ компания «Аспейс Девелопмент», принадлежащая ижевскому биз...</p>
+          <a href="https://t.me/stroi_news/10437" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">🏗️
+В тени «Красного просвещенца»: что происходит на площадке КРТ на Ашхабадской
+Больше года прошло с момента утверждения планировки проекта КРТ в границах улиц Ашхабадской, Генкиной, Тверской и 2-й Оранжерейной. За это время на участке рядом с историческим кварталом «Красный просвещенец» успели расселить и снести большинство домов из запланированных. 
+🏡
+Сейчас из старых построек, подлежащих сносу, там остались 
+два многоквартирных дома
+ на улице Ашхабадской, в непосредственной близости от улицы Генкиной — №25/16 и №23. 
+Как сегодня выглядит территория, где в ближайшие годы вырастут новостройки, 
+смотрите в фоторепортаже ДОМОСТРОЙНН.РУ
+📸
+Подписывайтесь на DomostroyNN.ru</p>
+          <a href="https://t.me/domostroynn/6186" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">микрорайон</span></div>
+          <p class="card-text">🏗
+Два кафе и образовательное учреждение появятся в Лапшихе в Нижнем Новгороде
+Согласно проекту, в микрорайоне Лапшиха в Советском районе в будущем 
+появятся два кафе
+. Здания на 2 и 3 этажа на схеме расположены на улице 
+Агрономической 
+и 
+Рыбинской
+, рядом с Ванеева. Также в проекте обозначено здание под образовательное учреждение. Это 2-3 этажный объект на пересечении 
+Ванеева и Рыбинской
+. Судя по документации, предполагается не только строительство, но и реконструкция уже имеющихся зданий.
+🗺
+Общественные обсуждения изменений в проект планировки территории в границах улиц Ванеева и Кузнечихинской проходят в Нижнем Новгороде до 15 мая.
+📸
+: 
+ООО «Архитектурное бюро «БЛиК»/ 
+admgor.nnov.ru
+П...</p>
+          <a href="https://t.me/domostroynn/6191" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities="Архангельск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Архангельск</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🤝
+Компания «Бюро света» стала партнером «Искусство строить»
+Федеральная компания «Бюро света» поддержала
+ архитектурно-строительную премию «Искусство строить» (18+) в 2026 году. Организатор — ДОМОСТРОЙНН.РУ. 
+💡
+«Бюро света» из Архангельска работает по всей России. Компания производит и монтирует световое оборудование, специализируется на архподсветке, дизайнерском и промышленном освещении. Как рассказал гендиректор 
+Борис Соколов
+, компания присоединилась к премии, чтобы быть в эпицентре самых важных событий. 
+💭
+«Премию решили поддержать, так как видим необходимость в устройстве нового развития урбанизации, и данная премия как раз показывает направление современной застройки”, - подчеркнул о...</p>
+          <a href="https://t.me/domostroynn/6195" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">🚧
+ Масштабный ремонт трамвайных путей продолжается
+ 
+в Нижнем Новгороде
+. Сейчас работы ведутся сразу на нескольких участках в Ленинском, Канавинском, Советском и Автозаводском районах. И сопровождаются они отменой маршрутов общественного транспорта, перекрытиями дорог, огромными пробками... А 
+когда все это закончится
+?
+Корреспондент ИА «В городе N»
+ отправилась в рейд, чтобы выяснить, как продвигается реконструкция
+. А заодно спросила у властей о готовности всех объектов и датах завершения ремонта — выяснила, не сорваны ли сроки. 
+📸
+ Большой репортаж с места событий, точные цифры и важные выводы — в 
+нашем эксклюзивном материале
+ 
+⬅️
+📱
+ 
+Подписаться
+ | 
+Прислать новость
+📱
+ 
+Подписаться в M...</p>
+          <a href="https://t.me/domostroynn/6196" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">🌅
+Пять жилых кварталов появятся у Оки и Волги в Нижнем Новгороде
+📍
+Наиболее активно в прибрежных локациях работает федеральный девелопер 
+GloraX
+. Компания реализует три проекта: «СТАТУС на Черниговской» между Канавинским и метромостом, «СТАТУС на Гребном канале» вдоль Волги и «Левобережный» рядом с Молитовским мостом.
+📍
+ГК «Подкова»
+ ведет строительство ЖК «Подкова на Волге» в районе Мещерского озера рядом с Борским мостом. Проект включает девять домов, а также социальную и коммерческую инфраструктуру. 
+ 
+📍
+Еще один проект развивает девелопер 
+ФСК Регион
+ — на участке между Молитовским и метромостом вдоль Черниговской набережной. Концепция предусматривает строительство высоток и городских в...</p>
+          <a href="https://t.me/domostroynn/6202" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Общее">Общее</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">ввод в эксплуатацию</span></div>
+          <p class="card-text">🥳
+Дом правительства достроили в Нижнем Новгороде спустя 19 лет
+Он расположен на территории Нижегородского кремля. Заключение о соответствии требованиям проектной документации 
+уже получено
+. Для получения разрешения на ввод в эксплуатацию сейчас формируют необходимый набор документов.
+По данным управделами правительства Нижегородской области, вопрос дальнейшего использования достроенных площадей находится в проработке, итоговое решение о размещении исполнительных органов или смежных структур 
+пока не принято
+.
+📸
+:
+Надя Кей /  ИА «В городе N»
+Подписывайтесь на DomostroyNN.ru</p>
+          <a href="https://t.me/domostroynn/6205" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-13</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw"> жк </span></div>
+          <p class="card-text">🏰
+Эксклюзив от застройщика: дом-дворец на месте ДК им. Ленина
+Масштабный проект преображения стартует в Канавинском районе Нижнего Новгорода: на месте 
+ДК им. Ленина
+ появится новый жилой 
+дом‑дворец
+, выполненный в стиле советского конструктивизма — 
+ЖК «Наследие»
+. ООО «СЗ «ДК» впервые раскрыло подробности: архитектурный облик ДК будет воссоздан до мельчайших деталей.
+❗
+В ЖК «Наследие» предусмотрено 
+всего 209 квартир
+ — от студий до трехкомнатных. Площадь вариантов варьируется от 26 до 146,6 кв. м. Планировки очень разнообразные: от классических с высотой потолков 2,75 м до уникальных пространств с оригинальными окнами или потолками 
+до 4 м
+.
+Принципиально важным решением было 
+сохранить ...</p>
+          <a href="https://t.me/domostroynn/6162" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-16</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">микрорайон</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🤝
+ГК «Три сезона» стала партнером премии «Искусство строить — 2026»
+ГК «Три сезона» стала партнером V юбилейной архитектурно-строительной премии «Искусство строить» (18+) в 2026 году. Организатором мероприятия стал ДОМОСТРОЙНН.РУ.
+ГК «Три сезона» — это холдинг, в состав которого входит: питомник декоративных растений 
+«Медвежья поляна»
+, компании «Пятый элемент» и «Зеленый проект». Руководитель ГК 
+Александр Ростов
+ входит в жюри премии «Искусство строить — 2026». Кроме того, он будет курировать номинацию — 
+«Лучшая концепция благоустройства»
+. 
+💭
+«Благоустройство в Нижнем — это наша боль, наша работа, наша жизнь. Хочется, чтобы наш город был красивым, а микрорайоны были лучше, чем 5–10 лет ...</p>
+          <a href="https://t.me/domostroynn/6168" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-17</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🛞
+Концепцию «каждой квартире по машино-месту» реализуют в нижегородском ЖК
+Нехватка парковочных мест в Нижнем Новгороде стала настоящей проблемой. Несмотря на то, что девелоперы предусматривают в проектах автостоянки, часто их количество оказывается меньше количества квартир. 
+❓
+А чем так хороша концепция «каждой квартире по машино-месту»?
+📌
+Это конкурентное преимущество проекта, наравне с высокими потолками и локацией. 
+📌
+Решает не только личные бытовые задачи, но и сохраняет эстетику города без визуального шума.
+📌
+Придомовое пространство  превращается в безопасный зеленый двор. 
+📌
+Отсутствие машин под окнами напрямую влияет на экологическую обстановку в ЖК. 
+ДОМОСТРОЙНН.РУ решил выяснить, ...</p>
+          <a href="https://t.me/domostroynn/6169" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-20</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строят</span><span class="tag kw">застройщик</span><span class="tag kw">девелопер</span></div>
+          <p class="card-text">🔝
+ 
+Топ-5 новостей за прошедшую неделю:
+1️⃣
+ 
+Нижегородские власти объяснили, почему отключать отопление пока рано
+2️⃣
+ 
+Почти 900 памятных мест благоустроят в Нижегородской области до лета
+3️⃣
+ 
+Эксклюзив от застройщика: дом-дворец на месте ДК им. Ленина
+4️⃣
+ 
+Театр начинается с вешалки, а ЖК — с паркинга: как девелопер YUNIKA решил проблему парковки в ПД «Грандъ»
+5️⃣
+ 
+Нижегородский Минград согласовал облик 19-этажной новостройки на улице Нартова 
+Подписывайтесь на DomostroyNN.ru
+ 
+🏠</p>
+          <a href="https://t.me/domostroynn/6170" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-24</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строится</span><span class="tag kw">застройщик</span><span class="tag kw">жилой комплекс</span></div>
+          <p class="card-text">🍪
+ 
+Кондитерская откроется в ЖК на Покровке на месте старинной фабрики
+Необычная кондитерская появится на месте старинной кондитерской фабрики семьи Кочетовых, на улице Большой Покровской в Нижнем Новгороде. Это место будет размещено в клубном доме «Покровский Премиум» и станет объектом, где перекликаются история и современность. 
+Люксовый жилой комплекс «Покровский Премиум» строится на пересечении улиц Крупской, Воровского и Большой Покровской. Эта локация имеет богатое прошлое — именно здесь в начале XX века открылся «Торговый дом Ивана и Анастасии Кочетовых», специализирующийся на изготовлении сладостей, поставляемых по всей царской России и за ее пределы. 
+Как рассказал директор по прода...</p>
+          <a href="https://t.me/domostroynn/6173" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-27</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">разрешение на строительство</span><span class="tag kw"> жк </span></div>
+          <p class="card-text">⚡
+Топ-5 новостей за прошедшую неделю
+🔺
+Техникум в Нижегородской области отремонтируют для создания агрокластера
+🔺
+Первый бетон залили в основание дома по КРТ на Самочкина в Нижнем Новгороде
+ 
+🔺
+Какие проекты КРТ в Нижнем Новгороде скоро получат разрешение на строительство
+ 
+🔺
+Кондитерская откроется в ЖК на Покровке на месте старинной фабрики
+ 
+🔺
+Дорожное покрытие провалилось на виадуке через М-12 в Нижегородской области
+ 
+Подписывайтесь на DomostroyNN.ru</p>
+          <a href="https://t.me/domostroynn/6178" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-28</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw"> жк </span></div>
+          <p class="card-text">🤩
+Застройщики ознакомятся с крупнейшим питомником растений Нижегородской области
+В Нижегородской области в рамках премии
+ «Искусство строить — 2026»
+ (18+) организуют тур в питомник декоративных растений «Медвежья поляна». 
+Экскурсия
+ предназначена для застройщиков: они увидят, как выращивают деревья, кустарники и рулонный газон для благоустройства.
+🌳
+Питомник принадлежит ГК «Три сезона», которая выступает
+ партнером премии
+. Глава ГК «Три сезона» Александр Ростов отмечает, что в питомнике представлены культуры, которые хорошо приживаются в климате региона. Сейчас здесь выращивают 
+почти миллион растений
+.
+💬
+«Я часто вижу, что для озеленения ЖК культуры выбирают неправильно, они не подходят ...</p>
+          <a href="https://t.me/domostroynn/6179" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-30</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">🫆 
+Технологичность как важный критерий: за что выбирают элитный ЖК в центре Нижнего
+Элитная недвижимость в наше время — это больше, чем просто стены. Это, в первую очередь, определенные сценарии жизни, которые отталкиваются от портрета будущего покупателя. 
+🔎
+ ДОМОСТРОЙНН.РУ 
+выяснил
+, как выглядит потенциальный покупатель жилья в сегменте «элит» и почему технологичность — один из ключевых критериев выбора недвижимости такого класса. Разобраться в этой теме нам помог застройщик нижегородского жилого комплекса 
+«Покровский Премиум»
+ — ЭЛИТДОМ.
+Подписывайтесь на DomostroyNN.ru</p>
+          <a href="https://t.me/domostroynn/6182" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-01</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw"> жк </span></div>
+          <p class="card-text">💎
+ 
+ПД «Грандъ» поборется за победу на юбилейной премии «Искусство строить — 2026»
+Премиальный дом 
+«Грандъ»
+ расположен на пересечении 
+улиц Шевченко и Максима Горького
+. В его состав войдет один дом, разделенный на семь секций, высотой от 6 до 12 этажей. В нем запроектировано 262 квартиры с потолками до 3,3 м.
+🏆
+ В 2026 году ПД «Грандъ» принимает участие в премии «Искусство строить» впервые. Однако ранее девелопер 
+YUNIKA
+ уже забирал награды за другие проекты в Нижнем Новгороде. В 2023 году КД «Резиденция» стал лучшим в номинациях 
+«Выбор нижегородца»
+ и 
+«ЖК года бизнес-класса»
+. В 2024-м ЖК «Трио» стал лауреатом в двух номинациях: 
+«ЖК года комфорт-класса»
+ и «Доступное жилье». В 2025 г...</p>
+          <a href="https://t.me/domostroynn/6183" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities="Нижний Новгород,Киров"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Нижний Новгород</span><span class="tag city">Киров</span><span class="tag kw">строят</span><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">🤩
+Топ-5 новостей за прошедшую неделю
+:
+1️⃣
+Девятый дом в ЖК «Мои Цветы» строят у Щелоковского хутора в Нижнем Новгороде
+ 
+2️⃣
+Решена судьба 20-летнего недостроя в историческом центре Нижнего Новгорода 
+ 
+3️⃣
+Главный корпус мельницы Башкирова восстановили в Нижнем Новгороде под жилье
+ 
+4️⃣
+Экспертиза одобрила проект строительства дома у Борского моста
+ 
+5️⃣
+20,4 млн рублей выделено на проект реконструкции дороги Нижний Новгород — Кстово
+ 
+Подписывайтесь на DomostroyNN.ru</p>
+          <a href="https://t.me/domostroynn/6184" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">⬇️
+Ипотека стала дешевле после уменьшения ключевой ставки Центробанка
+Спустя неделю после снижения ключевой ставки до 14,5% 
+произошло снижение
+ средних ставок по ипотеке на 0,69–0,89 п.п., сообщает «РБК-Недвижимость» со ссылкой на данные ЕИСЖС. 
+📊
+Показатели средних ставок по ипотеке и то, как они меняются, определяют каждую неделю и основываются на ставках предложения банков, входящих в топ-20 по выдаче жилищных кредитов в Москве.
+С 27 апреля по 3 мая 2026 года средние ставки на новостройки уменьшились на 0,69 п.п. — 
+до 19,22%.
+ На вторичку показатель снизился на 0,75 п.п. и составил 
+18,84%
+.
+Ипотека на загородное жилье также стала дешевле. При покупке готового дома параметр стал ниже на...</p>
+          <a href="https://t.me/domostroynn/6185" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-03-31</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">завод</span></div>
+          <p class="card-text">🌳
+Благоустройство общественных пространств по ФКГС стартовало в Нижнем Новгороде
+Работы по благоустройству общественных пространств стартовали в Нижнем Новгороде. Зоны отдыха 
+приводят в порядок
+ в рамках программы «Формирование комфортной городской среды». В общей сложности планируется преобразить 
+семь территорий
+:
+👉
+парк им. 777-летия Нижнего Новгорода на Автозаводе (2 очередь);
+👉
+сквер им. Космонавта Комарова в Ленинском районе (1очередь);
+👉
+зеленая зона напротив ЖК «Корабли» в Сормове (1 очередь);
+👉
+пространство на бульваре Нефтепереработчиков в Кстове;
+👉
+на откосе в поселке Приволжский в Кстове; 
+👉
+пешеходная зона на проспекте Победы в Кстове;
+👉
+на общественной территории в деревне Мал...</p>
+          <a href="https://t.me/domostroynn/6141" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-01</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🏡
+Застройщик предлагает нижегородцам четыре сценария жизни в загородных поселках
+Загородная недвижимость — это не роскошь, а осознанный выбор для тех, кто стремится к гармонии, уединению и мечтает о пространстве для роста своей семьи. Компания ООО «Жилищный ответ» 
+реализует четыре проекта
+ в живописном Кстовском районе, каждый из которых предлагает жителям сценарии жизни.
+➡️
+Для тех, кто ценит свое время, застройщик предлагает дома по принципу 
+«заезжай и живи»
+.
+➡️
+Для тех, кто ценит свободу творчества и возможность все подстроить под себя, подойдет еще один сценарий — 
+«дома-конструкторы»
+.
+➡️
+Семьи с детьми оценят 
+сочетание
+ загородного 
+простора с безопасностью
+ и развитой инфраструкту...</p>
+          <a href="https://t.me/domostroynn/6142" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-01</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🤑
+Стали известны ЖК-лидеры по самым крупным скидкам на квартиры в Нижнем Новгороде
+В Нижнем Новгороде можно приобрести квартиру в новостройке со скидкой до 30,82%. На сегодняшний день застройщики снизили цены более чем на 400 различных вариантов. ДОМОСТРОЙНН.РУ 
+подготовил список жилых комплексов
+, где прямо сейчас предложены самые крупные скидки на жилье.
+Топ-5 выглядит следующим образом:
+🔜
+ЖК «Статус на Гребном канале» 
+(GloraX)
+🔜
+ЖК «Корица»
+ (ННДК)
+🔜
+ЖК «Статус на Черниговской»
+ (GloraX)
+🔜
+Гранд-квартал «Бетанкур»
+ (ННДК) 
+🔜
+ЖК «Весна в Заречье»
+ (СЗ «ПРОЕКТ-С-35»)
+Подробнее о размерах скидок и конкретных вариантах квартир 
+читайте в нашем материале
+🛍
+#новостиНН
+ 
+#аналитика
+ 
+#рейтинг
+ ...</p>
+          <a href="https://t.me/domostroynn/6146" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Общее">Общее</span>
+            
+            <span class="date">2026-04-02</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строят</span><span class="tag kw">застройщик</span><span class="tag kw">девелопер</span></div>
+          <p class="card-text">👌
+Согласован облик двух домов в рамках КРТ на левом берегу Оки в Нижнем Новгороде
+Объекты станут первой очередью строительства 
+ЖК «Левобережный»
+. В роли застройщика выступает федеральный девелопер GloraX.
+👨‍🎨
+Архитектурное решение фасадов выполнено в 
+единой стилистике
+ для всего квартала. Для зданий выбрали белый, серый и терракотовый цвета. Такое сочетание придает постройкам динамику, но при этом они гармонично вписываются в окружающую среду.
+Наружные стены отделают навесной фасадной системой с 
+композитными панелями
+ разных оттенков, плиткой под 
+кирпич
+ и 
+панелями
+ с крашеным стеклом. Систему утепления дополнят финишным слоем из минеральной штукатурки.
+🏗️
+Чередование 
+остекленных
+ и 
+...</p>
+          <a href="https://t.me/domostroynn/6147" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities="Нижний Новгород"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Нижний Новгород</span><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">🔝
+Топ-5 новостей за прошедшую неделю:
+1️⃣
+Премьеры 2026 года: обзор самых ожидаемых ЖК в Нижнем Новгороде 
+2️⃣
+Госэкспертиза одобрила проект детсада на улице Дальней в Нижнем Новгороде
+ 
+3️⃣
+Михаил Мишустин подписал документ о строительстве ВСМ через Нижний Новгород
+ 
+4️⃣
+Пятиэтажные дома в России разрешили строить из дерева
+ 
+5️⃣
+Дома Чардымова и Самгина восстановили на площади Сенной за 150 млн рублей
+#новостиНН
+ 
+#строительство
+ 
+#недвижимость
+ 
+#новостройки
+ 
+#жилье
+ 
+#инфраструктура
+ 
+#НижнийНовгород
+ 
+#Нижегородская_область
+Подписывайтесь на DomostroyNN</p>
+          <a href="https://t.me/domostroynn/6148" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">мост</span></div>
+          <p class="card-text">🏗
+✅
+Два новых корпуса достроили в ЖК «Савин парк» в Нижнем Новгороде
+На территории жилого комплекса возвели 
+пятый корпус
+ (по генплану). В здании общей площадью около 7,8 тысячи кв. м находится 
+201 квартира
+ и 4 нежилых помещения. В новостройке есть студии, однушки и двухкомнатные квартиры.
+🏘
+Также завершено строительство 
+шестого корпуса на 158 квартир
+: от студий до трехкомнатных. Здесь также расположено 4 нежилых помещения. Общая жилая площадь новостройки — более 7 тысяч кв. м.
+Дома сданы
+ с чистовой отделкой. На придомовой территории обустроены детская игровая площадка и зона для занятий спортом. Также во дворах выполнены понижающие площадки и выделены места для мусорных контейнеров.
+📸...</p>
+          <a href="https://t.me/domostroynn/6149" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строят</span><span class="tag kw">застройщик</span><span class="tag kw">мост</span></div>
+          <p class="card-text">✔️
+Нижегородский Минград утвердил планировку КРТ за бывшим офисом Intel
+Согласно документу, застройщик 
+«СТРИАР»
+ возведет в границах улицы Тургенева 
+два многоквартирных дома
+ высотой до 25 этажей с подземными стоянками. Также здесь будет построено 
+административно-офисное
+ здание на 18 этажей и трансформаторная подстанция.
+🌳
+В перечне работ по КРТ также обозначено формирование внутриквартальных 
+проездов
+ и тротуаров; 
+благоустройство
+ территории; оборудование 
+детских площадок
+. Застройщик обустроит площадки для 
+отдыха
+ и
+ спорта
+, 
+автостоянку
+, 
+освещение
+ и 
+ливневки
+.
+Будущие новостройки будут обеспечены социнфраструктурой: жители новостроек будут пользоваться 
+школой
+, которую постр...</p>
+          <a href="https://t.me/domostroynn/6152" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">стадион</span></div>
+          <p class="card-text">💬
+Нижегородцы высказали свое мнение о КРТ у стадиона «Водник»
+Жители Нижнего Новгорода 
+высказали свое мнение
+ о комплексном развитии территории стадиона «Водник» в социальной сети. На претензии 
+по строительству будущих объектов ответила нижегородская мэрия
+.
+Свои опасения по поводу будущей застройки высказала жительница Татьяна. Переживания нижегородки касаются в том числе 
+транспортной обстановки
+ в районе улиц Алексеевской, Грузинской, Ошарской и Володарского. 
+💭
+«Где экспертиза Министерства энергетики и ЖКХ, в которой бы была дана оценка о возможности размещении всех перечисленных объектов в проекте КРТ без угрозы возникновения аварийных ситуаций в этом густонаселенном районе, где все с...</p>
+          <a href="https://t.me/domostroynn/6154" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-09</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строят</span><span class="tag kw">завод</span></div>
+          <p class="card-text">📍
+🏭
+ ОЭЗ «Кулибин» в Дзержинске — место, где строятся крупные заводы. Площадка, в которую вкладываются десятки миллиардов рублей и невероятное количество сил.
+ На огромной территории будет множество разных производств: от бытовой химии до компонентов для аэрокосмической отрасли.
+Корреспондент ИА «В городе N» 
+отправилась на место событий
+, чтобы подсмотреть за рабочими, оценить обстановку, подвести промежуточные итоги, узнать больше о дорогостоящих проектах и сделать фоторепортаж 
+📸
+Сколько предприятий уже готовы? Какие ключевые этапы пройдены, какие еще предстоят? И как в целом выглядит сейчас эта особая экономическая зона? 
+Ответы и эксклюзивные кадры с большой стройки — 
+в нашем материале...</p>
+          <a href="https://t.me/domostroynn/6155" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-10</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строится</span><span class="tag kw">девелопер</span><span class="tag kw"> жк </span></div>
+          <p class="card-text">🏗
+Как строится новый ЖК у парка на Автозаводе, рассказали нижегородцам
+Строительство 
+жилого комплекса 
+«Новая Львовская»
+, победившего в номинации «ЖК года комфорт-класса» премии «Искусство строить — 2025», продолжается в Автозаводском районе Нижнего Новгорода. Первый дом будет введен в эксплуатацию в 2027 году.
+В новом квартале уже «выросли» три здания, ведется внутренняя отделка. В общей сложности проектом предусмотрены 
+шесть домов
+ высотой до 21 этажа, а также 
+детский сад
+ на 240 мест, подземная и наземная 
+парковки
+. Квартиры будут видовыми — из окон будущие жильцы смогут любоваться парком им. 777-летия Нижнего Новгорода или Пермяковским озером.
+Застройка ведется по проекту КРТ. Ее ре...</p>
+          <a href="https://t.me/domostroynn/6159" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-10</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">новостройка</span></div>
+          <p class="card-text">🏆
+Представлен рейтинг нижегородских ЖК с самыми большими скидками на квартиры
+На сегодняшний день, более 
+650 квартир
+ в новостройках Нижнего Новгорода продают со скидками до 30,82%. Топ-3 жилых комплексов по размеру скидок выглядит так:
+🔸
+ЖК «Статус на Гребном канале» (GloraX) — 30,82%;
+🔸
+ЖК «Семашко 17» («Разумные инвестиции») — 26,53%;
+🔸
+ЖК «Статус на Черниговской» (GloraX) — 26%.
+Кто еще вошел в рейтинг, 
+читайте в нашем материале
+ 
+Подписывайтесь на DomostroyNN</p>
+          <a href="https://t.me/domostroynn/6160" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@domostroynn"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@domostroynn</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-04-13</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">завод</span></div>
+          <p class="card-text">💥
+Топ-5 новостей за прошедшую неделю:
+1️⃣
+Новое автомобильное производство хотят построить в Нижнем Новгороде к 2034 году
+2️⃣
+Мастер-план КРТ на месте кинотеатра «Россия» представили в Нижнем Новгороде
+3️⃣
+Два новых корпуса достроили в ЖК «Савин парк» в Нижнем Новгороде
+4️⃣
+Строительство завода за три млрд рублей завершилось в Дзержинске
+5️⃣
+Нижегородский Минград утвердил планировку КРТ за бывшим офисом Intel
+Подписывайтесь на DomostroyNN</p>
+          <a href="https://t.me/domostroynn/6161" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Московские заводы наращивают выпуск медоборудования: биопротезы, рентгены, УЗИ, системы для скорой помощи. 
+Рост за год — 7,2% 
+📈
+Отдельный плюс — цифровые решения. Компания «Хаасс» создала первую отечественную систему мониторинга медицинских газов. Теперь все, от источника до пациента, под контролем, без ошибок и потерь информации 
+😎
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9549" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Как московские заводы ковали Победу? Об этом — прошедшая лекция в павильоне «Умный город» на ВДНХ. 
+Своими знаниями поделились директор Музея истории шоколада и какао «МИШКа» Марина Жданович и директор Музея истории АО «ГКНПЦ им. М. В. Хруничева» Вадим Аксенов.
+⚙️
+ Как предприятия перестраивали производство и какие технологии появились в те тяжелые годы?
+Узнать ответы на эти вопросы можно из записи лекции 
+по ссылке
+ 
+👈
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9552" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-29</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Технологии Победы: как московские заводы приближали 9 Мая 1945-го
+5 мая в 11:00 в павильоне «Умный город» на ВДНХ состоится открытая лекция «Промышленный щит Москвы».
+⚙️
+ Лекторы — директор Музея истории шоколада и какао Марина Жданович и директор музея Музея истории АО «ГКНПЦ им. М. В. Хруничева» Вадим Аксенов — расскажут реальные истории ученых, инженеров и конструкторов, которые стояли за ключевыми технологиями военного времени.
+Мероприятие — часть проекта «Открой#Моспром», объединяющего более 150 заводов. Для участия необходимо зарегистрироваться 
+на сайте проекта
+ 
+👈
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9529" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-30</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Сладкие легенды и умные лифты: стартует новый цикл экскурсий «Открой#Моспром»!
+Что в программе?
+◽️
+ Кондитерский концерн «Бабаевский»: 31 тысяча тонн конфет в год и история длиной в 200 лет. 
+◽️
+ Щербинский лифтостроительный завод: их лифты установлены в Елоховском соборе и парке «Патриот». 
+◽️
+ «Научные развлечения»: датчики, опыты, конструкторы для юных гениев. 
+Как попасть?
+ На 
+сайте проекта
+ для регистрации на экскурсию в карточке события нужно нажать на кнопку «Регистрация», заполнить ФИО и паспортные данные и нажать кнопку «Сохранить».
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9531" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date"></span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span></div>
+          <p class="card-text">Танцы на заводе - новый тренд!
+«Технополис Москва» — особая экономическая зона, где работает больше 240 компаний. Они производят лекарства, лифты, микроэлектронику и еще много чего. Но сотрудники здесь ещё и развлекаются, например, ходят на зумбу. 
+Катя присоединилась к тренировке и рассказала, чем ещё можно заняться на заводе.
+MAX ВЕДЫ
+ | 
+VK ВЕДЫ
+ | 
+Наш сайт
+ | 
+Likee ВЕДЫ</p>
+          <a href="https://t.me/prommoscow/9509" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-20</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строят</span><span class="tag kw">технопарк</span></div>
+          <p class="card-text">🗺
+ 
+ОЭЗ Москвы расширяют — плюс 38 гектаров под новые проекты
+ 
+Расширение затронуло несколько площадок: в «Печатниках» строят технопарк, в Новой Москве создают крупнейший в России кластер по производству аккумуляторных батарей, а в «Руднево» разместят дополнительные производственные корпуса.
+Что это значит на деле:
+✔️
+ новые возможности для запуска высокотехнологичных проектов;
+✔️
+ дополнительные площади под предприятия и разработки;
+✔️
+ проще масштабировать бизнес внутри одной экосистемы.
+Масштаб площадки растет — и вместе с ним возможности для технологий, которые будут востребованы завтра!
+📲
+ 
+Моспром в MAX</p>
+          <a href="https://t.me/prommoscow/9511" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date"></span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">😄
+ Финальный штрих, который задает характер лифта
+В покрасочном цехе завода элементы кабины и дверей проходят обработку и получают свой цвет. На этом этапе важно все — ровное покрытие, аккуратность нанесения и внимание к каждой детали.
+Так формируется внешность лифта, которую мы привыкли видеть в доме каждый день.
+#Лифты
+ 
+#Производство
+Подписаться на MAX</p>
+          <a href="https://t.me/prommoscow/9514" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-21</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Столичные сервисы и Ростех объединили усилия, чтобы у производителей все схватывалось на лету 
+😍
+Столичный 
+«Банк технологий» взял
+ себе в коллекцию решения от Ростеха — от софта до токарных станков. А на платформе Ростеха 
+PCAT.ru
+ теперь живут городские сервисы подбора поставщиков.
+Что все это значит?
+ Заводы быстрее находят российские разработки и надежных поставщиков!
+📲
+ 
+Моспром в MAX</p>
+          <a href="https://t.me/prommoscow/9515" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-22</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span></div>
+          <p class="card-text">«Москвич» в Ташкенте: 
+речь, конечно, про лифт 
+😏
+Карачаровский механический завод представил на выставке «ИННОПРОМ. Центральная Азия» свой флагманский лифт. Стильный черно-серый, с фигурной подсветкой и удобной панелью. 
+КМЗ является резидентом особой экономической зоны «Технополис Москва». Модернизация производства идет полным ходом, скоро на заводе будут выпускать не только лифты, но и эскалаторы с траволаторами 
+😎
+📲
+ 
+Моспром в MAX</p>
+          <a href="https://t.me/prommoscow/9517" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Инфраструктура"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-23</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">школа</span></div>
+          <p class="card-text">🗺
+ Столичный производитель, резидент ОЭЗ «Технополис Москва», выпустил обучающий комплекс «Школа профессора Дроздова». 
+Внутри — физика, биология, география и окружающий мир. Дети играют, а на самом деле осваивают сложные науки 
+😎
+ Новый комплекс рассчитан на два года занятий.
+У компании «Научные развлечения» больше 30 патентов на собственные разработки! 
+📲
+ 
+Моспром в MAX</p>
+          <a href="https://t.me/prommoscow/9519" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-27</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">возводят</span><span class="tag kw">котлован</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🏗
+ На территории Карачаровского механического завода возводят самую высокую испытательную башню для лифтов в России. Строители уже забивают пробные сваи и роют котлован глубиной 5,5 метра, чтобы будущий гигант стоял надежно. 
+На башне планируют разместить медиафасад площадью до 2100 квадратных метров, а также решение с эффектом Naked Eye 3D, что позволит увидеть объемную картинку невооруженным глазом 
+😍
+🏢
+ Российские лифты готовятся к покорению не только небоскребов, но и, кажется, самой гравитации.
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9525" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@prommoscow"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@prommoscow</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-28</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">⚙️
+ На территории Московского цифрового завода открыли цех серийного производства 3D-принтеров, которые печатают кобальтом, никелем, титаном и алюминием.
+Как это работает? 
+Берут тончайший слой металлического порошка — титана, алюминия, кобальта — и мощным лазером плавят его по заданной траектории. Потом следующий слой, и еще, и еще. В итоге вырастает готовая деталь для космоса, авиации или медицины. Без сварки, без болтов — цельный металлический объект внутри принтера 
+😍
+И главный плюс: 80% комплектующих — российские. Программное обеспечение — свое, целиком и полностью. Никаких сюрпризов от импортеров.
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/prommoscow/9527" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Промышленность"
+             data-cities="Киров"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Киров</span><span class="tag kw">завод</span></div>
+          <p class="card-text">Эксклюзивные материалы "Делового Петербурга" сегодня, 7 мая
+🔺
+Переезд заводов за КАД 
+снизил число петербуржцев,
+ работающих в опасных условиях; 
+🔺
+Петербуржцам за год начислили 
+почти 31 млрд рублей
+ налога на доход по депозитам; 
+🔺
+Порты российской Балтики хотят 
+забрать часть грузов
+ с Дальнего Востока; 
+🔺
+KPI по блокировкам: 
+отсекут ли зарубежный VPN-трафик
+ в России
+Читайте газету "Деловой Петербург" на сайте 
+dp.ru
+ или покупайте в точках распространения. 
+Подписывайтесь на "ДП" по ссылке.</p>
+          <a href="https://t.me/dprunews/62392" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">"Если в городе есть культура, значит, в нём остаётся молодёжь": 
+почему универсальные культурные пространства становятся новым стандартом города и как они меняют взаимодействие искусства, аудитории и бизнеса 
+"ДП" рассказала Анастасия Курёхина
+ — художественный руководитель Центра современного искусства имени Сергея Курёхина. 
+🔺
+У новых поколений большая потребность в современных форматах искусства, музыки, танца, медиа-искусства, поэтому появилась необходимость в современных концертно-выставочных пространствах; 
+🔺
+Универсальные пространства — это будущее всех городов, они возникают как ответ на растущее разнообразие запросов со стороны аудитории и индустрии. В одном месте появляется возможн...</p>
+          <a href="https://t.me/dprunews/62396" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Промышленность"
+             data-cities="Смоленск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Смоленск</span><span class="tag kw">завод</span><span class="tag kw">мост</span></div>
+          <p class="card-text">⚡️
+⚡️
+⚡️
+⚡️
+⚡️
+"Реновация" покупает аварийное здание рядом с Большим Смоленским мостом. 
+Компания 
+стала единственным участником торгов
+ АО "ДОМ. РФ" по продаже здания на проспекте Обуховской Обороны, 42, корп. 2. 
+Единственный участник имеет право приобрести лот по начальной цене в 206,2 млн рублей.
+Компания получит заброшенный пятиэтажный дом площадью 4,4 тыс. м2 с участком 0,26 га. Это бывшее общежитие Завода турбинных лопаток, расселённое в 2015 году.
+В своё время его передали Высшей школе экономики, но она заниматься аварийной постройкой не стала. У ВШЭ объект забрали и отдали для продажи "ДОМ. РФ". Дом находится в предаварийном состоянии, в апреле этого года он серьёзно пострадал во вр...</p>
+          <a href="https://t.me/dprunews/62399" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Что позволяет уверенно продавать недвижимость в новой реальности? 
+На фоне охлаждения рынка недвижимости, вызванного высокой ключевой ставкой и падением спроса, для его участников всё более актуальными становятся вопросы — как продавать и зарабатывать, какие инструменты усиливают продажи и что влияет на сделку.
+Эти и другие темы будут обсуждаться в рамках программы риелторского кластера 
+на форуме недвижимости "Движение":
+ в течение трёх дней, с 16 по 18 июня, гости мероприятия смогут прокачать свои навыки, изучить аналитику и обменяться с коллегами успешными кейсами.
+В программе форума также будет уделено внимание ведению клиента, личному позиционированию, взаимодействию с застройщиками. Уч...</p>
+          <a href="https://t.me/dprunews/62401" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Портрет нового инвестора
+: кто вкладывает капитал в курортную недвижимость 
+Эксперты фиксируют осторожное возвращение частного инвестора на рынок недвижимости и вместе с тем констатируют: модель его поведения меняется, что оказывает влияние и на формирование предложения. 
+Пока говорить про уверенный рост не приходится: по данным IBC Real Estate, в России в I квартале 2026-го объём инвестиций в жилую и коммерческую недвижимость снизился на 30% в сравнении с аналогичным периодом прошлого года. Почти такой же показатель указывают и в Nikoliers.
+В целом меняются паттерны финансового поведения, замечают аналитики. Из ярких трендов — диверсификация портфеля и интерес к "неклассическим" инструмента...</p>
+          <a href="https://t.me/dprunews/62405" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Жильё"
+             data-cities="Санкт-Петербург"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw">застройщик</span><span class="tag kw"> жк </span><span class="tag kw">детский сад</span></div>
+          <p class="card-text">Смольный согласовал архитектурно-градостроительный облик нового ЖК на Синопской набережной
+, сообщили в комитете по градостроительству и архитектуре Петербурга. Проект разработало архитектурное бюро "Студия 44".
+Центральным планировочным элементом территории является общедоступный пешеходный променад, соединяющий Синопскую набережную и Новгородскую улицу. Вдоль променада расположатся коммерческие помещения и прогулочные зоны. Жилые блоки и зоны тихого отдыха обособлены от активной общественной жизни, они займут северную и южную части участка. На территории также предусмотрены открытые автостоянки, игровые и спортивные площадки, озеленение, отметили в КГА.
+Заказчиком проекта выступает АО "Спе...</p>
+          <a href="https://t.me/dprunews/62406" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">По данным Financial Times, к концу 2025 года почти каждый пятый внешнеторговый платеж российских компаний прошел через систему ООО "А7" 
+ 
+Компания выстроила собственную инфраструктуру более чем в 100 странах. Отказ от корреспондентских цепочек позволяет проводить трансграничные платежи без задержек: средства поступают контрагенту в считанные часы.
+ 
+Условия полностью прозрачны:
+— при импорте комиссия составляет 0,3% + НДС от суммы перевода;
+— при экспорте — 0%.
+ 
+Конвертация осуществляется строго по официальному курсу ЦБ, что позволяет точно планировать расходы. В условиях, когда каждый день задержки оборачивается упущенной выгодой, скорость и предсказуемость становятся ключевыми факторами ...</p>
+          <a href="https://t.me/dprunews/62409" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">⚡️
+⚡️
+⚡️
+⚡️
+⚡️
+Полки магазинов в Петербурге захватили высокобелковые и безлактозные ЗОЖ-товары. 
+Покупатели, заботящиеся о своём здоровье, охотно берут их, однако далеко не всегда получают реальную пользу.
+По данным Ассоциации компаний розничной торговли, за 2 года в федеральных торговых сетях спрос на такие товары вырос на 15–30%, а у части игроков — даже на 40%. В зависимости от формата магазина на полках можно найти от 14 до 200 наименований "зожной" продукции, с учётом же готовых блюд и специализированных позиций (без сахара, без глютена, без соли, веганские суперфуды, растительные альтернативы и т. д.) — до 2 тыс.
+Примечательно, что, по оценке аналитиков исследовательского центра НАФИ, ...</p>
+          <a href="https://t.me/dprunews/62373" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">⚡️
+⚡️
+⚡️
+⚡️
+⚡️
+Книжные магазины в Петербурге потеряли покупателей
+. Оборот книжной продукции в традиционной рознице 
+упал почти на 20%
+ за первые 3 месяца 2026 года. 
+По данным Ассоциации книгораспространителей и журнала "Книжная индустрия", экземплярные продажи книжной продукции в рознице по стране за I квартал 2026 года сократились на 18,8%. В денежном эквиваленте рынок потерял 5,8%. В то же время средняя цена выросла на 18,5% год к году и составила 611 рубль. С конца 2025 года стоимость книг поднялась на 4,5%.
+Продажи художественной литературы упали на 4,0% в деньгах и на 8,6% в экземплярах. Доля продаж художественных книг в общем ассортименте составила 38%, а средняя цена — 660 рублей. С...</p>
+          <a href="https://t.me/dprunews/62380" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities="Санкт-Петербург,Краснодар"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag city">Краснодар</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Ирина Яровикова назначена главным редактором "Делового Петербурга". 
+До выхода на новую должность она руководила редакцией деловой газеты "Ведомости Северо-Запад". 
+Андрей Жуков, работавший на позиции исполняющего обязанности главного редактора, останется в команде в должности первого заместителя главного редактора объединённой редакции. 
+Ирина Яровикова в журналистике более 25 лет. Работала директором регионального бюро "Интерфакс-Юг" в Краснодарском крае, стояла у истоков запуска франшизы РБК в ЮФО и СКФО, занимала посты главного редактора и исполнительного директора южного подразделения РБК, занималась запуском северо-западного подразделения "Федерал.Пресс", а также руководила редакцией Т...</p>
+          <a href="https://t.me/dprunews/62385" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">генподрядчик</span><span class="tag kw">завод</span></div>
+          <p class="card-text">⚡️
+⚡️
+⚡️
+⚡️
+⚡️
+Арестованы сотрудники генподрядчика комплексов по переработке отходов "Волхонка", "Островский" и "Новосёлки". 
+В деле о раскрытии "коррупционного преступления при строительстве мусороперерабатывающих заводов" накануне, 5 мая, отчиталась экономическая полиция управления МВД по Петербургу и Ленобласти. 
+Речь идёт о компании "Энергосеть", которая принадлежит ООО "ЭВ-Групп", аффилированному с "Интер РАО", 
+стало известно "ДП".
+ Последнее в свою очередь является одним из акционеров АО "Невский экологический оператор", заказчика строительства мусороперерабатывающих предприятий в Петербурге и Ленобласти.
+По данным полиции, задержанные "за денежное вознаграждение обеспечивали подконтр...</p>
+          <a href="https://t.me/dprunews/62387" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">детский сад</span></div>
+          <p class="card-text">В Петербурге выбрали подрядчика для строительства школы и детского сада в Красном Селе
+, 
+следует
+ из данных сайта госзакупок. Подряд за 1,4 млрд рублей получило ООО "Норд-Строй".
+Закупку на строительство образовательного учреждения объявили в конце марта. На конкурс подали одну заявка с предложением цены на 1 тыс. рублей меньше заявленной заказчиком. Итоги подвели в начале апреля, а заключённый контракт с подрядчиком опубликовали в конце прошлой недели. 
+Исполнителю требуется возвести начальную школу в Красносельском районе Петербурга, рядом с Родниковой, Красногородской, Театральной улицами, Гатчинским шоссе и улицей Восстановления. Здание будет четырёхэтажным. В его состав также войдёт де...</p>
+          <a href="https://t.me/dprunews/62388" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities="Санкт-Петербург"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Средняя цена новых авто в Петербурге и Ленобласти выросла до 3,33 млн рублей, 
+сообщили аналитики Авто. ру. Средняя цена нового автомобиля в Санкт-Петербурге и Ленинградской области в апреле 2026 года увеличилась на 4% относительно предыдущего месяца. 
+Как показало проведённое исследование, при подорожании во второй месяц весны число предложений со стороны локальных марок (Москвич, УАЗ, Aurus, Lada, Belgee, Evolute, Solaris, Sollers, Tenet) выросло на 18% с начала года и на 5% относительно марта. 
+Однако некоторые марки, например Jetta, Haval и Voyah, стали доступнее. Заметнее всего подешевели в регионе за месяц: Jetta VS7 (–6,6%; до 2,34 млн рублей), Haval H3 (–6%; до 2,93 млн рублей), Voya...</p>
+          <a href="https://t.me/dprunews/62390" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span></div>
+          <p class="card-text">МВД показало кадры задержания четырёх фигурантов дела о коррупции при строительстве мусороперерабатывающих заводов
+ в Петербурге. 
+Сотрудники экономической полиции задержали 38-летнего заместителя директора компании и троих его коллег в возрасте от 38 до 50 лет. Их подозревают в коммерческом подкупе. 
+По версии следствия, за деньги они обеспечивали подконтрольным подрядчикам увеличение объёмов и стоимости работ по госконтрактам. За каждый объект получали около 5 млн рублей, а за год их доход составил примерно 66 млн рублей. 
+Обыски прошли в Петербурге и Москве. Фигуранты полностью признали вину, им избрана мера пресечения в виде подписки о невыезде. 
+📸
+ ГУ МВД России по Петербургу и ЛО
+Подпи...</p>
+          <a href="https://t.me/dprunews/62348" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Последствия атаки БПЛА на Ленобласть и Петербург этой ночью
+🔺
+Жители Петербурга и области массово жалуются на сбои в работе мобильного интернета. По данным сервиса Detector404, за сутки зафиксировано более 3,1 тыс. жалоб на плохую работу интернета, за последний час — почти 300.
+🔺
+Губернатор Дрозденко официально предупредил о возможном понижении скорости мобильного интернета. У некоторых пользователей перестал работать даже домашний Wi-Fi и не открывались сайты из "белого списка".
+🔺
+Росавиация ввела временные ограничения на приём и выпуск воздушных судов в аэропорту Пулково для обеспечения безопасности полётов до 4:16. Десятки рейсов были задержаны или отменены.
+🔺
+Основной целью атак Дрозденк...</p>
+          <a href="https://t.me/dprunews/62358" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Вместе с квартирой вы покупаете коридоры, лестницы и лифты. И платите за них каждый месяц
+Когда вы берёте квартиру 50 м², вы становитесь совладельцем ещё нескольких сотен метров общих пространств. В зависимости от класса дома доля продаваемой площади составляет 60–85%. Остальное — МОПы (места общего пользования).
+В массовом сегменте до 35% дома — это холлы, лифтовые узлы, лестницы, колясочные. В премиум-классе добавляются коворкинги, спортзалы, террасы.
+Из проблем тут — узкие коридоры, нехватка лифтов, очереди, тесные всегда забитые колясочные и дорогая отделка, которая без уборки и вентиляции теряет вид за 2 года.
+Тарифы на содержание — от 60 до 600 рублей за "квадрат", поэтому жители всё ч...</p>
+          <a href="https://t.me/dprunews/62359" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Код идентичности: как бренды с богатой историей завоёвывают новую аудиторию
+Грамотная работа с историческим наследием бренда дает результаты: рост конверсии до 30%, увеличение посещаемости объектов до 35% и омоложение аудитории. Брендам-долгожителям важно не застрять в прошлом, 
+но и не терять идентичность.
+Эксперты отмечают, что есть множество сфер, где акцент на истории бренда, его традициях наиболее эффективен. И на первых позициях — производство и предметы роскоши (с умелой подачей их ценности). Технологический сектор также фигурирует в этом списке. Однако такая стратегия должна быть выверенной.
+"Главные риски — это консервативность: опасность застрять в прошлом и потерять свою актуально...</p>
+          <a href="https://t.me/dprunews/62361" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Смольный прогнозирует возвращение турпотока из Китая к доковидному уровню к 2030 году
+В 2019 году Петербург посетил 951 тысяча китайских туристов, а в прошлом году — только 235 тысяч. К 2030 году власти ожидают четырёхкратный рост. 
+Восстановлению способствует безвизовый режим для граждан КНР, введённый с 1 декабря 2025 года (продлится до 14 сентября 2026 года). 
+При этом структура поездок изменилась: в Петербург стало приезжать больше молодёжи с семьями и друзьями, около 70% гостей организуют туры самостоятельно, без агентств. Средний чек на поездку в 2025 году составил 116,6 тыс. рублей (на 6,8% ниже, чем годом ранее), а продолжительность визита сократилась с 9,8 до 5,5 дня. 
+При этом эксп...</p>
+          <a href="https://t.me/dprunews/62362" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">застройщик</span><span class="tag kw">девелопер</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Как инженерные решения влияют на продажу жилья бизнес- и премиум-класса
+На рынке недвижимости бизнес- и премиум-класса, несмотря на стагнацию, продажи продолжаются. Покупатели стали более рациональными и требовательными: они обращают внимание не только на внешний вид, но и на локацию, среду и инженерные особенности объекта. За год стоимость квадратного метра в бизнес-классе Петербурга выросла на 20–26% (до 620–650 тыс. рублей), в премиуме — свыше 850 тыс. рублей. 
+Эксперты прогнозируют дальнейший рост на 12–15% в текущем году. Высокий класс комфорта становится нормой: застройщики переориентируются на премиум-сегмент даже в проектах, задуманных как комфорт-класс. 
+Примером служит клубный дом ...</p>
+          <a href="https://t.me/dprunews/62366" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@dprunews"
+             data-category="Жильё"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@dprunews</span>
+            <span class="category-badge cat-Жильё">Жильё</span>
+            
+            <span class="date">2026-05-05</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">девелопер</span><span class="tag kw"> жк </span><span class="tag kw">жк "</span></div>
+          <p class="card-text">Мытный двор в Петербурге превратят в премиум-жильё
+Formula City согласовала с КГИОП реставрацию исторического здания на Евгеньевской улице (памятник регионального значения). Первая очередь — 46 квартир в границах объекта культурного наследия.
+Общая площадь нового ЖК "Евгеньевский" — около 30 тыс. м² премиум-сегмента. Инвестиции — 8 млрд рублей. Срок сдачи — 2029 год.
+Согласование заняло больше года. Соседний участок под новое строительство (1,7 га) — в городской собственности, там потребуется одобрение Градкомиссии.
+Девелопер купил проект в 2023 году за 3 млрд рублей. Расположение — в пешей доступности от Старо-Невского проспекта и Синопской набережной.
+Как исторический памятник превратят в ...</p>
+          <a href="https://t.me/dprunews/62370" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-01</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">💰
+ 
+Инвестиции в создание новых рабочих мест в Москве превысили 3,4 триллиона рублей
+Объем инвестиций, привлекаемых в развитие городской инфраструктуры в рамках программы стимулирования создания мест приложения труда, превысил 3,4 триллиона рублей. Основной фокус — высокотехнологичная промышленность, отметил заместитель Мэра Москвы по вопросам транспорта и промышленности 
+Максим Ликсутов. 
+⚙️
+ Уже одобрено более 290 объектов: заводы, деловые центры, школы, музеи, спорткомплексы и даже логистические хабы.
+⚙️
+ 20% реализованных проектов — промышленная инфраструктура.
+Программа работает с 2020 года и охватила практически все районы.
+📲
+ 
+Моспром в МАКС</p>
+          <a href="https://t.me/investmoscowru/5327" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-03</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">бизнес-центр</span></div>
+          <p class="card-text">📊
+ Основные новости дня 1-3 апреля
+✔️
+ Новости ДИПП
+◽️
+ Инвестиции в создание новых рабочих мест в Москве 
+превысили
+ 3,4 триллиона рублей
+◽️
+ Бизнес 
+может арендовать
+ офисы в индустриальном парке «Руднево»
+◽️
+ Произведено в Москве — для Победы: в рамках проекта «Открой#Моспром» 
+пройдет
+ серия особенных экскурсий на заводы столицы
+◽️
+ В «Сколково» 
+создано
+ свыше 700 рабочих мест после завершения капитального ремонта бизнес-центра «Галактион»
+◽️
+ Кондитерская столица: Москва 
+наращивает
+ выпуск сладостей
+◽️
+ Карачаровский механический завод 
+внедрил
+ систему трехмерного контроля деталей лифтового оборудования
+✔️
+ Федеральные новости 
+◽️
+ Путин 
+подписал
+ закон об ограничении передачи федер...</p>
+          <a href="https://t.me/investmoscowru/5330" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span></div>
+          <p class="card-text">✂️
+ 
+Москва укрепляет технологический суверенитет: выпуск медоборудования вырос на 7,2%
+Москва — ведущий центр разработки и выпуска высокотехнологичного медицинского оборудования. 
+«В столице работает более 300 компаний фармацевтической и медицинской отраслей, на которых трудятся около 30 тысяч человек. При поддержке города они модернизируют мощности и расширяют ассортимент, пополняя его современной отечественной продукцией. Так, в 2025 году производство медицинских инструментов и оборудования в Москве увеличилось на 7,2 процента по сравнению с 2024-м», — отметил Анатолий Гарбузов.
+Так, предприятие «Хаасс», резидент технопарка «Мосмедпарк», вывело на рынок инновационный продукт — «Централизо...</p>
+          <a href="https://t.me/investmoscowru/5332" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Иркутск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Иркутск</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🏢
+ 
+Карачаровский механический завод поставит лифты в Иркутскую область по программе капремонта
+Московский производитель в рамках соглашения с Фондом капитального ремонта Иркутской области поможет с заменой устаревшего оборудования — 38 современных лифтов отправятся в домах области по программе капремонта.
+«Столичный Карачаровский механический завод развивает сотрудничество с фондами капитального ремонта разных городов. Для многоквартирных домов Иркутской области КМЗ поставит 38 современных лифтов для обновления по программе капремонта. Соглашение с ФКР предусматривает комплексную реализацию проекта, включая проектирование, поставку и последующий монтаж оборудования», — сказал Анатолий Гарбу...</p>
+          <a href="https://t.me/investmoscowru/5333" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Иркутск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-04</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Иркутск</span><span class="tag kw">завод</span></div>
+          <p class="card-text">📊
+ Основные новости дня 4 апреля
+✔️
+ Новости ДИПП
+◽️
+ Столичные компании 
+наращивают 
+выпуск медицинского оборудования
+◽️
+ Карачаровский механический завод 
+поставит
+ 38 лифтов в Иркутскую область для замены по программе капремонта
+✔️
+ Федеральные новости 
+◽️
+ Правительство 
+сократит
+ долги по бюджетным кредитам 21 региона на 114 млрд руб
+◽️
+ В Госдуме 
+предложили
+ ввести особый правовой режим для впервые зарегистрированных ИП
+◽️
+ Московская биржа 
+начнет расчет 
+индексов четырех новых криптовалют
+✔️
+ Промышленность и инвестиции
+◽️
+ Российские химики и биологи 
+изучат
+ возможность переработки шлакоотвалов меткомбината
+◽️
+ Отечественный моторный завод 
+запустил
+ серийные поставки 653-сильных ...</p>
+          <a href="https://t.me/investmoscowru/5334" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">возведут</span><span class="tag kw">технопарк</span><span class="tag kw">производственный комплекс</span></div>
+          <p class="card-text">🏗
+ 
+Свыше 250 тысяч квадратных метров недвижимости введены в эксплуатацию с начала года по программе МПТ
+Пять новых объектов общей площадью более 250 тысяч квадратных метров введены в эксплуатацию в 2026 году в рамках программы стимулирования создания новых рабочих мест. 
+«Программа стимулирования создания мест приложения труда ориентирована на формирование в Москве сбалансированной городской среды, в которой новые рабочие места создаются рядом с жилыми кварталами. Это соответствует принципам 15-минутного города, снижает маятниковую миграцию и в первую очередь направлено на повышение качества жизни горожан. С начала 2026 года благодаря программе МПТ в столице введены в эксплуатацию пять объе...</p>
+          <a href="https://t.me/investmoscowru/5339" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-05-06</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">📊
+ Основные новости дня 6 апреля
+✔️
+ Новости ДИПП
+◽️
+ Свыше 250 тысяч квадратных метров недвижимости 
+введены в эксплуатацию
+ с начала года по программе МПТ
+◽️
+ Столичное фармпредприятие 
+увеличило
+ выпуск в приоритетных сегментах с начала года
+◽️
+ Столичным предпринимателям 
+представили
+ экосистему кадровой поддержки от города
+✔️
+ Федеральные новости 
+◽️
+ Более 171 млрд рублей с господдержкой 
+привлек
+ малый и средний бизнес с начала года
+◽️
+ В России 
+создали
+ подход для повышения эффективности и надежности финсервисов
+◽️
+ Ежедневная аудитория «МАКС» 
+превысила
+ 85 миллионов человек
+✔️
+ Промышленность и инвестиции
+◽️
+ В России 
+создали
+ технологию лазерной обработки металлических сплавов
+◽...</p>
+          <a href="https://t.me/investmoscowru/5341" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-05-07</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">📊
+ Основные новости дня 7 апреля
+✔️
+ Новости ДИПП
+◽️
+ Столичная компания 
+наладила выпуск
+ передовых акустических панелей для жилых и коммерческих помещений
+◽️
+ Баллы «Открой#Моспром» 
+можно обменять
+ на подарки и посещение тематических мероприятий 
+◽️
+ Значимый вклад в Победу 
+внесли
+ заводы Москвы
+✔️
+ Федеральные новости 
+◽️
+ ФАС и Минпромторг 
+выступили
+ с предложением по продаже алюминия на бирже
+◽️
+ Россиянам 
+разрешат
+ переезжать в другие регионы с прежним номером телефона
+◽️
+ В России в 2025 году 
+вырос объем
+ страхового рынка
+✔️
+ Промышленность и инвестиции
+◽️
+ В России 
+расширят
+ условия для господдержки промышленных проектов
+◽️
+ В России 
+создали
+ систему управления гибридным энерг...</p>
+          <a href="https://t.me/investmoscowru/5343" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-26</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">🏢
+ 
+В Москве заработали первые «умные» лифты с большими экранами
+По программе капремонта в столице начали устанавливать лифты Карачаровского механического завода с 24-дюймовыми информационными дисплеями (более 60 см). Первые такие подъемники уже запустили в районах Басманный, Хамовники, Текстильщики, Люблино и Марьино (ЦАО и ЮВАО).
+«Карачаровский механический завод продолжает расширять линейку современного лифтового оборудования для столичных объектов. Новые лифты с информационными экранами диагональю 24 дюйма повышают комфорт пассажиров и позволяют управляющей организации централизованно размещать актуальную информацию для жителей», — сказал Анатолий Гарбузов.
+⚙️
+ На экранах удобно и нагляд...</p>
+          <a href="https://t.me/investmoscowru/5307" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-26</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">строят</span><span class="tag kw">завод</span><span class="tag kw">технопарк</span></div>
+          <p class="card-text">📊
+ Основные новости дня 25-26 апреля
+✔️
+ Новости ДИПП
+◽️
+ Два технопарка и деловые объекты 
+построят
+ на северо-западе Москвы
+◽️
+ Ведущие предприятия Москвы 
+представили
+ свою продукцию в Узбекистане
+◽️
+ Руковдитель ДИПП 
+оценил
+ промышленный потенциал китайских роботов Kepler
+◽️
+ Москва 
+обсудила 
+возможности сотрудничества с Шанхайским технологическим университетом
+◽️
+ В Москве 
+запустили
+ в эксплуатацию первые лифты КМЗ с информационными экранами 24 дюйма
+✔️
+ Федеральные новости 
+◽️
+ Путин 
+подписал
+ закон, облегчающий переход малого бизнеса на уплату НДС
+◽️
+ Россиянам 
+объяснили
+ новые правила рассрочки
+◽️
+ В России 
+вырос
+ спрос на товары с подтвержденной подлинностью
+✔️
+ Промышленность...</p>
+          <a href="https://t.me/investmoscowru/5308" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-27</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строится</span><span class="tag kw">котлован</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🏢
+ 
+Выше только горы: как строится самая высокая в России испытательная башня для лифтового оборудования
+На Карачаровском механическом заводе началось возведение уникальной 138-метровой испытательной башни для лифтов. Генеральным подрядчиком выступает ООО «Промстрой», подведомственное Департаменту инвестиционной и промышленной политики города Москвы. 
+«Город поддерживает проекты, которые не только создают новые промышленные мощности, но и формируют технологический задел для целых отраслей. Так, на территории Карачаровского механического завода создается современная площадка, объединяющая административные, производственные и испытательные функции, что расширит возможности для разработки, пров...</p>
+          <a href="https://t.me/investmoscowru/5313" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-28</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🔨
+ 
+В Москве запустили новую линию по выпуску 3D-принтеров для печати металлом
+На Московском цифровом заводе открылся новый цех серийного выпуска аддитивных установок с технологией селективного лазерного сплавления. Оборудование позволяет печатать детали из металла для авиакосмоса, медицины и машиностроения.
+«Запуск линии стал результатом масштабной научно-исследовательской и опытно-конструкторской работы. Новое инновационное оборудование, выпускаемое в столице, за счет применения технологии послойного селективного лазерного плавления порошков металлов позволит значительно расширить возможности 3D-печати деталей для медицины, машиностроения, аэрокосмоса и других высокотехнологичных отраслей....</p>
+          <a href="https://t.me/investmoscowru/5315" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-29</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span></div>
+          <p class="card-text">Технологии Победы: роль столичных заводов в Великой Отечественной войне
+5 мая в павильоне «Умный город» на ВДНХ пройдет открытая 
+лекция
+ «Промышленный щит Москвы: вклад предприятий в Победу», участники которой узнают о том, как в 1941–1945 годах менялось производство на заводах, сыгравших значимую роль в ходе Великой Отечественной войны. 
+«9 Мая — памятная дата для всей нашей страны и для столичной промышленности в частности. В военные годы заводы столицы внесли неоценимый вклад в Победу. В рамках проекта “Открой#Моспром” в павильоне “Умный город” на ВДНХ пройдет тематическая лекция. Слушатели смогут подробно узнать, как в кратчайшие сроки гражданские производства трансформировались в оборо...</p>
+          <a href="https://t.me/investmoscowru/5319" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-30</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span></div>
+          <p class="card-text">Сладкие легенды и движение вверх: стартовал майский цикл экскурсий «Открой#Моспром»
+В мае двери для гостей открывают кондитерский концерн «Бабаевский» (выпускает более 31 тысячи тонн сладостей в год), Щербинский лифтостроительный завод и компания «Научные развлечения».
+«Москва по праву считается индустриальным центром России. Промышленные площадки города не только производят высококлассную продукцию, но и дарят впечатления. С 2019 года в рамках проекта “Открой#Моспром" любой желающий может посетить столичные заводы и ближе познакомиться с современными технологиями и передовыми инженерными решениями. За это время было организовано более 3,5 тысячи экскурсий и свыше тысячи мастер-классов. Таки...</p>
+          <a href="https://t.me/investmoscowru/5322" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date"></span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">технопарк</span><span class="tag kw">мост</span></div>
+          <p class="card-text">Открыли в Зеленограде один из крупнейших в России комплексов предприятий по производству строительных материалов
+🏭
+ На новых заводах будут производить автоклавный газобетон, архитектурные стеклопакеты, светопрозрачные конструкции и модульные фасады. 
+Продукция нужна для 
+строительства
+ жилых домов, в том числе по 
+Программе реновации
+, соцобъектов и другой городской инфраструктуры
+. 
+Создание этих производств — полностью за счёт частных инвестиций. Мы же присвоили комплексу статус масштабного инвестиционного проекта и предоставили под его строительство землю в аренду по льготной ставке — один рубль в год. Кроме того, объекты включены в городскую программу стимулирования создания мест приложе...</p>
+          <a href="https://t.me/investmoscowru/5283" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Владимир"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-22</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Владимир</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🏢
+ 
+«Москвич» в Ташкенте: столичный КМЗ показал флагманский лифт на международной промышленной выставке
+Карачаровский механический завод (КМЗ) представляет на выставке «ИННОПРОМ. Центральная Азия» свою флагманскую модель пассажирского лифта — «Москвич». Мероприятие стартовало в Ташкенте 20 апреля.
+«Московская промышленность продолжает расширять присутствие на внешних рынках. Участие столичных предприятий в ключевых промышленных мероприятиях азиатского региона способствует укреплению деловых связей города. На стенде Правительства Москвы на выставке “ИННОПРОМ. Центральная Азия” представлен пассажирский лифт “Москвич”. Это флагманская модель Карачаровского механического завода, отвечающая между...</p>
+          <a href="https://t.me/investmoscowru/5293" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card has-contacts"
+             data-channel="@investmoscowru"
+             data-category="Инфраструктура"
+             data-cities=""
+             data-contacts="1">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            <span class="has-contacts-badge">📋 Есть контакты</span>
+            <span class="date">2026-04-22</span>
+          </div>
+          <div class="contacts"><a href="mailto:ikc_gin@mos.ru" class="contact email">✉️ ikc_gin@mos.ru</a></div>
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Практика грамотного землепользователя
+ 
+🕒
+Мероприятие состоится 
+23 апреля в 15:00
+, участие бесплатное.
+ 
+👋
+Советник Управления контроля за объектами недвижимости по Юго-Восточному административному округу 
+Егор Федотов
+ расскажет об основных видах нарушений в сфере земельного законодательства.
+ 
+👋
+После прохождения 
+теоретического блока 
+участники смогут применить знания на практике.
+ 
+В формате 
+командной игры 
+они примерят на себя роли 
+инспекторов
+ и 
+нарушителей
+ и попробуют выявить нарушения земельного законодательства. 
+ 
+✅
+Для участия в мастер-классе необходимо 
+до 21 апреля
+ направить заявку на адрес электронной почты ikc_gin@mos.ru. 
+📍
+Мероприятие пройдет на площадке информационно...</p>
+          <a href="https://t.me/investmoscowru/5295" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-23</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🤝
+ 
+Москва и крупный азиатский производитель лифтов и эскалаторов договорились о стратегическом партнерстве
+ 
+Департамент инвестиционной и промышленной политики города Москвы и один из крупнейших в Азии производителей лифтового и эскалаторного оборудования Zhejiang Meilun Elevator Co., Ltd.подписали меморандум, закладывающий основу для стратегического партнерства сторон.
+«Сегодня в особой экономической зоне “Технополис Москва” на базе Карачаровского механического завода формируется первый в России кластер лифтостроения и вертикального транспорта. Подписанный меморандум — это намерение вывести кооперацию на принципиально иной уровень, открыв возможности для международного обмена технологиями ...</p>
+          <a href="https://t.me/investmoscowru/5299" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Инфраструктура"
+             data-cities="Москва"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Инфраструктура">Инфраструктура</span>
+            
+            <span class="date">2026-04-23</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">школа</span></div>
+          <p class="card-text">🗺
+ 
+Игровой набор резидента ОЭЗ Москвы поможет школьникам освоить естественные науки 
+Резидент особой экономической зоны «Технополис Москва» выпустил новый образовательный комплекс для детей. Он помогает в игровой форме освоить физику, биологию, географию и окружающий мир, сообщил заместитель Мэра Москвы по вопросам транспорта и промышленности 
+Максим Ликсутов.
+Компания «Научные развлечения» выпустила комплекс «Школа профессора Дроздова»:
+◽️
+ 28 профильных тем
+◽️
+ Более 700 научных фактов
+◽️
+ Свыше 580 тестов для закрепления
+◽️
+ Возможность добавлять свои иллюстрации и видео
+Объем материала рассчитан на 2 учебных года. Программное обеспечение уже внесено в реестр Минцифры России. Продукция к...</p>
+          <a href="https://t.me/investmoscowru/5300" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities=""
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-24</span>
+          </div>
+          
+          <div class="tags"><span class="tag kw">промышленный комплекс</span><span class="tag kw">мост</span></div>
+          <p class="card-text">🧪
+ 
+Столичный производитель полимеров создал отечественное решение для сельхозтехники
+Крупнейший в России и ЕАЭС разработчик полимерных композитов (НПП «Полипластик») выпустил высокотехнологичный пластик для элементов сельхозтехники. Раньше такие детали ввозили из-за рубежа.
+«Благодаря поддержке города предприятия не только наращивают объемы выпуска, но и расширяют ассортимент продукции в различных отраслях, включая агропромышленный комплекс. Разработка отечественных полимерных материалов стала важным шагом к технологической независимости сектора АПК. Первая партия продукции была поставлена заказчикам в январе 2026 года. Это позволит обеспечить российских производителей надежными комплектующ...</p>
+          <a href="https://t.me/investmoscowru/5304" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             data-channel="@investmoscowru"
+             data-category="Промышленность"
+             data-cities="Москва,Подольск"
+             data-contacts="0">
+          <div class="card-header">
+            <span class="channel-badge">@investmoscowru</span>
+            <span class="category-badge cat-Промышленность">Промышленность</span>
+            
+            <span class="date">2026-04-25</span>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Подольск</span><span class="tag kw">завод</span></div>
+          <p class="card-text">🚚
+ 
+Москва и Узбекистан: новый уровень промышленного сотрудничества
+Более 120 деловых встреч — таков итог работы столичных производителей на международной выставке «ИННОПРОМ. Центральная Азия». Об этом сообщил заместитель Мэра Москвы по вопросам транспорта и промышленности 
+Максим Ликсутов.
+На стенде Правительства Москвы можно было увидеть:
+◽️
+ Современные системы управления движением поездов
+◽️
+ Гибкие полимерные трубы
+◽️
+ Уникальную кабельно-проводниковую продукцию
+◽️
+ Инвестиционные возможности ОЭЗ «Технополис Москва»
+– «Завод Москабель» — обсудил регулярные поставки для нефтяной и железнодорожной отраслей
+– «ЭЛТЕЗА» — подтвердил интерес «Узбекских железных дорог» к закупке оборудования
+–...</p>
+          <a href="https://t.me/investmoscowru/5306" target="_blank" class="source-link">→ Открыть источник</a>
+        </div>
+<div class="empty hidden" id="empty-msg">Ничего не найдено по выбранным фильтрам</div>
+</div>
+<script>
+function filter() {
+  var ch = document.getElementById('fCh').value;
+  var cat = document.getElementById('fCat').value;
+  var city = document.getElementById('fCity').value;
+  var onlyContacts = document.getElementById('fContacts').checked;
+  var cards = document.querySelectorAll('.card');
+  var visible = 0;
+  cards.forEach(function(c) {
+    var ok = (!ch || c.dataset.channel === ch)
+          && (!cat || c.dataset.category === cat)
+          && (!city || c.dataset.cities.split(',').indexOf(city) !== -1)
+          && (!onlyContacts || c.dataset.contacts === '1');
+    c.classList.toggle('hidden', !ok);
+    if (ok) visible++;
+  });
+  document.getElementById('cnt').textContent = visible;
+  document.getElementById('empty-msg').classList.toggle('hidden', visible > 0);
+}
+function reset() {
+  ['fCh','fCat','fCity'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('fContacts').checked = false;
+  filter();
+}
+</script>
+</body>
+</html>

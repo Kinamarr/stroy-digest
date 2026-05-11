@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строительный дайджест</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            min-height: 100vh;
+        }
+
+        /* ── Шапка ─────────────────────────────────────────────────────────── */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 36px 24px 28px;
+            text-align: center;
+        }
+        .header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.3px; }
+        .header .sub { opacity: 0.6; font-size: 14px; margin-top: 6px; }
+        .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 5px 16px;
+            font-size: 13px;
+            margin-top: 14px;
+            letter-spacing: 0.2px;
+        }
+
+        /* ── Основной блок ──────────────────────────────────────────────────── */
+        .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+
+        /* ── Баннер "нет сессии" ─────────────────────────────────────────────── */
+        .alert {
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .alert-warn {
+            background: #fff8e1;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+        }
+        .alert code {
+            background: #1a1a2e;
+            color: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* ── Баннер "идёт сбор" ─────────────────────────────────────────────── */
+        .alert-loading {
+            background: #e0f2fe;
+            border: 1px solid #38bdf8;
+            color: #0c4a6e;
+            text-align: center;
+        }
+        .spinner {
+            display: inline-block;
+            width: 14px; height: 14px;
+            border: 2px solid #38bdf8;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Панель управления ───────────────────────────────────────────────── */
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .stats { font-size: 14px; color: #555; }
+        .stats strong { color: #1a1a2e; }
+
+        .btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 9px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: background 0.15s, opacity 0.15s;
+        }
+        .btn:hover { background: #c0392b; }
+        .btn.disabled { background: #bbb; cursor: not-allowed; pointer-events: none; }
+
+        /* ── Пустое состояние ────────────────────────────────────────────────── */
+        .empty {
+            background: white;
+            border-radius: 12px;
+            padding: 56px 24px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+        }
+        .empty-icon { font-size: 40px; margin-bottom: 12px; }
+        .empty h2 { font-size: 18px; color: #555; margin-bottom: 6px; }
+        .empty p { color: #999; font-size: 14px; margin-bottom: 24px; }
+
+        /* ── Категории и карточки ────────────────────────────────────────────── */
+        .section { margin-bottom: 28px; }
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+            margin-bottom: 10px;
+            padding-left: 2px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+            border-left: 3px solid #e74c3c;
+        }
+        .card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .channel { font-weight: 700; font-size: 13px; color: #e74c3c; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .tag {
+            background: #f0f2f5;
+            border-radius: 5px;
+            padding: 2px 9px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .card-text {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #333;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin-bottom: 12px;
+        }
+
+        .card-link {
+            font-size: 13px;
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .card-link:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            color: #bbb;
+            font-size: 12px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🏗 Строительный дайджест</h1>
+    <div class="sub">Мониторинг Telegram-каналов по ключевым словам</div>
+    {% if data %}
+    <div class="date-badge">{{ data.date }} · обновлено в {{ data.generated_at }}</div>
+    {% endif %}
+</div>
+
+<div class="container">
+
+    {% if not session_ok %}
+    <div class="alert alert-warn">
+        <strong>Требуется одноразовая авторизация.</strong>
+        Закрой сервер (Ctrl+C) и запусти в терминале:<br><br>
+        <code>python app.py --auth</code><br><br>
+        Введи номер телефона и код из Telegram. После — снова запусти <code>python app.py</code>.
+    </div>
+    {% endif %}
+
+    {% if scraping %}
+    <div class="alert alert-loading" id="loading-banner">
+        <span class="spinner"></span>
+        <strong>Собираю дайджест...</strong> Это займёт 1–2 минуты. Страница обновится сама.
+    </div>
+    <script>
+        (function poll() {
+            setTimeout(function() {
+                fetch('/status').then(r => r.json()).then(d => {
+                    if (!d.scraping) location.reload();
+                    else poll();
+                }).catch(poll);
+            }, 4000);
+        })();
+    </script>
+    {% endif %}
+
+    <div class="controls">
+        <div class="stats">
+            {% if data %}
+                Найдено: <strong>{{ data.count }}</strong> сообщений за последние 24 ч
+            {% else %}
+                Дайджест за сегодня ещё не собран
+            {% endif %}
+        </div>
+
+        {% if scraping %}
+            <span class="btn disabled">⏳ Собираю...</span>
+        {% else %}
+            <a href="/scrape" class="btn" id="scrape-btn">🔄 Собрать сейчас</a>
+        {% endif %}
+    </div>
+
+    {% if grouped %}
+        {% for category, items in grouped.items() %}
+        <div class="section">
+            <div class="section-title">{{ category }} &mdash; {{ items|length }}</div>
+            {% for item in items %}
+            <div class="card">
+                <div class="card-meta">
+                    <span class="channel">{{ item.channel }}</span>
+                    <div class="tags">
+                        {% for kw in item.keywords %}
+                        <span class="tag">{{ kw }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-text">{{ item.text }}</div>
+                <a href="{{ item.link }}" target="_blank" rel="noopener" class="card-link">→ Открыть в Telegram</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+    {% elif data and data.count == 0 %}
+        <div class="empty">
+            <div class="empty-icon">🔍</div>
+            <h2>Ничего не найдено</h2>
+            <p>За последние 24 часа по ключевым словам в каналах ничего не встретилось</p>
+        </div>
+
+    {% elif not scraping %}
+        <div class="empty">
+            <div class="empty-icon">📋</div>
+            <h2>Дайджест ещё не собран</h2>
+            <p>Автоматически соберётся в {{ digest_time }} по московскому времени<br>
+               или нажми кнопку прямо сейчас</p>
+            <br>
+            <a href="/scrape" class="btn">🔄 Собрать сейчас</a>
+        </div>
+    {% endif %}
+
+</div>
+
+<footer>Автоматический сбор каждый день в {{ digest_time }} (мск)</footer>
+
+<script>
+    document.getElementById('scrape-btn') && document.getElementById('scrape-btn').addEventListener('click', function() {
+        this.textContent = '⏳ Запускаю...';
+        this.classList.add('disabled');
+    });
+</script>
+
+</body>
+</html>
