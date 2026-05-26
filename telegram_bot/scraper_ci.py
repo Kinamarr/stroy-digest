@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).parent))
 from keywords import CHANNELS, KEYWORD_CATEGORIES
 from cities import CITIES
+from web_scraper import scrape_all_web
 
 HEADERS = {
     'User-Agent': (
@@ -461,6 +462,9 @@ def main():
         print(f'    Найдено: {len(results)} объектов')
         all_results.extend(results)
         time.sleep(2)
+
+    print('\nПарсю веб-источники...')
+    all_results.extend(scrape_all_web())
 
     print(f'\nВсего: {len(all_results)} объектов')
 
