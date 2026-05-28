@@ -62,13 +62,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="header">
   <div>
     <h1>🏗 Стройдайджест</h1>
-    <div class="sub">28.05.2026 · 65 объектов · 8 каналов</div>
+    <div class="sub">28.05.2026 · 64 объектов · 8 каналов</div>
   </div>
 </div>
-<div class="archive-bar">📁 Архив: <a href="archive/2026-05-27.html" class="arch-link">2026-05-27</a><a href="archive/2026-05-26.html" class="arch-link">2026-05-26</a><a href="archive/2026-05-25.html" class="arch-link">2026-05-25</a><a href="archive/2026-05-22.html" class="arch-link">2026-05-22</a><a href="archive/2026-05-21.html" class="arch-link">2026-05-21</a><a href="archive/2026-05-20.html" class="arch-link">2026-05-20</a><a href="archive/2026-05-19.html" class="arch-link">2026-05-19</a><a href="archive/2026-05-18.html" class="arch-link">2026-05-18</a><a href="archive/2026-05-15.html" class="arch-link">2026-05-15</a><a href="archive/2026-05-14.html" class="arch-link">2026-05-14</a><a href="archive/2026-05-13.html" class="arch-link">2026-05-13</a><a href="archive/2026-05-12.html" class="arch-link">2026-05-12</a></div>
+<div class="archive-bar">📁 Архив: <a href="archive/2026-05-28.html" class="arch-link">2026-05-28</a><a href="archive/2026-05-27.html" class="arch-link">2026-05-27</a><a href="archive/2026-05-26.html" class="arch-link">2026-05-26</a><a href="archive/2026-05-25.html" class="arch-link">2026-05-25</a><a href="archive/2026-05-22.html" class="arch-link">2026-05-22</a><a href="archive/2026-05-21.html" class="arch-link">2026-05-21</a><a href="archive/2026-05-20.html" class="arch-link">2026-05-20</a><a href="archive/2026-05-19.html" class="arch-link">2026-05-19</a><a href="archive/2026-05-18.html" class="arch-link">2026-05-18</a><a href="archive/2026-05-15.html" class="arch-link">2026-05-15</a><a href="archive/2026-05-14.html" class="arch-link">2026-05-14</a><a href="archive/2026-05-13.html" class="arch-link">2026-05-13</a><a href="archive/2026-05-12.html" class="arch-link">2026-05-12</a></div>
 
 <div class="tabs">
-  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (65)</button>
+  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (64)</button>
   <button class="tab-btn" id="tab-favs" onclick="switchTab('favs')">★ Избранное (<span id="fav-count">0</span>)</button>
 </div>
 
@@ -82,7 +82,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <div style="display:flex;align-items:center;gap:5px">
     <label>Город</label>
     <select id="fCity" onchange="applyFilter()">
-      <option value="">Все города</option><option value="Благовещенск">Благовещенск</option><option value="Владимир">Владимир</option><option value="Воронеж">Воронеж</option><option value="Екатеринбург">Екатеринбург</option><option value="Киров">Киров</option><option value="Магнитогорск">Магнитогорск</option><option value="Москва">Москва</option><option value="Омск">Омск</option><option value="Санкт-Петербург">Санкт-Петербург</option><option value="Саратов">Саратов</option><option value="Томск">Томск</option><option value="Химки">Химки</option>
+      <option value="">Все города</option><option value="Благовещенск">Благовещенск</option><option value="Владимир">Владимир</option><option value="Воронеж">Воронеж</option><option value="Екатеринбург">Екатеринбург</option><option value="Киров">Киров</option><option value="Краснодар">Краснодар</option><option value="Магнитогорск">Магнитогорск</option><option value="Москва">Москва</option><option value="Омск">Омск</option><option value="Санкт-Петербург">Санкт-Петербург</option><option value="Саратов">Саратов</option><option value="Томск">Томск</option><option value="Химки">Химки</option>
     </select>
   </div>
   <div style="display:flex;align-items:center;gap:5px">
@@ -98,7 +98,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <button onclick="resetFilter()">Сбросить</button>
 </div>
 
-<div class="stats">Показано: <b id="vis-count">65</b></div>
+<div class="stats">Показано: <b id="vis-count">64</b></div>
 
 <div class="grid" id="grid">
 
@@ -190,7 +190,7 @@ Syntaxis
             <button class="fav-btn" onclick="toggleFav(this,'c3')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw">метро</span><span class="tag kw">подземный переход</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">бассейн</span><span class="tag kw">подземный переход</span></div>
           <p class="card-text">Подземка в деталях: почему переходы остаются сухими даже в ливень
 Столицу и другие города центра и севера России накрыла майская непогода, дожди и прохладная погода ожидаются в течение недели. Но тем, кто передвигается на метро, непогода не страшна — в канале Градостроительного комплекса Москвы наглядно 
 показали
@@ -297,7 +297,7 @@ Syntaxis
             <button class="fav-btn" onclick="toggleFav(this,'c7')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw">школа</span><span class="tag kw">метро</span></div>
+          <div class="tags"><span class="tag kw">школа</span><span class="tag kw">метро</span><span class="tag kw">арена</span></div>
           <p class="card-text">Воскресная московская стройка: ледовая арена ХК ЦСКА на Ленинградском проспекте
 Новая ледовая арена возводится на Ленинградском проспекте, недалеко от станций метро «Аэропорт» и «Динамо». Она строится на месте старой ледовой арены и плавательного бассейна клуба.
 По замыслу архитекторов, многофункциональный спортивный комплекс будет напоминать бриллиантовую шайбу. Его общая площадь составит около 174 000 м². В нем 
@@ -321,7 +321,7 @@ Syntaxis
             <button class="fav-btn" onclick="toggleFav(this,'c8')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span><span class="tag kw">возвед</span></div>
           <p class="card-text">На севере Москвы построят почти 350 тысяч м² недвижимости по программе КРТ
 Столичные власти включили в программу комплексного развития территорий три участка общей площадью примерно 13 гектаров, расположенных в Северном и Северо-Восточном административных округах Москвы. В рамках реализации проекта планируется построить 346 140 м² недвижимости различного назначения.
 В частности, застройка затронет территорию бывшего Владыкинского механического завода на Дмитровском шоссе. Здесь возведут 207 000 м² общественно-деловых объектов.
@@ -368,7 +368,7 @@ Syntaxis
             <button class="fav-btn" onclick="toggleFav(this,'c10')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">бассейн</span><span class="tag kw">школа</span><span class="tag kw">мост</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">школа</span><span class="tag kw">бассейн</span><span class="tag kw">мост</span></div>
           <p class="card-text">В подмосковном 
 кластере «МЫС»
  стартовали продажи квартир в новом доме «Карелия»
@@ -392,7 +392,7 @@ Syntaxis
             <button class="fav-btn" onclick="toggleFav(this,'c11')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">офисный комплекс</span><span class="tag kw">культурный центр</span></div>
+          <div class="tags"><span class="tag kw">культурный центр</span><span class="tag kw">метро</span><span class="tag kw">офисный комплекс</span></div>
           <p class="card-text">Офисный комплекс построят в Электролитном проезде недалеко от метро «Нагорная»
 Столичные власти одобрили строительство делового центра площадью почти 20 000 м² по адресу: Электролитный проезд, вл. 1, к. 5. 
 Сейчас на участке находится неиспользуемое одноэтажное кирпичное здание 1930 года постройки, в котором ранее размещался общественно-культурный центр.
@@ -455,7 +455,7 @@ Tel...</p>
             <button class="fav-btn" onclick="toggleFav(this,'c13')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span></div>
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">завод</span><span class="tag kw">жилой комплекс</span></div>
           <p class="card-text">На набережной Москвы-реки в Филях построят новый жилой комплекс
 Городские власти одобрили строительство 70 425 м² жилья на месте бывшего опытно-экспериментального завода железобетонных конструкций по адресу: Большая Филевская ул., вл. 1.
 В состав комплекса войдут 621 квартира, а максимальная высота зданий составит 122 метра. Примерный массинг будущего ЖК 
@@ -506,7 +506,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c15')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Владимир</span><span class="tag city">Екатеринбург</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">реконстру</span></div>
+          <div class="tags"><span class="tag city">Владимир</span><span class="tag city">Екатеринбург</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
           <p class="card-text">Мэрия Москвы подготовила проект решения о комплексном развитии территории (КРТ) в самом центре столицы — на Тверской улице, владение 20/1. Речь идет об участке площадью 0,47 га рядом со станцией метро «Пушкинская». Согласно документу, на территории допускается строительство жилой застройки общей площадью до 16,4 тыс. кв. м.
 В границы КРТ вошли несколько участков и строений на Тверской улице. Часть объектов предполагается снести или реконструировать, при этом исторический «Дом Московского гражданского губернатора» должен быть сохранен как объект культурного наследия.
 Известно, что владельцем одного из участков, попавших в проект КРТ, является Владимир Давиди — крупный российский производитель...</p>
@@ -579,7 +579,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c18')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span></div>
           <p class="card-text">🗣️
  Народное голосование за лучший ЖК Нижнего Новгорода стартует 1 июня
 Онлайн-голосование
@@ -612,7 +612,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c19')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">возвед</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏗️
  30 детсадов и 12 школ хотят построить в Нижегородской области в рамках КРТ
 Как 
@@ -626,6 +626,32 @@ Telegram!</p>
         <div class="card "
              id="c20"
              data-channel="@domostroynn"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@domostroynn</span>
+            
+            <span class="date">2026-05-28</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c20')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">❌
+Нижегородская область приостанавливает заключение концессий до конца 2026 года
+Как 
+рассказали
+ нашему изданию в региональном правительстве, это связано с текущими сложностями в исполнении бюджета и необходимостью оптимизации расходов. В рамках исполнения рекомендаций федерального центра регион отказывается от принятия новых финансовых обязательств, что может повлиять на реализацию ряда крупных инфраструктурных проектов.
+Среди наиболее значимых инициатив, которые оказались под угрозой, находятся проекты строительства Восточного обхода Нижнего Новгорода и дублера проспекта Ленина. Общая стоимость Восточного обхода оценивается в 
+203,7 млрд рублей
+, а первая очередь дублера проспекта Ленина ...</p>
+          <a href="https://t.me/domostroynn/6301" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c21"
+             data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
              data-contacts="0"
@@ -635,7 +661,7 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-22</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c20')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c21')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">мост</span><span class="tag kw">детский сад</span></div>
@@ -659,7 +685,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6264" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c21"
+             id="c22"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -670,7 +696,7 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-25</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c21')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c22')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">метро</span><span class="tag kw">жилой комплекс</span><span class="tag kw">мост</span></div>
@@ -695,7 +721,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6270" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c22"
+             id="c23"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -706,7 +732,7 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-25</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c22')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c23')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span></div>
@@ -728,7 +754,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6274" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c23"
+             id="c24"
              data-channel="@domostroynn"
              data-category="Метро / Подземное"
              data-cities=""
@@ -739,7 +765,7 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c23')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
@@ -760,7 +786,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6278" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c24"
+             id="c25"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -771,7 +797,7 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-19</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c25')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">многоквартирный дом</span><span class="tag kw"> жк </span><span class="tag kw">приступ</span></div>
@@ -787,7 +813,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6244" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c25"
+             id="c26"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities="Киров,Благовещенск"
@@ -798,7 +824,7 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-19</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c25')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c26')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Киров</span><span class="tag city">Благовещенск</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
@@ -823,7 +849,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6245" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c26"
+             id="c27"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -834,10 +860,10 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-20</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c26')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c27')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">многоквартирный дом</span><span class="tag kw"> жк </span></div>
+          <div class="tags"><span class="tag kw">многоквартирный дом</span><span class="tag kw"> жк </span><span class="tag kw">завод</span></div>
           <p class="card-text">📝
  
 Согласован архитектурный облик новостройки в нижегородском ЖК «Торпедо»
@@ -856,7 +882,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6250" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c27"
+             id="c28"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -867,10 +893,10 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-20</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c27')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c28')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">микрорайон</span><span class="tag kw">стройплощ</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">микрорайон</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏘
  
 Микрорайон из 600 таунхаусов, пятиэтажек и детсада хотят построить в Кстове
@@ -887,7 +913,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6253" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c28"
+             id="c29"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
              data-cities=""
@@ -898,10 +924,10 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-20</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c28')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвод</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">возвод</span></div>
           <p class="card-text">🏗
 1,6 млн кв. м жилья строится в Нижегородской области в мае 2026 года
 Нижегородская область продолжает развивать жилищное строительство. По состоянию на 1 мая 2026 года в регионе возводится 1,6 млн кв. м жилья. Об этом 
@@ -916,7 +942,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6254" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c29"
+             id="c30"
              data-channel="@domostroynn"
              data-category="Социальный объект"
              data-cities=""
@@ -927,7 +953,7 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-21</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c30')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">университет</span><span class="tag kw">строит</span></div>
@@ -944,7 +970,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6258" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c30"
+             id="c31"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -955,10 +981,10 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-21</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c30')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c31')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span><span class="tag kw"> жк </span></div>
+          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">завод</span><span class="tag kw">мост</span></div>
           <p class="card-text">🚸
 Детский сад на 280 мест в ЖК «Торпедо» планируется открыть в 2027 году
 Учреждение на улице Малоэтажной в Автозаводском районе будет рассчитано на 280 мест. Это будет трехэтажное здание площадью более 5,2 тысячи кв. м, состоящее из нескольких разноцветных блоков.
@@ -977,7 +1003,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6259" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c31"
+             id="c32"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -988,10 +1014,10 @@ gipernn.ru
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-05-22</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c31')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c32')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">поликлиника</span><span class="tag kw">мост</span><span class="tag kw">детский сад</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">детский сад</span><span class="tag kw">новостройка</span></div>
           <p class="card-text">✍️
 Проект строительства дома у Борского моста в Нижнем Новгороде прошел экспертизу
 Речь идет 
@@ -1010,7 +1036,7 @@ gipernn.ru
           <a href="https://t.me/domostroynn/6262" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c32"
+             id="c33"
              data-channel="@prommoscow"
              data-category="Метро / Подземное"
              data-cities="Москва"
@@ -1021,7 +1047,7 @@ gipernn.ru
             <span class="channel-badge">@prommoscow</span>
             
             <span class="date">2026-05-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c32')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c33')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">разрешени</span></div>
@@ -1057,7 +1083,7 @@ gipernn.ru
           <a href="https://t.me/prommoscow/9660" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c33"
+             id="c34"
              data-channel="@prommoscow"
              data-category="Завод / Производство"
              data-cities="Омск,Томск"
@@ -1068,7 +1094,7 @@ gipernn.ru
             <span class="channel-badge">@prommoscow</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c33')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c34')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Омск</span><span class="tag city">Томск</span><span class="tag kw">метро</span><span class="tag kw">технопарк</span><span class="tag kw">строит</span></div>
@@ -1089,7 +1115,7 @@ gipernn.ru
           <a href="https://t.me/prommoscow/9646" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c34"
+             id="c35"
              data-channel="@prommoscow"
              data-category="Метро / Подземное"
              data-cities="Москва"
@@ -1100,7 +1126,7 @@ gipernn.ru
             <span class="channel-badge">@prommoscow</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c34')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c35')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
@@ -1121,7 +1147,77 @@ gipernn.ru
           <a href="https://t.me/prommoscow/9626" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c35"
+             id="c36"
+             data-channel="@dprunews"
+             data-category="Метро / Подземное"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#d2a8ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#d2a8ff;border-color:#d2a8ff22;background:#d2a8ff18">🚇 Метро / Подземное</span>
+            <span class="channel-badge">@dprunews</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c36')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
+          <p class="card-text">Новую линию метро в Петербурге оставили без удобного пересадочного узла  Будущую станцию метро "Броневая" построят вдалеке от действующей одноимённой ж.-д. станции, что помешает развитию будущего транспортно-пересадочного узла, обращают внимание опрошенные…</p>
+          <a href="https://t.me/dprunews/62786" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c37"
+             data-channel="@dprunews"
+             data-category="Жилой дом / ЖК"
+             data-cities="Краснодар"
+             data-contacts="0"
+             style="border-left-color:#3fb950">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
+            <span class="channel-badge">@dprunews</span>
+            
+            <span class="date">2026-05-28</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c37')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw">новостройка</span><span class="tag kw">возвод</span></div>
+          <p class="card-text">Петербург и область удержались в топе регионов с микроквартирами в новостройках
+Средняя площадь возводимого жилья в Ленинградской области составляет 41,3 м2, а в Петербурге — 41,4 м2, сообщили в пресс-службе портала ЕРЗ.
+Лидером по этому показателю оказалась Запорожская область, где средняя площадь строящихся квартир — около 37 м2.
+В десятку регионов с самыми маленькими квартирами также вошли Херсонская область, Башкортостан, Краснодарский край, Тува, Астраханская область, Адыгея и ДНР, где средние площади варьируются от 42 до 45 м2.
+📸
+ Ермохин Сергей / "ДП"
+Подписаться на "ДП" в 
+Telegram
+ / 
+MAX</p>
+          <a href="https://t.me/dprunews/62791" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c38"
+             data-channel="@dprunews"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@dprunews</span>
+            
+            <span class="date">2026-05-28</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c38')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">ВАД показал подробный проект первых 80 км трассы КАД-2 в Ленобласти
+Первый участок трассы КАД-2 длиной 80 км будет включать 40 искусственных сооружений, в том числе мост через Неву, рассказал начальник строительного управления АО "ВАД" КАД-2 Константин Порублёв.
+В пресс-службе АО "ВАД" подтвердили "ДП", что заключили контракт на проектирование 80 км КАД-2, и переадресовали корреспондента в ГК "Автодор" — к заказчику проекта. "ДП" направил запрос в "Автодор".
+На будущей трассе будет работать система бесконтактной оплаты проезда.
+Проектируемый участок КАД-2 будет начинаться с 663-го км трассы М-11 "Нева" и заканчиваться на 10-м км трассы Петербург — Матокса. Ширина каждой полосы движения соста...</p>
+          <a href="https://t.me/dprunews/62802" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c39"
              data-channel="@dprunews"
              data-category="Гостиница / Отель"
              data-cities="Владимир"
@@ -1132,7 +1228,7 @@ gipernn.ru
             <span class="channel-badge">@dprunews</span>
             
             <span class="date">2026-05-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c35')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c39')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Владимир</span><span class="tag kw">отель</span><span class="tag kw">строит</span></div>
@@ -1155,7 +1251,7 @@ MAX</p>
           <a href="https://t.me/dprunews/62772" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c36"
+             id="c40"
              data-channel="@dprunews"
              data-category="Метро / Подземное"
              data-cities=""
@@ -1166,7 +1262,7 @@ MAX</p>
             <span class="channel-badge">@dprunews</span>
             
             <span class="date">2026-05-28</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c36')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c40')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">метро</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
@@ -1176,26 +1272,7 @@ MAX</p>
           <a href="https://t.me/dprunews/62781" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c37"
-             data-channel="@dprunews"
-             data-category="Метро / Подземное"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#d2a8ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#d2a8ff;border-color:#d2a8ff22;background:#d2a8ff18">🚇 Метро / Подземное</span>
-            <span class="channel-badge">@dprunews</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c37')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
-          <p class="card-text">Новую линию метро в Петербурге оставили без удобного пересадочного узла  Будущую станцию метро "Броневая" построят вдалеке от действующей одноимённой ж.-д. станции, что помешает развитию будущего транспортно-пересадочного узла, обращают внимание опрошенные…</p>
-          <a href="https://t.me/dprunews/62786" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c38"
+             id="c41"
              data-channel="@dprunews"
              data-category="Завод / Производство"
              data-cities=""
@@ -1206,10 +1283,10 @@ MAX</p>
             <span class="channel-badge">@dprunews</span>
             
             <span class="date">2026-05-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c38')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c41')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">разрешени</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">постро</span><span class="tag kw">ввод в экс</span></div>
           <p class="card-text">⚡️
 ⚡️
 ⚡️
@@ -1224,7 +1301,7 @@ MAX</p>
           <a href="https://t.me/dprunews/62756" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c39"
+             id="c42"
              data-channel="@dprunews"
              data-category="Дорога / Мост"
              data-cities="Магнитогорск"
@@ -1235,7 +1312,7 @@ MAX</p>
             <span class="channel-badge">@dprunews</span>
             
             <span class="date">2026-05-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c39')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c42')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Магнитогорск</span><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
@@ -1255,79 +1332,6 @@ MAX</p>
           <a href="https://t.me/dprunews/62757" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c40"
-             data-channel="@dprunews"
-             data-category="Метро / Подземное"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#d2a8ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#d2a8ff;border-color:#d2a8ff22;background:#d2a8ff18">🚇 Метро / Подземное</span>
-            <span class="channel-badge">@dprunews</span>
-            
-            <span class="date">2026-05-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c40')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">станция метро</span><span class="tag kw">постро</span></div>
-          <p class="card-text">⚡️
-⚡️
-⚡️
-⚡️
-⚡️
-ОСК, ПМЭФ и "Сапсан": азбука "ДП" объединила строителей кораблей, метро и ВСМ
-"Метрострой Северной столицы" (МССС) сегодня — генподрядчик строительства петербургского метро. Компания стала преемником ОАО "Метрострой", которое на протяжении десятилетий было настоящим градообразующим предприятием, чья судьба неразрывно связана с историей города. Именно его специалисты впервые в СССР применили проходку в сложнейших грунтах — плывунах и водонасыщенных породах, построили станции глубокого заложения, ставшие архитектурными шедеврами.
-Однако к концу 2010–х годов легендарная компания столкнулась с системным кризисом. Закономерным финалом стало признание предприятия банкротом.
-Возрожде...</p>
-          <a href="https://t.me/dprunews/62758" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c41"
-             data-channel="@dprunews"
-             data-category="Социальный объект"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#39d353">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
-            <span class="channel-badge">@dprunews</span>
-            
-            <span class="date">2026-05-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c41')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw">школа</span><span class="tag kw">детский сад</span></div>
-          <p class="card-text">Участок в посёлке Троицкая Гора в Ленобласти распланировали по программе КРТ
-В Ленобласти утвердили проект планирования и межевания территории для жилого квартала в посёлке Троицкая гора по программе КРТ, рассказал председатель комитета градостроительной политики региона Игорь Кулаков. 
-Площадь участка составляет 38,55 га.
-"Троицкая Гора будет расти понятным кварталом, где рядом с жильём сразу заложены школа на 600 мест, детский сад на 350 мест, бассейн, спортзал, парк и скверы. В проекте также закреплены пешеходные связи, дороги и коммунальная инфраструктура", — отметил Кулаков.
-По словам главы комитета градостроительной политики, участок будет развиваться по договору о комплексном развитии...</p>
-          <a href="https://t.me/dprunews/62743" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c42"
-             data-channel="@dprunews"
-             data-category="Социальный объект"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#39d353">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
-            <span class="channel-badge">@dprunews</span>
-            
-            <span class="date">2026-05-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c42')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">школа</span><span class="tag kw">разрешени</span><span class="tag kw">возвед</span></div>
-          <p class="card-text">В Лаголово согласовали школу со студией звукозаписи за 1,6 млрд рублей
-Группа "Самолет" получила разрешение на строительство школы на 825 мест в квартале Лаголово Ломоносовского района.
-Объект возведут в составе жилого комплекса "Квартал Лаголово" в рамках соглашения с правительством Ленобласти и при софинансировании ГК "А101".
-Общая площадь четырёхэтажного здания составит 12 тыс. м2. В школе предусмотрят два учебных блока — для младших классов (325 мест) и для среднего и старшего звена.
-"К строительству соцобъектов в Ленобласти предъявляются высокие требования как в части функционального наполнения, так и синхронизации строительства с жилыми домами. Это позволяет формировать новые кварталы ...</p>
-          <a href="https://t.me/dprunews/62745" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
              id="c43"
              data-channel="@dprunews"
              data-category="Метро / Подземное"
@@ -1342,13 +1346,17 @@ MAX</p>
             <button class="fav-btn" onclick="toggleFav(this,'c43')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">котлован</span><span class="tag kw">строит</span></div>
-          <p class="card-text">На строительной площадке будущего вестибюля станции метро "Броневая" метростроители начали разрабатывать грунт
-, сообщает канал "Подземник".
-Работы проходят внутри ограждающей конструкции стартового котлована.
-Уже смонтирована обвязочная балка оголовки котлована, рабочие занимаются выемкой грунта экскаваторами. Стартовый котлован нужен для начала проходки наклонного хода (эскалаторного тоннеля) станции. Проходку проведут механизированным комплексом "Аврора".
-Станция "Броневая" расположится на втором участке Красносельско-Калининской линии (коричневой ветки) метро Петербурга. Вестибюль станции будет находиться на углу Благодатной улицы и Новоизмайловского проспекта, раньше здесь была парковка...</p>
-          <a href="https://t.me/dprunews/62749" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">станция метро</span><span class="tag kw">постро</span></div>
+          <p class="card-text">⚡️
+⚡️
+⚡️
+⚡️
+⚡️
+ОСК, ПМЭФ и "Сапсан": азбука "ДП" объединила строителей кораблей, метро и ВСМ
+"Метрострой Северной столицы" (МССС) сегодня — генподрядчик строительства петербургского метро. Компания стала преемником ОАО "Метрострой", которое на протяжении десятилетий было настоящим градообразующим предприятием, чья судьба неразрывно связана с историей города. Именно его специалисты впервые в СССР применили проходку в сложнейших грунтах — плывунах и водонасыщенных породах, построили станции глубокого заложения, ставшие архитектурными шедеврами.
+Однако к концу 2010–х годов легендарная компания столкнулась с системным кризисом. Закономерным финалом стало признание предприятия банкротом.
+Возрожде...</p>
+          <a href="https://t.me/dprunews/62758" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c44"
@@ -1502,7 +1510,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c50')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">возвод</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">строит</span><span class="tag kw">возвод</span></div>
           <p class="card-text">🧱
  
 Работа в шаговой доступности: в Солнцево появится новый бизнес-центр
@@ -1805,25 +1813,6 @@ VSporte
           <div class="tags"><span class="tag city">Воронеж</span><span class="tag kw">стадион</span><span class="tag kw">строит</span></div>
           <p class="card-text">Почему воронежские власти снова хотят акционировать «Факел» и при чем здесь риск затяжки строительства стадиона?</p>
           <a href="https://abireg.ru/newsitem/114543/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c64"
-             data-channel="Абирег"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">Абирег</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c64')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">реконстру</span></div>
-          <p class="card-text">Арбитраж заново рассмотрит иск орловских властей на 103 млн рублей к подрядчику реконструкции Красного моста</p>
-          <a href="https://abireg.ru/newsitem/114521/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
   <div class="empty-state hidden" id="empty-state">
     <div class="icon">🔍</div>
