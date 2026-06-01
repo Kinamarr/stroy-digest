@@ -247,13 +247,19 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 .header{{background:#010409;border-bottom:1px solid #21262d;padding:14px 24px;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:16px}}
 .header h1{{font-size:1.2rem;font-weight:700;color:#f0f6fc;letter-spacing:-.3px}}
 .header .sub{{font-size:.78rem;color:#8b949e}}
+.refresh-btn{{padding:6px 14px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:6px;cursor:pointer;font-size:.8rem;transition:background .15s,color .15s;white-space:nowrap}}
+.refresh-btn:hover{{background:#388bfd22;color:#58a6ff;border-color:#388bfd}}
+.refresh-btn:disabled{{opacity:.5;cursor:default}}
+.search-wrap{{padding:8px 24px;background:#161b22;border-bottom:1px solid #21262d;position:sticky;top:49px;z-index:198}}
+.search-input{{width:100%;padding:7px 12px;border:1px solid #30363d;border-radius:6px;font-size:.85rem;background:#21262d;color:#c9d1d9;outline:none;transition:border-color .15s}}
+.search-input:focus{{border-color:#58a6ff}}
 .archive-bar{{background:#010409;border-bottom:1px solid #21262d;padding:6px 24px;font-size:.75rem;display:flex;gap:10px;flex-wrap:wrap;color:#8b949e}}
 .arch-link{{color:#58a6ff;text-decoration:none}}.arch-link:hover{{text-decoration:underline}}
-.tabs{{background:#0d1117;border-bottom:1px solid #21262d;display:flex;padding:0 24px;position:sticky;top:49px;z-index:199}}
+.tabs{{background:#0d1117;border-bottom:1px solid #21262d;display:flex;padding:0 24px;position:sticky;top:97px;z-index:197}}
 .tab-btn{{padding:10px 18px;border:none;background:none;cursor:pointer;font-size:.85rem;color:#8b949e;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s}}
 .tab-btn.active{{color:#f0f6fc;border-bottom-color:#f78166;font-weight:600}}
 .tab-btn:hover{{color:#c9d1d9}}
-.filters{{background:#161b22;border-bottom:1px solid #21262d;padding:10px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:sticky;top:93px;z-index:198}}
+.filters{{background:#161b22;border-bottom:1px solid #21262d;padding:10px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:sticky;top:145px;z-index:196}}
 .filters label{{font-size:.74rem;color:#8b949e}}
 .filters select{{padding:5px 8px;border:1px solid #30363d;border-radius:6px;font-size:.78rem;background:#21262d;color:#c9d1d9;cursor:pointer}}
 .filters select:focus{{outline:none;border-color:#58a6ff}}
@@ -301,8 +307,13 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
     <h1>🏗 Стройдайджест</h1>
     <div class="sub">{date_str} · {total} объектов · {len(all_channels)} каналов</div>
   </div>
+  <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить</button>
 </div>
 {archive_html}
+
+<div class="search-wrap">
+  <input class="search-input" id="fSearch" type="text" placeholder="🔍 Поиск по тексту новости..." oninput="applyFilter()">
+</div>
 
 <div class="tabs">
   <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все ({total})</button>
@@ -374,6 +385,7 @@ function switchTab(tab){{
   applyFilter();
 }}
 function applyFilter(){{
+  var q=document.getElementById('fSearch').value.toLowerCase().trim();
   var ch=document.getElementById('fCh').value;
   var cat=document.getElementById('fCat').value;
   var city=document.getElementById('fCity').value;
@@ -382,7 +394,9 @@ function applyFilter(){{
   var cards=document.querySelectorAll('.card');
   var visible=0;
   cards.forEach(function(c){{
-    var ok=(!ch||c.dataset.channel===ch)
+    var textOk=!q||c.textContent.toLowerCase().indexOf(q)!==-1;
+    var ok=textOk
+        &&(!ch||c.dataset.channel===ch)
         &&(!cat||c.dataset.category===cat)
         &&(!city||c.dataset.cities.split(',').indexOf(city)!==-1)
         &&(!onlyCont||c.dataset.contacts==='1')
@@ -396,7 +410,40 @@ function applyFilter(){{
 function resetFilter(){{
   ['fCh','fCat','fCity'].forEach(function(id){{document.getElementById(id).value='';}});
   document.getElementById('fContacts').checked=false;
+  document.getElementById('fSearch').value='';
   applyFilter();
+}}
+
+async function triggerRefresh(){{
+  var btn=document.getElementById('refresh-btn');
+  var token=localStorage.getItem('gh_token')||'';
+  if(!token){{
+    token=prompt('Введи GitHub Personal Access Token:\\n\\n1. Открой github.com → Settings → Developer settings\\n   → Personal access tokens → Fine-grained tokens\\n2. New token → Repository: stroy-digest\\n   → Permissions: Actions = Read and write\\n3. Скопируй токен и вставь сюда\\n\\nТокен сохранится в браузере — вводить только один раз.');
+    if(!token)return;
+    localStorage.setItem('gh_token',token);
+  }}
+  btn.textContent='⏳ Запускаю...';
+  btn.disabled=true;
+  try{{
+    var r=await fetch('https://api.github.com/repos/Kinamarr/stroy-digest/actions/workflows/daily.yml/dispatches',{{
+      method:'POST',
+      headers:{{'Authorization':'Bearer '+token,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'}},
+      body:JSON.stringify({{ref:'main'}})
+    }});
+    if(r.status===204){{
+      btn.textContent='✅ Запущено! Через 3–5 мин страница обновится';
+      btn.style.color='#3fb950';
+      setTimeout(function(){{location.reload();}},320000);
+    }}else if(r.status===401||r.status===403){{
+      localStorage.removeItem('gh_token');
+      btn.textContent='❌ Неверный токен — нажми снова';
+    }}else{{
+      btn.textContent='❌ Ошибка '+r.status;
+    }}
+  }}catch(e){{
+    btn.textContent='❌ '+e.message;
+  }}
+  setTimeout(function(){{btn.textContent='🔄 Обновить';btn.disabled=false;btn.style.color='';}},18000);
 }}
 initFavs();
 </script>
