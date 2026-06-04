@@ -5,6 +5,11 @@ on:
     # 06:30 UTC = 09:30 Москва (UTC+3), пн-пт
     - cron: '30 6 * * 1-5'
   workflow_dispatch:   # ручной запуск через кнопку на GitHub
+  push:
+    branches: [main]
+    paths:
+      - 'telegram_bot/**.py'
+      - '.github/workflows/daily.yml'
 
 permissions:
   contents: write   # нужно для git push в docs/
