@@ -47,6 +47,7 @@ def _get(url: str) -> httpx.Response:
 
 
 def match_keywords(text: str) -> list:
+    """Строгий фильтр: нужен объект И действие (для общих источников)."""
     t = text.lower()
     if not any(kw in t for kw in OBJECT_KEYWORDS):
         return []
@@ -55,6 +56,15 @@ def match_keywords(text: str) -> list:
     matched_obj = [kw for kw in OBJECT_KEYWORDS if kw in t]
     matched_act = [s for s in ACTION_STEMS if s in t]
     return (matched_obj + matched_act)[:6]
+
+
+def match_broad(text: str) -> list:
+    """Мягкий фильтр: достаточно объекта ИЛИ действия (для тематических сайтов)."""
+    t = text.lower()
+    matched_obj = [kw for kw in OBJECT_KEYWORDS if kw in t]
+    matched_act = [s for s in ACTION_STEMS if s in t]
+    combined = matched_obj + matched_act
+    return combined[:6]
 
 
 def find_cities(text: str) -> list:
@@ -343,7 +353,7 @@ def scrape_ardexpert() -> list:
             if parent:
                 date_str = _parse_date_dmy(parent.get_text())
 
-            matched = match_keywords(title)
+            matched = match_broad(title)
             if matched:
                 seen.add(link)
                 results.append(_make('АРД Эксперт', 'ardexpert',
@@ -377,7 +387,7 @@ def scrape_realty_rbc() -> list:
             if parent:
                 date_str = _parse_date_dmy(parent.get_text())
 
-            matched = match_keywords(title)
+            matched = match_broad(title)
             if matched:
                 seen.add(href)
                 results.append(_make('РБК Недвижимость', 'realty_rbc',

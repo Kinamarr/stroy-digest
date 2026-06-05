@@ -183,7 +183,8 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
     date_str = datetime.now().strftime('%d.%m.%Y')
     all_cities   = sorted({city for r in all_results for city in r['cities']})
     all_channels = sorted({r['channel'] for r in all_results})
-    all_categories = sorted({r['category'] for r in all_results})
+    # Все категории из словаря — показываем даже если статей пока нет
+    all_categories = list(KEYWORD_CATEGORIES.keys())
     total = len(all_results)
 
     cards_html = ''
