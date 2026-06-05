@@ -1,4 +1,4 @@
-"""
+12"""
 Парсеры веб-сайтов: Коммерсантъ (все регионы), Абирег, Global52,
 ИнвестПроекты, Строители.РФ.
 Возвращают список словарей того же формата что и telegram scraper.
@@ -30,6 +30,8 @@ ACTION_STEMS = {
     'котлован', 'монолит', 'стройплощ', 'введ', 'разрешени',
     'закладк', 'первый кам', 'ввод в экс', 'сдан',
     'застраива', 'реконстру', 'капитальн',
+    'гидроизол', 'водонепрониц', 'дренажн', 'гидротехн',
+    'прокладыва', 'монтаж', 'установк', 'прокладк',
 }
 
 RU_MONTHS = {
@@ -317,6 +319,75 @@ def scrape_stroiteli_rf() -> list:
 
 
 # ──────────────────────────────────────────────
+# АРД Эксперт
+# ──────────────────────────────────────────────
+
+def scrape_ardexpert() -> list:
+    results = []
+    try:
+        r = _get('https://ardexpert.ru/article')
+        soup = BeautifulSoup(r.text, 'html.parser')
+        seen = set()
+
+        for a in soup.find_all('a', href=re.compile(r'/article/')):
+            href = a['href']
+            link = href if href.startswith('http') else f'https://ardexpert.ru{href}'
+            if link in seen:
+                continue
+            title = a.get_text(strip=True)
+            if len(title) < 20:
+                continue
+
+            date_str = ''
+            parent = a.find_parent(['div', 'li', 'article'])
+            if parent:
+                date_str = _parse_date_dmy(parent.get_text())
+
+            matched = match_keywords(title)
+            if matched:
+                seen.add(link)
+                results.append(_make('АРД Эксперт', 'ardexpert',
+                                     title, link, date_str, matched))
+    except Exception as e:
+        print(f'    АРД Эксперт: {e}')
+    return results
+
+
+# ──────────────────────────────────────────────
+# РБК Недвижимость
+# ──────────────────────────────────────────────
+
+def scrape_realty_rbc() -> list:
+    results = []
+    try:
+        r = _get('https://realty.rbc.ru/')
+        soup = BeautifulSoup(r.text, 'html.parser')
+        seen = set()
+
+        for a in soup.find_all('a', href=re.compile(r'realty\.rbc\.ru/(news|rbc_realty)/')):
+            href = a['href']
+            if href in seen:
+                continue
+            title = a.get_text(strip=True)
+            if len(title) < 20:
+                continue
+
+            date_str = ''
+            parent = a.find_parent(['div', 'li', 'article'])
+            if parent:
+                date_str = _parse_date_dmy(parent.get_text())
+
+            matched = match_keywords(title)
+            if matched:
+                seen.add(href)
+                results.append(_make('РБК Недвижимость', 'realty_rbc',
+                                     title, href, date_str, matched))
+    except Exception as e:
+        print(f'    РБК Недвижимость: {e}')
+    return results
+
+
+# ──────────────────────────────────────────────
 # Точка входа
 # ──────────────────────────────────────────────
 
@@ -326,6 +397,8 @@ WEB_SOURCES = [
     ('Global52',               scrape_global52),
     ('ИнвестПроекты',          scrape_investprojects),
     ('Строители.РФ',           scrape_stroiteli_rf),
+    ('АРД Эксперт',            scrape_ardexpert),
+    ('РБК Недвижимость',       scrape_realty_rbc),
 ]
 
 
