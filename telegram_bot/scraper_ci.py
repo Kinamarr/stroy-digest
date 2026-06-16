@@ -315,7 +315,10 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
     <h1>🏗 Стройдайджест</h1>
     <div class="sub">{date_str} · {total} объектов · {len(all_channels)} каналов</div>
   </div>
-  <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить</button>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить данные</button>
+    <button class="refresh-btn" onclick="window.location.href=window.location.pathname+'?v='+Date.now()" title="Если страница не обновилась — нажми сюда">↺ Перезагрузить</button>
+  </div>
 </div>
 {archive_html}
 
