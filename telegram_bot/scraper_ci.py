@@ -306,9 +306,31 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 ::-webkit-scrollbar-track{{background:#0d1117}}
 ::-webkit-scrollbar-thumb{{background:#30363d;border-radius:3px}}
 ::-webkit-scrollbar-thumb:hover{{background:#484f58}}
+#auth-overlay{{position:fixed;inset:0;background:#010409;z-index:9999;display:flex;align-items:center;justify-content:center}}
+.auth-box{{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:40px 48px;text-align:center;width:320px}}
+.auth-box h2{{color:#f0f6fc;font-size:1.3rem;margin-bottom:6px}}
+.auth-box p{{color:#8b949e;font-size:.82rem;margin-bottom:24px}}
+.auth-box input{{width:100%;padding:10px 14px;background:#21262d;border:1px solid #30363d;border-radius:6px;color:#f0f6fc;font-size:1rem;outline:none;margin-bottom:10px;text-align:center;letter-spacing:2px}}
+.auth-box input:focus{{border-color:#58a6ff}}
+.auth-box button{{width:100%;padding:10px;background:#238636;color:#fff;border:none;border-radius:6px;font-size:.95rem;cursor:pointer;font-weight:600}}
+.auth-box button:hover{{background:#2ea043}}
+.auth-error{{color:#f85149;font-size:.78rem;margin-top:8px;display:none}}
 </style>
 </head>
 <body>
+
+<div id="auth-overlay">
+  <div class="auth-box">
+    <h2>🏗 Стройдайджест</h2>
+    <p>Введите пароль для доступа</p>
+    <input type="password" id="pass-input" placeholder="••••••••"
+           onkeydown="if(event.key==='Enter')tryLogin()">
+    <button onclick="tryLogin()">Войти</button>
+    <div class="auth-error" id="pass-error">Неверный пароль</div>
+  </div>
+</div>
+
+<div id="main-content" style="display:none">
 
 <div class="header">
   <div>
@@ -466,7 +488,28 @@ async function triggerRefresh(){{
   if(r.status!==204){{setTimeout(function(){{btn.textContent='🔄 Обновить';btn.disabled=false;btn.style.color='';}},8000);}}
 }}
 initFavs();
+var _P='sistem';
+function tryLogin(){{
+  var v=document.getElementById('pass-input').value;
+  if(v===_P){{
+    localStorage.setItem('_da',_P);
+    document.getElementById('auth-overlay').style.display='none';
+    document.getElementById('main-content').style.display='block';
+    document.getElementById('pass-error').style.display='none';
+  }}else{{
+    document.getElementById('pass-error').style.display='block';
+    document.getElementById('pass-input').value='';
+    document.getElementById('pass-input').focus();
+  }}
+}}
+(function(){{
+  if(localStorage.getItem('_da')===_P){{
+    document.getElementById('auth-overlay').style.display='none';
+    document.getElementById('main-content').style.display='block';
+  }}
+}})();
 </script>
+</div>
 </body>
 </html>'''
 
