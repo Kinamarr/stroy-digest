@@ -245,6 +245,9 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Стройдайджест — {date_str}</title>
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -436,9 +439,18 @@ async function triggerRefresh(){{
       body:JSON.stringify({{ref:'main'}})
     }});
     if(r.status===204){{
-      btn.textContent='✅ Запущено! Через 3–5 мин страница обновится';
       btn.style.color='#3fb950';
-      setTimeout(function(){{location.reload();}},320000);
+      var secs=540;
+      var iv=setInterval(function(){{
+        secs--;
+        if(secs<=0){{
+          clearInterval(iv);
+          window.location.href=window.location.pathname+'?v='+Date.now();
+        }}else{{
+          var m=Math.floor(secs/60),s=secs%60;
+          btn.textContent='⏳ Обновится через '+m+':'+(s<10?'0':'')+s;
+        }}
+      }},1000);
     }}else if(r.status===401||r.status===403){{
       localStorage.removeItem('gh_token');
       btn.textContent='❌ Неверный токен — нажми снова';
@@ -448,7 +460,7 @@ async function triggerRefresh(){{
   }}catch(e){{
     btn.textContent='❌ '+e.message;
   }}
-  setTimeout(function(){{btn.textContent='🔄 Обновить';btn.disabled=false;btn.style.color='';}},18000);
+  if(r.status!==204){{setTimeout(function(){{btn.textContent='🔄 Обновить';btn.disabled=false;btn.style.color='';}},8000);}}
 }}
 initFavs();
 </script>
