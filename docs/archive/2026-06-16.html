@@ -73,7 +73,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <h1>🏗 Стройдайджест</h1>
     <div class="sub">16.06.2026 · 109 объектов · 12 каналов</div>
   </div>
-  <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить</button>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить данные</button>
+    <button class="refresh-btn" onclick="window.location.href=window.location.pathname+'?v='+Date.now()" title="Если страница не обновилась — нажми сюда">↺ Перезагрузить</button>
+  </div>
 </div>
 <div class="archive-bar">📁 Архив: <a href="archive/2026-06-16.html" class="arch-link">2026-06-16</a><a href="archive/2026-06-15.html" class="arch-link">2026-06-15</a><a href="archive/2026-06-12.html" class="arch-link">2026-06-12</a><a href="archive/2026-06-11.html" class="arch-link">2026-06-11</a><a href="archive/2026-06-10.html" class="arch-link">2026-06-10</a><a href="archive/2026-06-09.html" class="arch-link">2026-06-09</a><a href="archive/2026-06-08.html" class="arch-link">2026-06-08</a><a href="archive/2026-06-05.html" class="arch-link">2026-06-05</a><a href="archive/2026-06-04.html" class="arch-link">2026-06-04</a><a href="archive/2026-06-03.html" class="arch-link">2026-06-03</a><a href="archive/2026-06-02.html" class="arch-link">2026-06-02</a><a href="archive/2026-06-01.html" class="arch-link">2026-06-01</a><a href="archive/2026-05-29.html" class="arch-link">2026-05-29</a><a href="archive/2026-05-28.html" class="arch-link">2026-05-28</a></div>
 
@@ -131,7 +134,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
             <button class="fav-btn" onclick="toggleFav(this,'c0')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">«Вавилонские башни» могут появиться на месте Филевского автобусно-троллейбусного парка на западе Москвы
 Концепцию застройки территории, которую 
 выставил
@@ -154,7 +157,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
             <button class="fav-btn" onclick="toggleFav(this,'c1')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span><span class="tag kw">возвод</span></div>
           <p class="card-text">Воскресная московская стройка: ЖК СТОУН Сокольники от девелопера STONE
 На строительной площадке комплекса уже активно ведутся фасадные работы — в качестве основных материалов используют объемную бетонную плитку и алюминиевые ламели. Продолжается монтаж утеплителя, подсистем и оконных рам. Как сообщает девелопер, в проекте применяются алюминиевый оконный профиль Schüco и стекло Larta. Параллельно ведется монтаж внутренних инженерных систем — отопления, вентиляции и канализации.
 Жилой комплекс возводится по адресу: ул. Гастелло, вл. 32. Проект включает три корпуса высотой от 24 до 33 этажей. Архитектурное решение разработано бюро 
@@ -178,7 +181,7 @@ WALL
             <button class="fav-btn" onclick="toggleFav(this,'c2')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">возвед</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">возвед</span></div>
           <p class="card-text">На месте недостроенного комплекса апарт-особняков в Раменках может появиться жилой комплекс
 Столичные власти принципиально одобрили строительство жилого комплекса со спортивной инфраструктурой на западе Москвы. Проект будет реализован на месте так и не возведенного комплекса апарт-особняков Richwood Club Village, расположенного между Мосфильмовской улицей и проспектом Генерала Дорохова.
 Согласно утвержденному решению, площадь земельного участка под застройку будет увеличена с 0,8 до 1,16 гектара. На этой территории планируется возвести жилой комплекс, который будет включать 260 квартир общей площадью 17 719 м², а также объекты спортивной инфраструктуры.
@@ -200,7 +203,7 @@ WALL
             <button class="fav-btn" onclick="toggleFav(this,'c3')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">многофункциональный комплекс</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">многофункциональный комплекс</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">В Пресненском районе рядом с «Москва-Сити» может появиться новый многофункциональный комплекс высотой до 405 метров.
 Участок площадью 9,1 тыс. м² в границах проекта «Большой Сити» город уже 
 выставил на торги
@@ -228,7 +231,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c4')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">монолит</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">«Сторис на Мосфильмовской» – флагман OCTOBER GROUP – введен в эксплуатацию
 «Сторис на Мосфильмовской» (Мосфильмовская, 100) получил разрешение на ввод от Мосгосстройнадзора. Для OCTOBER GROUP это первый флагманский проект бизнес-класса с премиальными опциями, реализованный в концепции «пятиминутного города». Два корпуса (11 и 29 этажей) объединены стилобатом с офисами, коворкингом, детским клубом и коммерцией. Всего 440 квартир — от 22,8 до 146,4 кв. м, включая пентхаусы и варианты с террасами.
 Архитектурную концепцию создало международное бюро – на идее «дома как путешествия». Благодаря пластике форм и каскадным террасам проект напоминает круизный лайнер – и теперь можно увидеть, как это ко...</p>
@@ -271,7 +274,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c6')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">отель</span><span class="tag kw">мост</span><span class="tag kw">офисный центр</span></div>
+          <div class="tags"><span class="tag kw">медицинский центр</span><span class="tag kw">отель</span><span class="tag kw">мост</span></div>
           <p class="card-text">Александр Овечкин «построит» офисный центр в Мневниковской пойме
 Недостроенный апарт-комплекс, расположенный в составе Международной академией хоккея имени Александра Овечкина в Мневниковской пойме, будет перепрофилирован в офисный центр. Согласно проектной документации, вместо 10-этажного апарт-отеля с медицинским центром общей площадью около 23 000 м², здесь появится офисное здание площадью почти 33 000 м².
 Изначально монолитные работы в комплексе были 
@@ -294,7 +297,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c7')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">возвед</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span><span class="tag kw">возвед</span></div>
           <p class="card-text">Проект строительства жилого комплекса на Воздвиженке рядом с Кремлем проходит историко-культурную экспертизу. 
 Комплекс будет возведен на месте пустыря по адресу: ул. Воздвиженка, д. 7/6. Девелопером проекта выступает группа ЛСР, которая 
 приобрела
@@ -342,7 +345,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c9')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Сочи</span><span class="tag kw">мост</span><span class="tag kw"> жк </span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Сочи</span><span class="tag kw">мост</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
           <p class="card-text">Построить дом — полдела. Не менее важно, чтобы через несколько лет он не начал «сыпаться» на глазах у жителей и управляющей компании.
  
 Этому будет посвящена сессия «Слабые места здания: фасады, кровли, стилобаты и узлы, где после сдачи начинаются реальные убытки» на форуме недвижимости «Движение» в Сочи. Мероприятие стартует 16 июня, в 11:45, в Розе Холл, зал «Концерты».
@@ -365,7 +368,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c10')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">мост</span><span class="tag kw">многофункциональный комплекс</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">многофункциональный комплекс</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
           <p class="card-text">Проект футуристичного пешеходного моста в «Москва-Сити» обновил визуальный облик
 Появились новые визуализации будущего пешеходного моста в «Москва-Сити», который соединит общественную зону ТПУ «Сити» и многофункциональный комплекс «IQ-квартал». 
 По сравнению с 
@@ -392,7 +395,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c11')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">жилой комплекс</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">жилой комплекс</span><span class="tag kw">метро</span></div>
           <p class="card-text">ФСК построит крупный жилой комплекс в Ново-Переделкино
 Девелоперская группа ФСК приобрела фирму «ТПУ «Боровское шоссе 2», владеющую правами на застройку участка площадью 8,7 гектара рядом со станцией метро «Боровское шоссе» в Ново-Переделкино.
 В рамках застройки этой территории планируется возвести 138 500 м² недвижимости, из которой 92 000 м² — жилая застройка.
@@ -421,7 +424,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c12')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Владивосток</span><span class="tag kw">жилой квартал</span><span class="tag kw">отель</span><span class="tag kw">мост</span></div>
+          <div class="tags"><span class="tag city">Владивосток</span><span class="tag kw">бизнес-центр</span><span class="tag kw">новостройка</span><span class="tag kw">отель</span></div>
           <p class="card-text">🔥
  Эти проекты и компании затмили всех: лучшие в недвижимости России 2026
 Вы знали, что среди 370+ номинантов из Владивостока, Крыма и других регионов выбрали абсолютных чемпионов? 28 мая в Москве прогремела церемония «Рекордов Рынка Недвижимости» — 17-й раз подряд профессионалы рынка доказывали, кто здесь главный. 
@@ -465,7 +468,7 @@ Grand prix
             <button class="fav-btn" onclick="toggleFav(this,'c13')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">разрешени</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">MR Group получила разрешение на строительство высотного многофункционального комплекса у Петровского парка на севере Москвы.
 Проект, разработанный архитектурным бюро 
 ADM
@@ -495,7 +498,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c14')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">постро</span><span class="tag kw">возвед</span></div>
           <p class="card-text">На Варшавском шоссе построят жилой комплекс на месте бывшего супермаркета
 Столичные власти одобрили проект комплексного развития территории по адресу: Варшавское шоссе, вл. 146. На участке, где находится здание заброшенного супермаркета, планируется возведение многофункционального жилого комплекса общей площадью более 35 000 м², из которых около 27 000 м² составит жилье.
 Ранее для этого участка была разработана архитектурная концепция, которая 
@@ -544,7 +547,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c16')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Киров</span><span class="tag kw">метро</span><span class="tag kw">жилой дом</span><span class="tag kw">завод</span></div>
+          <div class="tags"><span class="tag city">Киров</span><span class="tag kw">новостройка</span><span class="tag kw">завод</span><span class="tag kw">метро</span></div>
           <p class="card-text">🏗
 Три многоквартирных дома ввели в эксплуатацию в Нижегородской области в мае
 1️⃣
@@ -573,7 +576,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c17')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">школа</span><span class="tag kw">строит</span><span class="tag kw">возвод</span></div>
+          <div class="tags"><span class="tag kw">школа</span><span class="tag kw">возвод</span><span class="tag kw">строит</span></div>
           <p class="card-text">🧱
 Строительство двух школ на 1050 мест стартовало в Нижегородской области
 Так, 
@@ -614,7 +617,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c18')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">детский сад</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">детский сад</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
           <p class="card-text">📍
  
 Территория Бурнаковской низины в Нижнем Новгороде скоро изменится до неузнаваемости
@@ -778,7 +781,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c23')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">введ</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">введ</span></div>
           <p class="card-text">📄
 Изменения в законы о недвижимости вступили в силу 1 июня в России
 Сразу 
@@ -807,7 +810,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw">микрорайон</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">микрорайон</span><span class="tag kw">метро</span></div>
           <p class="card-text">✅
 Проект дома в микрорайоне «Западный» в Дзержинске прошел экспертизу
 Проект строительства многоквартирного дома в Дзержинске 
@@ -908,7 +911,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c27')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">подземный паркинг</span><span class="tag kw">новостройка</span><span class="tag kw">многоквартирный дом</span></div>
+          <div class="tags"><span class="tag kw">подземный паркинг</span><span class="tag kw">многоквартирный дом</span><span class="tag kw">новостройка</span></div>
           <p class="card-text">🏗️
 17-этажная новостройка появится на улице Свободы в Сормове к 2029 году
 Новый многоквартирный дом появится на улице Свободы в Нижнем Новгороде к 2029 году. В 10 минутах езды от центра Сормова 
@@ -937,7 +940,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c28')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw"> жк </span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">метро</span><span class="tag kw"> жк </span></div>
           <p class="card-text">✅
 Проект еще одного дома ЖК «Торпедо» в Нижнем Новгороде одобрен экспертизой
 Проект строительства еще одного многоквартирного дома ЖК «Торпедо» в Нижнем Новгороде 
@@ -972,7 +975,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">жилой комплекс</span><span class="tag kw">микрорайон</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">микрорайон</span><span class="tag kw">жилой комплекс</span></div>
           <p class="card-text">🏡
 🏆
 Лучший малоэтажный ЖК года впервые выберут в Нижнем Новгороде
@@ -1033,7 +1036,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c31')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">поликлиника</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">поликлиника</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">🔝
 Топ-5 новостей за прошедшую неделю:
 1️⃣
@@ -1069,7 +1072,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c32')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">новостройка</span><span class="tag kw">многоквартирный дом</span></div>
+          <div class="tags"><span class="tag kw">многоквартирный дом</span><span class="tag kw">новостройка</span><span class="tag kw">мост</span></div>
           <p class="card-text">✅
 Четвертый дом в ЖК «Дом с террасами» достроили в Нижнем Новгороде
 Еще один многоквартирный дом достроили в Нижнем Новгороде. На этот раз 
@@ -1104,7 +1107,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c33')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">🗣️
 Нижегородский Минград проводит обсуждения по участку КРТ рядом с Актюбинской
 Общественные обсуждения
@@ -1164,7 +1167,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c35')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">многоквартирный дом</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">многоквартирный дом</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">⚡
 Границы нового участка КРТ определяют в Приокском районе Нижнего Новгорода
 Реализовать проект КРТ предполагается 
@@ -1223,7 +1226,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c37')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">На Петербургском международном экономическом форуме подписали два важных меморандума для развития электротранспорта
  
 📌
@@ -1256,7 +1259,7 @@ ADM
             <button class="fav-btn" onclick="toggleFav(this,'c38')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">производственный комплекс</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">производственный комплекс</span><span class="tag kw">строит</span></div>
           <p class="card-text">Москва поддержит строительство уникального завода по выпуску вакцин в ОЭЗ "Технополис Москва"
  
 Подписали Соглашение о сотрудничестве с исполнительным директором АО "Фармстандарт" 
@@ -1351,7 +1354,7 @@ MAX</p>
             <button class="fav-btn" onclick="toggleFav(this,'c41')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Нижний Новгород</span><span class="tag city">Казань</span><span class="tag kw">мост</span><span class="tag kw">приступ</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Нижний Новгород</span><span class="tag city">Казань</span><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">приступ</span></div>
           <p class="card-text">Поезда для ВСМ будут разгоняться до 400 км/ч,
  сообщил глава Минтранса Андрей Никитин на встрече с президентом. 
 "Это практически другая физика, поэтому там требования совершенно другого уровня к безопасности, допускам и так далее. И сегодня в Пышме эта работа развёрнута в полном соответствии с графиком", — сообщил Никитин.
@@ -1375,7 +1378,7 @@ MAX</p>
             <button class="fav-btn" onclick="toggleFav(this,'c42')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">станция метро</span><span class="tag kw">метро</span><span class="tag kw">котлован</span></div>
+          <div class="tags"><span class="tag kw">станция метро</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">Щит "Надежда" вышел на финишную стометровку до "Каменки"
 , сообщили в telegram-канале "Подземник". 
 Вскоре тоннелепроходческий комплекс достигнет демонтажной камеры, строительство которой завершают на Шуваловском проспекте. 
@@ -1464,7 +1467,7 @@ dp.ru
             <button class="fav-btn" onclick="toggleFav(this,'c45')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">приступ</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span><span class="tag kw">приступ</span></div>
           <p class="card-text">На строительной площадке будущей станции метро "Каменка" (проектное название — "Зоопарк") в Петербурге начался новый этап работ
 : специалисты приступили к разработке грунта внутри ограждающей конструкции "стены в грунте" для сооружения верхней плиты покрытия станции. Об этом сообщил telegram-канал "Подземник".
 "Каменка" станет продолжением Невско-Василеостровской (зелёной) линии метро за станцией "Беговая" (вместе со станцией "Богатырская").
@@ -1536,7 +1539,7 @@ MAX</p>
             <button class="fav-btn" onclick="toggleFav(this,'c48')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">университет</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">университет</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">Проект Kibi Kogen N Square от бюро
  Kengo Kuma and Associates 
 расположен в Кибичуо, префектура Окаяма, Япония. 
@@ -1629,7 +1632,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c52')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">технопарк</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">технопарк</span><span class="tag kw">строит</span></div>
           <p class="card-text">📈
  
 Более 15 миллиардов рублей инвестиций в рамках МаИП направлено на создание промышленных технопарков столицы в 2026 году
@@ -1735,7 +1738,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c55')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мцд</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">мцд</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">4️⃣
 8️⃣
  Первые турникеты столичного производства заработали на станции метро «Деловой центр».
@@ -1767,7 +1770,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c56')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Владимир</span><span class="tag kw">завод</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Владимир</span><span class="tag kw">завод</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">📊
  Основные новости дня 5 июня
 ✔️
@@ -1880,7 +1883,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c59')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw">университет</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">университет</span><span class="tag kw">завод</span><span class="tag kw">метро</span></div>
           <p class="card-text">📊
  Основные новости дня 6-7 июня
 ✔️
@@ -1924,7 +1927,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c60')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Киров</span><span class="tag kw">метро</span><span class="tag kw">метрополитен</span><span class="tag kw">завод</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Киров</span><span class="tag kw">завод</span><span class="tag kw">метро</span><span class="tag kw">метрополитен</span></div>
           <p class="card-text">⛓️
  
 Столичный завод «Спецкабель» переходит на отечественное сырьё для кабелей авиационного и ракетно-космического назначения
@@ -1970,7 +1973,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c62')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">На Петербургском международном экономическом форуме подписали два важных меморандума для развития электротранспорта
  
 📌
@@ -2003,7 +2006,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c63')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">производственный комплекс</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">производственный комплекс</span><span class="tag kw">строит</span></div>
           <p class="card-text">Москва поддержит строительство уникального завода по выпуску вакцин в ОЭЗ "Технополис Москва"
  
 Подписали Соглашение о сотрудничестве с исполнительным директором АО "Фармстандарт" 
@@ -2037,7 +2040,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c64')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">завод</span><span class="tag kw">производственный комплекс</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">метро</span><span class="tag kw">производственный комплекс</span></div>
           <p class="card-text">🏗
  
 Около 200 тысяч квадратных метров промышленных МаИП для строительной отрасли запущено в 2025 году в столице
@@ -2062,7 +2065,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c65')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">стадион</span><span class="tag kw">реконстру</span></div>
+          <div class="tags"><span class="tag kw">стадион</span><span class="tag kw">мост</span><span class="tag kw">реконстру</span></div>
           <p class="card-text">Какие стадионы реконструировали к чемпионату мира по футболу-2026
 ▪️
 С 11 июня по 19 июля 2026 года состоится 
@@ -2101,7 +2104,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c66')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">С ипотекой и без дома: как решается проблема обманутых дольщиков в ИЖС
 ▪️
 В России насчитывается 
@@ -2154,7 +2157,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c68')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">возвед</span></div>
           <p class="card-text">Верховный суд 
 разрешил сносить
  хозпостройки на спорных землях даже при старой ошибке в границах
@@ -2193,7 +2196,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c69')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Как сделать тандыр своими руками. Пошаговая инструкция
 ▪️
 Еда в тандыре готовится не от прямого контакта с углями, а 
@@ -2227,7 +2230,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c70')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">Папа римский 
 освятит
  башню Саграды Фамилии, строящейся 144 года
@@ -2362,7 +2365,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c74')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw">мост</span><span class="tag kw"> мкд</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw"> мкд</span><span class="tag kw">мост</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">🍿
  В Краснодарском крае активная жительница выяснила цену своим словам в чате дома
 (новая еженедельная рубрика 
@@ -2464,7 +2467,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c77')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Саратов</span><span class="tag kw">метро</span><span class="tag kw"> мкд</span><span class="tag kw">прокладк</span></div>
+          <div class="tags"><span class="tag city">Саратов</span><span class="tag kw"> мкд</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">В Саратове провайдер проиграл суд, пытаясь доказать, что строительные нормы по прокладке кабелей — это «дело добровольное»
 ТСЖ «Семейный» обратилось в суд с иском к АО «Эр-Телеком Холдинг». Товарищество требовало привести оборудование связи в надлежащее состояние: устранить провисание проводов в подъездах и проложить их по правилам — в кабель-каналах и плинтусах.
 Предыстория
@@ -2603,7 +2606,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c82')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag city">Томск</span><span class="tag kw">завод</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag city">Томск</span><span class="tag kw">завод</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">ГК «Амедарт» построит в Томске два завода по выпуску субстанций до 2036 года</p>
           <a href="https://www.kommersant.ru/doc/8738735" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
@@ -2641,7 +2644,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c84')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag city">Томск</span><span class="tag kw">завод</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag city">Томск</span><span class="tag kw">завод</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">ГК «Амедарт» построит в Томске два завода по выпуску субстанций до 2036 года</p>
           <a href="https://www.kommersant.ru/doc/8738734" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
@@ -2660,7 +2663,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c85')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">В Омске построят автодорогу от метромоста до улицы Перелета</p>
           <a href="https://www.kommersant.ru/doc/2719086" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
@@ -2698,7 +2701,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c87')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">В Омске построят автодорогу от метромоста до улицы Перелета</p>
           <a href="https://www.kommersant.ru/doc/2718609" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
