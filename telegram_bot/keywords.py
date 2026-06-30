@@ -1,3 +1,4 @@
+# updated: 2026-06-30
 CHANNELS = [
     '@stroi_news',
     '@domostroynn',
