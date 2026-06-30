@@ -458,34 +458,39 @@ def scrape_tenders() -> list:
     results = []
     seen = set()
 
-    # Зондируем доступные источники (первые 2 запроса)
-    probe_terms = TERMS[:2]
-    working_source = None
-
-    SOURCES = [
-        ('ЕИС RSS',    'https://zakupki.gov.ru/epz/order/extendedsearch/results.html?searchString={enc}&morphology=on&recordsPerPage=_10&rss=true'),
-        ('tenderplan', 'https://tenderplan.ru/tenders?search={enc}'),
+    # Зондируем доступные источники
+    PROBES = [
+        ('tenderplan-home',        'https://tenderplan.ru/'),
+        ('tenderplan-purchases',   'https://tenderplan.ru/purchases/'),
+        ('tenderplan-api-search',  'https://tenderplan.ru/api/tenders?query={enc}&pageSize=20'),
+        ('tenderplan-api-v1',      'https://api.tenderplan.ru/v1/tenders?search={enc}'),
+        ('clearspending',          'https://clearspending.ru/contracts/?search={enc}&year=2026'),
+        ('clearspending-api',      'https://clearspending.ru/api/v1/contracts/?search={enc}&limit=20'),
+        ('zakupki-rss',            'https://zakupki.gov.ru/epz/order/extendedsearch/results.html?searchString={enc}&morphology=on&recordsPerPage=_10&rss=true'),
     ]
 
-    for src_name, url_tpl in SOURCES:
+    enc0 = urllib.parse.quote(TERMS[0])
+    for probe_name, url_tpl in PROBES:
         try:
-            enc = urllib.parse.quote(probe_terms[0])
-            r = httpx.get(url_tpl.format(enc=enc), headers=HEADERS,
-                          timeout=15, follow_redirects=True, verify=False)
-            dbg.append(f'{src_name}: status={r.status_code} len={len(r.text)} ct={r.headers.get("content-type","?")}')
-            dbg.append(r.text[:800])
+            url = url_tpl.format(enc=enc0)
+            r = httpx.get(url, headers=HEADERS, timeout=12,
+                          follow_redirects=True, verify=False)
+            dbg.append(f'--- {probe_name} ---')
+            dbg.append(f'status={r.status_code} len={len(r.text)} ct={r.headers.get("content-type","?")}')
+            dbg.append(r.text[:600])
             save_debug()
-            if r.status_code == 200 and len(r.text) > 500:
-                working_source = (src_name, url_tpl)
-                break
         except Exception as e:
-            dbg.append(f'{src_name}: ERROR {e}')
+            dbg.append(f'--- {probe_name} --- ERROR: {e}')
             save_debug()
 
+    dbg.append('=== зонд завершён, данных не собираем в этом запуске ===')
+    save_debug()
+    print('    Тендеры: зонд завершён — смотри docs/debug_tenders.txt')
+    return []
+
+    # (код ниже не выполняется — оставлен для следующей итерации)
+    working_source = None
     if not working_source:
-        dbg.append('Ни один источник недоступен с серверов GitHub Actions')
-        save_debug()
-        print('    Тендеры: источники недоступны')
         return []
 
     src_name, url_tpl = working_source
