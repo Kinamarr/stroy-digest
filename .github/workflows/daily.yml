@@ -29,10 +29,7 @@ jobs:
           cache: 'pip'
 
       - name: Установка зависимостей
-        run: pip install httpx beautifulsoup4 playwright
-
-      - name: Установка браузера Playwright
-        run: python -m playwright install chromium --with-deps
+        run: pip install httpx beautifulsoup4
 
       - name: Запуск парсера
         env:

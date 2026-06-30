@@ -401,26 +401,17 @@ def scrape_realty_rbc() -> list:
 # Точка входа
 # ──────────────────────────────────────────────
 
-def scrape_zakupki() -> list:
-    """Тендеры с zakupki.gov.ru по ключевым словам (гидроизоляция, резервуары и т.д.)."""
+def scrape_tenders() -> list:
+    """Тендеры на строительство: пробуем ЕИС RSS и tenderplan.ru через httpx."""
     import urllib.parse
-    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_zakupki.txt'
-    dbg = ['=== debug_zakupki ===']
+    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_tenders.txt'
+    dbg = ['=== debug_tenders ===']
 
     def save_debug():
         try:
             debug_path.write_text('\n'.join(dbg), encoding='utf-8')
         except Exception:
             pass
-
-    try:
-        from playwright.sync_api import sync_playwright
-        dbg.append('playwright import: OK')
-    except ImportError as e:
-        dbg.append(f'playwright ImportError: {e}')
-        save_debug()
-        print(f'    Закупки.гов.ру: playwright не установлен — {e}')
-        return []
 
     TERMS = [
         # Водные объекты / резервуары
@@ -467,120 +458,94 @@ def scrape_zakupki() -> list:
     results = []
     seen = set()
 
-    try:
-        with sync_playwright() as p:
-            dbg.append('sync_playwright: OK')
-            try:
-                browser = p.chromium.launch(
-                    headless=True,
-                    args=['--no-sandbox', '--disable-dev-shm-usage',
-                          '--disable-blink-features=AutomationControlled'],
-                )
-                dbg.append('browser.launch: OK')
-            except Exception as e:
-                dbg.append(f'browser.launch ERROR: {e}')
-                save_debug()
-                return []
+    # Зондируем доступные источники (первые 2 запроса)
+    probe_terms = TERMS[:2]
+    working_source = None
 
-            ctx = browser.new_context(user_agent=HEADERS['User-Agent'], locale='ru-RU')
-            page = ctx.new_page()
-            dbg.append('page created: OK')
+    SOURCES = [
+        ('ЕИС RSS',    'https://zakupki.gov.ru/epz/order/extendedsearch/results.html?searchString={enc}&morphology=on&recordsPerPage=_10&rss=true'),
+        ('tenderplan', 'https://tenderplan.ru/tenders?search={enc}'),
+    ]
+
+    for src_name, url_tpl in SOURCES:
+        try:
+            enc = urllib.parse.quote(probe_terms[0])
+            r = httpx.get(url_tpl.format(enc=enc), headers=HEADERS,
+                          timeout=15, follow_redirects=True, verify=False)
+            dbg.append(f'{src_name}: status={r.status_code} len={len(r.text)} ct={r.headers.get("content-type","?")}')
+            dbg.append(r.text[:800])
+            save_debug()
+            if r.status_code == 200 and len(r.text) > 500:
+                working_source = (src_name, url_tpl)
+                break
+        except Exception as e:
+            dbg.append(f'{src_name}: ERROR {e}')
             save_debug()
 
-            for i, term in enumerate(TERMS):
-                try:
-                    enc = urllib.parse.quote(term)
-                    url = (
-                        f'https://zakupki.gov.ru/epz/order/extendedsearch/results.html'
-                        f'?searchString={enc}&morphology=on&pageNumber=1'
-                        f'&sortDirection=false&recordsPerPage=_10&showLotsInfoHidden=false'
-                    )
-                    page.goto(url, timeout=45000, wait_until='load')
-                    page.wait_for_timeout(6000)
-
-                    if i == 0:
-                        html = page.content()
-                        dbg.append(f'first page HTML ({len(html)} chars):')
-                        dbg.append(html[:6000])
-                        save_debug()
-
-                    cards = page.query_selector_all('.registry-entry__body-wrapper')
-                    if not cards:
-                        cards = page.query_selector_all('[class*="registry-entry__body"]')
-                    dbg.append(f'term[{i}] "{term[:25]}": cards={len(cards)}')
-                    print(f'    Закупки ({term[:30]}): карточек={len(cards)}')
-
-                    for card in cards:
-                        try:
-                            title_el = (
-                                card.query_selector('a[href*="/epz/order/notice/"]') or
-                                card.query_selector('.registry-entry__header-mid__title a') or
-                                card.query_selector('a[class*="title"]')
-                            )
-                            if not title_el:
-                                continue
-                            title = title_el.inner_text().strip()
-                            href = title_el.get_attribute('href') or ''
-                            link = ('https://zakupki.gov.ru' + href) if href.startswith('/') else href
-                            if not link or link in seen or len(title) < 15:
-                                continue
-
-                            customer = ''
-                            for sel in [
-                                '.registry-entry__body-href',
-                                'a[href*="/epz/organization/"]',
-                                '[class*="customer"] a',
-                            ]:
-                                el = card.query_selector(sel)
-                                if el:
-                                    customer = el.inner_text().strip()
-                                    break
-
-                            price = ''
-                            for sel in ['.price-block__content', '[class*="price"] .cost']:
-                                el = card.query_selector(sel)
-                                if el:
-                                    t = el.inner_text().strip()
-                                    if any(c.isdigit() for c in t):
-                                        price = t
-                                        break
-
-                            date_str = ''
-                            for sel in ['.registry-entry__header-mid__date', '[class*="date-start"]']:
-                                el = card.query_selector(sel)
-                                if el:
-                                    raw = el.inner_text()
-                                    date_str = _parse_date_ru(raw) or _parse_date_dmy(raw)
-                                    if date_str:
-                                        break
-
-                            full_text = f'{title} {customer}'
-                            matched = match_broad(full_text) or ['строит']
-
-                            seen.add(link)
-                            body = title
-                            if customer:
-                                body += f'\nЗаказчик: {customer}'
-                            if price:
-                                body += f'\nЦена: {price}'
-                            results.append(_make('Закупки.гов.ру', 'zakupki',
-                                                body, link, date_str, matched))
-                        except Exception:
-                            pass
-
-                    time.sleep(1)
-                except Exception as e:
-                    dbg.append(f'term[{i}] ERROR: {e}')
-                    print(f'    Закупки.гов.ру ({term}): {e}')
-
-            browser.close()
-            dbg.append(f'DONE: найдено {len(results)} тендеров')
-            save_debug()
-
-    except Exception as e:
-        dbg.append(f'outer ERROR: {e}')
+    if not working_source:
+        dbg.append('Ни один источник недоступен с серверов GitHub Actions')
         save_debug()
+        print('    Тендеры: источники недоступны')
+        return []
 
+    src_name, url_tpl = working_source
+    dbg.append(f'Используем: {src_name}')
+    print(f'    Тендеры: используем {src_name}')
+
+    for term in TERMS:
+        try:
+            enc = urllib.parse.quote(term)
+            r = httpx.get(url_tpl.format(enc=enc), headers=HEADERS,
+                          timeout=15, follow_redirects=True, verify=False)
+            if r.status_code != 200:
+                continue
+            soup = BeautifulSoup(r.text, 'html.parser')
+
+            if src_name == 'ЕИС RSS':
+                # RSS/Atom — элементы <item> или <entry>
+                items = soup.find_all(['item', 'entry'])
+                for item in items:
+                    title_el = item.find(['title'])
+                    link_el  = item.find(['link', 'guid'])
+                    title = title_el.get_text(strip=True) if title_el else ''
+                    link  = (link_el.get_text(strip=True) if link_el else
+                             link_el.get('href','') if link_el else '')
+                    if not title or not link or link in seen or len(title) < 10:
+                        continue
+                    desc_el = item.find(['description', 'summary', 'content'])
+                    desc = desc_el.get_text(separator=' ', strip=True)[:400] if desc_el else ''
+                    date_el = item.find(['pubdate', 'published', 'updated'])
+                    date_str = _parse_date_ru(date_el.get_text()) if date_el else ''
+                    matched = match_broad(f'{title} {desc}') or ['строит']
+                    seen.add(link)
+                    results.append(_make('Тендеры (ЕИС)', 'tenders', f'{title}\n{desc}',
+                                        link, date_str, matched))
+
+            elif src_name == 'tenderplan':
+                for a in soup.find_all('a', href=True):
+                    href = a['href']
+                    if '/tender/' not in href and '/tenders/' not in href:
+                        continue
+                    link = href if href.startswith('http') else 'https://tenderplan.ru' + href
+                    if link in seen:
+                        continue
+                    title = a.get_text(strip=True)
+                    if len(title) < 15:
+                        continue
+                    parent = a.find_parent(['div', 'li', 'article'])
+                    full_text = parent.get_text(separator=' ', strip=True)[:400] if parent else title
+                    date_str = _parse_date_ru(full_text) or _parse_date_dmy(full_text)
+                    matched = match_broad(f'{title} {full_text}') or ['строит']
+                    seen.add(link)
+                    results.append(_make('Тендеры', 'tenders', full_text[:300],
+                                        link, date_str, matched))
+
+            time.sleep(0.5)
+        except Exception as e:
+            print(f'    Тендеры ({term[:25]}): {e}')
+
+    dbg.append(f'DONE: найдено {len(results)}')
+    save_debug()
     return results
 
 
@@ -592,7 +557,7 @@ WEB_SOURCES = [
     ('Строители.РФ',           scrape_stroiteli_rf),
     ('АРД Эксперт',            scrape_ardexpert),
     ('РБК Недвижимость',       scrape_realty_rbc),
-    ('Закупки.гов.ру',         scrape_zakupki),
+    ('Тендеры',                scrape_tenders),
 ]
 
 
