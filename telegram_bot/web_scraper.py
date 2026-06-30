@@ -401,6 +401,115 @@ def scrape_realty_rbc() -> list:
 # Точка входа
 # ──────────────────────────────────────────────
 
+def scrape_zakupki() -> list:
+    """Тендеры с zakupki.gov.ru по ключевым словам (гидроизоляция, резервуары и т.д.)."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print('    Закупки.гов.ру: playwright не установлен, пропускаю')
+        return []
+
+    import urllib.parse
+
+    TERMS = [
+        'резервуар строительство',
+        'очистные сооружения строительство',
+        'насосная станция строительство',
+        'гидроизоляция резервуар',
+        'водовод реконструкция',
+        'дренаж строительство',
+    ]
+
+    results = []
+    seen = set()
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
+        ctx = browser.new_context(user_agent=HEADERS['User-Agent'])
+        page = ctx.new_page()
+
+        for term in TERMS:
+            try:
+                enc = urllib.parse.quote(term)
+                url = (
+                    f'https://zakupki.gov.ru/epz/order/extendedsearch/results.html'
+                    f'?searchString={enc}&morphology=on&pageNumber=1'
+                    f'&sortDirection=false&recordsPerPage=_10&showLotsInfoHidden=false'
+                )
+                page.goto(url, timeout=45000, wait_until='networkidle')
+                page.wait_for_timeout(2000)
+
+                cards = page.query_selector_all('.registry-entry__body-wrapper')
+                if not cards:
+                    cards = page.query_selector_all('[class*="registry-entry__body"]')
+
+                for card in cards:
+                    try:
+                        title_el = (
+                            card.query_selector('a[href*="/epz/order/notice/"]') or
+                            card.query_selector('.registry-entry__header-mid__title a') or
+                            card.query_selector('a[class*="title"]')
+                        )
+                        if not title_el:
+                            continue
+                        title = title_el.inner_text().strip()
+                        href = title_el.get_attribute('href') or ''
+                        link = ('https://zakupki.gov.ru' + href) if href.startswith('/') else href
+                        if not link or link in seen or len(title) < 15:
+                            continue
+
+                        customer = ''
+                        for sel in [
+                            '.registry-entry__body-href',
+                            'a[href*="/epz/organization/"]',
+                            '[class*="customer"] a',
+                        ]:
+                            el = card.query_selector(sel)
+                            if el:
+                                customer = el.inner_text().strip()
+                                break
+
+                        price = ''
+                        for sel in ['.price-block__content', '[class*="price"] .cost']:
+                            el = card.query_selector(sel)
+                            if el:
+                                t = el.inner_text().strip()
+                                if any(c.isdigit() for c in t):
+                                    price = t
+                                    break
+
+                        date_str = ''
+                        for sel in ['.registry-entry__header-mid__date', '[class*="date-start"]']:
+                            el = card.query_selector(sel)
+                            if el:
+                                raw = el.inner_text()
+                                date_str = _parse_date_ru(raw) or _parse_date_dmy(raw)
+                                if date_str:
+                                    break
+
+                        full_text = f'{title} {customer}'
+                        matched = match_broad(full_text) or ['строит']
+
+                        seen.add(link)
+                        body = title
+                        if customer:
+                            body += f'\nЗаказчик: {customer}'
+                        if price:
+                            body += f'\nЦена: {price}'
+                        results.append(_make('Закупки.гов.ру', 'zakupki',
+                                            body, link, date_str, matched))
+                    except Exception:
+                        pass
+
+                time.sleep(1)
+            except Exception as e:
+                print(f'    Закупки.гов.ру ({term}): {e}')
+
+        browser.close()
+
+    return results
+
+
 WEB_SOURCES = [
     ('Коммерсантъ (регионы)', scrape_kommersant),
     ('Абирег',                 scrape_abireg),
@@ -409,6 +518,7 @@ WEB_SOURCES = [
     ('Строители.РФ',           scrape_stroiteli_rf),
     ('АРД Эксперт',            scrape_ardexpert),
     ('РБК Недвижимость',       scrape_realty_rbc),
+    ('Закупки.гов.ру',         scrape_zakupki),
 ]
 
 
