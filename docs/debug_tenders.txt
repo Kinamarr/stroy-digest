@@ -1,5 +1,49 @@
 === debug_tenders ===
-ЕИС RSS: ERROR timed out
-tenderplan: status=404 len=4789 ct=text/html
-<!DOCTYPE html><html lang="ru" prefix="og: http://ogp.me/ns#"><head><meta name="generator" content="React Static"/><title data-react-helmet="true">Тендерплан — система поиска тендеров</title><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><meta name="google-site-verification" content="ETkUlpel4FfRbBs67yS9xceyyO0d9e0chbRXZ_xuhFI"/><meta data-react-helmet="true" property="og:title" content="Электронная площадка тендеров, торгов и госзакупок Тендерплан"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:url" content="https://tenderplan.ru/"/><meta data-react-helmet="true" property="og:locale" content="ru_RU"/><meta data-react-helmet="true" property="og:image" content="h
-Ни один источник недоступен с серверов GitHub Actions
+--- tenderplan-home ---
+status=200 len=220445 ct=text/html
+<!DOCTYPE html><html lang="ru" prefix="og: http://ogp.me/ns#"><head><meta name="generator" content="React Static"/><title data-react-helmet="true">Все тендеры, госзакупки, аукционы России на официальном сайте Тендерплан</title><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><meta name="google-site-verification" content="ETkUlpel4FfRbBs67yS9xceyyO0d9e0chbRXZ_xuhFI"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:locale" content="ru_RU"/><meta data-react-helmet="true" p
+--- tenderplan-purchases ---
+status=404 len=4789 ct=text/html
+<!DOCTYPE html><html lang="ru" prefix="og: http://ogp.me/ns#"><head><meta name="generator" content="React Static"/><title data-react-helmet="true">Тендерплан — система поиска тендеров</title><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/><meta name="google-site-verification" content="ETkUlpel4FfRbBs67yS9xceyyO0d9e0chbRXZ_xuhFI"/><meta data-react-helmet="true" property="og:title" content="Электронная площадка тендеров, торгов и госзакупок Тендерплан"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-re
+--- tenderplan-api-search ---
+status=401 len=0 ct=?
+
+--- tenderplan-api-v1 --- ERROR: [Errno -2] Name or service not known
+--- clearspending ---
+status=200 len=4465 ct=text/html; charset=utf-8
+<!doctype html><html lang="en"><head><title>Making sure you&#39;re not a bot!</title><link rel="stylesheet" href="/.within.website/x/xess/xess.min.css?cachebuster=1.25.0"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><style>
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .centered-div {
+            text-align: center;
+        }
+
+        #st
+--- clearspending-api ---
+status=200 len=4465 ct=text/html; charset=utf-8
+<!doctype html><html lang="en"><head><title>Making sure you&#39;re not a bot!</title><link rel="stylesheet" href="/.within.website/x/xess/xess.min.css?cachebuster=1.25.0"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><style>
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .centered-div {
+            text-align: center;
+        }
+
+        #st
+--- zakupki-rss --- ERROR: timed out
+=== зонд завершён, данных не собираем в этом запуске ===
