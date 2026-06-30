@@ -456,12 +456,21 @@ def scrape_zakupki() -> list:
     results = []
     seen = set()
 
+    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_zakupki.txt'
+
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
-        ctx = browser.new_context(user_agent=HEADERS['User-Agent'])
+        browser = p.chromium.launch(
+            headless=True,
+            args=['--no-sandbox', '--disable-dev-shm-usage',
+                  '--disable-blink-features=AutomationControlled'],
+        )
+        ctx = browser.new_context(
+            user_agent=HEADERS['User-Agent'],
+            locale='ru-RU',
+        )
         page = ctx.new_page()
 
-        for term in TERMS:
+        for i, term in enumerate(TERMS):
             try:
                 enc = urllib.parse.quote(term)
                 url = (
@@ -469,12 +478,17 @@ def scrape_zakupki() -> list:
                     f'?searchString={enc}&morphology=on&pageNumber=1'
                     f'&sortDirection=false&recordsPerPage=_10&showLotsInfoHidden=false'
                 )
-                page.goto(url, timeout=45000, wait_until='networkidle')
-                page.wait_for_timeout(2000)
+                page.goto(url, timeout=45000, wait_until='load')
+                page.wait_for_timeout(6000)
+
+                # Сохраняем HTML первого запроса для отладки
+                if i == 0:
+                    debug_path.write_text(page.content()[:8000], encoding='utf-8')
 
                 cards = page.query_selector_all('.registry-entry__body-wrapper')
                 if not cards:
                     cards = page.query_selector_all('[class*="registry-entry__body"]')
+                print(f'    Закупки ({term[:30]}): карточек={len(cards)}')
 
                 for card in cards:
                     try:
