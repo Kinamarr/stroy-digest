@@ -403,13 +403,24 @@ def scrape_realty_rbc() -> list:
 
 def scrape_zakupki() -> list:
     """Тендеры с zakupki.gov.ru по ключевым словам (гидроизоляция, резервуары и т.д.)."""
+    import urllib.parse
+    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_zakupki.txt'
+    dbg = ['=== debug_zakupki ===']
+
+    def save_debug():
+        try:
+            debug_path.write_text('\n'.join(dbg), encoding='utf-8')
+        except Exception:
+            pass
+
     try:
         from playwright.sync_api import sync_playwright
-    except ImportError:
-        print('    Закупки.гов.ру: playwright не установлен, пропускаю')
+        dbg.append('playwright import: OK')
+    except ImportError as e:
+        dbg.append(f'playwright ImportError: {e}')
+        save_debug()
+        print(f'    Закупки.гов.ру: playwright не установлен — {e}')
         return []
-
-    import urllib.parse
 
     TERMS = [
         # Водные объекты / резервуары
@@ -456,103 +467,119 @@ def scrape_zakupki() -> list:
     results = []
     seen = set()
 
-    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_zakupki.txt'
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=['--no-sandbox', '--disable-dev-shm-usage',
-                  '--disable-blink-features=AutomationControlled'],
-        )
-        ctx = browser.new_context(
-            user_agent=HEADERS['User-Agent'],
-            locale='ru-RU',
-        )
-        page = ctx.new_page()
-
-        for i, term in enumerate(TERMS):
+    try:
+        with sync_playwright() as p:
+            dbg.append('sync_playwright: OK')
             try:
-                enc = urllib.parse.quote(term)
-                url = (
-                    f'https://zakupki.gov.ru/epz/order/extendedsearch/results.html'
-                    f'?searchString={enc}&morphology=on&pageNumber=1'
-                    f'&sortDirection=false&recordsPerPage=_10&showLotsInfoHidden=false'
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=['--no-sandbox', '--disable-dev-shm-usage',
+                          '--disable-blink-features=AutomationControlled'],
                 )
-                page.goto(url, timeout=45000, wait_until='load')
-                page.wait_for_timeout(6000)
-
-                # Сохраняем HTML первого запроса для отладки
-                if i == 0:
-                    debug_path.write_text(page.content()[:8000], encoding='utf-8')
-
-                cards = page.query_selector_all('.registry-entry__body-wrapper')
-                if not cards:
-                    cards = page.query_selector_all('[class*="registry-entry__body"]')
-                print(f'    Закупки ({term[:30]}): карточек={len(cards)}')
-
-                for card in cards:
-                    try:
-                        title_el = (
-                            card.query_selector('a[href*="/epz/order/notice/"]') or
-                            card.query_selector('.registry-entry__header-mid__title a') or
-                            card.query_selector('a[class*="title"]')
-                        )
-                        if not title_el:
-                            continue
-                        title = title_el.inner_text().strip()
-                        href = title_el.get_attribute('href') or ''
-                        link = ('https://zakupki.gov.ru' + href) if href.startswith('/') else href
-                        if not link or link in seen or len(title) < 15:
-                            continue
-
-                        customer = ''
-                        for sel in [
-                            '.registry-entry__body-href',
-                            'a[href*="/epz/organization/"]',
-                            '[class*="customer"] a',
-                        ]:
-                            el = card.query_selector(sel)
-                            if el:
-                                customer = el.inner_text().strip()
-                                break
-
-                        price = ''
-                        for sel in ['.price-block__content', '[class*="price"] .cost']:
-                            el = card.query_selector(sel)
-                            if el:
-                                t = el.inner_text().strip()
-                                if any(c.isdigit() for c in t):
-                                    price = t
-                                    break
-
-                        date_str = ''
-                        for sel in ['.registry-entry__header-mid__date', '[class*="date-start"]']:
-                            el = card.query_selector(sel)
-                            if el:
-                                raw = el.inner_text()
-                                date_str = _parse_date_ru(raw) or _parse_date_dmy(raw)
-                                if date_str:
-                                    break
-
-                        full_text = f'{title} {customer}'
-                        matched = match_broad(full_text) or ['строит']
-
-                        seen.add(link)
-                        body = title
-                        if customer:
-                            body += f'\nЗаказчик: {customer}'
-                        if price:
-                            body += f'\nЦена: {price}'
-                        results.append(_make('Закупки.гов.ру', 'zakupki',
-                                            body, link, date_str, matched))
-                    except Exception:
-                        pass
-
-                time.sleep(1)
+                dbg.append('browser.launch: OK')
             except Exception as e:
-                print(f'    Закупки.гов.ру ({term}): {e}')
+                dbg.append(f'browser.launch ERROR: {e}')
+                save_debug()
+                return []
 
-        browser.close()
+            ctx = browser.new_context(user_agent=HEADERS['User-Agent'], locale='ru-RU')
+            page = ctx.new_page()
+            dbg.append('page created: OK')
+            save_debug()
+
+            for i, term in enumerate(TERMS):
+                try:
+                    enc = urllib.parse.quote(term)
+                    url = (
+                        f'https://zakupki.gov.ru/epz/order/extendedsearch/results.html'
+                        f'?searchString={enc}&morphology=on&pageNumber=1'
+                        f'&sortDirection=false&recordsPerPage=_10&showLotsInfoHidden=false'
+                    )
+                    page.goto(url, timeout=45000, wait_until='load')
+                    page.wait_for_timeout(6000)
+
+                    if i == 0:
+                        html = page.content()
+                        dbg.append(f'first page HTML ({len(html)} chars):')
+                        dbg.append(html[:6000])
+                        save_debug()
+
+                    cards = page.query_selector_all('.registry-entry__body-wrapper')
+                    if not cards:
+                        cards = page.query_selector_all('[class*="registry-entry__body"]')
+                    dbg.append(f'term[{i}] "{term[:25]}": cards={len(cards)}')
+                    print(f'    Закупки ({term[:30]}): карточек={len(cards)}')
+
+                    for card in cards:
+                        try:
+                            title_el = (
+                                card.query_selector('a[href*="/epz/order/notice/"]') or
+                                card.query_selector('.registry-entry__header-mid__title a') or
+                                card.query_selector('a[class*="title"]')
+                            )
+                            if not title_el:
+                                continue
+                            title = title_el.inner_text().strip()
+                            href = title_el.get_attribute('href') or ''
+                            link = ('https://zakupki.gov.ru' + href) if href.startswith('/') else href
+                            if not link or link in seen or len(title) < 15:
+                                continue
+
+                            customer = ''
+                            for sel in [
+                                '.registry-entry__body-href',
+                                'a[href*="/epz/organization/"]',
+                                '[class*="customer"] a',
+                            ]:
+                                el = card.query_selector(sel)
+                                if el:
+                                    customer = el.inner_text().strip()
+                                    break
+
+                            price = ''
+                            for sel in ['.price-block__content', '[class*="price"] .cost']:
+                                el = card.query_selector(sel)
+                                if el:
+                                    t = el.inner_text().strip()
+                                    if any(c.isdigit() for c in t):
+                                        price = t
+                                        break
+
+                            date_str = ''
+                            for sel in ['.registry-entry__header-mid__date', '[class*="date-start"]']:
+                                el = card.query_selector(sel)
+                                if el:
+                                    raw = el.inner_text()
+                                    date_str = _parse_date_ru(raw) or _parse_date_dmy(raw)
+                                    if date_str:
+                                        break
+
+                            full_text = f'{title} {customer}'
+                            matched = match_broad(full_text) or ['строит']
+
+                            seen.add(link)
+                            body = title
+                            if customer:
+                                body += f'\nЗаказчик: {customer}'
+                            if price:
+                                body += f'\nЦена: {price}'
+                            results.append(_make('Закупки.гов.ру', 'zakupki',
+                                                body, link, date_str, matched))
+                        except Exception:
+                            pass
+
+                    time.sleep(1)
+                except Exception as e:
+                    dbg.append(f'term[{i}] ERROR: {e}')
+                    print(f'    Закупки.гов.ру ({term}): {e}')
+
+            browser.close()
+            dbg.append(f'DONE: найдено {len(results)} тендеров')
+            save_debug()
+
+    except Exception as e:
+        dbg.append(f'outer ERROR: {e}')
+        save_debug()
 
     return results
 
