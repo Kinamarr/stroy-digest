@@ -401,156 +401,96 @@ def scrape_realty_rbc() -> list:
 # Точка входа
 # ──────────────────────────────────────────────
 
-def scrape_tenders() -> list:
-    """Тендеры на строительство: пробуем ЕИС RSS и tenderplan.ru через httpx."""
-    import urllib.parse
-    debug_path = Path(__file__).parent.parent / 'docs' / 'debug_tenders.txt'
-    dbg = ['=== debug_tenders ===']
+def scrape_otc() -> list:
+    """Тендеры на строительство с otc.ru (работает с GitHub Actions, plain HTML)."""
+    import urllib.parse, re
 
-    def save_debug():
-        try:
-            debug_path.write_text('\n'.join(dbg), encoding='utf-8')
-        except Exception:
-            pass
-
-    TERMS = [
-        # Водные объекты / резервуары
-        'резервуар строительство',
-        'очистные сооружения строительство',
-        'насосная станция строительство',
-        'водовод реконструкция',
-        'дренаж строительство',
-        'ливневая канализация строительство',
-        # Жилые дома / ЖК
-        'жилой комплекс строительство',
-        'многоквартирный дом строительство',
-        'жилой дом строительство реконструкция',
-        # Заводы / производство
-        'завод строительство',
-        'промышленный парк строительство',
-        'технопарк строительство',
-        # Офис / ТЦ
-        'бизнес-центр строительство',
-        'торговый центр строительство',
-        # Склад / логистика
-        'складской комплекс строительство',
-        'логистический центр строительство',
-        # Социальные объекты
-        'школа строительство',
-        'больница строительство',
-        'детский сад строительство',
-        # Спортивные объекты
-        'стадион строительство',
-        'бассейн строительство',
-        'спортивный комплекс строительство',
-        # Дороги / мосты
-        'мост строительство',
-        'путепровод строительство реконструкция',
-        # Метро / подземное
-        'тоннель строительство',
-        'метро строительство',
-        'подземная парковка строительство',
-        # Гостиницы
-        'гостиница строительство',
-        'отель строительство',
+    QUERIES = [
+        'строительство резервуара',
+        'строительство очистных сооружений',
+        'строительство насосной станции',
+        'строительство водовода',
+        'строительство дренажа',
+        'строительство жилого комплекса',
+        'строительство завода',
+        'строительство бассейна',
+        'строительство школы',
+        'строительство больницы',
+        'строительство стадиона',
+        'строительство склада',
+        'строительство гостиницы',
+        'строительство торгового центра',
+        'строительство тоннеля',
     ]
 
     results = []
     seen = set()
 
-    # Зондируем доступные источники
-    PROBES = [
-        ('tenderplan-home',        'https://tenderplan.ru/'),
-        ('tenderplan-purchases',   'https://tenderplan.ru/purchases/'),
-        ('tenderplan-api-search',  'https://tenderplan.ru/api/tenders?query={enc}&pageSize=20'),
-        ('tenderplan-api-v1',      'https://api.tenderplan.ru/v1/tenders?search={enc}'),
-        ('clearspending',          'https://clearspending.ru/contracts/?search={enc}&year=2026'),
-        ('clearspending-api',      'https://clearspending.ru/api/v1/contracts/?search={enc}&limit=20'),
-        ('zakupki-rss',            'https://zakupki.gov.ru/epz/order/extendedsearch/results.html?searchString={enc}&morphology=on&recordsPerPage=_10&rss=true'),
-    ]
-
-    enc0 = urllib.parse.quote(TERMS[0])
-    for probe_name, url_tpl in PROBES:
-        try:
-            url = url_tpl.format(enc=enc0)
-            r = httpx.get(url, headers=HEADERS, timeout=12,
-                          follow_redirects=True, verify=False)
-            dbg.append(f'--- {probe_name} ---')
-            dbg.append(f'status={r.status_code} len={len(r.text)} ct={r.headers.get("content-type","?")}')
-            dbg.append(r.text[:600])
-            save_debug()
-        except Exception as e:
-            dbg.append(f'--- {probe_name} --- ERROR: {e}')
-            save_debug()
-
-    dbg.append('=== зонд завершён, данных не собираем в этом запуске ===')
-    save_debug()
-    print('    Тендеры: зонд завершён — смотри docs/debug_tenders.txt')
-    return []
-
-    # (код ниже не выполняется — оставлен для следующей итерации)
-    working_source = None
-    if not working_source:
-        return []
-
-    src_name, url_tpl = working_source
-    dbg.append(f'Используем: {src_name}')
-    print(f'    Тендеры: используем {src_name}')
-
-    for term in TERMS:
+    for term in QUERIES:
         try:
             enc = urllib.parse.quote(term)
-            r = httpx.get(url_tpl.format(enc=enc), headers=HEADERS,
-                          timeout=15, follow_redirects=True, verify=False)
-            if r.status_code != 200:
+            r = _get(f'https://otc.ru/search?query={enc}&type=lots&status=ACTIVE')
+            if r.status_code != 200 or len(r.text) < 1000:
                 continue
+
             soup = BeautifulSoup(r.text, 'html.parser')
 
-            if src_name == 'ЕИС RSS':
-                # RSS/Atom — элементы <item> или <entry>
-                items = soup.find_all(['item', 'entry'])
-                for item in items:
-                    title_el = item.find(['title'])
-                    link_el  = item.find(['link', 'guid'])
-                    title = title_el.get_text(strip=True) if title_el else ''
-                    link  = (link_el.get_text(strip=True) if link_el else
-                             link_el.get('href','') if link_el else '')
-                    if not title or not link or link in seen or len(title) < 10:
-                        continue
-                    desc_el = item.find(['description', 'summary', 'content'])
-                    desc = desc_el.get_text(separator=' ', strip=True)[:400] if desc_el else ''
-                    date_el = item.find(['pubdate', 'published', 'updated'])
-                    date_str = _parse_date_ru(date_el.get_text()) if date_el else ''
-                    matched = match_broad(f'{title} {desc}') or ['строит']
-                    seen.add(link)
-                    results.append(_make('Тендеры (ЕИС)', 'tenders', f'{title}\n{desc}',
-                                        link, date_str, matched))
+            for a in soup.find_all('a', class_=lambda c: c and 'mantine-Anchor-root' in ' '.join(c if c else [])):
+                title_text = a.get_text(strip=True)
+                if not title_text.startswith('Закупка №'):
+                    continue
+                href = a.get('href', '')
+                if not href or href in seen:
+                    continue
 
-            elif src_name == 'tenderplan':
-                for a in soup.find_all('a', href=True):
-                    href = a['href']
-                    if '/tender/' not in href and '/tenders/' not in href:
+                # Поднимаемся по DOM до блока с "Организатор"
+                container = a
+                customer = price = date_str = title = ''
+                for _ in range(8):
+                    container = container.find_parent('div')
+                    if not container:
+                        break
+                    ct = container.get_text(separator=' ', strip=True)
+                    if 'Организатор' not in ct:
                         continue
-                    link = href if href.startswith('http') else 'https://tenderplan.ru' + href
-                    if link in seen:
-                        continue
-                    title = a.get_text(strip=True)
-                    if len(title) < 15:
-                        continue
-                    parent = a.find_parent(['div', 'li', 'article'])
-                    full_text = parent.get_text(separator=' ', strip=True)[:400] if parent else title
-                    date_str = _parse_date_ru(full_text) or _parse_date_dmy(full_text)
-                    matched = match_broad(f'{title} {full_text}') or ['строит']
-                    seen.add(link)
-                    results.append(_make('Тендеры', 'tenders', full_text[:300],
-                                        link, date_str, matched))
+
+                    # Заголовок тендера
+                    m = re.search(
+                        r'Закупка №[\w/\-]+\s+(.+?)(?:Начальная цена|Размещено|В избранное)',
+                        ct)
+                    title = re.sub(r'\s+В избранное\s*$', '',
+                                   m.group(1).strip())[:120] if m else ''
+
+                    m2 = re.search(r'Организатор\s+(.+?)(?:\s{2,}|Статус|$)', ct)
+                    customer = m2.group(1).strip()[:100] if m2 else ''
+
+                    m3 = re.search(r'([\d\s]+[,\.]\d+\s*₽)', ct)
+                    price = m3.group(1).strip() if m3 else ''
+
+                    m4 = re.search(r'Размещено:\s*(\d{2}\.\d{2}\.\d{4})', ct)
+                    date_str = _parse_date_dmy(m4.group(1)) if m4 else ''
+                    break
+
+                if not title and not customer:
+                    continue
+
+                matched = match_broad(f'{title} {customer}')
+                if not matched:
+                    continue
+
+                seen.add(href)
+                body = title or title_text
+                if customer:
+                    body += f'\nЗаказчик: {customer}'
+                if price:
+                    body += f'\nЦена: {price}'
+                results.append(_make('ОТС.ру', 'otc', body, href, date_str, matched))
 
             time.sleep(0.5)
         except Exception as e:
-            print(f'    Тендеры ({term[:25]}): {e}')
+            print(f'    ОТС.ру ({term[:25]}): {e}')
 
-    dbg.append(f'DONE: найдено {len(results)}')
-    save_debug()
+    print(f'    ОТС.ру: найдено {len(results)} тендеров')
     return results
 
 
@@ -562,7 +502,7 @@ WEB_SOURCES = [
     ('Строители.РФ',           scrape_stroiteli_rf),
     ('АРД Эксперт',            scrape_ardexpert),
     ('РБК Недвижимость',       scrape_realty_rbc),
-    ('Тендеры',                scrape_tenders),
+    ('ОТС.ру (тендеры)',       scrape_otc),
 ]
 
 
