@@ -401,96 +401,70 @@ def scrape_realty_rbc() -> list:
 # Точка входа
 # ──────────────────────────────────────────────
 
+def _otc_detail(href: str) -> tuple:
+    """Fetch customer and price from an OTC tender detail page."""
+    try:
+        r = _get(href)
+        if r.status_code != 200 or len(r.text) < 1000:
+            return '', ''
+        soup = BeautifulSoup(r.text, 'html.parser')
+        text = soup.get_text(separator=' | ', strip=True)
+        m_cust = re.search(r'Организатор\s*\|\s*(.{5,120}?)\s*\|', text)
+        customer = m_cust.group(1).strip()[:100] if m_cust else ''
+        m_price = re.search(r'([\d\s]+[,\.]\d+\s*₽)', text)
+        price = m_price.group(1).strip()[:40] if m_price else ''
+        return customer, price
+    except Exception:
+        return '', ''
+
+
 def scrape_otc() -> list:
-    """Тендеры на строительство с otc.ru (работает с GitHub Actions, plain HTML)."""
-    import urllib.parse, re
-
-    QUERIES = [
-        'строительство резервуара',
-        'строительство очистных сооружений',
-        'строительство насосной станции',
-        'строительство водовода',
-        'строительство дренажа',
-        'строительство жилого комплекса',
-        'строительство завода',
-        'строительство бассейна',
-        'строительство школы',
-        'строительство больницы',
-        'строительство стадиона',
-        'строительство склада',
-        'строительство гостиницы',
-        'строительство торгового центра',
-        'строительство тоннеля',
-    ]
-
+    """Тендеры на строительство с otc.ru — парсит 1000 новых лотов, фильтрует по ключевым словам."""
     results = []
-    seen = set()
+    try:
+        r = _get('https://otc.ru/new-tenders/')
+        if r.status_code != 200 or len(r.text) < 10000:
+            print(f'    ОТС.ру: недоступно ({r.status_code})')
+            return []
 
-    for term in QUERIES:
-        try:
-            enc = urllib.parse.quote(term)
-            r = _get(f'https://otc.ru/search?query={enc}&type=lots&status=ACTIVE')
-            if r.status_code != 200 or len(r.text) < 1000:
+        soup = BeautifulSoup(r.text, 'html.parser')
+        candidates = []
+        seen = set()
+
+        for a in soup.find_all('a', href=re.compile(r'^/buy/l\d')):
+            href_rel = a.get('href', '')
+            if href_rel in seen:
                 continue
+            p = a.find_next_sibling('p')
+            if not p:
+                continue
+            title = p.get_text(strip=True)
+            if not title:
+                continue
+            matched = match_broad(title)
+            if not matched:
+                continue
+            seen.add(href_rel)
+            candidates.append((href_rel, title, matched))
 
-            soup = BeautifulSoup(r.text, 'html.parser')
+        print(f'    ОТС.ру: {len(candidates)} строительных лотов из ~1000')
 
-            for a in soup.find_all('a', class_=lambda c: c and 'mantine-Anchor-root' in ' '.join(c if c else [])):
-                title_text = a.get_text(strip=True)
-                if not title_text.startswith('Закупка №'):
-                    continue
-                href = a.get('href', '')
-                if not href or href in seen:
-                    continue
+        # Fetch detail pages for up to 20 candidates to get customer + price
+        for href_rel, title, matched in candidates[:20]:
+            href = 'https://otc.ru' + href_rel
+            customer, price = _otc_detail(href)
+            body = title[:200]
+            if customer:
+                body += f'\nЗаказчик: {customer}'
+            if price:
+                body += f'\nЦена: {price}'
+            results.append(_make('ОТС.ру', 'otc', body, href, '', matched))
+            time.sleep(0.3)
 
-                # Поднимаемся по DOM до блока с "Организатор"
-                container = a
-                customer = price = date_str = title = ''
-                for _ in range(8):
-                    container = container.find_parent('div')
-                    if not container:
-                        break
-                    ct = container.get_text(separator=' ', strip=True)
-                    if 'Организатор' not in ct:
-                        continue
+    except Exception as e:
+        print(f'    ОТС.ру: {e}')
 
-                    # Заголовок тендера
-                    m = re.search(
-                        r'Закупка №[\w/\-]+\s+(.+?)(?:Начальная цена|Размещено|В избранное)',
-                        ct)
-                    title = re.sub(r'\s+В избранное\s*$', '',
-                                   m.group(1).strip())[:120] if m else ''
-
-                    m2 = re.search(r'Организатор\s+(.+?)(?:\s{2,}|Статус|$)', ct)
-                    customer = m2.group(1).strip()[:100] if m2 else ''
-
-                    m3 = re.search(r'([\d\s]+[,\.]\d+\s*₽)', ct)
-                    price = m3.group(1).strip() if m3 else ''
-
-                    m4 = re.search(r'Размещено:\s*(\d{2}\.\d{2}\.\d{4})', ct)
-                    date_str = _parse_date_dmy(m4.group(1)) if m4 else ''
-                    break
-
-                if not title and not customer:
-                    continue
-
-                matched = match_broad(f'{title} {customer}')
-                if not matched:
-                    continue
-
-                seen.add(href)
-                body = title or title_text
-                if customer:
-                    body += f'\nЗаказчик: {customer}'
-                if price:
-                    body += f'\nЦена: {price}'
-                results.append(_make('ОТС.ру', 'otc', body, href, date_str, matched))
-
-            time.sleep(0.5)
-        except Exception as e:
-            print(f'    ОТС.ру ({term[:25]}): {e}')
-
-    print(f'    ОТС.ру: найдено {len(results)} тендеров')
+    print(f'    ОТС.ру: итого {len(results)} тендеров')
     return results
 
 
