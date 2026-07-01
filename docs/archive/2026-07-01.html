@@ -93,7 +93,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="header">
   <div>
     <h1>🏗 Стройдайджест</h1>
-    <div class="sub">01.07.2026 · 114 объектов · 13 каналов</div>
+    <div class="sub">01.07.2026 · 135 объектов · 14 каналов</div>
   </div>
   <div style="display:flex;gap:8px;align-items:center">
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить данные</button>
@@ -107,7 +107,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (114)</button>
+  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (135)</button>
   <button class="tab-btn" id="tab-favs" onclick="switchTab('favs')">★ Избранное (<span id="fav-count">0</span>)</button>
 </div>
 
@@ -121,13 +121,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <div style="display:flex;align-items:center;gap:5px">
     <label>Город</label>
     <select id="fCity" onchange="applyFilter()">
-      <option value="">Все города</option><option value="Владимир">Владимир</option><option value="Воронеж">Воронеж</option><option value="Екатеринбург">Екатеринбург</option><option value="Калининград">Калининград</option><option value="Киров">Киров</option><option value="Краснодар">Краснодар</option><option value="Магнитогорск">Магнитогорск</option><option value="Москва">Москва</option><option value="Омск">Омск</option><option value="Подмосковье">Подмосковье</option><option value="Санкт-Петербург">Санкт-Петербург</option><option value="Саратов">Саратов</option><option value="Челябинск">Челябинск</option>
+      <option value="">Все города</option><option value="Владимир">Владимир</option><option value="Воронеж">Воронеж</option><option value="Екатеринбург">Екатеринбург</option><option value="Калининград">Калининград</option><option value="Киров">Киров</option><option value="Краснодар">Краснодар</option><option value="Курск">Курск</option><option value="Магнитогорск">Магнитогорск</option><option value="Москва">Москва</option><option value="Омск">Омск</option><option value="Подмосковье">Подмосковье</option><option value="Псков">Псков</option><option value="Санкт-Петербург">Санкт-Петербург</option><option value="Саратов">Саратов</option><option value="Смоленск">Смоленск</option><option value="Челябинск">Челябинск</option><option value="Ярославль">Ярославль</option>
     </select>
   </div>
   <div style="display:flex;align-items:center;gap:5px">
     <label>Канал</label>
     <select id="fCh" onchange="applyFilter()">
-      <option value="">Все каналы</option><option value="@domostroynn">@domostroynn</option><option value="@dprunews">@dprunews</option><option value="@gkhvsem">@gkhvsem</option><option value="@investmoscowru">@investmoscowru</option><option value="@mos_sobyanin">@mos_sobyanin</option><option value="@prommoscow">@prommoscow</option><option value="@radiuswood">@radiuswood</option><option value="@realty_rbc">@realty_rbc</option><option value="@stroi_news">@stroi_news</option><option value="АРД Эксперт">АРД Эксперт</option><option value="Абирег">Абирег</option><option value="Коммерсантъ">Коммерсантъ</option><option value="РБК Недвижимость">РБК Недвижимость</option>
+      <option value="">Все каналы</option><option value="@domostroynn">@domostroynn</option><option value="@dprunews">@dprunews</option><option value="@gkhvsem">@gkhvsem</option><option value="@investmoscowru">@investmoscowru</option><option value="@mos_sobyanin">@mos_sobyanin</option><option value="@prommoscow">@prommoscow</option><option value="@radiuswood">@radiuswood</option><option value="@realty_rbc">@realty_rbc</option><option value="@stroi_news">@stroi_news</option><option value="АРД Эксперт">АРД Эксперт</option><option value="Абирег">Абирег</option><option value="Коммерсантъ">Коммерсантъ</option><option value="ОТС.ру">ОТС.ру</option><option value="РБК Недвижимость">РБК Недвижимость</option>
     </select>
   </div>
   <label class="fcontacts">
@@ -137,7 +137,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <button onclick="resetFilter()">Сбросить</button>
 </div>
 
-<div class="stats">Показано: <b id="vis-count">114</b></div>
+<div class="stats">Показано: <b id="vis-count">135</b></div>
 
 <div class="grid" id="grid">
 
@@ -180,7 +180,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
             <button class="fav-btn" onclick="toggleFav(this,'c1')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">офисный комплекс</span><span class="tag kw">мост</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">офисный комплекс</span></div>
           <p class="card-text">ЛСР построит офисный комплекс у метро «Нагорная»
 Входящая в Группу ЛСР компания «ЛСР. Недвижимость-М» закрыла сделку по покупке участка в Электролитном проезде недалеко от метро «Нагорная». На этом участке недавно было 
 одобрено
@@ -231,7 +231,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c3')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">бизнес-центр</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">Стройка арт-бизнес-кластера «КОБЗОН СИТИ» опережает плановые сроки
 В Басманном районе продолжается строительство единственного бизнес-центра класса «А» в пределах ТТК – «КОБЗОН СИТИ» от девелопера October Group. Работы ведутся с опережением плановых сроков.
 Текущие детали строительства: 
@@ -280,7 +280,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c5')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">разрешени</span><span class="tag kw">ввод в экс</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">ввод в экс</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">Девелопер STONE завершил строительство бизнес-центра на первой линии ул. Вавилова и получил заключение о соответствии
 Премиальный бизнес-центр STONE Ленинский общей площадью порядка 74 тыс. м² успешно прошел проверку Мосгосстройнадзора и получил положительное заключение о соответствии (ЗОС). 
 На сегодняшний день построенный объект отвечает всем требованиям технических регламентов и проектной документации, что дает возможность получить разрешение на ввод в эксплуатацию. 
@@ -361,7 +361,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c8')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">жилой комплекс</span><span class="tag kw">детский сад</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">жилой комплекс</span><span class="tag kw">детский сад</span></div>
           <p class="card-text">Воскресная московская стройка: жилой комплекс «Мневники» от девелопера «Гранель»
 Жилой комплекс «Мневники» возводится на северо-западе столицы, на улице Народного Ополчения. Проект реализуется на месте бывшего офисного центра, который девелопер «Гранель» выкупил у компании «Иткол-недвижимость».
 Проект 
@@ -389,7 +389,7 @@ Apex
             <button class="fav-btn" onclick="toggleFav(this,'c9')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">физкультурно-оздоровительный</span><span class="tag kw">жилой комплекс</span><span class="tag kw">детский сад</span></div>
+          <div class="tags"><span class="tag kw">стадион</span><span class="tag kw">жилой комплекс</span><span class="tag kw">детский сад</span></div>
           <p class="card-text">На месте стадиона «Наука» на Большой Академической улице может появиться крупный жилой комплекс
 Столичные власти рассматривают проект масштабной застройки на месте бывшего стадиона «Наука» на Большой Академической улице, вл. 38. 
 В рамках проекта планируется построить более 120 000 м² жилья, а также детский сад и физкультурно-оздоровительный центр.
@@ -440,7 +440,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c11')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">метро</span><span class="tag kw">метрополитен</span></div>
+          <div class="tags"><span class="tag kw">метрополитен</span><span class="tag kw">метро</span><span class="tag kw">жилой комплекс</span></div>
           <p class="card-text">У «Садовых кварталов» в Хамовниках может появиться новый жилой комплекс
 Девелопер Capital Group ведет согласование проекта строительства жилого комплекса рядом с территорией элитного квартала «Садовые кварталы» в Хамовниках. Объект планируется возвести на месте существующего пятиэтажного офисного здания по адресу: Трубецкая улица, вл. 28, стр. 1, стр. 2 и Ефремова, вл. 10, стр.2.
 Согласно проекту, в новом комплексе будет 56 квартир, а общая площадь объекта составит около 13 000 м². В настоящее время земельный участок принадлежит фирме «Доступные решения», связанной с бывшим зятем главы «Транснефти» Андреем Болотовым.
@@ -489,7 +489,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c13')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">бассейн</span><span class="tag kw">апартаменты</span></div>
+          <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw"> жк </span><span class="tag kw">апартаменты</span></div>
           <p class="card-text">⚡️
 В рамках 
 проекта
@@ -538,7 +538,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c15')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">котлован</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">возвед</span></div>
           <p class="card-text">ПИК построит станцию метро «Луганская» на юге Москвы
 Группа компаний ПИК примет участие в строительстве станции метро «Луганская» Бирюлевской линии. В настоящее время застройщик ищет подрядчика для возведения ограждающих конструкций котлована будущей станции.
 Станция будет построена в районе Царицыно на пересечении Кавказского бульвара с Ереванской и Луганской улицами. Проект предусматривает строительство станции мелкого заложения колонного типа с береговыми платформами.
@@ -589,7 +589,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c17')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">постро</span><span class="tag kw">возвед</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">возвед</span><span class="tag kw">постро</span></div>
           <p class="card-text">Застройщик скандального бизнес-центра в Филях построит деловой центр на месте недостроя в Печатниках
 Совладелец компании-застройщика офисного комплекса «Фили Резиденс» Иван Гаврилюк стал совладельцем фирмы «СЗ «Полбина 21». Эта компания владеет участком с недостроенным гаражным комплексом на улице Полбина в районе Печатники.
 На месте долгостроя планируется возведение административно-делового центра общей площадью свыше 27 000 м². 
@@ -612,7 +612,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c18')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span><span class="tag kw">микрорайон</span></div>
+          <div class="tags"><span class="tag kw">торговый центр</span><span class="tag kw">жилой комплекс</span><span class="tag kw">микрорайон</span></div>
           <p class="card-text">📍
 Новый торговый центр открылся в ЖК «Новая жизнь – Ройка» в Кстовском районе
 ТЦ расположился у въезда в микрорайон. Его общая площадь составляет 2,6 тысячи кв. м. Само здание состоит из нескольких секций. Там обустроят магазины, кафе и помещения для администрации. Для удобства маломобильных граждан входные группы оборудовали специальными пандусами.
@@ -666,7 +666,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c20')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
           <p class="card-text">⬆️
  Топ-3 самых продаваемых жилых комплексов составлен в Нижнем Новгороде
 По данным аналитической системы 
@@ -732,7 +732,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c22')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">технопарк</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">технопарк</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
           <p class="card-text">🛒
  Дом Рукавишникова в Нижнем Новгороде продали за 69 млн рублей
 Речь идет о здании, расположенном на улице Большой Печерской. Дом был построен в 1888 году как часть городской усадьбы состоятельного купца и выполнен в стиле поздней эклектики с элементами модерна. Фасад украшен архитектурными деталями, характерными для конца XIX века. Нижегородцам этот дом хорошо известен как одно из мест действия фильма Алексея Балабанова «Жмурки» (18+).
@@ -790,7 +790,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">возвод</span><span class="tag kw">возвед</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">возвед</span><span class="tag kw">возвод</span></div>
           <p class="card-text">☑️
  Земли под 5 инвестпроектов на 859 млн рублей выделили в Нижегородской области
 Самый крупный из одобренных проектов — завод по производству быстровозводимых каркасов зданий. Предприятие появится в Городецком округе на территории в 75 тысяч кв. м. Компания «ЗМК Смольковский» планирует вложить в производство 
@@ -853,7 +853,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c26')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw"> жк </span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw"> жк </span><span class="tag kw">сдан</span></div>
           <p class="card-text">⚡
 Первый дом ЖК «Новая Львовская» построили в Нижнем Новгороде
 Это одноподъездное здание № 6 (по генплану) на улице Львовской в Автозаводском районе, которое рассчитано на 180 квартир. Покупатели могут выбрать между студиями и квартирами с двумя, тремя или четырьмя комнатами в евроформатах. Все жилые помещения сданы с полной чистовой отделкой. На первом этаже разместили 17 помещений под коммерцию. Каждое из них имеет отдельный вход с улицы.
@@ -942,7 +942,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span><span class="tag kw">реконстру</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвед</span><span class="tag kw">установк</span></div>
           <p class="card-text">💵
 Госдума разъяснила правила использования маткапитала для ремонта жилья
 Многие семьи хотели бы направить средства маткапитала на обновление своего дома, однако законодательство устанавливает для этого строгие рамки. Зампредседателя комитета Госдумы по строительству и ЖКХ Сергей Колунов в беседе с РИА Новости 
@@ -1001,7 +1001,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c31')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвед</span><span class="tag kw">установк</span></div>
           <p class="card-text">❌
 ФОК не собираются строить в Дивееве из-за низкой численности людей
 Жители села Дивеево Нижегородской области 
@@ -1071,7 +1071,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c33')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">монтаж</span><span class="tag kw">возвод</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">закладк</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">🚠
 Строительство канатной дороги через Оку в Нижнем Новгороде идет по графику
 В Нижнем Новгороде активно 
@@ -1142,7 +1142,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c35')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">бизнес-центр</span><span class="tag kw">строит</span></div>
           <p class="card-text">🏗
  
 Работа в 15 минутах от дома: на юго-востоке появится новый бизнес-центр
@@ -1275,7 +1275,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c39')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">торгово-развлекательный</span><span class="tag kw">мост</span><span class="tag kw">приступ</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">торгово-развлекательный</span><span class="tag kw">приступ</span></div>
           <p class="card-text">Девелопер Александр Кожин возвращается в Рейтинг миллиардеров "Делового Петербурга"
 Актуальная стоимость портфеля коммерческих, ресторанных и развлекательных активов бизнесмена 
 оценивается
@@ -1369,7 +1369,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c43')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">завод</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">Процесс реализации нашего проекта покрытия из клееных деревянных конструкций, выполненный по архитектурным решениям Мастерской Тотана Кузембаева. Монтаж конструкций покрытия производит компания Radiuswood, конструкции изготовлены на заводе ДСК КМК, покрашены красками компании Farbraum, кровельное покрытие от компании Tegola, а утепление пола и стен материалами компании Технониколь. Вот такой симбиоз получился - сразу семь партнеров Ассоциации Деревянного Домостроения приняли участие в строительстве данного объекта. Благодарен Заказчику строительства компании  ПАО "Татнефть" за прекрасную возможность совместно поработать на таком объекте.
  Уверен, что новый павильон проката горнолыжного обору...</p>
           <a href="https://t.me/radiuswood/733" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
@@ -1436,7 +1436,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c46')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">метро</span><span class="tag kw">мцд</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мцд</span><span class="tag kw">бизнес-центр</span></div>
           <p class="card-text">🏗
  
 На севере Москвы построят бизнес-центр по программе МПТ
@@ -1660,7 +1660,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c52')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">промышленный парк</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">промышленный парк</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏗
  
 У станции метро «Новокосино» появится новый промышленный парк
@@ -1715,7 +1715,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c54')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">монтаж</span><span class="tag kw">капитальн</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">капитальн</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">🏢
  
 С начала 2026 года КМЗ
@@ -1834,7 +1834,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c57')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">офисный центр</span><span class="tag kw">подземный паркинг</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">подземный паркинг</span><span class="tag kw">офисный центр</span></div>
           <p class="card-text">🏗
  
 В Раменках построят деловой центр почти на 4 тысячи рабочих мест
@@ -1857,7 +1857,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c58')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Челябинск</span><span class="tag city">Магнитогорск</span><span class="tag kw">завод</span><span class="tag kw">монтаж</span><span class="tag kw">капитальн</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Челябинск</span><span class="tag city">Магнитогорск</span><span class="tag kw">завод</span><span class="tag kw">капитальн</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">🏢
  КМЗ установит лифты в Челябинской области
 Резидент ОЭЗ «Технополис Москва», Карачаровский механический завод, заключил соглашение с Фондом капитального ремонта многоквартирных домов Челябинской области на поставку 
@@ -2045,7 +2045,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c63')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">школа</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">школа</span><span class="tag kw">мост</span></div>
           <p class="card-text">За 14 лет Троицкий и Новомосковский округа стали драйвером развития столицы 
 🌆
  Здесь построены десятки миллионов квадратных метров недвижимости, сформирован современный 
@@ -2081,7 +2081,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c64')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">мцд</span><span class="tag kw">мост</span></div>
+          <div class="tags"><span class="tag kw">школа</span><span class="tag kw">мост</span><span class="tag kw">жилой комплекс</span></div>
           <p class="card-text">В ТиНАО большое внимание уделяем и обновлению жилищного фонда
 Программа реновации
  идёт по установленным планам. Жители въезжают в качественные и современные 
@@ -2114,7 +2114,7 @@ VSporte
             <button class="fav-btn" onclick="toggleFav(this,'c65')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span><span class="tag kw">метро</span></div>
+          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">жилой комплекс</span><span class="tag kw"> жк </span></div>
           <p class="card-text">Продолжаем реализовывать 
 Программу реновации
  во всех округах города, включая Северо-Западный
@@ -2171,42 +2171,8 @@ VSporte
             <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
             <span class="channel-badge">@realty_rbc</span>
             
-            <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c67')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
-          <p class="card-text">🧱
-🧱
-🧱
-🧱
- Нынешние условия по льготной семейной ипотеке сохранятся до 
-1 октября 2026 года
-. Вице-премьер Марат Хуснуллин объяснил перенос сроков необходимостью «принять очень взвешенное решение» и 
-дать время гражданам, застройщикам и банкам подготовиться к изменениям программы.
-▪️
-Опрошенные «РБК Недвижимостью» эксперты считают перенос сроков 
-положительным сигналом
- для застройщиков и покупателей. По их мнению, это позволит избежать турбулентности на рынке и роста цен, сохранив уровень спроса на новостройки.
-▪️
-По мнению экспертов, изменения условий программы требуют не только оценки бюджетных затрат, но и 
-прогнозирования социально-экономического эффекта
-, поэтому решение было решено отло...</p>
-          <a href="https://t.me/realty_rbc/8492" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c68"
-             data-channel="@realty_rbc"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">@realty_rbc</span>
-            
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c68')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c67')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2243,7 +2209,7 @@ Setl Group и ССК
           <a href="https://t.me/realty_rbc/8507" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c69"
+             id="c68"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2254,7 +2220,7 @@ Setl Group и ССК
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c69')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c68')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">возвод</span><span class="tag kw">строит</span></div>
@@ -2298,7 +2264,7 @@ VK
           <a href="https://t.me/realty_rbc/8508" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c70"
+             id="c69"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2309,7 +2275,7 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c70')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c69')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2343,7 +2309,154 @@ VK
           <a href="https://t.me/realty_rbc/8511" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
+             id="c70"
+             data-channel="@realty_rbc"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@realty_rbc</span>
+            
+            <span class="date">2026-06-29</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c70')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <p class="card-text">▪️
+Какой дом можно оформить в собственность
+Дом должен быть построен до 14 мая 1998 года, использоваться для постоянного проживания, не быть самовольной постройкой, а участок — находиться в границах населенного пункта.
+▪️
+Какие понадобятся документы
+Подойдут документы, подтверждающие строительство или проживание в доме до 14 мая 1998 года: выписка из похозяйственной книги, документы о подключении к инженерным сетям, техучете или регистрации.
+▪️
+Как оформить земельный участок
+Для начала нужно проверить, стоит ли участок на кадастровом учете. Если да — подать заявление о его предоставлении, если нет — сначала образовать участок.
+▪️
+Как образовать земельный участок
+Подготовьте схему расположени...</p>
+          <a href="https://t.me/realty_rbc/8486" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
              id="c71"
+             data-channel="@realty_rbc"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@realty_rbc</span>
+            
+            <span class="date">2026-06-30</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c71')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">🧱
+🧱
+🧱
+🧱
+ Нынешние условия по льготной семейной ипотеке сохранятся до 
+1 октября 2026 года
+. Вице-премьер Марат Хуснуллин объяснил перенос сроков необходимостью «принять очень взвешенное решение» и 
+дать время гражданам, застройщикам и банкам подготовиться к изменениям программы.
+▪️
+Опрошенные «РБК Недвижимостью» эксперты считают перенос сроков 
+положительным сигналом
+ для застройщиков и покупателей. По их мнению, это позволит избежать турбулентности на рынке и роста цен, сохранив уровень спроса на новостройки.
+▪️
+По мнению экспертов, изменения условий программы требуют не только оценки бюджетных затрат, но и 
+прогнозирования социально-экономического эффекта
+, поэтому решение было решено отло...</p>
+          <a href="https://t.me/realty_rbc/8492" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c72"
+             data-channel="@realty_rbc"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@realty_rbc</span>
+            
+            <span class="date">2026-06-26</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c72')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">🧱
+🧱
+🧱
+🧱
+ После перехода ИЖС на эскроу-счета лишь 
+около 4,3 тыс. из 8 тыс.
+ подрядчиков, заявивших о готовности работать по новой схеме, вышли на реальные сделки. Из-за этого на рынке 
+возник дефицит квалифицированных подрядчиков
+, сообщили в «Дом. РФ».
+▪️
+По оценке института жилищного развития, около 
+30% 
+одобренных ипотек на строительство частного дома не доходят до выдачи именно из-за 
+невозможности найти подрядчика, работающего по эскроу-счетам.
+▪️
+Для решения проблемы «Дом. РФ» запустил программу поддержки подрядчиков с 
+поручительством
+. Ожидается, что она поможет привлечь на рынок 
+еще 500–700 компаний.
+#ипотека
+🐚
+Читать РБК Недвижимость в Telegram
+ | 
+VK
+ | Канал РБК в «
+Максе
+»</p>
+          <a href="https://t.me/realty_rbc/8468" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c73"
+             data-channel="@realty_rbc"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@realty_rbc</span>
+            
+            <span class="date">2026-06-27</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c73')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span></div>
+          <p class="card-text">▪️
+Перенос кухни в жилую комнату
+Запрещено размещать кухню над жилыми комнатами квартир соседей. За такое нарушение собственника оштрафуют 
+на 2,5 тыс. руб.,
+ а кухню обяжут вернуть в исходное положение.
+ Исключение — квартиры на первых этажах.
+▪️
+Газовая плита в неположенном месте
+Перенос газовой плиты с вмешательством в систему газоснабжения 
+нужно согласовать
+ с газовой службой и органом местного самоуправления. Без согласования грозит 
+штраф 2,5 тыс. руб.,
+ а если без специалиста газовой службы — 
+15 тыс. руб.
+▪️
+Снос стены
+Полностью сносить несущую стену между кухней и комнатой 
+запрещено
+. В несущей стене можно сделать только небольшой проем с 
+обязательным укреплением металлоконструкц...</p>
+          <a href="https://t.me/realty_rbc/8470" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c74"
              data-channel="@realty_rbc"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2354,7 +2467,7 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c71')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c74')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">новостройка</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2390,7 +2503,7 @@ VK
           <a href="https://t.me/realty_rbc/8481" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c72"
+             id="c75"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2401,10 +2514,10 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c72')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c75')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span><span class="tag kw">котлован</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span><span class="tag kw">постро</span></div>
           <p class="card-text">🧱
 🧱
 🧱
@@ -2425,119 +2538,6 @@ VK
 на 50 тыс. руб.
 «Такая динамика обусловлена инфляционными издержками: за период март–май вклю...</p>
           <a href="https://t.me/realty_rbc/8484" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c73"
-             data-channel="@realty_rbc"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">@realty_rbc</span>
-            
-            <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c73')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
-          <p class="card-text">▪️
-Какой дом можно оформить в собственность
-Дом должен быть построен до 14 мая 1998 года, использоваться для постоянного проживания, не быть самовольной постройкой, а участок — находиться в границах населенного пункта.
-▪️
-Какие понадобятся документы
-Подойдут документы, подтверждающие строительство или проживание в доме до 14 мая 1998 года: выписка из похозяйственной книги, документы о подключении к инженерным сетям, техучете или регистрации.
-▪️
-Как оформить земельный участок
-Для начала нужно проверить, стоит ли участок на кадастровом учете. Если да — подать заявление о его предоставлении, если нет — сначала образовать участок.
-▪️
-Как образовать земельный участок
-Подготовьте схему расположени...</p>
-          <a href="https://t.me/realty_rbc/8486" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c74"
-             data-channel="@realty_rbc"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">@realty_rbc</span>
-            
-            <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c74')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
-          <p class="card-text">🧱
-🧱
-🧱
-🧱
- После перехода ИЖС на эскроу-счета лишь 
-около 4,3 тыс. из 8 тыс.
- подрядчиков, заявивших о готовности работать по новой схеме, вышли на реальные сделки. Из-за этого на рынке 
-возник дефицит квалифицированных подрядчиков
-, сообщили в «Дом. РФ».
-▪️
-По оценке института жилищного развития, около 
-30% 
-одобренных ипотек на строительство частного дома не доходят до выдачи именно из-за 
-невозможности найти подрядчика, работающего по эскроу-счетам.
-▪️
-Для решения проблемы «Дом. РФ» запустил программу поддержки подрядчиков с 
-поручительством
-. Ожидается, что она поможет привлечь на рынок 
-еще 500–700 компаний.
-#ипотека
-🐚
-Читать РБК Недвижимость в Telegram
- | 
-VK
- | Канал РБК в «
-Максе
-»</p>
-          <a href="https://t.me/realty_rbc/8468" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c75"
-             data-channel="@realty_rbc"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">@realty_rbc</span>
-            
-            <span class="date">2026-06-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c75')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span></div>
-          <p class="card-text">▪️
-Перенос кухни в жилую комнату
-Запрещено размещать кухню над жилыми комнатами квартир соседей. За такое нарушение собственника оштрафуют 
-на 2,5 тыс. руб.,
- а кухню обяжут вернуть в исходное положение.
- Исключение — квартиры на первых этажах.
-▪️
-Газовая плита в неположенном месте
-Перенос газовой плиты с вмешательством в систему газоснабжения 
-нужно согласовать
- с газовой службой и органом местного самоуправления. Без согласования грозит 
-штраф 2,5 тыс. руб.,
- а если без специалиста газовой службы — 
-15 тыс. руб.
-▪️
-Снос стены
-Полностью сносить несущую стену между кухней и комнатой 
-запрещено
-. В несущей стене можно сделать только небольшой проем с 
-обязательным укреплением металлоконструкц...</p>
-          <a href="https://t.me/realty_rbc/8470" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c76"
@@ -2651,7 +2651,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c79')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> мкд</span><span class="tag kw">мост</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw"> мкд</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">В Московской области УО не смогла доказать право брать плату за заваренный мусоропровод
 #дело_подписчика
  
@@ -2807,7 +2807,7 @@ VK
             <button class="fav-btn" onclick="toggleFav(this,'c84')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw"> мкд</span><span class="tag kw">мост</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw">мост</span><span class="tag kw"> мкд</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">🍿
  В Краснодарском крае активная жительница выяснила цену своим словам в чате дома
 (новая еженедельная рубрика 
@@ -3309,21 +3309,21 @@ VK
         <div class="card "
              id="c110"
              data-channel="РБК Недвижимость"
-             data-category="Дорога / Мост"
+             data-category="Завод / Производство"
              data-cities=""
              data-contacts="0"
-             style="border-left-color:#79c0ff">
+             style="border-left-color:#f0883e">
           <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="cat-badge" style="color:#f0883e;border-color:#f0883e22;background:#f0883e18">🏭 Завод / Производство</span>
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
             <button class="fav-btn" onclick="toggleFav(this,'c110')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span></div>
-          <p class="card-text">«Домклик» оценил разницу в стоимости посуточной аренды и номера в отелеЖилье, 15:15</p>
-          <a href="https://realty.rbc.ru/news/6a44fbfa9a7947ae67fcdb5f?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">приступ</span></div>
+          <p class="card-text">Asterus приступил к развитию территории бывшего завода «Кристалл»Новости компаний, 17:58</p>
+          <a href="https://realty.rbc.ru/news/6a44f7d99a79470332660228?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c111"
@@ -3341,8 +3341,8 @@ VK
           </div>
           
           <div class="tags"><span class="tag kw">мост</span></div>
-          <p class="card-text">Какую недвижимость можно купить по цене свадьбы в МосквеЖилье, 14:22</p>
-          <a href="https://realty.rbc.ru/news/6a4277879a79473720319379?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <p class="card-text">«Домклик» оценил разницу в стоимости посуточной аренды и номера в отелеЖилье, 15:15</p>
+          <a href="https://realty.rbc.ru/news/6a44fbfa9a7947ae67fcdb5f?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c112"
@@ -3360,11 +3360,30 @@ VK
           </div>
           
           <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Какую недвижимость можно купить по цене свадьбы в МосквеЖилье, 14:22</p>
+          <a href="https://realty.rbc.ru/news/6a4277879a79473720319379?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c113"
+             data-channel="РБК Недвижимость"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c113')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
           <p class="card-text">Квартиры у Петровского парка: недвижимость в эпоху ИИГород, 12:30</p>
           <a href="https://realty.rbc.ru/news/6a390e509a79470a5cbb42eb?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c113"
+             id="c114"
              data-channel="РБК Недвижимость"
              data-category="Общее"
              data-cities=""
@@ -3375,12 +3394,434 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c113')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c114')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">строит</span></div>
           <p class="card-text">Названы застройщики — лидеры по объемам строительства жилья в МосквеОтрасль, 10:48</p>
           <a href="https://realty.rbc.ru/news/6a444d4f9a7947b54c3887c0?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c115"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities="Воронеж"
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c115')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Воронеж</span><span class="tag kw">капитальн</span></div>
+          <p class="card-text">2026-04060/ Выполнение работ по капитальному ремонту ГБУК ВО «Государственный академический Воронежский русский народный хор имени К.И. Массалитинова» по адресу: Воронежская область, г. Воронеж, ул. Д
+Заказчик: МИНИСТЕРСТВО ПО РЕГУЛИРОВАНИЮ КОНтрактНОЙ СИСТЕМЫ В СФЕРЕ ЗАКУПОК ВОРОНЕЖСКОЙ обл
+Цена: 7 000 000,00 ₽</p>
+          <a href="https://otc.ru/buy/l0131200001026003974-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c116"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c116')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">монтаж</span></div>
+          <p class="card-text">проектирование, изготовление, поставку, электромонтажные работы, проведение испытаний и пусконаладочные работы местных панелей управления и синхронизации главных распределительных устройств 10,5 кВ, щ
+Заказчик: ООО "Росатом Машиностр"
+Цена: 0,00 ₽</p>
+          <a href="https://otc.ru/buy/l4509846-4-11-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c117"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c117')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">капитальн</span></div>
+          <p class="card-text">Выполнить работы по капитальному ремонту крыльца в ДК п. Расково,
+Заказчик: МУНИЦИПАЛЬНОЕ АУ КУЛЬТУРЫ "МЕЖПОСЕЛЕНЧЕСКАЯ КЛУБНАЯ СИСТЕМА"
+Цена: 421 508,79 ₽</p>
+          <a href="https://otc.ru/buy/l1800829-2-15-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c118"
+             data-channel="ОТС.ру"
+             data-category="Дорога / Мост"
+             data-cities="Калининград"
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c118')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Калининград</span><span class="tag kw">мост</span></div>
+          <p class="card-text">на поставку изделий медицинского назначения для клинико-диагностической лаборатории(Набор для определения совместимости крови донора и реципиента и выявления аллоимунных антител)
+Заказчик: ГБУ ЗДРАВООХРАНЕНИЯ КАЛИНИНГРАДСКОЙ обл "ЧЕРНЯХОВСКАЯ ЦРБ"
+Цена: 63 945,00 ₽</p>
+          <a href="https://otc.ru/buy/l0335300018826000114-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c119"
+             data-channel="ОТС.ру"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c119')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">капитальн</span></div>
+          <p class="card-text">Выполнить работы по капитальному ремонту отмостки и устройство водосточной системы входной группы в  ДК п. Расково
+Заказчик: МУНИЦИПАЛЬНОЕ АУ КУЛЬТУРЫ "МЕЖПОСЕЛЕНЧЕСКАЯ КЛУБНАЯ СИСТЕМА"
+Цена: 282 650,38 ₽</p>
+          <a href="https://otc.ru/buy/l1800828-2-15-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c120"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities="Калининград,Киров"
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c120')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Калининград</span><span class="tag city">Киров</span><span class="tag kw">капитальн</span></div>
+          <p class="card-text">Выполнение работ по капитальному ремонту участка водопроводной сети по ул. Кирова в г. Черняховске Калининградской области (восстановление плиточного покрытия) 1 этап
+Заказчик: АДМИНИСТРАЦИЯ МУНИЦИПАЛЬНОГО ОБРАЗОВАНИЯ "ЧЕРНЯХОВСКИЙ МУНИЦИПАЛЬНЫЙ ОКРУГ КАЛИНИНГРАДСКОЙ обл"
+Цена: 7 845 295,52 ₽</p>
+          <a href="https://otc.ru/buy/l0135300007526000103-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c121"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c121')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строит</span></div>
+          <p class="card-text">Выполнение работ по проведению инженерных изысканий, разработке проектно-сметной документации, разработке рабочей документации, включая получение положительного заключения государственной экспертизы п
+Заказчик: АО "ОСОБАЯ ЭКОНОМИЧЕСКАЯ ЗОНА ТЕХНИКО-ВНЕДРЕНЧЕСКОГО ТИПА "ДУБНА"
+Цена: 44 760 826,42 ₽</p>
+          <a href="https://otc.ru/buy/l32616170150-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c122"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c122')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строит</span></div>
+          <p class="card-text">Выполнение работ по проведению инженерных изысканий, разработке проектно-сметной документации, разработке рабочей документации, включая получение положительного заключения государственной экспертизы п
+Заказчик: АО "ОСОБАЯ ЭКОНОМИЧЕСКАЯ ЗОНА ТЕХНИКО-ВНЕДРЕНЧЕСКОГО ТИПА "ДУБНА"
+Цена: 17 390 095,21 ₽</p>
+          <a href="https://otc.ru/buy/l32616170148-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c123"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities="Омск"
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c123')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">строит</span></div>
+          <p class="card-text">Поставка строительных материалов
+Заказчик: БУ ЗДРАВООХРАНЕНИЯ ОМСКОЙ обл "ОБЛАСТНОЙ КЛИНИЧЕСКИЙ ПРОТИВОТУБЕРКУЛЕЗНЫЙ ДИСПАНСЕР"
+Цена: 16 270,00 ₽</p>
+          <a href="https://otc.ru/buy/l14946033-3-9-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c124"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c124')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">установк</span></div>
+          <p class="card-text">Оказание услуг по установке системы видеонаблюдения с функцией видеоаналитикии и предоставлением доступа в облачную платформу видеонаблюдения, интегрированную с цифровой платформой учета спортивных до
+Заказчик: МКУ гСКОГО ОКРУГА КЛИН "ЦЕНТР ПРОВЕДЕНИЯ ТОРГОВ"
+Цена: 1 440 020,80 ₽</p>
+          <a href="https://otc.ru/buy/l0848300054826000102-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c125"
+             data-channel="ОТС.ру"
+             data-category="Жилой дом / ЖК"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#3fb950">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c125')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">жилой комплекс</span></div>
+          <p class="card-text">Работы по сохранению объекта культурного наследия регионального значения «Жилой комплекс Кулиевых, где в 1917-1940 годах жил народный поэт КБАССР Кулиев К.Ш.» (Старинная дом-сакля К.Ш. Кулиева), распо
+Заказчик: ГОСУДАРСТВЕННОЕ КАЗЁННОЕ УЧРЕЖДЕНИЕ КУЛЬТУРЫ "НАЦИОНАЛЬНЫЙ МУЗЕЙ КАБАРДИНО-БАЛКАРСКОЙ Респ"
+Цена: 11 938 230,00 ₽</p>
+          <a href="https://otc.ru/buy/l0304200018326000002-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c126"
+             data-channel="ОТС.ру"
+             data-category="Социальный объект"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#39d353">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c126')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">детский сад</span></div>
+          <p class="card-text">Выполнение работ по вырубке (обрезке) зеленых насаждений в рамках благоустройства территории ФГБДОУ «Детский сад общеразвивающего вида № 47»
+Заказчик: ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ДОШКОЛЬНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ "Д/С ОБЩЕРАЗВИВАЮЩЕГО ВИ
+Цена: 315 000,00 ₽</p>
+          <a href="https://otc.ru/buy/l0307100009826000014-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c127"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities="Ярославль"
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c127')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Ярославль</span><span class="tag kw">строит</span></div>
+          <p class="card-text">Выполнение проектных и комплекса ремонтно-строительных и специальных работ по проекту «Branch renovation and relocation» на объекте по адресу: г. Ярославль, проспект Ленина д. 52_III
+Заказчик: АО "ОТП Банк"
+Цена: 0,00 ₽</p>
+          <a href="https://otc.ru/buy/l4509839-4-12-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c128"
+             data-channel="ОТС.ру"
+             data-category="Социальный объект"
+             data-cities="Смоленск"
+             data-contacts="0"
+             style="border-left-color:#39d353">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c128')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Смоленск</span><span class="tag kw">больница</span><span class="tag kw">ввод в экс</span><span class="tag kw">установк</span></div>
+          <p class="card-text">1414-аэф Поставка медицинского оборудования (система управления аудиовизуальными данными/устройствами в операционной) монтаж, установку, ввод в эксплуатацию медицинского оборудования, обучение правила
+Заказчик: ГЛАВНОЕ УПРАВЛЕНИЕ СМОЛЕНСКОЙ обл ПО РЕГУЛИРОВАНИЮ КОНтрактНОЙ СИСТЕМЫ
+Цена: 32 988 150,00 ₽</p>
+          <a href="https://otc.ru/buy/l0163200000326003608-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c129"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c129')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">капитальн</span></div>
+          <p class="card-text">Оказание услуг и (или) выполнение работ по капитальному ремонту общего имущества многоквартирного дома по адресу: Кемеровская область-Кузбасс, г. Мыски, ул. 18-й квартал, д. 6
+Заказчик: МКУ "УПРАВЛЕНИЕ ЖИЛИЩНО-КОММУНАЛЬНОГО ХОЗЯЙСТВА МЫСКОВСКОГО гСКОГО ОКРУГА"
+Цена: 16 492 176,83 ₽</p>
+          <a href="https://otc.ru/buy/l083930000482600009-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c130"
+             data-channel="ОТС.ру"
+             data-category="Завод / Производство"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#f0883e">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#f0883e;border-color:#f0883e22;background:#f0883e18">🏭 Завод / Производство</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c130')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">монтаж</span><span class="tag kw">прокладк</span></div>
+          <p class="card-text">Выполнение комплекса строительно-монтажных работ по прокладке кабеля сети электроснабжения 10 кВ от ПС «Маломожайская» до ТП 2.1 на объекте: «Завод производства ячеек, модулей, паков и стационарных си
+Заказчик: АО "ТВЭЛ-СТРОЙ"
+Цена: 0,00 ₽</p>
+          <a href="https://otc.ru/buy/l4509821-4-11-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c131"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities="Курск"
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c131')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Курск</span><span class="tag kw">капитальн</span></div>
+          <p class="card-text">Выполнение работ по капитальному ремонту системы теплоснабжения в многоквартирном доме, расположенном на территории Курской области по адресу: г. Железногорск, ул. Ленина, д.32 корп.1
+Заказчик: ФОНД "РЕГИОНАЛЬНЫЙ ОПЕРАТОР ФОНДА КАПИТАЛЬНОГО РЕМОНТА МНОГОКВАРТИРНЫХ ДОМОВ КУРСКОЙ обл"
+Цена: 8 095 696,00 ₽</p>
+          <a href="https://otc.ru/buy/l074400000022603240-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c132"
+             data-channel="ОТС.ру"
+             data-category="Социальный объект"
+             data-cities="Псков"
+             data-contacts="0"
+             style="border-left-color:#39d353">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c132')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Псков</span><span class="tag kw">детский сад</span><span class="tag kw">капитальн</span><span class="tag kw">монтаж</span></div>
+          <p class="card-text">Монтаж СОУЭ (Антитеррор) и видеонаблюдения в рамках капитального ремонта в здании МБДОУ «Детский сад комбинированного вида № 40 «Ручеек», расположенного по адресу: 
+180019, Псковская область, г. Псков
+Заказчик: АДМИНИСТРАЦИЯ гА ПСКОВА
+Цена: 856 720,00 ₽</p>
+          <a href="https://otc.ru/buy/l0157300025226000284-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c133"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c133')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">монтаж</span></div>
+          <p class="card-text">поставка электроустановочных и электромонтажных материалов для эксплуатации и ремонта инженерных сетей
+Заказчик: АО «Управление административными зданиями»
+Цена: 0,00 ₽</p>
+          <a href="https://otc.ru/buy/l4509820-4-11-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c134"
+             data-channel="ОТС.ру"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">ОТС.ру</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c134')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">установк</span></div>
+          <p class="card-text">Разработка и изготовление модуля передачи пластины в установку совмещения»,
+шифр «Трек-200-МП
+Заказчик: АО "ЗЕЛЕНОГРАДСКИЙ НАНОТЕХНОЛОГИЧЕСКИЙ ЦЕНТР"
+Цена: 0,00 ₽</p>
+          <a href="https://otc.ru/buy/l4509812-4-12-1/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
   <div class="empty-state hidden" id="empty-state">
     <div class="icon">🔍</div>
