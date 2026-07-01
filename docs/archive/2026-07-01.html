@@ -93,21 +93,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <div class="header">
   <div>
     <h1>🏗 Стройдайджест</h1>
-    <div class="sub">01.07.2026 · 110 объектов · 12 каналов</div>
+    <div class="sub">01.07.2026 · 114 объектов · 13 каналов</div>
   </div>
   <div style="display:flex;gap:8px;align-items:center">
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить данные</button>
     <button class="refresh-btn" onclick="window.location.href=window.location.pathname+'?v='+Date.now()" title="Если страница не обновилась — нажми сюда">↺ Перезагрузить</button>
   </div>
 </div>
-<div class="archive-bar">📁 Архив: <a href="archive/2026-06-30.html" class="arch-link">2026-06-30</a><a href="archive/2026-06-29.html" class="arch-link">2026-06-29</a><a href="archive/2026-06-26.html" class="arch-link">2026-06-26</a><a href="archive/2026-06-25.html" class="arch-link">2026-06-25</a><a href="archive/2026-06-24.html" class="arch-link">2026-06-24</a><a href="archive/2026-06-23.html" class="arch-link">2026-06-23</a><a href="archive/2026-06-22.html" class="arch-link">2026-06-22</a><a href="archive/2026-06-19.html" class="arch-link">2026-06-19</a><a href="archive/2026-06-18.html" class="arch-link">2026-06-18</a><a href="archive/2026-06-17.html" class="arch-link">2026-06-17</a><a href="archive/2026-06-16.html" class="arch-link">2026-06-16</a><a href="archive/2026-06-15.html" class="arch-link">2026-06-15</a><a href="archive/2026-06-12.html" class="arch-link">2026-06-12</a><a href="archive/2026-06-11.html" class="arch-link">2026-06-11</a></div>
+<div class="archive-bar">📁 Архив: <a href="archive/2026-07-01.html" class="arch-link">2026-07-01</a><a href="archive/2026-06-30.html" class="arch-link">2026-06-30</a><a href="archive/2026-06-29.html" class="arch-link">2026-06-29</a><a href="archive/2026-06-26.html" class="arch-link">2026-06-26</a><a href="archive/2026-06-25.html" class="arch-link">2026-06-25</a><a href="archive/2026-06-24.html" class="arch-link">2026-06-24</a><a href="archive/2026-06-23.html" class="arch-link">2026-06-23</a><a href="archive/2026-06-22.html" class="arch-link">2026-06-22</a><a href="archive/2026-06-19.html" class="arch-link">2026-06-19</a><a href="archive/2026-06-18.html" class="arch-link">2026-06-18</a><a href="archive/2026-06-17.html" class="arch-link">2026-06-17</a><a href="archive/2026-06-16.html" class="arch-link">2026-06-16</a><a href="archive/2026-06-15.html" class="arch-link">2026-06-15</a><a href="archive/2026-06-12.html" class="arch-link">2026-06-12</a></div>
 
 <div class="search-wrap">
   <input class="search-input" id="fSearch" type="text" placeholder="🔍 Поиск по тексту новости..." oninput="applyFilter()">
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (110)</button>
+  <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все (114)</button>
   <button class="tab-btn" id="tab-favs" onclick="switchTab('favs')">★ Избранное (<span id="fav-count">0</span>)</button>
 </div>
 
@@ -127,7 +127,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <div style="display:flex;align-items:center;gap:5px">
     <label>Канал</label>
     <select id="fCh" onchange="applyFilter()">
-      <option value="">Все каналы</option><option value="@domostroynn">@domostroynn</option><option value="@gkhvsem">@gkhvsem</option><option value="@investmoscowru">@investmoscowru</option><option value="@mos_sobyanin">@mos_sobyanin</option><option value="@prommoscow">@prommoscow</option><option value="@radiuswood">@radiuswood</option><option value="@realty_rbc">@realty_rbc</option><option value="@stroi_news">@stroi_news</option><option value="АРД Эксперт">АРД Эксперт</option><option value="Абирег">Абирег</option><option value="Коммерсантъ">Коммерсантъ</option><option value="РБК Недвижимость">РБК Недвижимость</option>
+      <option value="">Все каналы</option><option value="@domostroynn">@domostroynn</option><option value="@dprunews">@dprunews</option><option value="@gkhvsem">@gkhvsem</option><option value="@investmoscowru">@investmoscowru</option><option value="@mos_sobyanin">@mos_sobyanin</option><option value="@prommoscow">@prommoscow</option><option value="@radiuswood">@radiuswood</option><option value="@realty_rbc">@realty_rbc</option><option value="@stroi_news">@stroi_news</option><option value="АРД Эксперт">АРД Эксперт</option><option value="Абирег">Абирег</option><option value="Коммерсантъ">Коммерсантъ</option><option value="РБК Недвижимость">РБК Недвижимость</option>
     </select>
   </div>
   <label class="fcontacts">
@@ -137,7 +137,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   <button onclick="resetFilter()">Сбросить</button>
 </div>
 
-<div class="stats">Показано: <b id="vis-count">110</b></div>
+<div class="stats">Показано: <b id="vis-count">114</b></div>
 
 <div class="grid" id="grid">
 
@@ -156,7 +156,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
             <button class="fav-btn" onclick="toggleFav(this,'c0')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Stone получил положительное заключение экспертизы по проекту строительства жилого комплекса на Новоданиловской набережной
 Жилой комплекс СТОУН Блик на первой линии Москвы-реки будет 
 состоять
@@ -180,7 +180,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
             <button class="fav-btn" onclick="toggleFav(this,'c1')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">офисный комплекс</span><span class="tag kw">метро</span><span class="tag kw">мост</span></div>
+          <div class="tags"><span class="tag kw">офисный комплекс</span><span class="tag kw">мост</span><span class="tag kw">метро</span></div>
           <p class="card-text">ЛСР построит офисный комплекс у метро «Нагорная»
 Входящая в Группу ЛСР компания «ЛСР. Недвижимость-М» закрыла сделку по покупке участка в Электролитном проезде недалеко от метро «Нагорная». На этом участке недавно было 
 одобрено
@@ -231,7 +231,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c3')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">бизнес-центр</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">Стройка арт-бизнес-кластера «КОБЗОН СИТИ» опережает плановые сроки
 В Басманном районе продолжается строительство единственного бизнес-центра класса «А» в пределах ТТК – «КОБЗОН СИТИ» от девелопера October Group. Работы ведутся с опережением плановых сроков.
 Текущие детали строительства: 
@@ -280,7 +280,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c5')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">постро</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">ввод в экс</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">Девелопер STONE завершил строительство бизнес-центра на первой линии ул. Вавилова и получил заключение о соответствии
 Премиальный бизнес-центр STONE Ленинский общей площадью порядка 74 тыс. м² успешно прошел проверку Мосгосстройнадзора и получил положительное заключение о соответствии (ЗОС). 
 На сегодняшний день построенный объект отвечает всем требованиям технических регламентов и проектной документации, что дает возможность получить разрешение на ввод в эксплуатацию. 
@@ -308,7 +308,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c6')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Компания Абрамовича и Харитонина построит коттеджный поселок в Сколково
 Столичные власти согласовали строительство коттеджного поселка площадью 77 000 м² на участке в 33,6 га рядом с инновационным центром «Сколково».
 Реализацией проекта займется компания «Управление недвижимостью», которой с конца 2024 года в равных долях владеют инвестиционная компания Millhouse Романа Абрамовича и «Столичная девелоперская компания», связанная с владельцем «Фармстандарта» Виктором Харитониным.
@@ -335,7 +335,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c7')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Жилой комплекс от итальянских архитекторов может появиться на Остоженке
 Итальянское архитектурное бюро Officina Architetti разработало концепцию жилого комплекса для участка на углу Коробейникова и Бутиковского переулков, который считается одной из последних на Остоженке площадок, подходящих для девелоперского проекта.
 Проект представляет собой шестиэтажное здание с плавными линиями фасадов, закругленными углами и динамичным силуэтом. В его структуру органично интегрирована часть сохранившегося фасада постройки 1901 года.
@@ -361,7 +361,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c8')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">детский сад</span><span class="tag kw">бизнес-центр</span><span class="tag kw">жилой комплекс</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">детский сад</span><span class="tag kw">бизнес-центр</span></div>
           <p class="card-text">Воскресная московская стройка: жилой комплекс «Мневники» от девелопера «Гранель»
 Жилой комплекс «Мневники» возводится на северо-западе столицы, на улице Народного Ополчения. Проект реализуется на месте бывшего офисного центра, который девелопер «Гранель» выкупил у компании «Иткол-недвижимость».
 Проект 
@@ -412,7 +412,7 @@ Apex
             <button class="fav-btn" onclick="toggleFav(this,'c10')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Как и 
 ожидалось
 , компания «СЗ «Речников», принадлежащая девелоперу Regions Development семьи Муцоевых и городской фирме «КРТ», назначена оператором комплексного развития территории на улице Речников в районе Нагатино-Садовники.
@@ -489,7 +489,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c13')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw"> жк </span><span class="tag kw">апартаменты</span></div>
+          <div class="tags"><span class="tag kw">апартаменты</span><span class="tag kw">бассейн</span><span class="tag kw"> жк </span></div>
           <p class="card-text">⚡️
 В рамках 
 проекта
@@ -514,7 +514,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c14')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Рядом с ипподромом могут построить жилой комплекс с террасами
 Госкомпания «
 Дом.рф
@@ -538,7 +538,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c15')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">ПИК построит станцию метро «Луганская» на юге Москвы
 Группа компаний ПИК примет участие в строительстве станции метро «Луганская» Бирюлевской линии. В настоящее время застройщик ищет подрядчика для возведения ограждающих конструкций котлована будущей станции.
 Станция будет построена в районе Царицыно на пересечении Кавказского бульвара с Ереванской и Луганской улицами. Проект предусматривает строительство станции мелкого заложения колонного типа с береговыми платформами.
@@ -589,7 +589,7 @@ Telegram!</p>
             <button class="fav-btn" onclick="toggleFav(this,'c17')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">Застройщик скандального бизнес-центра в Филях построит деловой центр на месте недостроя в Печатниках
 Совладелец компании-застройщика офисного комплекса «Фили Резиденс» Иван Гаврилюк стал совладельцем фирмы «СЗ «Полбина 21». Эта компания владеет участком с недостроенным гаражным комплексом на улице Полбина в районе Печатники.
 На месте долгостроя планируется возведение административно-делового центра общей площадью свыше 27 000 м². 
@@ -601,34 +601,6 @@ Telegram!</p>
              id="c18"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">@domostroynn</span>
-            
-            <span class="date">2026-06-25</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c18')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">возвед</span></div>
-          <p class="card-text">💵
-Госдума разъяснила правила использования маткапитала для ремонта жилья
-Многие семьи хотели бы направить средства маткапитала на обновление своего дома, однако законодательство устанавливает для этого строгие рамки. Зампредседателя комитета Госдумы по строительству и ЖКХ Сергей Колунов в беседе с РИА Новости 
-разъяснил ключевые различия
- между ремонтом и реконструкцией.
-Он отметил, что закон не позволяет оплачивать маткапиталом обычные ремонтные работы: замену окон, установку сантехники или косметическую отделку стен. Средства можно использовать только для тех преобразований, которые ведут к 
-увеличению общей площади жилья
-. 
-💭
-«К таким работам в частном доме относится возведение пристройки...</p>
-          <a href="https://t.me/domostroynn/6421" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c19"
-             data-channel="@domostroynn"
-             data-category="Дорога / Мост"
              data-cities="Владимир"
              data-contacts="0"
              style="border-left-color:#79c0ff">
@@ -637,10 +609,10 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c19')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c18')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Владимир</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Владимир</span><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏡
 Четыре старинных дома в Нижнем Новгороде продают с торгов за 23 млн рублей
 Четыре старинных дома 
@@ -657,7 +629,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6422" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c20"
+             id="c19"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -668,10 +640,10 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c20')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c19')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">торговый центр</span><span class="tag kw"> жк </span><span class="tag kw">микрорайон</span></div>
+          <div class="tags"><span class="tag kw">микрорайон</span><span class="tag kw">торговый центр</span><span class="tag kw"> жк </span></div>
           <p class="card-text">📍
 Новый торговый центр открылся в ЖК «Новая жизнь – Ройка» в Кстовском районе
 ТЦ расположился у въезда в микрорайон. Его общая площадь составляет 2,6 тысячи кв. м. Само здание состоит из нескольких секций. Там обустроят магазины, кафе и помещения для администрации. Для удобства маломобильных граждан входные группы оборудовали специальными пандусами.
@@ -683,7 +655,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6423" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c21"
+             id="c20"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
              data-cities=""
@@ -694,7 +666,7 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c21')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c20')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">возвед</span></div>
@@ -711,7 +683,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6424" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c22"
+             id="c21"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -722,10 +694,10 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c22')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c21')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">мост</span><span class="tag kw">монолит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
           <p class="card-text">⬆️
  Топ-3 самых продаваемых жилых комплексов составлен в Нижнем Новгороде
 По данным аналитической системы 
@@ -750,7 +722,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6427" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c23"
+             id="c22"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
              data-cities=""
@@ -761,7 +733,7 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c23')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c22')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">возвед</span></div>
@@ -777,7 +749,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6428" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c24"
+             id="c23"
              data-channel="@domostroynn"
              data-category="Завод / Производство"
              data-cities=""
@@ -788,10 +760,10 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c23')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">технопарк</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">технопарк</span><span class="tag kw">постро</span></div>
           <p class="card-text">🛒
  Дом Рукавишникова в Нижнем Новгороде продали за 69 млн рублей
 Речь идет о здании, расположенном на улице Большой Печерской. Дом был построен в 1888 году как часть городской усадьбы состоятельного купца и выполнен в стиле поздней эклектики с элементами модерна. Фасад украшен архитектурными деталями, характерными для конца XIX века. Нижегородцам этот дом хорошо известен как одно из мест действия фильма Алексея Балабанова «Жмурки» (18+).
@@ -802,7 +774,7 @@ Telegram!</p>
           <a href="https://t.me/domostroynn/6430" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c25"
+             id="c24"
              data-channel="@domostroynn"
              data-category="Социальный объект"
              data-cities=""
@@ -813,10 +785,10 @@ Telegram!</p>
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c25')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c24')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">детский сад</span><span class="tag kw">постро</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag kw">детский сад</span><span class="tag kw">стройплощ</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">✅
  Выдано разрешение на строительство первого дома по КРТ на Гребном канале
 Реализацией проекта займется московский застройщик 
@@ -835,7 +807,7 @@ Level Group
           <a href="https://t.me/domostroynn/6432" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c26"
+             id="c25"
              data-channel="@domostroynn"
              data-category="Завод / Производство"
              data-cities=""
@@ -846,10 +818,10 @@ Level Group
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c26')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c25')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">возвод</span><span class="tag kw">возвед</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">возвед</span><span class="tag kw">возвод</span></div>
           <p class="card-text">☑️
  Земли под 5 инвестпроектов на 859 млн рублей выделили в Нижегородской области
 Самый крупный из одобренных проектов — завод по производству быстровозводимых каркасов зданий. Предприятие появится в Городецком округе на территории в 75 тысяч кв. м. Компания «ЗМК Смольковский» планирует вложить в производство 
@@ -863,7 +835,7 @@ Level Group
           <a href="https://t.me/domostroynn/6435" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c27"
+             id="c26"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
              data-cities=""
@@ -874,7 +846,7 @@ Level Group
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c27')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c26')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -898,7 +870,7 @@ Level Group
           <a href="https://t.me/domostroynn/6436" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c28"
+             id="c27"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -909,10 +881,10 @@ Level Group
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-23</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c28')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c27')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">завод</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
           <p class="card-text">⚡
 Первый дом ЖК «Новая Львовская» построили в Нижнем Новгороде
 Это одноподъездное здание № 6 (по генплану) на улице Львовской в Автозаводском районе, которое рассчитано на 180 квартир. Покупатели могут выбрать между студиями и квартирами с двумя, тремя или четырьмя комнатами в евроформатах. Все жилые помещения сданы с полной чистовой отделкой. На первом этаже разместили 17 помещений под коммерцию. Каждое из них имеет отдельный вход с улицы.
@@ -925,7 +897,7 @@ Level Group
           <a href="https://t.me/domostroynn/6406" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c29"
+             id="c28"
              data-channel="@domostroynn"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -936,7 +908,7 @@ Level Group
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-24</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c28')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">подземная парковка</span><span class="tag kw">жилой комплекс</span><span class="tag kw">строит</span></div>
@@ -952,7 +924,7 @@ Level Group
           <a href="https://t.me/domostroynn/6415" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c30"
+             id="c29"
              data-channel="@domostroynn"
              data-category="Метро / Подземное"
              data-cities=""
@@ -963,7 +935,7 @@ Level Group
             <span class="channel-badge">@domostroynn</span>
             
             <span class="date">2026-06-24</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c30')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c29')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
@@ -987,6 +959,34 @@ Level Group
           <a href="https://t.me/domostroynn/6416" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
+             id="c30"
+             data-channel="@domostroynn"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@domostroynn</span>
+            
+            <span class="date">2026-06-25</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c30')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">установк</span></div>
+          <p class="card-text">💵
+Госдума разъяснила правила использования маткапитала для ремонта жилья
+Многие семьи хотели бы направить средства маткапитала на обновление своего дома, однако законодательство устанавливает для этого строгие рамки. Зампредседателя комитета Госдумы по строительству и ЖКХ Сергей Колунов в беседе с РИА Новости 
+разъяснил ключевые различия
+ между ремонтом и реконструкцией.
+Он отметил, что закон не позволяет оплачивать маткапиталом обычные ремонтные работы: замену окон, установку сантехники или косметическую отделку стен. Средства можно использовать только для тех преобразований, которые ведут к 
+увеличению общей площади жилья
+. 
+💭
+«К таким работам в частном доме относится возведение пристройки...</p>
+          <a href="https://t.me/domostroynn/6421" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
              id="c31"
              data-channel="@domostroynn"
              data-category="Дорога / Мост"
@@ -1001,7 +1001,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c31')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">установк</span></div>
           <p class="card-text">❌
 ФОК не собираются строить в Дивееве из-за низкой численности людей
 Жители села Дивеево Нижегородской области 
@@ -1031,7 +1031,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c32')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">приступ</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">приступ</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏗
 Амфитеатр и пешеходный мост построят в сквере в Новинках по программе ФКГС
 Сквер в поселке Новинки Нижнего Новгорода 
@@ -1071,7 +1071,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c33')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">монолит</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">монтаж</span><span class="tag kw">строит</span></div>
           <p class="card-text">🚠
 Строительство канатной дороги через Оку в Нижнем Новгороде идет по графику
 В Нижнем Новгороде активно 
@@ -1142,7 +1142,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c35')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">бизнес-центр</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">🏗
  
 Работа в 15 минутах от дома: на юго-востоке появится новый бизнес-центр
@@ -1172,7 +1172,7 @@ Level Group
             <button class="fav-btn" onclick="toggleFav(this,'c36')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span><span class="tag kw">введ</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span><span class="tag kw">строит</span><span class="tag kw">введ</span></div>
           <p class="card-text">🐎
  
 Где в Москве создают новые рабочие места
@@ -1262,6 +1262,30 @@ Level Group
         </div>
         <div class="card "
              id="c39"
+             data-channel="@dprunews"
+             data-category="Офис / ТЦ"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏢 Офис / ТЦ</span>
+            <span class="channel-badge">@dprunews</span>
+            
+            <span class="date">2026-07-01</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c39')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">торгово-развлекательный</span><span class="tag kw">мост</span><span class="tag kw">приступ</span></div>
+          <p class="card-text">Девелопер Александр Кожин возвращается в Рейтинг миллиардеров "Делового Петербурга"
+Актуальная стоимость портфеля коммерческих, ресторанных и развлекательных активов бизнесмена 
+оценивается
+ аналитиками издания примерно в 11,45 млрд рублей. 
+Основным объектом в структуре капитала предпринимателя выступает флагманский торгово-развлекательный комплекс с аквапарком "Питерлэнд" на Приморском проспекте площадью 168,5 тыс. м2. Александр Кожин контролирует объект через ООО "Стрёмберг", где ему принадлежит 51% долей. На балансе компании зафиксирован чистый убыток за 2025 год в размере 1,04 млрд рублей, однако операционные структуры холдинга показывают высокую доходность.
+В частности, ООО "Питерлэнд ...</p>
+          <a href="https://t.me/dprunews/63557" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c40"
              data-channel="@radiuswood"
              data-category="Спортивный объект"
              data-cities=""
@@ -1272,7 +1296,7 @@ Level Group
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2025-02-21</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c39')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c40')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">бассейн</span><span class="tag kw">приступ</span></div>
@@ -1282,7 +1306,7 @@ Level Group
           <a href="https://t.me/radiuswood/745" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c40"
+             id="c41"
              data-channel="@radiuswood"
              data-category="Метро / Подземное"
              data-cities="Санкт-Петербург"
@@ -1293,7 +1317,7 @@ Level Group
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2025-04-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c40')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c41')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span><span class="tag kw">реконстру</span></div>
@@ -1305,7 +1329,7 @@ Level Group
           <a href="https://t.me/radiuswood/749" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c41"
+             id="c42"
              data-channel="@radiuswood"
              data-category="Социальный объект"
              data-cities=""
@@ -1316,10 +1340,10 @@ Level Group
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2025-04-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c41')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c42')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">университет</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">университет</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">Проект Kibi Kogen N Square от бюро
  Kengo Kuma and Associates 
 расположен в Кибичуо, префектура Окаяма, Япония. 
@@ -1331,7 +1355,7 @@ Level Group
           <a href="https://t.me/radiuswood/753" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c42"
+             id="c43"
              data-channel="@radiuswood"
              data-category="Завод / Производство"
              data-cities=""
@@ -1342,7 +1366,7 @@ Level Group
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2024-11-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c42')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c43')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">завод</span><span class="tag kw">мост</span><span class="tag kw">монтаж</span></div>
@@ -1351,7 +1375,7 @@ Level Group
           <a href="https://t.me/radiuswood/733" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c43"
+             id="c44"
              data-channel="@radiuswood"
              data-category="Спортивный объект"
              data-cities=""
@@ -1362,7 +1386,7 @@ Level Group
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2024-09-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c43')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c44')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">арена</span><span class="tag kw">строит</span></div>
@@ -1378,7 +1402,7 @@ VSporte
           <a href="https://t.me/radiuswood/712" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c44"
+             id="c45"
              data-channel="@radiuswood"
              data-category="Социальный объект"
              data-cities=""
@@ -1389,7 +1413,7 @@ VSporte
             <span class="channel-badge">@radiuswood</span>
             
             <span class="date">2024-10-24</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c44')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c45')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">университет</span><span class="tag kw">строит</span></div>
@@ -1398,7 +1422,7 @@ VSporte
           <a href="https://t.me/radiuswood/718" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c45"
+             id="c46"
              data-channel="@investmoscowru"
              data-category="Офис / ТЦ"
              data-cities=""
@@ -1409,10 +1433,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-23</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c45')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c46')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мцд</span><span class="tag kw">метро</span><span class="tag kw">бизнес-центр</span></div>
+          <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">мцд</span><span class="tag kw">метро</span></div>
           <p class="card-text">🏗
  
 На севере Москвы построят бизнес-центр по программе МПТ
@@ -1424,7 +1448,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5580" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c46"
+             id="c47"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities="Москва"
@@ -1435,10 +1459,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c46')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c47')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span><span class="tag kw">введ</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span><span class="tag kw">строит</span><span class="tag kw">введ</span></div>
           <p class="card-text">🐎
  
 Где в Москве создают новые рабочие места
@@ -1464,7 +1488,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5587" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c47"
+             id="c48"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1475,7 +1499,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c47')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c48')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">технопарк</span><span class="tag kw">установк</span></div>
@@ -1518,7 +1542,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5589" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c48"
+             id="c49"
              data-channel="@investmoscowru"
              data-category="Метро / Подземное"
              data-cities="Москва"
@@ -1529,7 +1553,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c48')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c49')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Москва</span><span class="tag kw">метро</span><span class="tag kw">установк</span></div>
@@ -1541,7 +1565,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5595" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c49"
+             id="c50"
              data-channel="@investmoscowru"
              data-category="Дорога / Мост"
              data-cities=""
@@ -1552,7 +1576,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c49')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c50')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">монтаж</span></div>
@@ -1599,7 +1623,30 @@ VSporte
           <a href="https://t.me/investmoscowru/5596" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c50"
+             id="c51"
+             data-channel="@investmoscowru"
+             data-category="Завод / Производство"
+             data-cities="Москва"
+             data-contacts="0"
+             style="border-left-color:#f0883e">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#f0883e;border-color:#f0883e22;background:#f0883e18">🏭 Завод / Производство</span>
+            <span class="channel-badge">@investmoscowru</span>
+            
+            <span class="date">2026-07-01</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c51')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag city">Москва</span><span class="tag kw">завод</span><span class="tag kw">приступ</span></div>
+          <p class="card-text">🏢
+ 
+Сервисный центр Карачаровского механического завода сопровождает почти 4 000 лифтов в Москве
+В июне Карачаровский механический завод приступил к техническому сопровождению ещё 268 лифтов в жилых домах Москвы. Общее число оборудования, работу которого обеспечивает предприятие в столице, достигло почти четырёх тысяч единиц.
+«Столичные производители активно развивают компетенции в сфере эксплуатации и технического сопровождения оборудования. В июне подразделение Карачаровского механического завода приняло на обслуживание 268 лифтов. Специалисты сервисного центра КМЗ выполняют работы как на лифтах собственного производства, так и на оборудовании других производителей — всего почти четырёх ты...</p>
+          <a href="https://t.me/investmoscowru/5597" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c52"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1610,10 +1657,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-15</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c50')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c52')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">промышленный парк</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">промышленный парк</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">🏗
  
 У станции метро «Новокосино» появится новый промышленный парк
@@ -1622,7 +1669,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5560" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c51"
+             id="c53"
              data-channel="@investmoscowru"
              data-category="Метро / Подземное"
              data-cities=""
@@ -1633,7 +1680,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c51')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c53')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мцд</span><span class="tag kw">метро</span><span class="tag kw">монтаж</span></div>
@@ -1654,7 +1701,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5562" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c52"
+             id="c54"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1665,10 +1712,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-16</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c52')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c54')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">монтаж</span><span class="tag kw">капитальн</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">капитальн</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">🏢
  
 С начала 2026 года КМЗ
@@ -1683,7 +1730,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5563" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c53"
+             id="c55"
              data-channel="@investmoscowru"
              data-category="Метро / Подземное"
              data-cities=""
@@ -1694,7 +1741,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-16</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c53')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c55')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
@@ -1716,7 +1763,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5564" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c54"
+             id="c56"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1727,7 +1774,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-16</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c54')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c56')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">завод</span><span class="tag kw">строит</span></div>
@@ -1773,7 +1820,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5566" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c55"
+             id="c57"
              data-channel="@investmoscowru"
              data-category="Офис / ТЦ"
              data-cities=""
@@ -1784,10 +1831,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-17</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c55')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c57')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">офисный центр</span><span class="tag kw">метро</span><span class="tag kw">подземный паркинг</span></div>
+          <div class="tags"><span class="tag kw">офисный центр</span><span class="tag kw">подземный паркинг</span><span class="tag kw">метро</span></div>
           <p class="card-text">🏗
  
 В Раменках построят деловой центр почти на 4 тысячи рабочих мест
@@ -1796,7 +1843,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5567" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c56"
+             id="c58"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities="Москва,Челябинск,Магнитогорск"
@@ -1807,10 +1854,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-19</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c56')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c58')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Челябинск</span><span class="tag city">Магнитогорск</span><span class="tag kw">завод</span><span class="tag kw">монтаж</span><span class="tag kw">капитальн</span></div>
+          <div class="tags"><span class="tag city">Москва</span><span class="tag city">Челябинск</span><span class="tag city">Магнитогорск</span><span class="tag kw">завод</span><span class="tag kw">капитальн</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">🏢
  КМЗ установит лифты в Челябинской области
 Резидент ОЭЗ «Технополис Москва», Карачаровский механический завод, заключил соглашение с Фондом капитального ремонта многоквартирных домов Челябинской области на поставку 
@@ -1819,7 +1866,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5572" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c57"
+             id="c59"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities="Москва,Челябинск"
@@ -1830,7 +1877,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-19</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c57')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c59')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Москва</span><span class="tag city">Челябинск</span><span class="tag kw">завод</span><span class="tag kw">приступ</span></div>
@@ -1878,7 +1925,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5573" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c58"
+             id="c60"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1889,7 +1936,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-11</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c58')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c60')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">завод</span><span class="tag kw">строит</span></div>
@@ -1901,7 +1948,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5541" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c59"
+             id="c61"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities=""
@@ -1912,10 +1959,10 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-12</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c59')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c61')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">технопарк</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag kw">технопарк</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">📈
  
 Более 15 миллиардов рублей инвестиций в рамках МаИП направлено на создание промышленных технопарков столицы в 2026 году
@@ -1934,7 +1981,7 @@ VSporte
           <a href="https://t.me/investmoscowru/5545" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c60"
+             id="c62"
              data-channel="@investmoscowru"
              data-category="Завод / Производство"
              data-cities="Москва"
@@ -1945,7 +1992,7 @@ VSporte
             <span class="channel-badge">@investmoscowru</span>
             
             <span class="date">2026-06-14</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c60')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c62')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Москва</span><span class="tag kw">технопарк</span><span class="tag kw">введ</span></div>
@@ -1984,7 +2031,43 @@ VSporte
           <a href="https://t.me/investmoscowru/5549" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c61"
+             id="c63"
+             data-channel="@mos_sobyanin"
+             data-category="Социальный объект"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#39d353">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#39d353;border-color:#39d35322;background:#39d35318">🏥 Социальный объект</span>
+            <span class="channel-badge">@mos_sobyanin</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c63')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">школа</span><span class="tag kw">метро</span></div>
+          <p class="card-text">За 14 лет Троицкий и Новомосковский округа стали драйвером развития столицы 
+🌆
+ Здесь построены десятки миллионов квадратных метров недвижимости, сформирован современный 
+транспортный каркас
+ с 
+линиями
+ и станциями метро. Реализуются крупные, уникальные проекты в высокотехнологичной 
+промышленности
+, имеющие большое значение для нашей страны. 
+Благодаря качественной городской 
+инфраструктуре
+, новым рабочим местам, хорошей экологии горожане всё чаще выбирают ТиНАО для жизни. За эти годы его население выросло почти в 4 раза. 
+✔️
+ В развитие ТиНАО постоянно инвестируют и город, и 
+бизнес
+. В частности, за счёт бюджетных средств построили 
+новое здание школы искусств в Филимонковском районе
+. ...</p>
+          <a href="https://t.me/mos_sobyanin/20577" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c64"
              data-channel="@mos_sobyanin"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -1995,7 +2078,40 @@ VSporte
             <span class="channel-badge">@mos_sobyanin</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c61')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c64')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">школа</span><span class="tag kw">мцд</span></div>
+          <p class="card-text">В ТиНАО большое внимание уделяем и обновлению жилищного фонда
+Программа реновации
+ идёт по установленным планам. Жители въезжают в качественные и современные 
+новые дома
+.
+Возвели 
+новый жилой комплекс на ул. Чапаева, 4
+. Он расположен недалеко от станции Щербинка МЦД-2. В пешей доступности — школы, детские сады, медучреждения, магазины, спортклубы.
+🔑
+ В квартиры с улучшенной отделкой переедут 56 семей из трёх домов по улице Мостотреста: №14, №16 и №18.
+Ещё один важный объект для ТиНАО — 
+Культурно-досуговый центр "Шишкин Лес"
+, который, уверен, станет новой точкой притяжения местных жителей.
+📍
+ Построили его в одноимённом посёлке Краснопахорского района в рамках Адресной инвестиционной прог...</p>
+          <a href="https://t.me/mos_sobyanin/20586" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c65"
+             data-channel="@mos_sobyanin"
+             data-category="Жилой дом / ЖК"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#3fb950">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
+            <span class="channel-badge">@mos_sobyanin</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c65')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">метро</span><span class="tag kw">жилой комплекс</span></div>
@@ -2013,7 +2129,7 @@ VSporte
           <a href="https://t.me/mos_sobyanin/20557" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c62"
+             id="c66"
              data-channel="@mos_sobyanin"
              data-category="Метро / Подземное"
              data-cities=""
@@ -2024,7 +2140,7 @@ VSporte
             <span class="channel-badge">@mos_sobyanin</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c62')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c66')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мцд</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
@@ -2045,43 +2161,7 @@ VSporte
           <a href="https://t.me/mos_sobyanin/20554" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c63"
-             data-channel="@mos_sobyanin"
-             data-category="Метро / Подземное"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#d2a8ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#d2a8ff;border-color:#d2a8ff22;background:#d2a8ff18">🚇 Метро / Подземное</span>
-            <span class="channel-badge">@mos_sobyanin</span>
-            
-            <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c63')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">тоннель</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
-          <p class="card-text">Начали строительство 
-станции "Южный порт"
- Люблинско-Дмитровской линии метро
- 
-🏗
- Она будет находиться на развивающейся территории бывшей промзоны "Южный порт" и улучшит транспортную доступность Южнопортового района.
- 
-Станция строится открытым способом на перегоне между "Кожуховской" и 
-"Печатниками"
-. Запланированы две береговые платформы и два наземных вестибюля.
- 
-Завершить строительство рассчитываем в 2030 году
-. После благоустроим прилегающую территорию, сделаем удобную пешеходную сеть для пассажиров.
- 
-🛣
- Кроме того, 
-над станционным комплексом будет автодорожный тоннель
-. Он протянется от 2-го Южнопортового проезда до Южнопортовой улицы и станет частью новой магистрали, связывающей ...</p>
-          <a href="https://t.me/mos_sobyanin/20536" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c64"
+             id="c67"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2092,7 +2172,7 @@ VSporte
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c64')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c67')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2115,7 +2195,7 @@ VSporte
           <a href="https://t.me/realty_rbc/8492" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c65"
+             id="c68"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2126,7 +2206,7 @@ VSporte
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c65')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c68')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2163,7 +2243,7 @@ Setl Group и ССК
           <a href="https://t.me/realty_rbc/8507" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c66"
+             id="c69"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2174,7 +2254,7 @@ Setl Group и ССК
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-07-01</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c66')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c69')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">возвод</span></div>
@@ -2218,7 +2298,52 @@ VK
           <a href="https://t.me/realty_rbc/8508" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c67"
+             id="c70"
+             data-channel="@realty_rbc"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">@realty_rbc</span>
+            
+            <span class="date">2026-07-01</span>
+            <button class="fav-btn" onclick="toggleFav(this,'c70')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">▪️
+Совет Федерации одобрил закон, который вводит механизм жилищно-накопительных вкладов. Любой гражданин сможет 
+открыть пополняемый вклад сроком не менее трех лет 
+и использовать накопленные средства
+ для улучшения жилищных условий.
+▪️
+На весь срок действия вклада будет застраховано 
+100% суммы
+ в пределах 
+10 млн руб.
+ Для сравнения, лимит страхования по обычным банковским вкладам составляет 
+1,4 млн руб.
+▪️
+Накопленные средства можно будет направить на покупку квартиры
+ в новостройке или строительство частного дома
+, а также использовать 
+для первоначального взноса,
+ погашения основного 
+долга или процентов по ипотеке.
+#законы
+ 
+🐚
+Читать РБК Недвижимость в Telegram
+ | 
+VK
+ | Канал РБК в 
+...</p>
+          <a href="https://t.me/realty_rbc/8511" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c71"
              data-channel="@realty_rbc"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2229,10 +2354,10 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c67')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c71')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">новостройка</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">новостройка</span><span class="tag kw">строит</span></div>
           <p class="card-text">19 июня ЦБ снизил ключевую ставку на 
 0,25 п.п.
  За неделю после этого решения средние рыночные ставки по ипотеке снизились только в сегменте новостроек — на 
@@ -2265,7 +2390,7 @@ VK
           <a href="https://t.me/realty_rbc/8481" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c68"
+             id="c72"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2276,10 +2401,10 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c68')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c72')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">установк</span></div>
           <p class="card-text">🧱
 🧱
 🧱
@@ -2302,7 +2427,7 @@ VK
           <a href="https://t.me/realty_rbc/8484" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c69"
+             id="c73"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2313,10 +2438,10 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c69')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c73')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">постро</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span><span class="tag kw">постро</span></div>
           <p class="card-text">▪️
 Какой дом можно оформить в собственность
 Дом должен быть построен до 14 мая 1998 года, использоваться для постоянного проживания, не быть самовольной постройкой, а участок — находиться в границах населенного пункта.
@@ -2332,7 +2457,7 @@ VK
           <a href="https://t.me/realty_rbc/8486" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c70"
+             id="c74"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2343,7 +2468,7 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-26</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c70')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c74')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2377,7 +2502,7 @@ VK
           <a href="https://t.me/realty_rbc/8468" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c71"
+             id="c75"
              data-channel="@realty_rbc"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2388,7 +2513,7 @@ VK
             <span class="channel-badge">@realty_rbc</span>
             
             <span class="date">2026-06-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c71')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c75')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">установк</span></div>
@@ -2415,7 +2540,7 @@ VK
           <a href="https://t.me/realty_rbc/8470" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c72"
+             id="c76"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2426,7 +2551,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-05</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c72')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c76')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw"> мкд</span><span class="tag kw">строит</span></div>
@@ -2457,7 +2582,7 @@ VK
           <a href="https://t.me/gkhvsem/4291" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c73"
+             id="c77"
              data-channel="@gkhvsem"
              data-category="Дорога / Мост"
              data-cities="Киров"
@@ -2468,7 +2593,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-08</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c73')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c77')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Киров</span><span class="tag kw">мост</span><span class="tag kw">капитальн</span></div>
@@ -2487,7 +2612,7 @@ VK
           <a href="https://t.me/gkhvsem/4292" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c74"
+             id="c78"
              data-channel="@gkhvsem"
              data-category="Дорога / Мост"
              data-cities="Киров,Екатеринбург"
@@ -2498,7 +2623,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-19</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c74')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c78')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Киров</span><span class="tag city">Екатеринбург</span><span class="tag kw">мост</span><span class="tag kw">прокладк</span></div>
@@ -2512,7 +2637,7 @@ VK
           <a href="https://t.me/gkhvsem/4302" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c75"
+             id="c79"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2523,10 +2648,10 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-22</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c75')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c79')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw"> мкд</span><span class="tag kw">мост</span><span class="tag kw">монтаж</span></div>
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw"> мкд</span><span class="tag kw">монтаж</span></div>
           <p class="card-text">В Московской области УО не смогла доказать право брать плату за заваренный мусоропровод
 #дело_подписчика
  
@@ -2539,7 +2664,7 @@ VK
           <a href="https://t.me/gkhvsem/4303" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c76"
+             id="c80"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities="Калининград"
@@ -2550,7 +2675,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c76')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c80')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Калининград</span><span class="tag kw"> мкд</span><span class="tag kw">капитальн</span></div>
@@ -2567,7 +2692,7 @@ VK
           <a href="https://t.me/gkhvsem/4308" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c77"
+             id="c81"
              data-channel="@gkhvsem"
              data-category="Офис / ТЦ"
              data-cities=""
@@ -2578,7 +2703,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c77')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c81')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">бизнес-центр</span><span class="tag kw">установк</span></div>
@@ -2595,7 +2720,7 @@ VK
           <a href="https://t.me/gkhvsem/4310" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c78"
+             id="c82"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities="Саратов"
@@ -2606,10 +2731,10 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-05-20</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c78')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c82')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Саратов</span><span class="tag kw">метро</span><span class="tag kw"> мкд</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag city">Саратов</span><span class="tag kw"> мкд</span><span class="tag kw">метро</span><span class="tag kw">строит</span></div>
           <p class="card-text">В Саратове провайдер проиграл суд, пытаясь доказать, что строительные нормы по прокладке кабелей — это «дело добровольное»
 ТСЖ «Семейный» обратилось в суд с иском к АО «Эр-Телеком Холдинг». Товарищество требовало привести оборудование связи в надлежащее состояние: устранить провисание проводов в подъездах и проложить их по правилам — в кабель-каналах и плинтусах.
 Предыстория
@@ -2620,7 +2745,7 @@ VK
           <a href="https://t.me/gkhvsem/4272" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c79"
+             id="c83"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities="Санкт-Петербург"
@@ -2631,7 +2756,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-05-22</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c79')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c83')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw"> мкд</span><span class="tag kw">строит</span></div>
@@ -2668,7 +2793,7 @@ VK
           <a href="https://t.me/gkhvsem/4275" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c80"
+             id="c84"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities="Краснодар"
@@ -2679,10 +2804,10 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-06-02</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c80')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c84')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw"> мкд</span><span class="tag kw">мост</span><span class="tag kw">разрешени</span></div>
+          <div class="tags"><span class="tag city">Краснодар</span><span class="tag kw">мост</span><span class="tag kw"> мкд</span><span class="tag kw">разрешени</span></div>
           <p class="card-text">🍿
  В Краснодарском крае активная жительница выяснила цену своим словам в чате дома
 (новая еженедельная рубрика 
@@ -2698,7 +2823,7 @@ VK
           <a href="https://t.me/gkhvsem/4287" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c81"
+             id="c85"
              data-channel="@gkhvsem"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2709,7 +2834,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-04-27</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c81')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c85')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw"> мкд</span><span class="tag kw">строит</span></div>
@@ -2722,7 +2847,7 @@ VK
           <a href="https://t.me/gkhvsem/4241" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c82"
+             id="c86"
              data-channel="@gkhvsem"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2733,7 +2858,7 @@ VK
             <span class="channel-badge">@gkhvsem</span>
             
             <span class="date">2026-04-28</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c82')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c86')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">монтаж</span><span class="tag kw">строит</span></div>
@@ -2745,7 +2870,26 @@ VK
           <a href="https://t.me/gkhvsem/4255" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c83"
+             id="c87"
+             data-channel="Коммерсантъ"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">Коммерсантъ</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c87')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
+          <p class="card-text">В Белорецком районе шестой год пытаются найти строителей моста в Азнагулово</p>
+          <a href="https://www.kommersant.ru/doc/8781206" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c88"
              data-channel="Коммерсантъ"
              data-category="Завод / Производство"
              data-cities=""
@@ -2756,7 +2900,7 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c83')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c88')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">завод</span><span class="tag kw">строит</span></div>
@@ -2764,26 +2908,7 @@ VK
           <a href="https://www.kommersant.ru/doc/8780253" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c84"
-             data-channel="Коммерсантъ"
-             data-category="Завод / Производство"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#f0883e">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#f0883e;border-color:#f0883e22;background:#f0883e18">🏭 Завод / Производство</span>
-            <span class="channel-badge">Коммерсантъ</span>
-            
-            <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c84')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">приступ</span><span class="tag kw">строит</span></div>
-          <p class="card-text">«Русал» приступит к строительству завода фольги в Хакасии в 2026 году</p>
-          <a href="https://www.kommersant.ru/doc/8780271" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c85"
+             id="c89"
              data-channel="Коммерсантъ"
              data-category="Дорога / Мост"
              data-cities="Саратов"
@@ -2794,7 +2919,7 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2017-06-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c85')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c89')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Саратов</span><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2802,7 +2927,7 @@ VK
           <a href="https://www.kommersant.ru/doc/3338054" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c86"
+             id="c90"
              data-channel="Коммерсантъ"
              data-category="Завод / Производство"
              data-cities=""
@@ -2813,15 +2938,15 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2026-06-30</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c86')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c90')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">приступ</span><span class="tag kw">строит</span></div>
+          <div class="tags"><span class="tag kw">завод</span><span class="tag kw">строит</span><span class="tag kw">приступ</span></div>
           <p class="card-text">«Русал» приступит к строительству завода фольги в Хакасии в 2026 году</p>
           <a href="https://www.kommersant.ru/doc/8780270" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c87"
+             id="c91"
              data-channel="Коммерсантъ"
              data-category="Дорога / Мост"
              data-cities="Омск"
@@ -2832,15 +2957,15 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2015-04-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c87')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c91')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">В Омске построят автодорогу от метромоста до улицы Перелета</p>
           <a href="https://www.kommersant.ru/doc/2719086" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c88"
+             id="c92"
              data-channel="Коммерсантъ"
              data-category="Дорога / Мост"
              data-cities=""
@@ -2851,7 +2976,7 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2015-04-29</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c88')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c92')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span><span class="tag kw">строит</span></div>
@@ -2859,7 +2984,7 @@ VK
           <a href="https://www.kommersant.ru/doc/2719082" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c89"
+             id="c93"
              data-channel="Коммерсантъ"
              data-category="Дорога / Мост"
              data-cities="Омск"
@@ -2870,15 +2995,15 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date">2015-04-28</span>
-            <button class="fav-btn" onclick="toggleFav(this,'c89')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c93')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">метро</span><span class="tag kw">мост</span><span class="tag kw">постро</span></div>
+          <div class="tags"><span class="tag city">Омск</span><span class="tag kw">мост</span><span class="tag kw">метро</span><span class="tag kw">постро</span></div>
           <p class="card-text">В Омске построят автодорогу от метромоста до улицы Перелета</p>
           <a href="https://www.kommersant.ru/doc/2718609" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c90"
+             id="c94"
              data-channel="Коммерсантъ"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -2889,7 +3014,7 @@ VK
             <span class="channel-badge">Коммерсантъ</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c90')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c94')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw"> жк </span><span class="tag kw">строит</span></div>
@@ -2897,7 +3022,7 @@ VK
           <a href="https://www.kommersant.ru/doc/8443509" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c91"
+             id="c95"
              data-channel="Абирег"
              data-category="Спортивный объект"
              data-cities="Воронеж"
@@ -2908,7 +3033,7 @@ VK
             <span class="channel-badge">Абирег</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c91')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c95')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Воронеж</span><span class="tag kw">стадион</span><span class="tag kw">строит</span></div>
@@ -2916,7 +3041,7 @@ VK
           <a href="https://abireg.ru/newsitem/115217/" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c92"
+             id="c96"
              data-channel="АРД Эксперт"
              data-category="Водные объекты / Резервуары"
              data-cities=""
@@ -2927,7 +3052,7 @@ VK
             <span class="channel-badge">АРД Эксперт</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c92')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c96')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">резервуар</span><span class="tag kw">строит</span></div>
@@ -2935,118 +3060,42 @@ VK
           <a href="https://ardexpert.ru/article/29269" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c93"
-             data-channel="АРД Эксперт"
-             data-category="Жилой дом / ЖК"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#3fb950">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
-            <span class="channel-badge">АРД Эксперт</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c93')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">жилой комплекс</span></div>
-          <p class="card-text">Первый жилой комплекса бизнес-класса на Сахалине утепляют надежной каменной ватой ТЕХНОНИКОЛЬ</p>
-          <a href="https://ardexpert.ru/article/29263" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c94"
-             data-channel="РБК Недвижимость"
-             data-category="Дорога / Мост"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">РБК Недвижимость</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c94')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">мост</span></div>
-          <p class="card-text">Квартиры у Петровского парка: недвижимость в эпоху ИИ</p>
-          <a href="https://realty.rbc.ru/news/6a390e509a79470a5cbb42eb" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c95"
-             data-channel="РБК Недвижимость"
-             data-category="Дорога / Мост"
-             data-cities="Санкт-Петербург"
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">РБК Недвижимость</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c95')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw">мост</span></div>
-          <p class="card-text">В «Домклик» оценили ипотечный спрос на недвижимость Санкт-Петербурга</p>
-          <a href="https://realty.rbc.ru/news/6a439e039a79473a5f03a16c" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c96"
-             data-channel="РБК Недвижимость"
-             data-category="Общее"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#58a6ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
-            <span class="channel-badge">РБК Недвижимость</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c96')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">строит</span></div>
-          <p class="card-text">Режим экономии: во сколько обойдется строительство дома летом 2026-гоЭксклюзив</p>
-          <a href="https://realty.rbc.ru/news/6a3e71609a79475ed07c5639" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
              id="c97"
              data-channel="РБК Недвижимость"
-             data-category="Жилой дом / ЖК"
+             data-category="Дорога / Мост"
              data-cities=""
              data-contacts="0"
-             style="border-left-color:#3fb950">
+             style="border-left-color:#79c0ff">
           <div class="card-header">
-            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
             <button class="fav-btn" onclick="toggleFav(this,'c97')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">новостройка</span></div>
-          <p class="card-text">ЦБ оценил ценовой разрыв между новостройками и вторичкой в 9–18%</p>
-          <a href="https://realty.rbc.ru/news/6a3e608c9a79474fe4acda1a" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Какую недвижимость можно купить по цене свадьбы в Москве</p>
+          <a href="https://realty.rbc.ru/news/6a4277879a79473720319379" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c98"
              data-channel="РБК Недвижимость"
-             data-category="Общее"
+             data-category="Дорога / Мост"
              data-cities=""
              data-contacts="0"
-             style="border-left-color:#58a6ff">
+             style="border-left-color:#79c0ff">
           <div class="card-header">
-            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
             <button class="fav-btn" onclick="toggleFav(this,'c98')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">строит</span></div>
-          <p class="card-text">Как обустроить стильную зону отдыха на даче в 2026 году</p>
-          <a href="https://realty.rbc.ru/news/6a26c97f9a7947537219ea9c" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">«Домклик» оценил разницу в стоимости посуточной аренды и номера в отеле</p>
+          <a href="https://realty.rbc.ru/news/6a44fbfa9a7947ae67fcdb5f" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c99"
@@ -3064,8 +3113,8 @@ VK
           </div>
           
           <div class="tags"><span class="tag kw">мост</span></div>
-          <p class="card-text">Превзойти депозиты: в какую недвижимость инвестировать в 2026 годуЭксклюзив</p>
-          <a href="https://realty.rbc.ru/news/6a39e0769a79478e356935c5" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <p class="card-text">Квартиры у Петровского парка: недвижимость в эпоху ИИ</p>
+          <a href="https://realty.rbc.ru/news/6a390e509a79470a5cbb42eb" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c100"
@@ -3083,8 +3132,8 @@ VK
           </div>
           
           <div class="tags"><span class="tag kw">строит</span></div>
-          <p class="card-text">Печь, ковры и кружева: как обустроить дачу в русском стиле</p>
-          <a href="https://realty.rbc.ru/news/6a2004ce9a7947b714879949" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <p class="card-text">Режим экономии: во сколько обойдется строительство дома летом 2026-гоЭксклюзив</p>
+          <a href="https://realty.rbc.ru/news/6a3e71609a79475ed07c5639" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c101"
@@ -3102,11 +3151,68 @@ VK
           </div>
           
           <div class="tags"><span class="tag kw">новостройка</span></div>
-          <p class="card-text">Пошли на сближение: разрыв цен между новостройками и вторичкой снижаетсяЭксклюзив</p>
-          <a href="https://realty.rbc.ru/news/6a3114dc9a79477afb663727" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <p class="card-text">ЦБ оценил ценовой разрыв между новостройками и вторичкой в 9–18%</p>
+          <a href="https://realty.rbc.ru/news/6a3e608c9a79474fe4acda1a" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
              id="c102"
+             data-channel="РБК Недвижимость"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c102')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строит</span></div>
+          <p class="card-text">Как обустроить стильную зону отдыха на даче в 2026 году</p>
+          <a href="https://realty.rbc.ru/news/6a26c97f9a7947537219ea9c" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c103"
+             data-channel="РБК Недвижимость"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c103')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Превзойти депозиты: в какую недвижимость инвестировать в 2026 годуЭксклюзив</p>
+          <a href="https://realty.rbc.ru/news/6a39e0769a79478e356935c5" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c104"
+             data-channel="РБК Недвижимость"
+             data-category="Общее"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#58a6ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#58a6ff;border-color:#58a6ff22;background:#58a6ff18">🏗 Общее</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c104')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">строит</span></div>
+          <p class="card-text">Печь, ковры и кружева: как обустроить дачу в русском стиле</p>
+          <a href="https://realty.rbc.ru/news/6a2004ce9a7947b714879949" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c105"
              data-channel="РБК Недвижимость"
              data-category="Жилой дом / ЖК"
              data-cities=""
@@ -3117,7 +3223,26 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c102')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c105')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">новостройка</span></div>
+          <p class="card-text">Пошли на сближение: разрыв цен между новостройками и вторичкой снижаетсяЭксклюзив</p>
+          <a href="https://realty.rbc.ru/news/6a3114dc9a79477afb663727" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c106"
+             data-channel="РБК Недвижимость"
+             data-category="Жилой дом / ЖК"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#3fb950">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c106')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">новостройка</span></div>
@@ -3125,7 +3250,7 @@ VK
           <a href="https://realty.rbc.ru/news/6a2a743c9a79471e4b4c2fa7" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c103"
+             id="c107"
              data-channel="РБК Недвижимость"
              data-category="Спортивный объект"
              data-cities="Подмосковье"
@@ -3136,7 +3261,7 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c103')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c107')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag city">Подмосковье</span><span class="tag kw">бассейн</span></div>
@@ -3144,7 +3269,7 @@ VK
           <a href="https://realty.rbc.ru/news/6a3501d29a7947f88af004da" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c104"
+             id="c108"
              data-channel="РБК Недвижимость"
              data-category="Метро / Подземное"
              data-cities=""
@@ -3155,15 +3280,15 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c104')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c108')" title="В избранное">☆</button>
           </div>
           
-          <div class="tags"><span class="tag kw">метро</span><span class="tag kw">станция метро</span></div>
+          <div class="tags"><span class="tag kw">станция метро</span><span class="tag kw">метро</span></div>
           <p class="card-text">3Собянин рассказал, какой будет новая станция метро «СберСити»</p>
           <a href="https://realty.rbc.ru/news/6a3be5119a7947420c09da5c" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c105"
+             id="c109"
              data-channel="РБК Недвижимость"
              data-category="Общее"
              data-cities=""
@@ -3174,7 +3299,7 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c105')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c109')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">строит</span></div>
@@ -3182,7 +3307,7 @@ VK
           <a href="https://realty.rbc.ru/news/6a3291059a7947a16245b3d3" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c106"
+             id="c110"
              data-channel="РБК Недвижимость"
              data-category="Дорога / Мост"
              data-cities=""
@@ -3193,7 +3318,45 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c106')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c110')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">«Домклик» оценил разницу в стоимости посуточной аренды и номера в отелеЖилье, 15:15</p>
+          <a href="https://realty.rbc.ru/news/6a44fbfa9a7947ae67fcdb5f?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c111"
+             data-channel="РБК Недвижимость"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c111')" title="В избранное">☆</button>
+          </div>
+          
+          <div class="tags"><span class="tag kw">мост</span></div>
+          <p class="card-text">Какую недвижимость можно купить по цене свадьбы в МосквеЖилье, 14:22</p>
+          <a href="https://realty.rbc.ru/news/6a4277879a79473720319379?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+        </div>
+        <div class="card "
+             id="c112"
+             data-channel="РБК Недвижимость"
+             data-category="Дорога / Мост"
+             data-cities=""
+             data-contacts="0"
+             style="border-left-color:#79c0ff">
+          <div class="card-header">
+            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
+            <span class="channel-badge">РБК Недвижимость</span>
+            
+            <span class="date"></span>
+            <button class="fav-btn" onclick="toggleFav(this,'c112')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">мост</span></div>
@@ -3201,7 +3364,7 @@ VK
           <a href="https://realty.rbc.ru/news/6a390e509a79470a5cbb42eb?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
         <div class="card "
-             id="c107"
+             id="c113"
              data-channel="РБК Недвижимость"
              data-category="Общее"
              data-cities=""
@@ -3212,50 +3375,12 @@ VK
             <span class="channel-badge">РБК Недвижимость</span>
             
             <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c107')" title="В избранное">☆</button>
+            <button class="fav-btn" onclick="toggleFav(this,'c113')" title="В избранное">☆</button>
           </div>
           
           <div class="tags"><span class="tag kw">строит</span></div>
           <p class="card-text">Названы застройщики — лидеры по объемам строительства жилья в МосквеОтрасль, 10:48</p>
           <a href="https://realty.rbc.ru/news/6a444d4f9a7947b54c3887c0?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c108"
-             data-channel="РБК Недвижимость"
-             data-category="Жилой дом / ЖК"
-             data-cities=""
-             data-contacts="0"
-             style="border-left-color:#3fb950">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#3fb950;border-color:#3fb95022;background:#3fb95018">🏗 Жилой дом / ЖК</span>
-            <span class="channel-badge">РБК Недвижимость</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c108')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag kw">новостройка</span></div>
-          <p class="card-text">В Москве выросло число районов с новостройками от ₽1 млн за «квадрат»Жилье, 30 июн, 19:06</p>
-          <a href="https://realty.rbc.ru/news/6a43df2c9a7947c75c4da89d?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
-        </div>
-        <div class="card "
-             id="c109"
-             data-channel="РБК Недвижимость"
-             data-category="Дорога / Мост"
-             data-cities="Санкт-Петербург"
-             data-contacts="0"
-             style="border-left-color:#79c0ff">
-          <div class="card-header">
-            <span class="cat-badge" style="color:#79c0ff;border-color:#79c0ff22;background:#79c0ff18">🌉 Дорога / Мост</span>
-            <span class="channel-badge">РБК Недвижимость</span>
-            
-            <span class="date"></span>
-            <button class="fav-btn" onclick="toggleFav(this,'c109')" title="В избранное">☆</button>
-          </div>
-          
-          <div class="tags"><span class="tag city">Санкт-Петербург</span><span class="tag kw">мост</span></div>
-          <p class="card-text">В «Домклик» оценили ипотечный спрос на недвижимость Санкт-ПетербургаДеньги, 30 июн, 14:06</p>
-          <a href="https://realty.rbc.ru/news/6a439e039a79473a5f03a16c?from=newsfeed" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>
   <div class="empty-state hidden" id="empty-state">
     <div class="icon">🔍</div>
