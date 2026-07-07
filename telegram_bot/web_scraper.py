@@ -34,6 +34,28 @@ ACTION_STEMS = {
     'прокладыва', 'монтаж', 'установк', 'прокладк',
 }
 
+# Ключевые слова с обеих сторон которых не должно быть букв (чтобы 'мост' не ловил
+# 'недвижимость', а 'метро' не ловил 'метров' / 'квадратных метров').
+_LB = r'(?<![а-яёА-ЯЁa-zA-Z0-9])'   # левая граница слова
+_RB_STRICT = {'метро', 'бкл', 'мцд', 'мфц', ' жк ', 'арена'}  # + правая граница
+_OBJ_KW_RE = {
+    kw: re.compile(
+        _LB + re.escape(kw) + (r'(?![а-яёА-ЯЁa-zA-Z0-9])' if kw in _RB_STRICT else ''),
+        re.IGNORECASE,
+    )
+    for kw in OBJECT_KEYWORDS
+}
+
+# Фразы, указывающие на аналитику рынка — такие статьи не нужны
+NOISE_BLACKLIST = frozenset([
+    'рост цен', 'снижение цен', 'вторичн',
+    'цены выросли', 'цены упали', 'средняя цена',
+    'рухнул на', 'упал на', 'обвал рынк',
+    'ипотечный', 'ипотечная ставка', 'ключевая ставка',
+    'квадратный метр стои', 'стоимость квадрат',
+    'аналитики подсчит', 'эксперты подсчит',
+])
+
 RU_MONTHS = {
     'января': 1, 'февраля': 2, 'марта': 3, 'апреля': 4,
     'мая': 5, 'июня': 6, 'июля': 7, 'августа': 8,
@@ -46,25 +68,37 @@ def _get(url: str) -> httpx.Response:
                      follow_redirects=True, verify=False)
 
 
+def _is_noise(text: str) -> bool:
+    t = text.lower()
+    return any(n in t for n in NOISE_BLACKLIST)
+
+
+def _obj_matches(t: str) -> list:
+    return [kw for kw, pat in _OBJ_KW_RE.items() if pat.search(t)]
+
+
 def match_keywords(text: str) -> list:
     """Строгий фильтр: нужен объект И действие (для общих источников)."""
+    if _is_noise(text):
+        return []
     t = text.lower()
-    if not any(kw in t for kw in OBJECT_KEYWORDS):
+    matched_obj = _obj_matches(t)
+    if not matched_obj:
         return []
-    if not any(stem in t for stem in ACTION_STEMS):
-        return []
-    matched_obj = [kw for kw in OBJECT_KEYWORDS if kw in t]
     matched_act = [s for s in ACTION_STEMS if s in t]
+    if not matched_act:
+        return []
     return (matched_obj + matched_act)[:6]
 
 
 def match_broad(text: str) -> list:
     """Мягкий фильтр: достаточно объекта ИЛИ действия (для тематических сайтов)."""
+    if _is_noise(text):
+        return []
     t = text.lower()
-    matched_obj = [kw for kw in OBJECT_KEYWORDS if kw in t]
+    matched_obj = _obj_matches(t)
     matched_act = [s for s in ACTION_STEMS if s in t]
-    combined = matched_obj + matched_act
-    return combined[:6]
+    return (matched_obj + matched_act)[:6]
 
 
 def find_cities(text: str) -> list:
