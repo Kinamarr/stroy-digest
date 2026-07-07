@@ -398,6 +398,187 @@ def scrape_realty_rbc() -> list:
 
 
 # ──────────────────────────────────────────────
+# Google News RSS — все регионы России
+# ──────────────────────────────────────────────
+
+def _parse_rss_date(text: str) -> str:
+    """RFC 2822 pubDate → YYYY-MM-DD."""
+    try:
+        from email.utils import parsedate_to_datetime
+        return parsedate_to_datetime(text).strftime('%Y-%m-%d')
+    except Exception:
+        return _parse_date_dmy(text)
+
+
+def _parse_rss_xml(text: str):
+    """Парсит RSS через lxml (xml) или html.parser как fallback, возвращает список item dict."""
+    try:
+        soup = BeautifulSoup(text, 'xml')
+        items = soup.find_all('item')
+        if items:
+            return items, 'xml'
+    except Exception:
+        pass
+    soup = BeautifulSoup(text, 'html.parser')
+    return soup.find_all('item'), 'html'
+
+
+def _rss_text(el) -> str:
+    if el is None:
+        return ''
+    return (el.string or el.get_text(strip=True) or '').strip()
+
+
+def scrape_google_news_rss() -> list:
+    """Строительные новости со всей России через Google News RSS (8 запросов × 100 статей)."""
+    import urllib.parse
+    QUERIES = [
+        'строительство жилого комплекса',
+        'строительство завода предприятия',
+        'строительство склада логистического центра',
+        'строительство школы больницы поликлиники',
+        'строительство гостиницы отеля',
+        'строительство стадиона бассейна арены',
+        'строительство моста тоннеля',
+        'строительство резервуара очистных сооружений насосной',
+    ]
+    results = []
+    seen_titles = set()
+
+    for query in QUERIES:
+        try:
+            enc = urllib.parse.quote(query)
+            url = f'https://news.google.com/rss/search?q={enc}&hl=ru&gl=RU&ceid=RU:ru'
+            r = _get(url)
+            if r.status_code != 200 or len(r.text) < 500:
+                continue
+
+            items, _ = _parse_rss_xml(r.text)
+            for item in items:
+                title_el = item.find('title')
+                pub_el   = item.find('pubdate') or item.find('pubDate')
+                src_el   = item.find('source')
+
+                if not title_el:
+                    continue
+                raw_title = _rss_text(title_el)
+                # Убираем " - Источник" в конце заголовка Google News
+                title = re.sub(r'\s*[-–]\s*.{3,50}$', '', raw_title).strip() or raw_title
+
+                if title in seen_titles:
+                    continue
+
+                # Ссылка: Google News кладёт URL между тегами, ищем regex
+                link_m = re.search(
+                    r'<link[^>]*>([^<]{20,})</link>|<link[^/]*/?>([^<]{20,})',
+                    str(item)
+                )
+                link = (link_m.group(1) or link_m.group(2) or '').strip() if link_m else ''
+
+                pub  = _rss_text(pub_el)
+                src  = _rss_text(src_el) or 'Google News'
+                date_str = _parse_rss_date(pub) if pub else ''
+
+                matched = match_broad(title)
+                if not matched:
+                    continue
+
+                seen_titles.add(title)
+                results.append(_make(
+                    f'Google News / {src[:30]}',
+                    'gnews',
+                    title,
+                    link,
+                    date_str,
+                    matched,
+                ))
+            time.sleep(0.8)
+        except Exception as e:
+            print(f'    Google News ({query[:30]}): {e}')
+
+    print(f'    Google News: {len(results)} строительных новостей из регионов')
+    return results
+
+
+# ──────────────────────────────────────────────
+# Строительная газета — RSS (отраслевое, вся Россия)
+# ──────────────────────────────────────────────
+
+def scrape_stroygaz_rss() -> list:
+    """Строительная газета RSS — главное отраслевое издание, ~100 статей."""
+    results = []
+    try:
+        r = _get('https://stroygaz.ru/rss/')
+        if r.status_code != 200 or len(r.text) < 500:
+            return []
+        items, _ = _parse_rss_xml(r.text)
+        for item in items:
+            title_el = item.find('title')
+            pub_el   = item.find('pubdate') or item.find('pubDate')
+            desc_el  = item.find('description')
+
+            if not title_el:
+                continue
+            title = _rss_text(title_el)
+            # Ссылка через regex (html.parser делает link void-элементом)
+            link_m = re.search(r'<link[^>]*>([^<]{20,})</link>', str(item))
+            link = link_m.group(1).strip() if link_m else ''
+            pub  = _rss_text(pub_el)
+            desc = BeautifulSoup(_rss_text(desc_el), 'html.parser').get_text(strip=True)[:250] if desc_el else ''
+            date_str = _parse_rss_date(pub) if pub else ''
+
+            combined = f'{title} {desc}'
+            matched  = match_broad(combined)
+            if not matched:
+                continue
+
+            body = title + (f'\n{desc}' if desc else '')
+            results.append(_make('Строительная газета', 'stroygaz', body, link, date_str, matched))
+    except Exception as e:
+        print(f'    Строительная газета: {e}')
+    print(f'    Строительная газета: {len(results)} статей')
+    return results
+
+
+# ──────────────────────────────────────────────
+# АНКБ — аналитический центр новостроек
+# ──────────────────────────────────────────────
+
+def scrape_ancb() -> list:
+    """АНКБ — агрегатор строительных новостей, ежедневно ~30 статей."""
+    results = []
+    base = 'https://ancb.ru'
+    try:
+        r = _get(f'{base}/news/')
+        if r.status_code != 200 or len(r.text) < 1000:
+            return []
+        soup = BeautifulSoup(r.text, 'html.parser')
+        seen = set()
+        for a in soup.find_all('a', href=re.compile(r'/news/read/\d+')):
+            href = a['href']
+            link = href if href.startswith('http') else base + href
+            if link in seen:
+                continue
+            title = a.get_text(strip=True)
+            if len(title) < 10:
+                continue
+            # Дата из текста карточки
+            date_str = ''
+            parent = a.find_parent(['div', 'article', 'li'])
+            if parent:
+                date_str = _parse_date_dmy(parent.get_text())
+            matched = match_broad(title)
+            if not matched:
+                continue
+            seen.add(link)
+            results.append(_make('АНКБ', 'ancb', title, link, date_str, matched))
+    except Exception as e:
+        print(f'    АНКБ: {e}')
+    print(f'    АНКБ: {len(results)} статей')
+    return results
+
+
+# ──────────────────────────────────────────────
 # Точка входа
 # ──────────────────────────────────────────────
 
@@ -469,14 +650,20 @@ def scrape_otc() -> list:
 
 
 WEB_SOURCES = [
+    # Региональные агрегаторы
+    ('Google News (регионы)',  scrape_google_news_rss),
+    ('Строительная газета',   scrape_stroygaz_rss),
+    ('АНКБ',                  scrape_ancb),
+    # Тематические сайты
     ('Коммерсантъ (регионы)', scrape_kommersant),
-    ('Абирег',                 scrape_abireg),
-    ('Global52',               scrape_global52),
-    ('ИнвестПроекты',          scrape_investprojects),
-    ('Строители.РФ',           scrape_stroiteli_rf),
-    ('АРД Эксперт',            scrape_ardexpert),
-    ('РБК Недвижимость',       scrape_realty_rbc),
-    ('ОТС.ру (тендеры)',       scrape_otc),
+    ('Абирег',                scrape_abireg),
+    ('Global52',              scrape_global52),
+    ('ИнвестПроекты',         scrape_investprojects),
+    ('Строители.РФ',          scrape_stroiteli_rf),
+    ('АРД Эксперт',           scrape_ardexpert),
+    ('РБК Недвижимость',      scrape_realty_rbc),
+    # Тендеры
+    ('ОТС.ру (тендеры)',      scrape_otc),
 ]
 
 
