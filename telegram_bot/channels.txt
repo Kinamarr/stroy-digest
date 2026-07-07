@@ -23,6 +23,12 @@
 @stroygaz_official
 @ardexpert_ru
 
+# ── ВОРОНЕЖ (приоритет) ───────────────────────
+@vrn_today
+@communa_vrn
+@moeonline
+@voronezh_gorod
+
 # ── Регионы: Поволжье / Татарстан ─────────────
 @tatarnews
 @kazanfirst

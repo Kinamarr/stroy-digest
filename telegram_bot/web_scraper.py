@@ -430,9 +430,10 @@ def _rss_text(el) -> str:
 
 
 def scrape_google_news_rss() -> list:
-    """Строительные новости со всей России через Google News RSS (8 запросов × 100 статей)."""
+    """Строительные новости со всей России через Google News RSS (8 общих + приоритетные города)."""
     import urllib.parse
     QUERIES = [
+        # Общие строительные запросы (вся Россия)
         'строительство жилого комплекса',
         'строительство завода предприятия',
         'строительство склада логистического центра',
@@ -441,6 +442,10 @@ def scrape_google_news_rss() -> list:
         'строительство стадиона бассейна арены',
         'строительство моста тоннеля',
         'строительство резервуара очистных сооружений насосной',
+        # Приоритетные города (отдельные запросы для максимального охвата)
+        'строительство Воронеж',
+        'строительство Воронежская область объект',
+        'новостройки строительство Воронеж застройщик',
     ]
     results = []
     seen_titles = set()
@@ -579,6 +584,43 @@ def scrape_ancb() -> list:
 
 
 # ──────────────────────────────────────────────
+# Горком36 — строительство Воронежа
+# ──────────────────────────────────────────────
+
+def scrape_gorcom36() -> list:
+    """Горком36 — воронежский портал, раздел строительства."""
+    results = []
+    base = 'https://gorcom36.ru'
+    try:
+        r = _get(f'{base}/rubric/stroitelstvo/')
+        if r.status_code != 200 or len(r.text) < 500:
+            return []
+        soup = BeautifulSoup(r.text, 'html.parser')
+        seen = set()
+        for a in soup.find_all('a', href=re.compile(r'^/?content/')):
+            href = a['href']
+            link = href if href.startswith('http') else f'{base}/{href.lstrip("/")}'
+            if link in seen:
+                continue
+            title = a.get_text(strip=True)
+            if len(title) < 15:
+                continue
+            date_str = ''
+            parent = a.find_parent(['div', 'article', 'li'])
+            if parent:
+                date_str = _parse_date_dmy(parent.get_text())
+            matched = match_broad(title)
+            if not matched:
+                continue
+            seen.add(link)
+            results.append(_make('Горком36 (Воронеж)', 'gorcom36', title, link, date_str, matched))
+    except Exception as e:
+        print(f'    Горком36: {e}')
+    print(f'    Горком36: {len(results)} статей')
+    return results
+
+
+# ──────────────────────────────────────────────
 # Точка входа
 # ──────────────────────────────────────────────
 
@@ -654,6 +696,8 @@ WEB_SOURCES = [
     ('Google News (регионы)',  scrape_google_news_rss),
     ('Строительная газета',   scrape_stroygaz_rss),
     ('АНКБ',                  scrape_ancb),
+    # Приоритет: Воронеж
+    ('Горком36 (Воронеж)',    scrape_gorcom36),
     # Тематические сайты
     ('Коммерсантъ (регионы)', scrape_kommersant),
     ('Абирег',                scrape_abireg),
