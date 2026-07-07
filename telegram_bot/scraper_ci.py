@@ -207,6 +207,13 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
         cat_color = CAT_COLOR.get(item['category'], '#58a6ff')
         cat_icon  = CAT_ICON.get(item['category'], '🏗')
 
+        # Город в шапку карточки — первый из найденных
+        city_badge = ''
+        if item['cities']:
+            primary_city = item['cities'][0]
+            extra = f' +{len(item["cities"])-1}' if len(item['cities']) > 1 else ''
+            city_badge = f'<span class="city-badge">📍 {primary_city}{extra}</span>'
+
         cards_html += f'''
         <div class="card {'has-contacts' if has_contacts else ''}"
              id="{card_id}"
@@ -217,13 +224,14 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
              style="border-left-color:{cat_color}">
           <div class="card-header">
             <span class="cat-badge" style="color:{cat_color};border-color:{cat_color}22;background:{cat_color}18">{cat_icon} {item['category']}</span>
+            {city_badge}
             <span class="channel-badge">{item['channel']}</span>
             {contact_marker}
             <span class="date">{item['date']}</span>
             <button class="fav-btn" onclick="toggleFav(this,'{card_id}')" title="В избранное">☆</button>
           </div>
           {contact_block}
-          <div class="tags">{cities_html}{kw_html}</div>
+          <div class="tags">{kw_html}</div>
           <p class="card-text">{preview}</p>
           <a href="{item['link']}" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>'''
@@ -281,6 +289,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 .card:hover{{border-color:#30363d;box-shadow:0 4px 20px rgba(0,0,0,.4)}}
 .card-header{{display:flex;align-items:center;gap:6px;margin-bottom:9px;flex-wrap:wrap}}
 .cat-badge{{font-size:.72rem;padding:3px 9px;border-radius:20px;font-weight:600;border:1px solid;white-space:nowrap}}
+.city-badge{{background:#0d2a1e;color:#3fb950;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid #3fb95044;white-space:nowrap;letter-spacing:.01em}}
 .channel-badge{{background:#21262d;color:#8b949e;font-size:.68rem;padding:2px 7px;border-radius:10px}}
 .has-contacts-badge{{font-size:.66rem;background:#0d2818;color:#3fb950;border:1px solid #1a4731;padding:2px 7px;border-radius:10px;font-weight:600}}
 .date{{margin-left:auto;font-size:.68rem;color:#6e7681;white-space:nowrap}}
