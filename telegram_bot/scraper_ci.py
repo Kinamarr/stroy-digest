@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, str(Path(__file__).parent))
 from keywords import CHANNELS, KEYWORD_CATEGORIES
 from cities import CITIES
-from web_scraper import scrape_all_web
+from web_scraper import scrape_all_web, scrape_all_industry
 
 HEADERS = {
     'User-Agent': (
@@ -52,6 +52,7 @@ CAT_ICON = {
     'Дорога / Мост':               '🌉',
     'Метро / Подземное':           '🚇',
     'Водные объекты / Резервуары': '💧',
+    'Горная пром. / ТЭК':         '⛏',
 }
 
 CAT_COLOR = {
@@ -65,6 +66,7 @@ CAT_COLOR = {
     'Дорога / Мост':               '#79c0ff',
     'Метро / Подземное':           '#d2a8ff',
     'Водные объекты / Резервуары': '#4fc3f7',
+    'Горная пром. / ТЭК':         '#ffa657',
 }
 
 
@@ -214,6 +216,7 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
             extra = f' +{len(item["cities"])-1}' if len(item['cities']) > 1 else ''
             city_badge = f'<span class="city-badge">📍 {primary_city}{extra}</span>'
 
+        is_industry = item.get('industry', False)
         cards_html += f'''
         <div class="card {'has-contacts' if has_contacts else ''}"
              id="{card_id}"
@@ -221,6 +224,7 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
              data-category="{item['category']}"
              data-cities="{cities_data}"
              data-contacts="{'1' if has_contacts else '0'}"
+             data-industry="{'1' if is_industry else '0'}"
              style="border-left-color:{cat_color}">
           <div class="card-header">
             <span class="cat-badge" style="color:{cat_color};border-color:{cat_color}22;background:{cat_color}18">{cat_icon} {item['category']}</span>
@@ -359,6 +363,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 
 <div class="tabs">
   <button class="tab-btn active" id="tab-all" onclick="switchTab('all')">Все ({total})</button>
+  <button class="tab-btn" id="tab-industry" onclick="switchTab('industry')">⛏ Промышленность</button>
   <button class="tab-btn" id="tab-favs" onclick="switchTab('favs')">★ Избранное (<span id="fav-count">0</span>)</button>
 </div>
 
@@ -423,6 +428,7 @@ function initFavs(){{
 function switchTab(tab){{
   currentTab=tab;
   document.getElementById('tab-all').classList.toggle('active',tab==='all');
+  document.getElementById('tab-industry').classList.toggle('active',tab==='industry');
   document.getElementById('tab-favs').classList.toggle('active',tab==='favs');
   applyFilter();
 }}
@@ -442,7 +448,8 @@ function applyFilter(){{
         &&(!cat||c.dataset.category===cat)
         &&(!city||c.dataset.cities.split(',').indexOf(city)!==-1)
         &&(!onlyCont||c.dataset.contacts==='1')
-        &&(currentTab!=='favs'||favs[c.id]);
+        &&(currentTab!=='favs'||favs[c.id])
+        &&(currentTab!=='industry'||c.dataset.industry==='1');
     c.classList.toggle('hidden',!ok);
     if(ok)visible++;
   }});
@@ -584,6 +591,9 @@ def main():
 
     print('\nПарсю веб-источники...')
     all_results.extend(scrape_all_web())
+
+    print('\nПарсю промышленные источники...')
+    all_results.extend(scrape_all_industry())
 
     print(f'\nВсего: {len(all_results)} объектов')
 
