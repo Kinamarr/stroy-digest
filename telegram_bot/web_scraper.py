@@ -436,8 +436,10 @@ def scrape_realty_rbc() -> list:
 # Google News RSS — все регионы России
 # ──────────────────────────────────────────────
 
-def _parse_rss_date(text: str) -> str:
-    """RFC 2822 pubDate → YYYY-MM-DD."""
+def _parse_rss_date(text) -> str:
+    """RFC 2822 pubDate → YYYY-MM-DD. Принимает строку или BeautifulSoup Tag."""
+    if not isinstance(text, str):
+        text = text.get_text(strip=True) if hasattr(text, 'get_text') else str(text)
     try:
         from email.utils import parsedate_to_datetime
         return parsedate_to_datetime(text).strftime('%Y-%m-%d')
@@ -757,27 +759,30 @@ def scrape_nornickel() -> list:
     results = []
     base = 'https://www.nornickel.ru'
     seen = set()
-    try:
-        r = _get(f'{base}/press-center/news/')
-        if r.status_code != 200:
-            print(f'    Норникель: HTTP {r.status_code}')
-            return []
-        soup = BeautifulSoup(r.text, 'html.parser')
-        for a in soup.find_all('a', href=re.compile(r'/press-center/news/\d')):
-            href = a['href']
-            link = f'{base}{href}' if href.startswith('/') else href
-            if link in seen:
+    # Пробуем несколько вариантов URL
+    for path in ['/press-center/news/', '/company/press-center/news/', '/media/news/']:
+        try:
+            r = _get(f'{base}{path}')
+            if r.status_code != 200:
                 continue
-            title = a.get_text(strip=True)
-            if len(title) < 10:
-                continue
-            matched = match_broad(title) or match_industry(title)
-            if not matched:
-                continue
-            seen.add(link)
-            results.append(_make('Норникель', 'nornickel', title, link, '', matched))
-    except Exception as e:
-        print(f'    Норникель: {e}')
+            soup = BeautifulSoup(r.text, 'html.parser')
+            for a in soup.find_all('a', href=re.compile(r'/(press-center|media|news)/\d')):
+                href = a['href']
+                link = f'{base}{href}' if href.startswith('/') else href
+                if link in seen:
+                    continue
+                title = a.get_text(strip=True)
+                if len(title) < 10:
+                    continue
+                matched = match_broad(title) or match_industry(title)
+                if not matched:
+                    continue
+                seen.add(link)
+                results.append(_make('Норникель', 'nornickel', title, link, '', matched))
+            if results:
+                break
+        except Exception as e:
+            print(f'    Норникель {path}: {e}')
     print(f'    Норникель: {len(results)} статей')
     return results
 
@@ -814,123 +819,80 @@ def scrape_rushydro() -> list:
     return results
 
 
-def scrape_nornickel_tenders() -> list:
-    """Закупки Норникеля — строительно-монтажные и проектные работы."""
+def _gnews_industry_query(query: str, seen: set) -> list:
+    """Вспомогательная: один запрос Google News для промышленных источников."""
+    import urllib.parse
     results = []
-    base = 'https://zakupki.nornickel.ru'
-    seen = set()
     try:
-        # Поиск закупок по строительству
-        for query in ['строительство', 'гидроизоляция', 'монтаж']:
-            enc = query.replace(' ', '+')
-            r = _get(f'{base}/search?q={enc}')
-            if r.status_code != 200:
+        enc = urllib.parse.quote(query)
+        r = _get(f'https://news.google.com/rss/search?q={enc}&hl=ru&gl=RU&ceid=RU:ru')
+        items, _ = _parse_rss_xml(r.text)
+        for item in items:
+            t_el = item.find('title')
+            pub  = item.find('pubDate')
+            title = _rss_text(t_el)
+            title_clean = re.sub(r'\s*[-–]\s*.{3,50}$', '', title).strip() or title
+            if title_clean in seen or len(title_clean) < 10:
                 continue
-            soup = BeautifulSoup(r.text, 'html.parser')
-            for a in soup.find_all('a', href=re.compile(r'/(tender|lot|purchase)/')):
-                href = a['href']
-                link = f'{base}{href}' if href.startswith('/') else href
-                if link in seen:
-                    continue
-                title = a.get_text(strip=True)
-                if len(title) < 10:
-                    continue
-                matched = match_industry(title) or match_broad(title)
-                if not matched:
-                    continue
-                seen.add(link)
-                results.append(_make('Норникель (закупки)', 'nornickel_tenders',
-                                     title, link, '', matched))
-            time.sleep(0.5)
-    except Exception as e:
-        print(f'    Норникель закупки: {e}')
-    print(f'    Норникель (закупки): {len(results)} тендеров')
-    return results
-
-
-def scrape_rushydro_tenders() -> list:
-    """Закупки РусГидро — строительство и оборудование для ГЭС."""
-    results = []
-    base = 'https://zakupki.rushydro.ru'
-    seen = set()
-    try:
-        r = _get(f'{base}/zakupki/')
-        if r.status_code != 200:
-            # Запасной URL
-            r = _get(f'https://www.rushydro.ru/procurement/')
-        if r.status_code != 200:
-            print(f'    РусГидро закупки: HTTP {r.status_code}')
-            return []
-        soup = BeautifulSoup(r.text, 'html.parser')
-        for a in soup.find_all('a', href=True):
-            href = a['href']
-            title = a.get_text(strip=True)
-            if len(title) < 15:
+            link_m = re.search(r'<link[^>]*>([^<]{20,})</link>|<link[^/]*/?>([^<]{20,})', str(item))
+            link = (link_m.group(1) or link_m.group(2) or '').strip() if link_m else ''
+            if not link:
                 continue
-            matched = match_industry(title) or match_broad(title)
+            matched = match_broad(title_clean) or match_industry(title_clean)
             if not matched:
                 continue
-            link = f'{base}{href}' if href.startswith('/') else href
-            if link in seen:
-                continue
-            seen.add(link)
-            results.append(_make('РусГидро (закупки)', 'rushydro_tenders',
-                                 title, link, '', matched))
+            seen.add(title_clean)
+            date_str = _parse_rss_date(pub) if pub else ''
+            results.append(_make('Google News (пром-сть)', 'gnews_industry',
+                                 title_clean, link, date_str, matched))
     except Exception as e:
-        print(f'    РусГидро закупки: {e}')
-    print(f'    РусГидро (закупки): {len(results)} тендеров')
+        print(f'    gnews [{query[:40]}]: {e}')
     return results
 
 
 def scrape_google_news_industry() -> list:
-    """Google News — крупные промышленные проекты и горнодобывающая отрасль."""
-    import urllib.parse
+    """Google News — крупные промышленные компании: строительство, закупки, объекты."""
+    # Крупнейшие российские компании — потенциальные заказчики АКВАСТОП
     QUERIES = [
-        'Норникель строительство объект',
-        'РусГидро строительство ГЭС объект',
-        'АЛРОСА строительство рудник',
-        'горнодобывающий строительство завод карьер',
-        'строительство гидроэлектростанции объект',
-        'строительство обогатительная фабрика рудник',
+        # Горнодобывающие
+        'Норникель строительство реконструкция объект',
+        'АЛРОСА строительство рудник объект',
+        'Полюс Золото строительство горнодобывающий',
+        'Металлоинвест строительство ГОК объект',
+        'Евраз строительство шахта карьер',
+        'Северсталь строительство завод объект',
+        # Гидроэнергетика
+        'РусГидро строительство ГЭС гидроузел',
+        'строительство гидроэлектростанции объект Россия',
+        'строительство плотина дамба гидроузел',
+        # Нефтегаз и химия
+        'Роснефть строительство объект завод',
+        'Газпром строительство объект',
+        'СИБУР строительство нефтехимический',
+        'ФосАгро строительство объект',
+        # Общие промышленные
+        'строительство горно-обогатительный комбинат ГОК',
+        'строительство обогатительная фабрика рудник шахта',
+        'строительство электростанция ТЭС ТЭЦ объект',
+        'строительство нефтеперерабатывающий завод НПЗ',
+        # РЖД и крупная инфраструктура
+        'РЖД строительство тоннель объект',
+        'Росатом строительство АЭС объект',
     ]
     results = []
-    seen_titles: set = set()
+    seen: set = set()
     for query in QUERIES:
-        try:
-            enc = urllib.parse.quote(query)
-            r = _get(f'https://news.google.com/rss/search?q={enc}&hl=ru&gl=RU&ceid=RU:ru')
-            items, _ = _parse_rss_xml(r.text)
-            for item in items:
-                t_el  = item.find('title')
-                pub   = item.find('pubDate')
-                title = _rss_text(t_el)
-                title_clean = re.sub(r'\s*[-–]\s*.{3,50}$', '', title).strip() or title
-                if title_clean in seen_titles or len(title_clean) < 10:
-                    continue
-                link_m = re.search(r'<link[^>]*>([^<]{20,})</link>|<link[^/]*/?>([^<]{20,})', str(item))
-                link = (link_m.group(1) or link_m.group(2) or '').strip() if link_m else ''
-                if not link:
-                    continue
-                matched = match_broad(title_clean) or match_industry(title_clean)
-                if not matched:
-                    continue
-                seen_titles.add(title_clean)
-                date_str = _parse_rss_date(pub) if pub else ''
-                results.append(_make('Google News (промышленность)', 'gnews_industry',
-                                     title_clean, link, date_str, matched))
-        except Exception as e:
-            print(f'    Google News industry [{query}]: {e}')
-        time.sleep(0.3)
-    print(f'    Google News (промышленность): {len(results)} статей')
+        items = _gnews_industry_query(query, seen)
+        results.extend(items)
+        time.sleep(0.4)
+    print(f'    Google News (пром-сть): {len(results)} статей из {len(QUERIES)} запросов')
     return results
 
 
 INDUSTRY_SOURCES = [
-    ('Норникель (новости)',       scrape_nornickel),
-    ('РусГидро (новости)',        scrape_rushydro),
-    ('Норникель (закупки)',       scrape_nornickel_tenders),
-    ('РусГидро (закупки)',        scrape_rushydro_tenders),
-    ('Google News (пром-сть)',    scrape_google_news_industry),
+    ('Норникель (новости)',    scrape_nornickel),
+    ('РусГидро (новости)',     scrape_rushydro),
+    ('Google News (пром-сть)', scrape_google_news_industry),
 ]
 
 
