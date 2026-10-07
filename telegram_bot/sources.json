@@ -1,0 +1,6694 @@
+[
+ {
+  "method": "gnews",
+  "target": "sminex.com",
+  "region": "Москва",
+  "name": "Sminex",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.etalongroup.com/",
+  "region": "Москва",
+  "name": "Эталон",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "lsr.ru",
+  "region": "Москва",
+  "name": "ЛСР — Москва",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "samolet.ru",
+  "region": "Москва",
+  "name": "Самолёт",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "pik.ru",
+  "region": "Москва",
+  "name": "ПИК",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "moscow_stroi",
+  "region": "Москва",
+  "name": "Стройки — и точка (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gk_samolet",
+  "region": "Москва",
+  "name": "gk_samolet (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gk_fsk",
+  "region": "Москва",
+  "name": "gk_fsk (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "brusnika.ru",
+  "region": "Москва",
+  "name": "Брусника",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://a101.ru/",
+  "region": "Москва",
+  "name": "А101",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://fsk.ru/",
+  "region": "Москва",
+  "name": "ФСК",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "stroi_mos_ru",
+  "region": "Москва",
+  "name": "stroi_mos_ru (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "pik_ru",
+  "region": "Москва",
+  "name": "pik_ru (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stroinadzormsk",
+  "region": "Москва",
+  "name": "stroinadzormsk (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://dogma.ru/",
+  "region": "Москва",
+  "name": "DOGMA",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://pioneer.ru/",
+  "region": "Москва",
+  "name": "PIONEER",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "capitalgroup.ru",
+  "region": "Москва",
+  "name": "Capital Group",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://krost.ru/",
+  "region": "Москва",
+  "name": "КРОСТ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "erzrf",
+  "region": "Москва",
+  "name": "ЕРЗ.РФ (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://msk1.ru/rss-feeds/rss.xml",
+  "region": "Москва",
+  "name": "МСК1.ру",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.mos.ru/rss",
+  "region": "Москва",
+  "name": "mos.ru — строительство",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://investmoscow.ru/",
+  "region": "Москва",
+  "name": "Инвестиционный портал Москвы",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "stroi.mos.ru",
+  "region": "Москва",
+  "name": "Департамент строительства города Москвы",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://stroi.mos.ru/news/rss",
+  "region": "Москва",
+  "name": "Комитет Москвы по обеспечению реализации строительных проектов (stroi.mos.ru)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://riavrn.ru/rss/",
+  "region": "Москва",
+  "name": "Строительство.Недвижимость.RU",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.forbes.ru/",
+  "region": "Москва",
+  "name": "Forbes — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kommersant.ru/",
+  "region": "Москва",
+  "name": "Коммерсантъ — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://realty.ria.ru/export/rss2/archive/index.xml",
+  "region": "Москва",
+  "name": "РИА Недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://rssexport.rbc.ru/realty/news/30/full.rss",
+  "region": "Москва",
+  "name": "РБК Недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.mskagency.ru/rss/yandex",
+  "region": "Москва",
+  "name": "Мскагентство",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroyrf.gov.ru",
+  "region": "Санкт-Петербург",
+  "name": "Министерство строительства и ЖКХ РФ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "glavstroy",
+  "region": "Санкт-Петербург",
+  "name": "Главстрой — Telegram-канал",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://psk.ru",
+  "region": "Санкт-Петербург",
+  "name": "ПСК (Петербургская строительная компания)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://fontanka.ru/rss-feeds/rss.xml",
+  "region": "Санкт-Петербург",
+  "name": "Фонтанка.ру — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://asninfo.ru/rss.xml",
+  "region": "Санкт-Петербург",
+  "name": "АСН-инфо (Agency for Construction News)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.gov.spb.ru",
+  "region": "Санкт-Петербург",
+  "name": "Портал Правительства Санкт-Петербурга",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://nostroy.ru",
+  "region": "Санкт-Петербург",
+  "name": "Национальное объединение строителей (НОСТРОЙ)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://spbit.ru/rss/",
+  "region": "Санкт-Петербург",
+  "name": "spbit.ru (Санкт-Петербургские ведомости IT)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.dp.ru/news.rss",
+  "region": "Санкт-Петербург",
+  "name": "Деловой Петербург (DP.ru) — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ktostroit.ru/rss.php",
+  "region": "Санкт-Петербург",
+  "name": "КтоСтроит.ру",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://nsp.ru/rss",
+  "region": "Санкт-Петербург",
+  "name": "NSP.ru (Новая строительная газета)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://78.ru/",
+  "region": "Санкт-Петербург",
+  "name": "78.ru",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://glorax.com/",
+  "region": "Санкт-Петербург",
+  "name": "GloraX",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kvs.ru",
+  "region": "Санкт-Петербург",
+  "name": "КВС (Компания ВнешСтрой)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://rsti.ru/spb",
+  "region": "Санкт-Петербург",
+  "name": "РСТИ (Развитие строительных технологий и инженерии)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "setlgroup",
+  "region": "Санкт-Петербург",
+  "name": "Setl Group — Telegram-канал",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "lsr_group",
+  "region": "Санкт-Петербург",
+  "name": "ЛСР — Telegram-канал",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "sbweek",
+  "region": "Новосибирская область",
+  "name": "Сибирская строительная неделя (@sbweek)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "onlinestroyka",
+  "region": "Новосибирская область",
+  "name": "Online Stroyka (@onlinestroyka)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "groupmetaofficial",
+  "region": "Новосибирская область",
+  "name": "Группа МЕТА (@groupmetaofficial)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://nsk.dk.ru/",
+  "region": "Новосибирская область",
+  "name": "Деловой квартал DK.RU (Новосибирск)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://nsknews.info/feed/",
+  "region": "Новосибирская область",
+  "name": "Новосибирск News (nsknews.info, тег «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vn.ru/news/rss",
+  "region": "Новосибирская область",
+  "name": "VN.RU (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nsk.sibdom.ru/tags/stroitelstvo/",
+  "region": "Новосибирская область",
+  "name": "Сибдом (nsk.sibdom.ru) — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ngs.ru/rss-feeds/rss.xml",
+  "region": "Новосибирская область",
+  "name": "НГС.ру (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sibirinvest.ru/rss.xml",
+  "region": "Новосибирская область",
+  "name": "СибирьИнвест",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://em-nsk.ru/",
+  "region": "Новосибирская область",
+  "name": "ГК Энергомонтаж",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "strana.com",
+  "region": "Новосибирская область",
+  "name": "Страна Девелопмент (Новосибирск)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://groupmeta.ru/",
+  "region": "Новосибирская область",
+  "name": "Группа МЕТА",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--80aaeb2ac7cd.xn--p1ai/",
+  "region": "Новосибирская область",
+  "name": "ГК VIRA (vira-stroy.ru)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "unity-life.ru",
+  "region": "Новосибирская область",
+  "name": "ГК ЮНИТИ (unity-life.ru)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nsk.brusnika.ru/",
+  "region": "Новосибирская область",
+  "name": "Брусника (управление домами) — Новосибирск",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://novo-sibirsk.ru",
+  "region": "Новосибирская область",
+  "name": "Официальный сайт города Новосибирска (novo-sibirsk.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://novo-sibirsk.ru/dep/construction/",
+  "region": "Новосибирская область",
+  "name": "Департамент строительства и архитектуры мэрии Новосибирска",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy.nso.ru/rss.xml",
+  "region": "Новосибирская область",
+  "name": "Министерство строительства Новосибирской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://asonsk.ru/rss/news",
+  "region": "Новосибирская область",
+  "name": "АСОНО (Ассоциация строителей НСО)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sgilsib.ru/feed/",
+  "region": "Новосибирская область",
+  "name": "Союз «Гильдия проектировщиков Сибири»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sro-pp.ru/rss/news",
+  "region": "Новосибирская область",
+  "name": "СРО Ассоциация «Партнёрство проектировщиков»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://souzstr.ru/",
+  "region": "Новосибирская область",
+  "name": "Союз строителей Новосибирской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sros-ns.ru/",
+  "region": "Новосибирская область",
+  "name": "СРО Ассоциация «Новосибирские строители»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sbweek.ru/rss",
+  "region": "Новосибирская область",
+  "name": "Сибирская строительная неделя (sbweek.ru)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://stroyvedomosti.ru/",
+  "region": "Новосибирская область",
+  "name": "Строительные Ведомости (stroyvedomosti.ru)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://rssexport.rbc.ru/rbcnews/news/30/full.rss",
+  "region": "Новосибирская область",
+  "name": "РБК Новосибирск",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stroimsibir",
+  "region": "Новосибирская область",
+  "name": "СтроимСибирь.рф (@stroimsibir)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "unity_life_nsk",
+  "region": "Новосибирская область",
+  "name": "ЮНИТИ | Девелопер (@unity_life_nsk)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "koncernsiberia",
+  "region": "Новосибирская область",
+  "name": "Концерн «Сибирь» (@koncernsiberia)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "nsostroi",
+  "region": "Новосибирская область",
+  "name": "Новосибирск Строится (@nsostroi)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.novosibexpo.ru",
+  "region": "Новосибирская область",
+  "name": "МВК «Новосибирск Экспоцентр»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "prinzipn",
+  "region": "Свердловская область",
+  "name": "Prinzip (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "cleverpark_ekb",
+  "region": "Свердловская область",
+  "name": "Clever Park (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "dzen.ru",
+  "region": "Свердловская область",
+  "name": "К.ИРА | Прогулки по городу (Дзен)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ingraficon",
+  "region": "Свердловская область",
+  "name": "Инграфикон (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tochno_dom",
+  "region": "Свердловская область",
+  "name": "ТочноДом (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ugmkzastroyshik",
+  "region": "Свердловская область",
+  "name": "УГМК-Застройщик (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "sinara_development",
+  "region": "Свердловская область",
+  "name": "Синара-Девелопмент (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "asrossotg",
+  "region": "Свердловская область",
+  "name": "АСРО «ССО» (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "kortros.ru",
+  "region": "Свердловская область",
+  "name": "ГК «КОРТРОС»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sinara-development.ru",
+  "region": "Свердловская область",
+  "name": "Синара-Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ugmkstroy.ru/blog",
+  "region": "Свердловская область",
+  "name": "УГМК-Застройщик (блог)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vestnikstroy.ru/rss/",
+  "region": "Свердловская область",
+  "name": "Отраслевой журнал «Вестник»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sro-sso.ru",
+  "region": "Свердловская область",
+  "name": "АСРО «Строители Свердловской области»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://s-r-o.ru",
+  "region": "Свердловская область",
+  "name": "СРО «Уральское объединение строителей»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://spsi-sro.ru",
+  "region": "Свердловская область",
+  "name": "Ассоциация СРО «Союз Стройиндустрии Свердловской области»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ten-stroy.ru",
+  "region": "Свердловская область",
+  "name": "ТЭН Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gk-praktika.ru",
+  "region": "Свердловская область",
+  "name": "ГК «Практика»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--80acgfbsl1azdqr.xn--p1ai/news/rss",
+  "region": "Свердловская область",
+  "name": "Официальный портал Екатеринбурга",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy.midural.ru/rss",
+  "region": "Свердловская область",
+  "name": "Министерство строительства и развития инфраструктуры Свердловской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://nadzor.midural.ru/rss",
+  "region": "Свердловская область",
+  "name": "Департамент государственного жилищного и строительного надзора Свердловской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://rosreestr.gov.ru",
+  "region": "Свердловская область",
+  "name": "Управление Росреестра по Свердловской области",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "forum-100.ru",
+  "region": "Свердловская область",
+  "name": "Форум 100+ TechnoBuild (официальный сайт)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.e1.ru/rss-feeds/rss.xml",
+  "region": "Свердловская область",
+  "name": "Е1.ру",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://66.ru/rss",
+  "region": "Свердловская область",
+  "name": "66.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://oblgazeta.ru/feed/",
+  "region": "Свердловская область",
+  "name": "Областная газета",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.uralsky-rabochi.ru",
+  "region": "Свердловская область",
+  "name": "Уральский рабочий",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ura.news",
+  "region": "Свердловская область",
+  "name": "URA.RU",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://eanews.ru/rss",
+  "region": "Свердловская область",
+  "name": "РИА «Европейско-Азиатские Новости» (ЕАН)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "rbc.ru",
+  "region": "Свердловская область",
+  "name": "РБК Екатеринбург",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.kommersant.ru",
+  "region": "Свердловская область",
+  "name": "Коммерсантъ — Урал",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.dk.ru/",
+  "region": "Свердловская область",
+  "name": "«Деловой квартал» (DK.RU)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.ural.kp.ru",
+  "region": "Свердловская область",
+  "name": "КП.ру — Екатеринбург",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--b1agapfwapgcl.xn--p1ai/rss",
+  "region": "Свердловская область",
+  "name": "«Всеостройке.рф»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "smu88.group",
+  "region": "Республика Татарстан",
+  "name": "СМУ-88",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://suvarstroit.ru",
+  "region": "Республика Татарстан",
+  "name": "Суварстроит",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://akbars-dom.ru",
+  "region": "Республика Татарстан",
+  "name": "Ак Барс Дом",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://unistroyrf.ru",
+  "region": "Республика Татарстан",
+  "name": "Унистрой",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nup-sro.ru",
+  "region": "Республика Татарстан",
+  "name": "Ассоциация «ОСОТ» — Объединение строительных организаций Татарстана",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sros-rt.ru",
+  "region": "Республика Татарстан",
+  "name": "АСРО «Содружество строителей РТ»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kp.ru",
+  "region": "Республика Татарстан",
+  "name": "Комсомольская правда — Казань",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://rt.rbc.ru/tatarstan",
+  "region": "Республика Татарстан",
+  "name": "РБК Татарстан",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "inkazan.ru",
+  "region": "Республика Татарстан",
+  "name": "InKazan",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.business-gazeta.ru/rss.xml",
+  "region": "Республика Татарстан",
+  "name": "БИЗНЕС Online",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://realnoevremya.ru/realty",
+  "region": "Республика Татарстан",
+  "name": "Реальное время",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://innopolis.ru/rss",
+  "region": "Республика Татарстан",
+  "name": "Иннополис — официальный сайт",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.tatarstan.ru",
+  "region": "Республика Татарстан",
+  "name": "Министерство строительства, архитектуры и ЖКХ РТ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gsn.tatarstan.ru",
+  "region": "Республика Татарстан",
+  "name": "Инспекция государственного строительного надзора РТ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kzn.ru/meriya/ispolnitelnyy-komitet/upravlenie-arkhitektury-i-gradostroitelstva-ispolnitelnogo-komiteta-g-kazani/",
+  "region": "Республика Татарстан",
+  "name": "Управление архитектуры и градостроительства ИКМО г. Казани",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ops-sro.ru",
+  "region": "Республика Татарстан",
+  "name": "Союз «ОПС» — Объединение профессиональных строителей",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kzn.ru",
+  "region": "Республика Татарстан",
+  "name": "Официальный портал Казани",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "stroyex.pro",
+  "region": "Республика Татарстан",
+  "name": "Журнал «Стройэкспертиза. Республика Татарстан»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--80aaaavrbxwcvhejfddbd.xn--p1acf/?feed=rss2",
+  "region": "Республика Татарстан",
+  "name": "Журнал «Строители Татарстана»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "smu88official",
+  "region": "Республика Татарстан",
+  "name": "СМУ-88 (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "akbarsdom",
+  "region": "Республика Татарстан",
+  "name": "Ак Барс Дом (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "unistroy",
+  "region": "Республика Татарстан",
+  "name": "Унистрой (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "novkaz16",
+  "region": "Республика Татарстан",
+  "name": "Новостройки Казани (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kazannovostroyky",
+  "region": "Республика Татарстан",
+  "name": "Новостройки Казани | Никита Григорьев (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://www.krskstate.ru/xml/news/",
+  "region": "Красноярский край",
+  "name": "Правительство Красноярского края",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.admkrsk.ru/administration/structure/buildingdep/Pages/default.aspx",
+  "region": "Красноярский край",
+  "name": "Департамент градостроительства администрации г. Красноярска",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://newslab.ru/news/all/rss",
+  "region": "Красноярский край",
+  "name": "Newslab.ru — раздел «Недвижимость и строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://minstroy.krskstate.ru/xml/news/",
+  "region": "Красноярский край",
+  "name": "Министерство строительства и ЖКХ Красноярского края",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://krasnadzor.ru/",
+  "region": "Красноярский край",
+  "name": "Служба строительного надзора и жилищного контроля Красноярского края",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kras.mk.ru/",
+  "region": "Красноярский край",
+  "name": "МК Красноярск",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.vesti-krasnoyarsk.ru/rss.php",
+  "region": "Красноярский край",
+  "name": "Вести-Красноярск (ГТРК)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.krsk.kp.ru/",
+  "region": "Красноярский край",
+  "name": "Комсомольская правда — Красноярск",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gornovosti.ru/news/category/stroitelstvo-i-blagoustroystvo/",
+  "region": "Красноярский край",
+  "name": "Городские новости Красноярска — раздел «Строительство и благоустройство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ngs24.ru/rss-feeds/rss.xml",
+  "region": "Красноярский край",
+  "name": "НГС24.РУ — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "http://www.admkrsk.ru/Pages/default.aspx",
+  "region": "Красноярский край",
+  "name": "Администрация города Красноярска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://krsk.aif.ru/rss/googlearticles",
+  "region": "Красноярский край",
+  "name": "АиФ Красноярск",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sibnovosti.ru/rss",
+  "region": "Красноярский край",
+  "name": "Сибирское агентство новостей (sibnovosti.ru)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://dela.ru/rss/lenta.xml",
+  "region": "Красноярский край",
+  "name": "Dela.ru — Красноярское деловое издание",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.sibdom.ru/news/",
+  "region": "Красноярский край",
+  "name": "СИБДОМ — новости недвижимости Красноярска",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.sibdom.ru/news/proekty/",
+  "region": "Красноярский край",
+  "name": "СИБДОМ — городские проекты",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://sro-krasstroy.ru/",
+  "region": "Красноярский край",
+  "name": "Саморегулируемая ассоциация «Красноярские строители» (СА «КС»)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sks-sro.ru/",
+  "region": "Красноярский край",
+  "name": "Ассоциация «Саморегулируемая корпорация строителей Красноярского края» (СКС)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://npeas.ru/?feed=rss2",
+  "region": "Красноярский край",
+  "name": "Ассоциация СРО «Енисейский альянс строителей» (ЕАС)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://anri.life-it.pro/?feed=rss2",
+  "region": "Красноярский край",
+  "name": "Ассоциация «Енисейский альянс проектировщиков» (ЕАП)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.arban.ru/",
+  "region": "Красноярский край",
+  "name": "ГСК «Арбан»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "красстрой.рф",
+  "region": "Красноярский край",
+  "name": "ГСК «Красстрой»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.sm-city.ru/",
+  "region": "Красноярский край",
+  "name": "Строительная группа «СМ.СИТИ»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://usk-sibiryak.ru/",
+  "region": "Красноярский край",
+  "name": "УСК «Сибиряк»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://constructive-d.ru/",
+  "region": "Красноярский край",
+  "name": "СЗ «Конструктив Девелопмент»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "realty.vbr.ru",
+  "region": "Красноярский край",
+  "name": "Выберу.ру — застройщики Красноярска",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "usksibiryak",
+  "region": "Красноярский край",
+  "name": "УСК «Сибиряк» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "arban24",
+  "region": "Красноярский край",
+  "name": "ГСК «Арбан» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "krasnadzor",
+  "region": "Красноярский край",
+  "name": "Стройнадзор Красноярского края — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "krasminstroy",
+  "region": "Красноярский край",
+  "name": "Минстрой Красноярского края — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.siblider.ru/",
+  "region": "Красноярский край",
+  "name": "СК «СибЛидер»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://fskgotika.ru/feed/",
+  "region": "Красноярский край",
+  "name": "ФСК «Готика»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "monolitholding",
+  "region": "Красноярский край",
+  "name": "МонолитХолдинг — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "dsk_kras",
+  "region": "Красноярский край",
+  "name": "ДСК — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "sm_city_krasnoyarsk",
+  "region": "Красноярский край",
+  "name": "СМ.СИТИ — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gkrascvetai",
+  "region": "Красноярский край",
+  "name": "ГК «Расцветай» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://szno.ru/",
+  "region": "Нижегородская область",
+  "name": "Дирекция по строительству (СЗ НО)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.nn.ru/rss-feeds/rss.xml",
+  "region": "Нижегородская область",
+  "name": "НН.ру (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "newsnn.ru",
+  "region": "Нижегородская область",
+  "name": "NewsNN (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://nn.aif.ru/rss/all.php",
+  "region": "Нижегородская область",
+  "name": "АиФ Нижний Новгород (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kommersant.ru/theme/3062",
+  "region": "Нижегородская область",
+  "name": "Коммерсантъ — Нижний Новгород (строительная отрасль)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nn.dk.ru/",
+  "region": "Нижегородская область",
+  "name": "Деловой квартал — Нижний Новгород (NN.DK.RU)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "nn.rbc.ru",
+  "region": "Нижегородская область",
+  "name": "РБК Нижний Новгород",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://sonns.ru/",
+  "region": "Нижегородская область",
+  "name": "Объединение нижегородских проектировщиков (СРО)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://s194.ru/",
+  "region": "Нижегородская область",
+  "name": "СРО Союз «Строители Приволжья»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://nobl.ru/rss/news",
+  "region": "Нижегородская область",
+  "name": "Ассоциация строителей малого и среднего бизнеса",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nn-r.ru/",
+  "region": "Нижегородская область",
+  "name": "Строительная группа «Новый Нижний»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://a-spt.ru/",
+  "region": "Нижегородская область",
+  "name": "ГК «АГРОСПЕЦТЕХ»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://novaya.ru/",
+  "region": "Нижегородская область",
+  "name": "ГК «Новая» (Новая Жизнь)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.domostroynn.ru/",
+  "region": "Нижегородская область",
+  "name": "«Домострой НН» — каталог новостроек",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gsn.nobl.ru/",
+  "region": "Нижегородская область",
+  "name": "Инспекция государственного строительного надзора Нижегородской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.nobl.ru/",
+  "region": "Нижегородская область",
+  "name": "Министерство строительства Нижегородской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "NovostroikiNiznegoNovgoroda",
+  "region": "Нижегородская область",
+  "name": "Новостройки Нижнего Новгорода (@NovostroikiNiznegoNovgoroda)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "stroim_nn",
+  "region": "Нижегородская область",
+  "name": "Ремонт Строительство Заказы и Исполнители НН (@stroim_nn)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--d1amha.xn--p1ai/",
+  "region": "Нижегородская область",
+  "name": "ННДК",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://podkova-nn.ru/",
+  "region": "Нижегородская область",
+  "name": "ГК «Подкова»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fsk.ru",
+  "region": "Нижегородская область",
+  "name": "ГК «ФСК» (в НН)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kommersant_nn",
+  "region": "Нижегородская область",
+  "name": "Коммерсантъ Приволжье (@kommersant_nn)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "nn_ru",
+  "region": "Нижегородская область",
+  "name": "Новости Нижнего Новгорода | NN.RU (@nn_ru)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "andeconn",
+  "region": "Нижегородская область",
+  "name": "СЗ «АндЭко» (@andeconn)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://nk-nn.com/",
+  "region": "Нижегородская область",
+  "name": "ЖК «Кузнечиха Город»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://pgs-nn.ru/",
+  "region": "Нижегородская область",
+  "name": "Ассоциация «Приволжская гильдия строителей» (СРО)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "rosreestr.gov.ru",
+  "region": "Челябинская область",
+  "name": "Управление Росреестра по Челябинской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://cheladmin.gov74.ru/",
+  "region": "Челябинская область",
+  "name": "Администрация города Челябинска",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://vesna74.ru/",
+  "region": "Челябинская область",
+  "name": "Девелопер Весна",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--80aque.xn--p1ai/",
+  "region": "Челябинская область",
+  "name": "ПАО «АПРИ»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://golos.click/",
+  "region": "Челябинская область",
+  "name": "Группа Голос (Голос.Девелопмент)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.chelindustry.ru/feed/",
+  "region": "Челябинская область",
+  "name": "Chelindustry.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vecherka.su/rss/",
+  "region": "Челябинская область",
+  "name": "Вечерний Челябинск",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://chel.dk.ru/",
+  "region": "Челябинская область",
+  "name": "CHEL.DK.RU (Деловой квартал)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.cheltv.ru/feed/",
+  "region": "Челябинская область",
+  "name": "ChelTV.ru (ГТРК «Южный Урал»)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "pchela.news",
+  "region": "Челябинская область",
+  "name": "Pchela.news",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://74.ru/rss-feeds/rss.xml",
+  "region": "Челябинская область",
+  "name": "74.ru",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vecherchel",
+  "region": "Челябинская область",
+  "name": "Вечерний Челябинск (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "sskural",
+  "region": "Челябинская область",
+  "name": "ССК УрСиб (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_74",
+  "region": "Челябинская область",
+  "name": "Челябинский Минстрой (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gsn.gov74.ru/",
+  "region": "Челябинская область",
+  "name": "Главное управление государственного строительного надзора Челябинской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.gov74.ru/",
+  "region": "Челябинская область",
+  "name": "Министерство строительства и инфраструктуры Челябинской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://betotek.ru/",
+  "region": "Челябинская область",
+  "name": "БЕТОТЕК-Застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sirius74.ru/feed/",
+  "region": "Челябинская область",
+  "name": "Сириус",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://souzstroy74.ru/",
+  "region": "Челябинская область",
+  "name": "Челябинский межрегиональный Союз строителей (ЧМСС)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://achgs.ru/feed/",
+  "region": "Челябинская область",
+  "name": "Челябинская Гильдия Строителей",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ugks.ru/",
+  "region": "Челябинская область",
+  "name": "УЖКС (Уральское жилищно-коммунальное строительство)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.sskural.ru/",
+  "region": "Челябинская область",
+  "name": "ССК УрСиб (Союз строительных компаний Урала и Сибири)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ancb.ru/rss/index.rss",
+  "region": "Челябинская область",
+  "name": "Агентство новостей «Строительный бизнес»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vestnik.susu.ru/building/gateway/plugin/WebFeedGatewayPlugin/atom",
+  "region": "Челябинская область",
+  "name": "Вестник ЮУрГУ. Серия «Строительство и архитектура»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.sskural.ru/about/vestnik/",
+  "region": "Челябинская область",
+  "name": "«Строительный вестник» (ССК УрСиб)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://zhilstroynadzor.bashkortostan.ru",
+  "region": "Республика Башкортостан",
+  "name": "Госстройнадзор РБ (Госкомитет по жилищному и строительному надзору)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://arch.gorodufa.ru/feed",
+  "region": "Республика Башкортостан",
+  "name": "Главархитектура г. Уфы",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://building.bashkortostan.ru",
+  "region": "Республика Башкортостан",
+  "name": "Министерство строительства и архитектуры РБ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gorodufa.ru",
+  "region": "Республика Башкортостан",
+  "name": "Портал Администрации г. Уфы",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://azrb.ru",
+  "region": "Республика Башкортостан",
+  "name": "Ассоциация застройщиков РБ (АЗРБ)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://osrbsro.ru",
+  "region": "Республика Башкортостан",
+  "name": "СРО «Объединение строителей РБ»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "komrstroy.ru",
+  "region": "Республика Башкортостан",
+  "name": "СРО «Строители Башкирии»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sro-rb.ru",
+  "region": "Республика Башкортостан",
+  "name": "АСРОР «Союз строителей РБ»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.psk6.ru",
+  "region": "Республика Башкортостан",
+  "name": "ПСК-6",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gkstrateg.ru",
+  "region": "Республика Башкортостан",
+  "name": "ГК Стратег",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://js-invest.ru",
+  "region": "Республика Башкортостан",
+  "name": "ГК Жилстройинвест",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "frgsrb.ru",
+  "region": "Республика Башкортостан",
+  "name": "Фонд развития жилищного строительства РБ",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ufa.aif.ru/rss/all.php",
+  "region": "Республика Башкортостан",
+  "name": "АиФ Уфа (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gorodufa.ru/about/info/tags/stroitelstvo/",
+  "region": "Республика Башкортостан",
+  "name": "Портал gorodufa.ru (тег «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "beregu.ru",
+  "region": "Республика Башкортостан",
+  "name": "ГК Берег",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://realnoevremya.ru",
+  "region": "Республика Башкортостан",
+  "name": "Реальное время (Уфа/Казань)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "norm_ufa",
+  "region": "Республика Башкортостан",
+  "name": "НормОбзор (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://1trest.ru",
+  "region": "Республика Башкортостан",
+  "name": "ГК Первый Трест",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://prime-development.ru",
+  "region": "Республика Башкортостан",
+  "name": "Прайм Девелопмент (Prime Development)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://freedomufa.ru/feed/",
+  "region": "Республика Башкортостан",
+  "name": "Freedom (Уфа)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroyrb",
+  "region": "Республика Башкортостан",
+  "name": "Минстрой РБ (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "stroikyufy",
+  "region": "Республика Башкортостан",
+  "name": "Стройки Уфы (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "stroitelibashkirii",
+  "region": "Республика Башкортостан",
+  "name": "СРО «Строители Башкирии» (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://alfastroyinvest.ru/feed/",
+  "region": "Краснодарский край",
+  "name": "АльфаСтройИнвест",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sskuban.ru",
+  "region": "Краснодарский край",
+  "name": "ГК СпецСтройКубань",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "neometria.ru",
+  "region": "Краснодарский край",
+  "name": "Неометрия",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gk-nvm.ru",
+  "region": "Краснодарский край",
+  "name": "ГК НВМ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nostroy.ru/regions/ugnyfo/",
+  "region": "Краснодарский край",
+  "name": "Региональное объединение строителей Кубани",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://skksro.ru",
+  "region": "Краснодарский край",
+  "name": "Ассоциация «Строители Краснодарского края» (СКК СРО)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://93.ru/rss-feeds/rss.xml",
+  "region": "Краснодарский край",
+  "name": "93.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://krd.ru/rss/news",
+  "region": "Краснодарский край",
+  "name": "Управление архитектуры и градостроительства Краснодара",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://depstroy.krasnodar.ru/rss/",
+  "region": "Краснодарский край",
+  "name": "Департамент строительства Краснодарского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "depstroyKK",
+  "region": "Краснодарский край",
+  "name": "ДепСтрой Краснодарского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "sskuban",
+  "region": "Краснодарский край",
+  "name": "ГК ССК (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "expertsouth.ru",
+  "region": "Краснодарский край",
+  "name": "Эксперт Юг",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.livekuban.ru/rss",
+  "region": "Краснодарский край",
+  "name": "Живая Кубань",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.yuga.ru/news.rss",
+  "region": "Краснодарский край",
+  "name": "Yuga.ru",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "kuban24.tv",
+  "region": "Краснодарский край",
+  "name": "Кубань 24",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.dg-yug.ru/rss",
+  "region": "Краснодарский край",
+  "name": "Деловая газета Юг",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://krasnodar.ru/rss/",
+  "region": "Краснодарский край",
+  "name": "Правительство Краснодарского края",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ki-news.ru/rss",
+  "region": "Краснодарский край",
+  "name": "Краснодарские известия (раздел стройки)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "stroyorbita.com",
+  "region": "Краснодарский край",
+  "name": "Строительная Орбита",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "sro23.ru",
+  "region": "Краснодарский край",
+  "name": "СРО «Краснодарские строители»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "np-ss.org",
+  "region": "Самарская область",
+  "name": "СРО СОЮЗ «Содружество строителей»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "askfomin",
+  "region": "Самарская область",
+  "name": "Канал министра строительства Самарской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://newdon.ru/",
+  "region": "Самарская область",
+  "name": "ГК «Новый Дон»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--b1afasgq4e.xn--p1ai/",
+  "region": "Самарская область",
+  "name": "Корпорация КОШЕЛЕВ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://rzv.ru/",
+  "region": "Самарская область",
+  "name": "ГК «Развитие»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "migradso",
+  "region": "Самарская область",
+  "name": "Министерство градостроительной политики Самарской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gisn63",
+  "region": "Самарская область",
+  "name": "Госинспекция Стройнадзора (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "rzv_samara",
+  "region": "Самарская область",
+  "name": "Развитие в Самаре (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gisn.samregion.ru/rss",
+  "region": "Самарская область",
+  "name": "Государственная инспекция строительного надзора Самарской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.samregion.ru/rss",
+  "region": "Самарская область",
+  "name": "Портал Правительства Самарской области",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://63.ru/rss-feeds/rss.xml",
+  "region": "Самарская область",
+  "name": "63.ру",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "volga.news",
+  "region": "Самарская область",
+  "name": "Волга Ньюс",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sgpress.ru/feed",
+  "region": "Самарская область",
+  "name": "Самарская газета (SGPRESS)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.niasam.ru/rss_1",
+  "region": "Самарская область",
+  "name": "НИА Самара",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://np-sp.ru/feed/",
+  "region": "Самарская область",
+  "name": "СРО А «Строители Поволжья»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://samgs.ru/",
+  "region": "Самарская область",
+  "name": "Самарская гильдия строителей (СРО СГС)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy.samregion.ru/rss",
+  "region": "Самарская область",
+  "name": "Министерство строительства Самарской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy63",
+  "region": "Самарская область",
+  "name": "Министерство строительства Самарской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://realnoevremya.ru/",
+  "region": "Самарская область",
+  "name": "Реальное время",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://business-guberniya.ru/rss/company/",
+  "region": "Самарская область",
+  "name": "Бизнес Губерния (ExpertPro Стройка)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://rostov.dk.ru/wiki/stroitelstvo",
+  "region": "Ростовская область",
+  "name": "Деловой квартал Ростов (DK.RU)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://rostov1.ru/rss-feeds/rss.xml",
+  "region": "Ростовская область",
+  "name": "ROSTOV1",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://big-rostov.ru/feed/",
+  "region": "Ростовская область",
+  "name": "Big Rostov",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "rostovgazeta.ru",
+  "region": "Ростовская область",
+  "name": "Ростовская газета",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gorodn.ru/razdel/novosti_kompaniy/investproekty/",
+  "region": "Ростовская область",
+  "name": "Город N",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "don24.ru",
+  "region": "Ростовская область",
+  "name": "ДОН 24",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://161.ru/rss-feeds/rss.xml",
+  "region": "Ростовская область",
+  "name": "161.ru",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.donland.ru/news/rss",
+  "region": "Ростовская область",
+  "name": "Правительство Ростовской области",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rostov-gorod.ru/rss",
+  "region": "Ростовская область",
+  "name": "Администрация г. Ростова-на-Дону",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://stroynadzor.donland.ru",
+  "region": "Ростовская область",
+  "name": "Региональная служба государственного строительного надзора Ростовской области (ГСН РО)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroi.donland.ru",
+  "region": "Ростовская область",
+  "name": "Министерство строительства, архитектуры и территориального развития Ростовской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "yandex.ru",
+  "region": "Ростовская область",
+  "name": "Гильдия проектных организаций Южного округа",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://asufo.ru",
+  "region": "Ростовская область",
+  "name": "Ассоциация строителей Южного округа (АСЮО)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://npsro.info/rss",
+  "region": "Ростовская область",
+  "name": "Союз «Строители Ростовской области» (СРО)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.stsg-donstu.ru/jour/gateway/plugin/WebFeedGatewayPlugin/atom",
+  "region": "Ростовская область",
+  "name": "Современные тенденции в строительстве, градостроительстве и планировке территорий",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://msk-development.ru",
+  "region": "Ростовская область",
+  "name": "Московская Строительная Компания (МСК)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--d1acaqraferjjcw.xn--p1ai",
+  "region": "Ростовская область",
+  "name": "ГК «Доннефтестрой»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gk-usi.ru",
+  "region": "Ростовская область",
+  "name": "ГК «ЮгСтройИнвест»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sk10.ru",
+  "region": "Ростовская область",
+  "name": "СК10",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroiro",
+  "region": "Ростовская область",
+  "name": "Минстрой Ростовской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "don24tv",
+  "region": "Ростовская область",
+  "name": "Телеканал «ДОН 24» (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "dns161",
+  "region": "Ростовская область",
+  "name": "Доннефтестрой (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dogma_official",
+  "region": "Ростовская область",
+  "name": "DOGMA (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.domostroydon.ru/novosti",
+  "region": "Ростовская область",
+  "name": "ДомостройДон",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "smu1rostov.ru",
+  "region": "Ростовская область",
+  "name": "АО «СЗ «СМУ-1»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://dogma.ru",
+  "region": "Ростовская область",
+  "name": "ГК DOGMA",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "stroybet.ru",
+  "region": "Омская область",
+  "name": "ГК «Стройбетон»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sibgrad.ru/news/rss",
+  "region": "Омская область",
+  "name": "ГК «Сибград»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sro-omsk.ru",
+  "region": "Омская область",
+  "name": "Союз Строителей Омской области (ССОО)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "novostroyKPDplus",
+  "region": "Омская область",
+  "name": "Новострой КПД плюс (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "nedvizhimost_with_love",
+  "region": "Омская область",
+  "name": "Новостройки Омск (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "nstroygroup",
+  "region": "Омская область",
+  "name": "НОРДСТРОЙ | Омск (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://maxiomsk.ru/rss",
+  "region": "Омская область",
+  "name": "Каталог «Строительный комплекс Сибири и РК»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://mszhk.omskportal.ru/rss",
+  "region": "Омская область",
+  "name": "Министерство строительства и архитектуры Омской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "omsk_minstroy",
+  "region": "Омская область",
+  "name": "Минстрой Омской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://newton.ru",
+  "region": "Омская область",
+  "name": "newton (Омск)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://svetdom.ru",
+  "region": "Омская область",
+  "name": "СЗ «Светлый Дом»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://trest4.ru/rss.xml",
+  "region": "Омская область",
+  "name": "ПСК Трест №4",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://etalongroup.com",
+  "region": "Омская область",
+  "name": "Группа Эталон (Омск)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.rbc.ru/omsk",
+  "region": "Омская область",
+  "name": "РБК Омск",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://sectormedia.ru",
+  "region": "Омская область",
+  "name": "Журнал «Архитектура и строительство» (Сектор Медиа)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ngs55.ru/rss-feeds/rss.xml",
+  "region": "Омская область",
+  "name": "NGS55.ru (НГС.Омск)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gorod55.ru",
+  "region": "Омская область",
+  "name": "Город55.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://newsomsk.ru/rss.php",
+  "region": "Омская область",
+  "name": "NewsOmsk.ru (Новый Омск)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://admomsk.gosuslugi.ru",
+  "region": "Омская область",
+  "name": "Администрация города Омска",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "omskportal.ru",
+  "region": "Омская область",
+  "name": "Портал Правительства Омской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gsn.omskportal.ru/oiv/gsn",
+  "region": "Омская область",
+  "name": "Главное управление государственного строительного надзора и государственной экспертизы Омской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://omsk.sibdom.ru",
+  "region": "Омская область",
+  "name": "СИБДОМ (Омск)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://bk55.ru/news/rss",
+  "region": "Омская область",
+  "name": "Омскпресс (БК55)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.kommersant.ru/theme/2765",
+  "region": "Воронежская область",
+  "name": "Коммерсантъ — Черноземье (строительство)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vrn.aif.ru/rss/all.php",
+  "region": "Воронежская область",
+  "name": "АиФ Воронеж (раздел «Строительство»)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gorcom36.ru/rss",
+  "region": "Воронежская область",
+  "name": "Горком36 (раздел «Стройка»)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://tvgram.ru/tvgubernia",
+  "region": "Воронежская область",
+  "name": "TV Губерния (Воронеж)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.soyuzstroy.ru/page/14",
+  "region": "Воронежская область",
+  "name": "Газета «Строительство и недвижимость в Воронежском регионе»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://cchgeu.ru/press/news/rss/",
+  "region": "Воронежская область",
+  "name": "Вестник ВГТУ (строительство и архитектура)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.soyuzstroy.ru/",
+  "region": "Воронежская область",
+  "name": "Союз строителей Воронежской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://srosvo.ru/rss",
+  "region": "Воронежская область",
+  "name": "АСРО «Строители Черноземья»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sstroi.ru/",
+  "region": "Воронежская область",
+  "name": "Ассоциация «СРО Партнеры» (Воронежская область)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://npros.ru/rss",
+  "region": "Воронежская область",
+  "name": "Ассоциация СРО РОС «Развитие»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "vgasu-sro.ru",
+  "region": "Воронежская область",
+  "name": "Ассоциация СРО «ВГАСУ-строй»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.govvrn.ru/rss.xml",
+  "region": "Воронежская область",
+  "name": "Инспекция Госстройнадзора Воронежской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://www.govvrn.ru/rss.xml",
+  "region": "Воронежская область",
+  "name": "Правительство Воронежской области (портал)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://voronezh-city.gosuslugi.ru",
+  "region": "Воронежская область",
+  "name": "Администрация городского округа г. Воронеж",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy36.ru/rss.xml",
+  "region": "Воронежская область",
+  "name": "Министерство строительства Воронежской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vyborstroi.ru/",
+  "region": "Воронежская область",
+  "name": "СК «ВЫБОР»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://dsk.vrn.ru/",
+  "region": "Воронежская область",
+  "name": "ДСК (Домостроительный комбинат)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vrndk.ru/",
+  "region": "Воронежская область",
+  "name": "ВДК (Воронежская Девелоперская Компания)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://bm36.ru/",
+  "region": "Воронежская область",
+  "name": "BM GROUP development",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vrn_you36",
+  "region": "Воронежская область",
+  "name": "ЖК «Ю» Воронеж (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dsk_vrn",
+  "region": "Воронежская область",
+  "name": "ДСК застройщик Воронеж (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "inspekciy",
+  "region": "Воронежская область",
+  "name": "Инспекция Госстройнадзора ВО (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "PROstroiku_vrn",
+  "region": "Воронежская область",
+  "name": "PRO СТРОЙКУ (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "aprilstroit",
+  "region": "Пермский край",
+  "name": "Апрель Премиум — строительство домов",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.gorodperm.ru/actions/building-up/dga_perm/",
+  "region": "Пермский край",
+  "name": "Департамент градостроительства и архитектуры администрации Перми",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://permkrai.ru/news/tags/?tags=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE",
+  "region": "Пермский край",
+  "name": "Правительство Пермского края — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mrkspermkrai",
+  "region": "Пермский край",
+  "name": "Министерство по управлению имуществом и градостроительной деятельности ПК",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://59.ru/rss-feeds/rss.xml",
+  "region": "Пермский край",
+  "name": "59.ru — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "properm.ru",
+  "region": "Пермский край",
+  "name": "Properm.ru — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.newsko.ru/rss.xml",
+  "region": "Пермский край",
+  "name": "Новый компаньон — застройщики",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.business-class.su/rss",
+  "region": "Пермский край",
+  "name": "Business Class — Пермь",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://ms.permkrai.ru/",
+  "region": "Пермский край",
+  "name": "Министерство строительства Пермского края",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kantadom.ru",
+  "region": "Пермский край",
+  "name": "Канта Групп — застройщик Перми",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://spk.perm.ru/",
+  "region": "Пермский край",
+  "name": "СтройПанельКомплект (СПК) — Пермь",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "stroizhurnal.ru",
+  "region": "Пермский край",
+  "name": "Магазин строительной литературы в Перми",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "zhelezno_perm",
+  "region": "Пермский край",
+  "name": "Железно — Пермь",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "talanperm",
+  "region": "Пермский край",
+  "name": "Талан Пермь",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "brusnikacompany",
+  "region": "Пермский край",
+  "name": "Брусника. Говорит и показывает",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ingroupp",
+  "region": "Пермский край",
+  "name": "ИНГРУПП",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "orso_group",
+  "region": "Пермский край",
+  "name": "Орсо групп — застройщик",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "Kortros",
+  "region": "Пермский край",
+  "name": "ГК Кортрос",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mingkh59",
+  "region": "Пермский край",
+  "name": "Министерство ЖКХ Пермского края",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_perm",
+  "region": "Пермский край",
+  "name": "Минстрой Пермского края",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "xn--80adb0aceriehm2kh.xn--p1ai",
+  "region": "Пермский край",
+  "name": "ЖК Новый Парковый (ПМД)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://pzsp.ru/",
+  "region": "Пермский край",
+  "name": "ПЗСП — застройщик №1 по объёму строительства",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://orsogroup.ru/",
+  "region": "Пермский край",
+  "name": "Орсо Групп — застройщик Перми",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ingroupp.ru/",
+  "region": "Пермский край",
+  "name": "ИНГРУПП — девелопер Перми",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://pm-d.ru/",
+  "region": "Пермский край",
+  "name": "ПМД — застройщик Перми",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "zhcom.ru",
+  "region": "Пермский край",
+  "name": "Железно — Пермь",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://unistroyrf.ru/perm/",
+  "region": "Пермский край",
+  "name": "Унистрой — Пермь (ЖК Причал)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://alfa59.ru/",
+  "region": "Пермский край",
+  "name": "ГК Альфа — застройщик Перми",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://talan.ru/perm",
+  "region": "Пермский край",
+  "name": "Талан — Пермь (Городские кварталы Талан)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.souzpp.ru/rss",
+  "region": "Пермский край",
+  "name": "СРО «Союз проектировщиков Прикамья»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sro-perm.ru/feed/",
+  "region": "Пермский край",
+  "name": "СРО «Гильдия Пермских Проектировщиков»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://spksro.ru/rss",
+  "region": "Пермский край",
+  "name": "СРО «Союз строителей Пермского края»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sro-snv.ru/rss",
+  "region": "Волгоградская область",
+  "name": "СРО Ассоциация «Строители Нижней Волги»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://svr-sro.ru/",
+  "region": "Волгоградская область",
+  "name": "СРО Ассоциация «Строители Волгоградского региона»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://peresvet-ug.ru/",
+  "region": "Волгоградская область",
+  "name": "Пересвет-Юг",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://myurbn.ru/",
+  "region": "Волгоградская область",
+  "name": "ЖК ТВОЙУРБН (Пересвет-Юг)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://oblstroy.volgograd.ru/",
+  "region": "Волгоградская область",
+  "name": "Комитет строительства Волгоградской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ugsn.volgograd.ru/",
+  "region": "Волгоградская область",
+  "name": "Инспекция государственного строительного надзора Волгоградской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://volgadmin.ru/d/branches/grad/about",
+  "region": "Волгоградская область",
+  "name": "Департамент по градостроительству и архитектуре администрации Волгограда",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://volgadmin.ru/d/Home/Index",
+  "region": "Волгоградская область",
+  "name": "Администрация Волгограда",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.volgograd.ru/news/rss",
+  "region": "Волгоградская область",
+  "name": "Официальный портал Волгоградской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroyrf.gov.ru/",
+  "region": "Волгоградская область",
+  "name": "Минстрой РФ",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://v1.ru/rss-feeds/rss.xml",
+  "region": "Волгоградская область",
+  "name": "V1.ру — новости Волгограда",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://bloknot-volgograd.ru/rss_news.php",
+  "region": "Волгоградская область",
+  "name": "Блокнот Волгоград",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gorvesti.ru/rss",
+  "region": "Волгоградская область",
+  "name": "Городские вести (ГорВести)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--b1ats.xn--80asehdb/news/rss",
+  "region": "Волгоградская область",
+  "name": "МТВ — телеканал Волгограда",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "novostivolgograda.ru",
+  "region": "Волгоградская область",
+  "name": "Новости Волгограда.ру",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://vgasu.ru/nauka/zhurnaly/vestnik-volggasu/",
+  "region": "Волгоградская область",
+  "name": "Вестник ВолгГТУ. Строительство и архитектура",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://stroygaz.ru/rss",
+  "region": "Волгоградская область",
+  "name": "Строительная газета",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "oblstroyvo",
+  "region": "Волгоградская область",
+  "name": "Комитет строительства Волгоградской области (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.belgorodstroy.ru/",
+  "region": "Белгородская область",
+  "name": "Минстрой Белгородской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "belregion.ru",
+  "region": "Белгородская область",
+  "name": "Губернатор и Правительство Белгородской области",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://belgorodtv.ru/?feed=rss2",
+  "region": "Белгородская область",
+  "name": "ГТРК «Белгород»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "bel.ru",
+  "region": "Белгородская область",
+  "name": "bel.ru — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://openbelgorod.ru/rss/yandex",
+  "region": "Белгородская область",
+  "name": "«Открытый Белгород» — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.belnovosti.ru/feed/yandex.rss",
+  "region": "Белгородская область",
+  "name": "«Белгородские новости» — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://belbeton.ru/corporation/news/",
+  "region": "Белгородская область",
+  "name": "ЖБК-1 — новости холдинга",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy31",
+  "region": "Белгородская область",
+  "name": "Минстрой Белгородской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://www.dsbrobl.ru/feed/",
+  "region": "Брянская область",
+  "name": "Департамент строительства Брянской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.bryanskobl.ru/news/rss",
+  "region": "Брянская область",
+  "name": "Правительство Брянской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://arhitektura32.ru/",
+  "region": "Брянская область",
+  "name": "Управление архитектуры и градостроительства Брянской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://bga32.ru/category/news/city-building/feed/",
+  "region": "Брянская область",
+  "name": "Брянская городская администрация — раздел «Строительство и архитектура»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "guberniya.tv",
+  "region": "Брянская область",
+  "name": "Брянская Губерния — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://bragazeta.ru/feed",
+  "region": "Брянская область",
+  "name": "Брянские новости — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkr32.ru",
+  "region": "Брянская область",
+  "name": "Региональный фонд капитального ремонта МКД Брянской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://megapolis32.ru/",
+  "region": "Брянская область",
+  "name": "Мегаполис-Строй — новости застройщика",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "atmosfera32.ru",
+  "region": "Брянская область",
+  "name": "Атмосфера — новости застройщика (Брянск)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dsbrobl",
+  "region": "Брянская область",
+  "name": "Департамент строительства Брянской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "upsirb",
+  "region": "Брянская область",
+  "name": "Управление по строительству и развитию территории г. Брянска",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "newsbryanskru",
+  "region": "Брянская область",
+  "name": "Новости Брянска",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "atmosfera32",
+  "region": "Брянская область",
+  "name": "Застройщик «Атмосфера» Брянск",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://mas.avo.ru/",
+  "region": "Владимирская область",
+  "name": "Министерство архитектуры и строительства ВО",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://avo.ru/main/-/rss-feed/yandex-rss",
+  "region": "Владимирская область",
+  "name": "Правительство Владимирской области — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vladimir-city.ru/",
+  "region": "Владимирская область",
+  "name": "Администрация г. Владимира — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vladtv.ru/rss",
+  "region": "Владимирская область",
+  "name": "ГТРК «Владимир» — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fondkr33.ru",
+  "region": "Владимирская область",
+  "name": "Фонд капитального ремонта ВО",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://33-news.ru/rss.xml",
+  "region": "Владимирская область",
+  "name": "33-news.ru — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://newsvladimir.ru/",
+  "region": "Владимирская область",
+  "name": "Владимирские новости (newsvladimir.ru)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://progorod33.ru/rss.xml",
+  "region": "Владимирская область",
+  "name": "Про Город Владимир",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "das_vo",
+  "region": "Владимирская область",
+  "name": "Министерство архитектуры и строительства ВО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "isup_33",
+  "region": "Владимирская область",
+  "name": "ИСУП-33",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "smi_vladimir",
+  "region": "Владимирская область",
+  "name": "Новости Владимира и Области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "progorod_33",
+  "region": "Владимирская область",
+  "name": "Про Город Владимир",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.fkr36.ru/",
+  "region": "Воронежская область",
+  "name": "Фонд капитального ремонта Воронежской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "36.rosstat.gov.ru",
+  "region": "Воронежская область",
+  "name": "Воронежстат — строительство",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vestivrn.ru/rss/",
+  "region": "Воронежская область",
+  "name": "Вести Воронеж",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://tv-gubernia.ru/rss",
+  "region": "Воронежская область",
+  "name": "TV Губерния — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://moe-online.ru/rss",
+  "region": "Воронежская область",
+  "name": "МОЁ! Online — раздел «Недвижимость»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vrn.mk.ru/",
+  "region": "Воронежская область",
+  "name": "МК Воронеж",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://abireg.ru/feed/",
+  "region": "Воронежская область",
+  "name": "Абирег — новости Воронежа",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://dsk.vrn.ru/novosti/",
+  "region": "Воронежская область",
+  "name": "ДСК Воронеж — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroyvo",
+  "region": "Воронежская область",
+  "name": "Минстрой Воронежской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestivrnru",
+  "region": "Воронежская область",
+  "name": "Вести Воронеж",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ivanovoobl.ru",
+  "region": "Ивановская область",
+  "name": "Правительство Ивановской области — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ivgoradm.ru/mainPage",
+  "region": "Ивановская область",
+  "name": "Администрация города Иваново",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ivteleradio.ru/rss",
+  "region": "Ивановская область",
+  "name": "ГТРК «Ивтелерадио»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ivgazeta.ru/rss",
+  "region": "Ивановская область",
+  "name": "«Ивановская газета»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "chastnik.ru",
+  "region": "Ивановская область",
+  "name": "«Частник» (Иваново)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.ivanovonews.ru/",
+  "region": "Ивановская область",
+  "name": "IvanovoNews",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rk37.ru/rss",
+  "region": "Ивановская область",
+  "name": "Газета «Рабочий край»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kapremont37",
+  "region": "Ивановская область",
+  "name": "Фонд капремонта ИО",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.admoblkaluga.ru/",
+  "region": "Калужская область",
+  "name": "Минстрой и ЖКХ Калужской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "admoblkaluga.ru",
+  "region": "Калужская область",
+  "name": "Правительство Калужской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fkr-kaluga.ru/",
+  "region": "Калужская область",
+  "name": "Фонд капитального ремонта Калужской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kaluga-gov.ru/",
+  "region": "Калужская область",
+  "name": "Администрация г. Калуги",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gtrk-kaluga.ru",
+  "region": "Калужская область",
+  "name": "ГТРК «Калуга»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.kaluga-poisk.ru/rss/news_google.xml",
+  "region": "Калужская область",
+  "name": "Kaluga-poisk.ru — раздел «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kaluga24.tv",
+  "region": "Калужская область",
+  "name": "Kaluga24.tv — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kp40.ru/news/tag/%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE",
+  "region": "Калужская область",
+  "name": "Калужский перекресток (kp40.ru) — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kgvinfo.ru",
+  "region": "Калужская область",
+  "name": "Калужские губернские ведомости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://znamkaluga.ru/rss",
+  "region": "Калужская область",
+  "name": "Знамя.Калуга (znamkaluga.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://media.kalugahouse.ru/n/",
+  "region": "Калужская область",
+  "name": "Калугахаус.Медиа (kalugahouse.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kapital40.ru/",
+  "region": "Калужская область",
+  "name": "Капитал 40 (kapital40.ru)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy40",
+  "region": "Калужская область",
+  "name": "Минстрой и ЖКХ Калужской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "novostroyka_kaluga",
+  "region": "Калужская область",
+  "name": "ЖК Академический г. Калуга",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gkh.kostroma.gov.ru/rss/",
+  "region": "Костромская область",
+  "name": "Департамент строительства, ЖКХ и ТЭК Костромской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://adm44.ru/rss/",
+  "region": "Костромская область",
+  "name": "Администрация Костромской области — новости",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://grad.kostroma.gov.ru/rss/",
+  "region": "Костромская область",
+  "name": "Комитет архитектуры и градостроительства Костромской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kapremont44.ru/",
+  "region": "Костромская область",
+  "name": "Фонд капитального ремонта Костромской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gradkostroma.ru/rss.ashx",
+  "region": "Костромская область",
+  "name": "Администрация города Костромы",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gtrk-kostroma.ru/",
+  "region": "Костромская область",
+  "name": "ГТРК «Кострома»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://kostroma.aif.ru/rss/googlearticles",
+  "region": "Костромская область",
+  "name": "АиФ Кострома",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://masterstroy44.ru/",
+  "region": "Костромская область",
+  "name": "ГК «МастерСтрой» — новостройки Костромы",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "depstroy_44",
+  "region": "Костромская область",
+  "name": "Департамент строительства, ЖКХ и ТЭК КО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kostromatch",
+  "region": "Костромская область",
+  "name": "Костромач — Новости Костромы",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kostromachp",
+  "region": "Костромская область",
+  "name": "ЧП Кострома",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://telno.ru/city/Kostroma",
+  "region": "Костромская область",
+  "name": "TelNo — Telegram-каналы Костромы",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kursk.ru",
+  "region": "Курская область",
+  "name": "Правительство Курской области — строительство",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrkkursk.ru/rss",
+  "region": "Курская область",
+  "name": "ГТРК «Курск»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kpravda.ru/rss",
+  "region": "Курская область",
+  "name": "Курская правда",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kurskcity.ru/",
+  "region": "Курская область",
+  "name": "Kurskcity.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://46tv.ru/rss.xml",
+  "region": "Курская область",
+  "name": "46tv.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kursk-izvestia.ru/news/rss/",
+  "region": "Курская область",
+  "name": "Курские известия",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "chp_kursk",
+  "region": "Курская область",
+  "name": "ЧП Курск",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "липецкаяобласть.рф",
+  "region": "Липецкая область",
+  "name": "Правительство Липецкой области — строительство",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kapremont48.ru/",
+  "region": "Липецкая область",
+  "name": "Фонд капитального ремонта Липецкой области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://lipetskcity.ru/",
+  "region": "Липецкая область",
+  "name": "Администрация города Липецка",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gradlip.ru/rss",
+  "region": "Липецкая область",
+  "name": "Управление градостроительства Липецкой области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--48-1lc2ai.xn--p1ai/feed/",
+  "region": "Липецкая область",
+  "name": "Управление капитального строительства Липецкой области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vesti-lipetsk.ru/",
+  "region": "Липецкая область",
+  "name": "ГТРК «Липецк» (Вести-Липецк)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://lipetskmedia.ru/",
+  "region": "Липецкая область",
+  "name": "LipetskMedia.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gorod48.ru/rss/rss.xml",
+  "region": "Липецкая область",
+  "name": "GOROD48.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://lpgzt.ru/rss",
+  "region": "Липецкая область",
+  "name": "Липецкая газета (ИД)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://lipetsknews.ru/rss.xml",
+  "region": "Липецкая область",
+  "name": "Липецкие новости (LipetskNews.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://newslipetsk.ru/",
+  "region": "Липецкая область",
+  "name": "Новости Липецка (Newslipetsk.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://odsk-lip.ru/",
+  "region": "Липецкая область",
+  "name": "ОДСК Липецк — застройщик",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestilipetsk",
+  "region": "Липецкая область",
+  "name": "ГТРК Липецк (Вести-Липецк)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gorod48ru",
+  "region": "Липецкая область",
+  "name": "GOROD48 | Город48",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "rss48",
+  "region": "Липецкая область",
+  "name": "РемСтройСервис | Липецк",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "lipetski",
+  "region": "Липецкая область",
+  "name": "Строительство Липецк 48 rus",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "mosreg.ru",
+  "region": "Московская область",
+  "name": "Правительство Московской области — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://fkr-mosreg.ru/",
+  "region": "Московская область",
+  "name": "Фонд капитального ремонта Московской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://riamo.ru/rss",
+  "region": "Московская область",
+  "name": "РИАМО",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://mosregtoday.ru/rss",
+  "region": "Московская область",
+  "name": "Подмосковье сегодня",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://360.ru/rss",
+  "region": "Московская область",
+  "name": "Телеканал 360",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "interfax.ru",
+  "region": "Московская область",
+  "name": "Интерфакс — Подмосковье",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "tass.ru",
+  "region": "Московская область",
+  "name": "ТАСС — Московская область",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tv360ru",
+  "region": "Московская область",
+  "name": "360 Новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "http://orel-region.ru/rss/rss2.xml",
+  "region": "Орловская область",
+  "name": "Департамент дорожного хозяйства, транспорта и РГСП Орловской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://orelkapremont.ru/",
+  "region": "Орловская область",
+  "name": "Фонд капитального ремонта Орловской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.orel-adm.ru/ru/",
+  "region": "Орловская область",
+  "name": "Администрация города Орла",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vestiorel.ru/rss.xml",
+  "region": "Орловская область",
+  "name": "ГТРК «Орёл» (Вести-Орёл)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://regionorel.ru/news/rss",
+  "region": "Орловская область",
+  "name": "Орловская правда",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://orelgrad.ru/feed/",
+  "region": "Орловская область",
+  "name": "ИА «Орелград»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://oreltimes.ru/feed/",
+  "region": "Орловская область",
+  "name": "ОрёлТаймс",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ria57.ru/feed/",
+  "region": "Орловская область",
+  "name": "РИА 57",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://newsorel.ru/",
+  "region": "Орловская область",
+  "name": "Орловские новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://obl1.ru/",
+  "region": "Орловская область",
+  "name": "Первый областной портал новостей",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "istoki.tv",
+  "region": "Орловская область",
+  "name": "Истоки ТВ",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://orelstroy.ru/",
+  "region": "Орловская область",
+  "name": "ПАО СЗ «Орелстрой» (ГК ОДСК)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "sts57.ru",
+  "region": "Орловская область",
+  "name": "СТС Групп",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestiorel",
+  "region": "Орловская область",
+  "name": "Вести-Орёл (ГТРК)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "oreltimes",
+  "region": "Орловская область",
+  "name": "ОрёлТаймс",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "newsorel",
+  "region": "Орловская область",
+  "name": "Орловские новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "odskgroup",
+  "region": "Орловская область",
+  "name": "ГК «ОДСК»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "sts_orel",
+  "region": "Орловская область",
+  "name": "СТС Групп",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "zenit57",
+  "region": "Орловская область",
+  "name": "СЗ «Зенит»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.ryazan.gov.ru/",
+  "region": "Рязанская область",
+  "name": "Министерство строительного комплекса Рязанской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "ryazan.gov.ru",
+  "region": "Рязанская область",
+  "name": "Правительство Рязанской области",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fondkr62.ru",
+  "region": "Рязанская область",
+  "name": "Фонд капитального ремонта Рязанской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://admrzn.ryazan.gov.ru/",
+  "region": "Рязанская область",
+  "name": "Администрация города Рязани",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.gtrkoka.ru/rss",
+  "region": "Рязанская область",
+  "name": "ГТРК «Ока» (Вести-Рязань)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rv-ryazan.ru/feed/",
+  "region": "Рязанская область",
+  "name": "Рязанские ведомости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "http://mediaryazan.ru/static/rss.php",
+  "region": "Рязанская область",
+  "name": "МедиаРязань",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://progorod62.ru/rss.xml",
+  "region": "Рязанская область",
+  "name": "Про Город Рязань (progorod62.ru)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ya62.ru/rss-feeds/rss.xml",
+  "region": "Рязанская область",
+  "name": "Я62.ру",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rg62.info/feed/rss/",
+  "region": "Рязанская область",
+  "name": "Областная Рязанская Газета (rg62.info)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gorod62.tv",
+  "region": "Рязанская область",
+  "name": "Телекомпания «Город» (gorod62.tv)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.ryazan.kp.ru/",
+  "region": "Рязанская область",
+  "name": "Комсомольская Правда — Рязань",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroyro62",
+  "region": "Рязанская область",
+  "name": "Минстрой Рязанской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fondkr62",
+  "region": "Рязанская область",
+  "name": "Фонд капремонта Рязанской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrkoka",
+  "region": "Рязанская область",
+  "name": "ГТРК «Ока» (Вести-Рязань)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "rv_ryazan",
+  "region": "Рязанская область",
+  "name": "Рязанские ведомости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ya62ru",
+  "region": "Рязанская область",
+  "name": "Я62.ру",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mediaryazan_official",
+  "region": "Рязанская область",
+  "name": "МедиаРязань",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "jkxryazan",
+  "region": "Рязанская область",
+  "name": "ЖКХИНФО 62",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gji62",
+  "region": "Рязанская область",
+  "name": "Госжилинспекция Рязанской области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "admryazan",
+  "region": "Рязанская область",
+  "name": "Администрация г. Рязани",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy67.admin-smolensk.ru/",
+  "region": "Смоленская область",
+  "name": "Министерство архитектуры и строительства Смоленской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.admin-smolensk.ru/files/rss/feed.xml",
+  "region": "Смоленская область",
+  "name": "Правительство Смоленской области — строительство",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kaprem.admin-smolensk.ru/",
+  "region": "Смоленская область",
+  "name": "Фонд капитального ремонта Смоленской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.smoladmin.ru/",
+  "region": "Смоленская область",
+  "name": "Администрация города Смоленска",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.smoladmin.ru/administraciya-goroda/struktura/upravlenie-arhitektury-i-gradostroitelstva/obschaya-informaciya-ob-upravlenii-arhitektury-i-gradostroit/",
+  "region": "Смоленская область",
+  "name": "Управление архитектуры и градостроительства Администрации Смоленска",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.smoladmin.ru/administraciya-goroda/struktura/upravlenie-municipalnogo-stroitelstva/obschaya-informaciya-ob-upravlenii-municipalnogo-stroitelstva/",
+  "region": "Смоленская область",
+  "name": "Управление муниципального строительства Администрации Смоленска",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://zakaz67.ru/feed/",
+  "region": "Смоленская область",
+  "name": "МКУ «Строитель» (Заказ 67)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gtrksmolensk.ru",
+  "region": "Смоленская область",
+  "name": "ГТРК «Смоленск» (Вести-Смоленск)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "rabochy-put.ru",
+  "region": "Смоленская область",
+  "name": "Рабочий путь",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://smolensk-i.ru/feed",
+  "region": "Смоленская область",
+  "name": "О чём говорит Смоленск",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://smolgazeta.ru/rss.xml",
+  "region": "Смоленская область",
+  "name": "Смоленская газета",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://smoldaily.ru/rss",
+  "region": "Смоленская область",
+  "name": "SmolDaily.ru",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.mk-smolensk.ru/",
+  "region": "Смоленская область",
+  "name": "МК в Смоленске",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://smol.aif.ru/rss/googlearticles",
+  "region": "Смоленская область",
+  "name": "АиФ Смоленск",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.smol.kp.ru/",
+  "region": "Смоленская область",
+  "name": "КП Смоленск",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.grazhdanstroy.ru/news/rss/",
+  "region": "Смоленская область",
+  "name": "ГК «Гражданстрой»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "smolstrom.ru",
+  "region": "Смоленская область",
+  "name": "АО «Смолстром-сервис»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "smolminstroy",
+  "region": "Смоленская область",
+  "name": "Минстрой Смоленской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "smolensk_i",
+  "region": "Смоленская область",
+  "name": "О чём говорит Смоленск",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "smolenskdaily",
+  "region": "Смоленская область",
+  "name": "SmolDaily.ru",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "rabochyput",
+  "region": "Смоленская область",
+  "name": "Рабочий путь",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://archit.tmbreg.ru/",
+  "region": "Тамбовская область",
+  "name": "Министерство строительства Тамбовской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.tambov.gov.ru/news/rss",
+  "region": "Тамбовская область",
+  "name": "Правительство Тамбовской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kapremont68.ru/",
+  "region": "Тамбовская область",
+  "name": "Фонд капитального ремонта Тамбовской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://city.tambov.gov.ru/",
+  "region": "Тамбовская область",
+  "name": "Администрация города Тамбова",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gkh.tmbreg.ru/",
+  "region": "Тамбовская область",
+  "name": "Министерство ТЭК и ЖКХ Тамбовской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://vestitambov.ru/",
+  "region": "Тамбовская область",
+  "name": "ГТРК «Тамбов» (Вести-Тамбов)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "tvtambov.ru",
+  "region": "Тамбовская область",
+  "name": "ТК «Новый Век» (Тамбов)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.onlinetambov.ru/rss/",
+  "region": "Тамбовская область",
+  "name": "OnlineTambov.ru",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://bloknottambov.ru/rss_news.php",
+  "region": "Тамбовская область",
+  "name": "Блокнот Тамбов",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://novostitambova.ru/rss",
+  "region": "Тамбовская область",
+  "name": "Новости Тамбова (novostitambova.ru)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://erzrf.ru/",
+  "region": "Тамбовская область",
+  "name": "ЕРЗ.РФ — Тамбовская область",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--68-6kctg8ahhgtq8b.xn--p1ai/rss.xml",
+  "region": "Тамбовская область",
+  "name": "ГК «Спецмонтаж» (ЖК «Домашний»)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ugjn68",
+  "region": "Тамбовская область",
+  "name": "Мингосжилстройтехконтроль Тамбовской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "disp_tambov",
+  "region": "Тамбовская область",
+  "name": "ЦГДС Тамбова",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://stroy.tularegion.ru/",
+  "region": "Тульская область",
+  "name": "Министерство строительства Тульской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://tularegion.ru/upload/iblock_rss_607.xml",
+  "region": "Тульская область",
+  "name": "Правительство Тульской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gkh.tularegion.ru/",
+  "region": "Тульская область",
+  "name": "Министерство жилищного хозяйства и благоустройства ТО",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kapremont71.ru/",
+  "region": "Тульская область",
+  "name": "Фонд капитального ремонта Тульской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "tula.ru",
+  "region": "Тульская область",
+  "name": "Администрация города Тулы",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vestitula.ru/feed",
+  "region": "Тульская область",
+  "name": "ГТРК «Тула» (Вести-Тула)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://myslo.ru/rss/blogs/",
+  "region": "Тульская область",
+  "name": "MySlo.ru — городской портал Тулы",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://tulapressa.ru/tag/stroitelstvo/",
+  "region": "Тульская область",
+  "name": "ИА «Тульская пресса» — строительство",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://srotula.ru/",
+  "region": "Тульская область",
+  "name": "СРО «Строители Тульской области»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://tula.aif.ru/rss/googlearticles",
+  "region": "Тульская область",
+  "name": "АиФ Тула",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://tula.mk.ru/",
+  "region": "Тульская область",
+  "name": "МК в Туле",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.tula.kp.ru/",
+  "region": "Тульская область",
+  "name": "Комсомольская правда — Тула",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://edinstvo71.ru/",
+  "region": "Тульская область",
+  "name": "ГК «Единство»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kapital71.ru/",
+  "region": "Тульская область",
+  "name": "ГК «Капитал»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.ost71.ru/",
+  "region": "Тульская область",
+  "name": "ГК «ОСТ»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_tularegion",
+  "region": "Тульская область",
+  "name": "Минстрой Тульской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "FKR_Tula",
+  "region": "Тульская область",
+  "name": "Фонд капремонта Тульской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestitula",
+  "region": "Тульская область",
+  "name": "Вести-Тула (ГТРК)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://portal.yarregion.ru/depts-str/",
+  "region": "Ярославская область",
+  "name": "Министерство строительства и ЖКХ Ярославской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.yarregion.ru/_layouts/rssfeed_yarregion/listfeed_yrnews.aspx",
+  "region": "Ярославская область",
+  "name": "Правительство Ярославской области — пресс-центр",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://yarmkd76.ru/",
+  "region": "Ярославская область",
+  "name": "Региональный фонд содействия капремонту МКД Ярославской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://city-yaroslavl.ru/rss.php",
+  "region": "Ярославская область",
+  "name": "Мэрия города Ярославля",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://portal.yarregion.ru/depts-igsnyo/",
+  "region": "Ярославская область",
+  "name": "Инспекция государственного строительного надзора Ярославской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://vesti-yaroslavl.ru/",
+  "region": "Ярославская область",
+  "name": "ГТРК «Ярославия» (Вести-Ярославль)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yarreg.ru/feed/",
+  "region": "Ярославская область",
+  "name": "Ярославский регион",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://76.ru/rss-feeds/rss.xml",
+  "region": "Ярославская область",
+  "name": "76.ру",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://progorod76.ru/rss.xml",
+  "region": "Ярославская область",
+  "name": "ПроГород Ярославль",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yarcube.ru/rss/",
+  "region": "Ярославская область",
+  "name": "Яркуб",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yar.aif.ru/rss/googlearticles",
+  "region": "Ярославская область",
+  "name": "Аргументы и факты — Ярославль",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://svetloyar76.ru/",
+  "region": "Ярославская область",
+  "name": "СК Светлояр",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gkh_yar",
+  "region": "Ярославская область",
+  "name": "Минстрой и ЖКХ Ярославской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestiyaroslavl",
+  "region": "Ярославская область",
+  "name": "Вести-Ярославль",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.mgsn.ru/",
+  "region": "Москва",
+  "name": "Мосгосстройнадзор",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://realty.yandex.ru/",
+  "region": "Москва",
+  "name": "Яндекс Недвижимость",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "chp_moskva",
+  "region": "Москва",
+  "name": "ЧП Москва — происшествия",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gov.karelia.ru",
+  "region": "Республика Карелия",
+  "name": "Министерство строительства, ЖКХ и энергетики Республики Карелия",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://petrozavodsk-mo.ru/",
+  "region": "Республика Карелия",
+  "name": "Администрация Петрозаводского городского округа",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "karelinform.ru",
+  "region": "Республика Карелия",
+  "name": "Карелинформ — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sfkrk.ru/news/rss",
+  "region": "Республика Карелия",
+  "name": "Группа компаний «СФК» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sana-karelia.ru/",
+  "region": "Республика Карелия",
+  "name": "СК «САНА» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.rkomi.ru/rss",
+  "region": "Республика Коми",
+  "name": "Правительство Республики Коми — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://komiinform.ru/rss/newsRss",
+  "region": "Республика Коми",
+  "name": "Комиинформ — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.bnkomi.ru/rss/news",
+  "region": "Республика Коми",
+  "name": "БНКоми — недвижимость и стройка",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestikomi",
+  "region": "Республика Коми",
+  "name": "Вести-Коми — Telegram",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ksalfa.com",
+  "region": "Республика Коми",
+  "name": "КС Альфа — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://dvinanews.ru/rss",
+  "region": "Архангельская область",
+  "name": "Министерство строительства и архитектуры Архангельской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://arhcity.ru/",
+  "region": "Архангельская область",
+  "name": "Мэрия города Архангельска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://29.ru/rss-feeds/rss.xml",
+  "region": "Архангельская область",
+  "name": "29.ru — новости Архангельска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.dvinainform.ru/rss.xml",
+  "region": "Архангельская область",
+  "name": "Двина-Информ — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vologda-oblast.ru/rss.php",
+  "region": "Вологодская область",
+  "name": "Департамент строительства и ЖКХ Вологодской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://35media.ru/rss",
+  "region": "Вологодская область",
+  "name": "Жить35.ру — новости Вологды",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gov39.ru/",
+  "region": "Калининградская область",
+  "name": "Министерство строительства Калининградской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gov39.ru",
+  "region": "Калининградская область",
+  "name": "Правительство Калининградской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.klgd.ru/rss/index.php?rss=y",
+  "region": "Калининградская область",
+  "name": "Администрация города Калининграда",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.newkaliningrad.ru/news/rss.xml",
+  "region": "Калининградская область",
+  "name": "Newkaliningrad.ru — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://admin.klops.ru/rss/rss",
+  "region": "Калининградская область",
+  "name": "Клопс (klops.ru) — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kgd.ru",
+  "region": "Калининградская область",
+  "name": "Калининград.Ru — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ksi39.ru",
+  "region": "Калининградская область",
+  "name": "Калининградстройинвест — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://lenobl.ru/rss",
+  "region": "Ленинградская область",
+  "name": "Комитет по строительству Ленинградской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "lenobl.ru",
+  "region": "Ленинградская область",
+  "name": "Правительство Ленинградской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://47news.ru/rss",
+  "region": "Ленинградская область",
+  "name": "47news.ru — новости Ленинградской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://lenoblinform.ru/",
+  "region": "Ленинградская область",
+  "name": "Леноблинформ — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stroylo",
+  "region": "Ленинградская область",
+  "name": "Комитет по строительству ЛО — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.gov-murman.ru/",
+  "region": "Мурманская область",
+  "name": "Министерство строительства и ЖКХ Мурманской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gov-murman.ru",
+  "region": "Мурманская область",
+  "name": "Правительство Мурманской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.citymurmansk.ru/",
+  "region": "Мурманская область",
+  "name": "Администрация города Мурманска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://severpost.ru/rss.xml",
+  "region": "Мурманская область",
+  "name": "Северомурманск — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://szair.ru/",
+  "region": "Мурманская область",
+  "name": "ГК «АИР» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://gkh.adm-nao.ru/obshaya-informaciya/press-centr/news/rss/",
+  "region": "Ненецкий автономный округ",
+  "name": "Департамент строительства, ЖКХ, энергетики и транспорта НАО",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "adm-nao.ru",
+  "region": "Ненецкий автономный округ",
+  "name": "Администрация Ненецкого автономного округа — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://nao24.ru/rss.xml",
+  "region": "Ненецкий автономный округ",
+  "name": "НАО24 — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://nvinder.ru/rubric/22/feed",
+  "region": "Ненецкий автономный округ",
+  "name": "Няръяна вындер — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "novreg.ru",
+  "region": "Новгородская область",
+  "name": "Правительство Новгородской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://news.novgorod.ru/news/rss",
+  "region": "Новгородская область",
+  "name": "Новгород.ру — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://53news.ru/rss",
+  "region": "Новгородская область",
+  "name": "53news.ru — новости Новгородской области",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "pravo.pskov.ru",
+  "region": "Псковская область",
+  "name": "Государственный комитет Псковской области по строительству",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "pskov.ru",
+  "region": "Псковская область",
+  "name": "Правительство Псковской области — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fkr60.ru",
+  "region": "Псковская область",
+  "name": "Фонд капитального ремонта Псковской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrkpskov.ru/?format=feed&type=rss",
+  "region": "Псковская область",
+  "name": "ГТРК «Псков» (Вести-Псков)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://pln-pskov.ru/rss.php",
+  "region": "Псковская область",
+  "name": "Псковская лента новостей (pln-pskov.ru)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "informpskov.ru",
+  "region": "Псковская область",
+  "name": "Центр информации «Псков» — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestipskov",
+  "region": "Псковская область",
+  "name": "Вести-Псков — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://smu60.ru/",
+  "region": "Псковская область",
+  "name": "СМУ-60 — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gov.spb.ru",
+  "region": "Санкт-Петербург",
+  "name": "Правительство Санкт-Петербурга — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "fontanka",
+  "region": "Санкт-Петербург",
+  "name": "Фонтанка — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.bn.ru/",
+  "region": "Санкт-Петербург",
+  "name": "BN.ru — недвижимость СПб",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "adygheya.ru",
+  "region": "Республика Адыгея",
+  "name": "Министерство строительства, транспорта, ЖКХ и дорожного хозяйства Республики Адыгея",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://adygtv.ru/nT/rss.php",
+  "region": "Республика Адыгея",
+  "name": "ГТРК «Адыгея»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sovetskaya-adygeya.ru/rss",
+  "region": "Республика Адыгея",
+  "name": "Советская Адыгея (СА онлайн)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://adigeatoday.ru/news/",
+  "region": "Республика Адыгея",
+  "name": "Адыгея Сегодня — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://adygvoice.ru/",
+  "region": "Республика Адыгея",
+  "name": "Адыгэ макъ — новостной портал",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://adigea.aif.ru/rss/googlearticles",
+  "region": "Республика Адыгея",
+  "name": "АиФ Адыгея — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://24mtv.ru/feed/",
+  "region": "Республика Адыгея",
+  "name": "Майкопское телевидение (МТВ) — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_adygeia",
+  "region": "Республика Адыгея",
+  "name": "ГТРК Адыгея — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy01",
+  "region": "Республика Адыгея",
+  "name": "Минстрой Республики Адыгея — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://azkka.ru/novosti",
+  "region": "Республика Адыгея",
+  "name": "Ассоциация застройщиков Краснодарского края и Республики Адыгея",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kalmstroy.ru",
+  "region": "Республика Калмыкия",
+  "name": "Министерство по строительству, транспорту и дорожному хозяйству Республики Калмыкия",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vesti-kalmykia.ru/feed/rss/news?format=feed",
+  "region": "Республика Калмыкия",
+  "name": "ГТРК «Калмыкия» (Вести-Калмыкия)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://riakalm.ru/?format=feed&type=rss",
+  "region": "Республика Калмыкия",
+  "name": "РИА Калмыкия — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://tegrk.ru/feed",
+  "region": "Республика Калмыкия",
+  "name": "Степные вести — новости Калмыкии",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kalmykia-online.ru/rss",
+  "region": "Республика Калмыкия",
+  "name": "Калмыкия-online.ру — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.mk-kalm.ru/news/",
+  "region": "Республика Калмыкия",
+  "name": "МК в Калмыкии — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_kalmykia",
+  "region": "Республика Калмыкия",
+  "name": "Вести-Калмыкия — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_rk",
+  "region": "Республика Калмыкия",
+  "name": "Минстрой Республики Калмыкия — Telegram",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://krasnodar.ru/rss",
+  "region": "Краснодарский край",
+  "name": "Правительство Краснодарского края — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kubantv.ru/",
+  "region": "Краснодарский край",
+  "name": "ГТРК «Кубань» (Вести-Кубань)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kubnews.ru/rss",
+  "region": "Краснодарский край",
+  "name": "Кубанские новости — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kuban.rbc.ru",
+  "region": "Краснодарский край",
+  "name": "РБК Краснодар — недвижимость и стройка",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "russiakuban",
+  "region": "Краснодарский край",
+  "name": "Вести-Кубань — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.astrobl.ru/",
+  "region": "Астраханская область",
+  "name": "Министерство строительства и ЖКХ Астраханской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.astrobl.ru/news",
+  "region": "Астраханская область",
+  "name": "Правительство Астраханской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://lotosgtrk.ru/rss",
+  "region": "Астраханская область",
+  "name": "ГТРК «Лотос» (Вести-Астрахань)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://a24.press/rss.xml",
+  "region": "Астраханская область",
+  "name": "Астрахань 24 — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://punkt-a.info/",
+  "region": "Астраханская область",
+  "name": "Пункт-А — новости Астрахани",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kaspyinfo.ru/rss/",
+  "region": "Астраханская область",
+  "name": "КаспийИнфо — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://astrakhan.su/feed/",
+  "region": "Астраханская область",
+  "name": "Астрахань.su — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrklotos",
+  "region": "Астраханская область",
+  "name": "ГТРК «Лотос» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_ao",
+  "region": "Астраханская область",
+  "name": "Минстрой и ЖКХ АО — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.volgograd.ru/",
+  "region": "Волгоградская область",
+  "name": "Администрация города Волгограда",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://volgograd-trv.ru/rss.xml",
+  "region": "Волгоградская область",
+  "name": "ГТРК «Волгоград-ТРВ» (Вести-Волгоград)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vestivlg.ru/feed",
+  "region": "Волгоградская область",
+  "name": "ВестиВЛГ — новости Волгограда",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroi.donland.ru/",
+  "region": "Ростовская область",
+  "name": "Министерство строительства, архитектуры и территориального развития Ростовской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.donland.ru/news/rss/",
+  "region": "Ростовская область",
+  "name": "Правительство Ростовской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://dontr.ru/",
+  "region": "Ростовская область",
+  "name": "ГТРК «Дон-ТР» (Вести-Дон)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rostov.aif.ru/rss/google_realestate_20",
+  "region": "Ростовская область",
+  "name": "АиФ Ростов — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gorodn.ru/",
+  "region": "Ростовская область",
+  "name": "Деловой портал ГородН — инвестпроекты",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gazetapik.ru/",
+  "region": "Ростовская область",
+  "name": "Газета «ПИК» (Каменск-Шахтинский) — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_don",
+  "region": "Ростовская область",
+  "name": "Вести-Дон — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.e-dag.ru/",
+  "region": "Республика Дагестан",
+  "name": "Министерство строительства, архитектуры и ЖКХ Республики Дагестан",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "e-dag.ru",
+  "region": "Республика Дагестан",
+  "name": "Правительство Республики Дагестан — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "dagfkr.ru",
+  "region": "Республика Дагестан",
+  "name": "Дагестанский фонд капитального ремонта",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrkdagestan.ru/rss/",
+  "region": "Республика Дагестан",
+  "name": "ГТРК «Дагестан» (Вести-Дагестан)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://riadagestan.ru/rss",
+  "region": "Республика Дагестан",
+  "name": "РИА «Дагестан» — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "midag.ru",
+  "region": "Республика Дагестан",
+  "name": "Махачкалинские известия — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://rgvktv.ru/yandex.rss/",
+  "region": "Республика Дагестан",
+  "name": "РГВК «Дагестан» — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://dag.aif.ru/rss/google_realestate_8",
+  "region": "Республика Дагестан",
+  "name": "АиФ-Дагестан — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "dagpravda.ru",
+  "region": "Республика Дагестан",
+  "name": "Дагестанская правда — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroyrd",
+  "region": "Республика Дагестан",
+  "name": "Минстрой Дагестана — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrkdagestan",
+  "region": "Республика Дагестан",
+  "name": "ГТРК «Дагестан» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "smotrim.ru",
+  "region": "Республика Дагестан",
+  "name": "Кавказ 24 (объединённый канал СКФО)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://iwel.ru/",
+  "region": "Республика Дагестан",
+  "name": "ГК «iWEL» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "minstroiri.ru",
+  "region": "Республика Ингушетия",
+  "name": "Министерство строительства Республики Ингушетия",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gov.ru",
+  "region": "Республика Ингушетия",
+  "name": "Правительство Республики Ингушетия — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://admmagas.ru/",
+  "region": "Республика Ингушетия",
+  "name": "Администрация МО «Городской округ город Магас»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ingushetiatv.ru/rss",
+  "region": "Республика Ингушетия",
+  "name": "ГТРК «Ингушетия» (Вести-Ингушетии)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ingushetia.org/rss",
+  "region": "Республика Ингушетия",
+  "name": "Ингушетия.org — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://berkat.ru/",
+  "region": "Республика Ингушетия",
+  "name": "Беркат — доска объявлений Ингушетии",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_ri",
+  "region": "Республика Ингушетия",
+  "name": "Минстрой Ингушетии — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_ingushetia",
+  "region": "Республика Ингушетия",
+  "name": "ГТРК «Ингушетия» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "magas_capital",
+  "region": "Республика Ингушетия",
+  "name": "Администрация г. Магас — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.kbr.ru/",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Министерство строительства и ЖКХ Кабардино-Балкарской Республики",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://admnalchik.ru/rss",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Местная администрация городского округа Нальчик",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://aif.ru/rss/googlearticles",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "АиФ-Кабардино-Балкария — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "nalchiknews1",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Местная администрация г.о. Нальчик — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://xn--h1acdfggndek3d.xn--p1ai/",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Министерство строительства и ЖКХ Карачаево-Черкесской Республики",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kchr.ru/news/",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Официальный сайт Главы и Правительства КЧР — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gtrkkchr.ru/",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "ГТРК «Карачаево-Черкесия»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kchr.ru/",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "РИА «Карачаево-Черкесия» — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://skchr.ru/",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Союз «Строители Карачаево-Черкесской Республики»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroykchr",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Минстрой КЧР — Telegram",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy.alania.gov.ru/minstroynewsr_ss",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Министерство строительства и архитектуры Республики Северная Осетия-Алания",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://alania.gov.ru/news/",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Правительство РСО-Алания — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fkr-alania.ru",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Фонд капитального ремонта РСО-Алания",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://alaniatv.ru/rss",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "ГТРК «Алания» (Вести-Алания)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://sevosetia.ru/",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Газета «Северная Осетия» — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://region15.ru/rss",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "15-й Регион — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://iryston.tv/rss",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Iryston TV — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "osnova.news",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "ОСнова — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.e-osetia.ru/rss",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "e-osetia.ru — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "alaniatvru",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "ГТРК «Алания» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://n15-realty.ru/ru",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Н15 — агентство недвижимости",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://sk-sard.ru/",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "ГК «САРД» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://msgkhchr.ru/feed/",
+  "region": "Чеченская Республика",
+  "name": "Министерство строительства и ЖКХ Чеченской Республики",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://chechnya.gov.ru/rss",
+  "region": "Чеченская Республика",
+  "name": "Официальный сайт Главы Чеченской Республики — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gtrkvainah.ru",
+  "region": "Чеченская Республика",
+  "name": "ГТРК «Вайнах» (Вести-Чечня)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "grozny.tv",
+  "region": "Чеченская Республика",
+  "name": "ЧГТРК «Грозный»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.grozny-inform.ru/feeds/rss/",
+  "region": "Чеченская Республика",
+  "name": "ИА «Грозный-Информ» — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "chechnyatoday.com",
+  "region": "Чеченская Республика",
+  "name": "ИА «Чечня Сегодня» — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://grozny.estate/feed/",
+  "region": "Чеченская Республика",
+  "name": "Grozny Estate — блог о недвижимости",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "domchr.ru",
+  "region": "Чеченская Республика",
+  "name": "DOMCHR — недвижимость Грозного",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroychr",
+  "region": "Чеченская Республика",
+  "name": "Минстрой ЧР — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "groznytv",
+  "region": "Чеченская Республика",
+  "name": "ЧГТРК «Грозный» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://triumfcc.ru/feed/",
+  "region": "Чеченская Республика",
+  "name": "ГК «ТРИУМФ» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://skmonolit.info/projects",
+  "region": "Чеченская Республика",
+  "name": "ГК «СК Монолит» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--h1acdfggnhdg.xn--p1ai/",
+  "region": "Ставропольский край",
+  "name": "Министерство строительства и архитектуры Ставропольского края",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.stavregion.ru/news/feed/atom/",
+  "region": "Ставропольский край",
+  "name": "Правительство Ставропольского края — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fkr26.ru/",
+  "region": "Ставропольский край",
+  "name": "Фонд капитального ремонта Ставропольского края",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vesti26.ru/rss.xml",
+  "region": "Ставропольский край",
+  "name": "ГТРК «Ставрополье» (Вести-Ставрополье)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://26.ru/rss-feeds/rss.xml",
+  "region": "Ставропольский край",
+  "name": "26.ru — новости Ставрополя",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://bloknot-stavropol.ru/rss_news.php",
+  "region": "Ставропольский край",
+  "name": "Блокнот-Ставрополь — новости недвижимости",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://stav.aif.ru/rss/google_realestate_26",
+  "region": "Ставропольский край",
+  "name": "АиФ-Ставрополь — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "1777.ru",
+  "region": "Ставропольский край",
+  "name": "1777.ru — новости Ставрополя",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroysk",
+  "region": "Ставропольский край",
+  "name": "Минстрой Ставропольского края — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://glavstroy-26.ru/",
+  "region": "Ставропольский край",
+  "name": "ГК «ГлавСтрой» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.bashinform.ru/rss/yandex",
+  "region": "Республика Башкортостан",
+  "name": "Башинформ — новости строительства",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ufa1.ru/rss-feeds/rss.xml",
+  "region": "Республика Башкортостан",
+  "name": "Уфа1.ру — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "ufa.aif.ru",
+  "region": "Республика Башкортостан",
+  "name": "АиФ-Уфа — строительство",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "e-mordovia.ru",
+  "region": "Республика Мордовия",
+  "name": "Министерство строительства, архитектуры и ЖКХ Республики Мордовия",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.tatarstan.ru/",
+  "region": "Республика Татарстан",
+  "name": "Министерство строительства, архитектуры и ЖКХ Республики Татарстан",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "prav.tatarstan.ru",
+  "region": "Республика Татарстан",
+  "name": "Правительство Республики Татарстан — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kzn.ru/",
+  "region": "Республика Татарстан",
+  "name": "Администрация г. Казани",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "business-gazeta.ru",
+  "region": "Республика Татарстан",
+  "name": "Бизнес Онлайн — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://suvarstroit.ru/",
+  "region": "Республика Татарстан",
+  "name": "Суварстроит — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://unistroy.ru/",
+  "region": "Республика Татарстан",
+  "name": "Унистрой — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://udmurt.ru/rss",
+  "region": "Удмуртская Республика",
+  "name": "Правительство Удмуртии — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.izh.ru/",
+  "region": "Удмуртская Республика",
+  "name": "Администрация г. Ижевска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://day.org.ru/rss",
+  "region": "Удмуртская Республика",
+  "name": "День.орг — новости Ижевска",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "komosstroy.ru",
+  "region": "Удмуртская Республика",
+  "name": "КОМОССТРОЙ — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkr21.ru",
+  "region": "Чувашская Республика",
+  "name": "Фонд капитального ремонта ЧР",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "chgtrk.ru",
+  "region": "Чувашская Республика",
+  "name": "ГТРК «Чувашия»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://cheb.ru/",
+  "region": "Чувашская Республика",
+  "name": "cheb.ru — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://doriss.ru/",
+  "region": "Чувашская Республика",
+  "name": "Дорисс — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://permkrai.ru/bitrix/rss.php?ID=&LANG=s1&TYPE=news&LIMIT=20",
+  "region": "Пермский край",
+  "name": "Правительство Пермского края — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.gorodperm.ru/",
+  "region": "Пермский край",
+  "name": "Администрация г. Перми",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://xn--80ady5a5d.xn--p1ai/news/rss/",
+  "region": "Кировская область",
+  "name": "Правительство Кировской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fkr43.ru/",
+  "region": "Кировская область",
+  "name": "Фонд капитального ремонта Кировской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.gtrk-vyatka.ru/rss.xml",
+  "region": "Кировская область",
+  "name": "ГТРК «Вятка»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "newsler.ru",
+  "region": "Кировская область",
+  "name": "Newsler.ru — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "nnov.ru",
+  "region": "Нижегородская область",
+  "name": "Администрация г. Нижнего Новгорода",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "nn.ru",
+  "region": "Нижегородская область",
+  "name": "НН.ру — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.gipernn.ru/rss",
+  "region": "Нижегородская область",
+  "name": "GIPERNN — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_nn",
+  "region": "Нижегородская область",
+  "name": "ГТК «Нижний Новгород» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://karkasmonolit.ru/",
+  "region": "Нижегородская область",
+  "name": "Каркас Монолит — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://orenburg-gov.ru/news/rss",
+  "region": "Оренбургская область",
+  "name": "Правительство Оренбургской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://orenburg.ru/",
+  "region": "Оренбургская область",
+  "name": "Администрация г. Оренбурга",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://56.ru/rss-feeds/rss.xml",
+  "region": "Оренбургская область",
+  "name": "56.ru — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.ural56.ru/",
+  "region": "Оренбургская область",
+  "name": "Урал56.ру — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://penza-online.ru/",
+  "region": "Пензенская область",
+  "name": "Пенза-Онлайн — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.samadm.ru/media/rss/",
+  "region": "Самарская область",
+  "name": "Администрация г. Самары",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.minstroy.saratov.gov.ru/",
+  "region": "Саратовская область",
+  "name": "Министерство строительства и ЖКХ Саратовской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://saratov.gov.ru/news/rss/",
+  "region": "Саратовская область",
+  "name": "Правительство Саратовской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://saratovmer.ru/",
+  "region": "Саратовская область",
+  "name": "Администрация г. Саратова",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrk-saratov.ru/rss",
+  "region": "Саратовская область",
+  "name": "ГТРК «Саратов»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "64.ru",
+  "region": "Саратовская область",
+  "name": "64.ru — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "ulgov.ru",
+  "region": "Ульяновская область",
+  "name": "Правительство Ульяновской области — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ulmeria.ru",
+  "region": "Ульяновская область",
+  "name": "Администрация г. Ульяновска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrk-volga.ru/feed/",
+  "region": "Ульяновская область",
+  "name": "ГТРК «Волга»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ulpressa.ru",
+  "region": "Ульяновская область",
+  "name": "Ульяновск Сегодня — новости",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_volga",
+  "region": "Ульяновская область",
+  "name": "ГТРК «Волга» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "dars.ru",
+  "region": "Ульяновская область",
+  "name": "DARS Development — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://gkh.kurganobl.ru/",
+  "region": "Курганская область",
+  "name": "Департамент строительства, госэкспертизы и ЖКХ Курганской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kurganobl.ru",
+  "region": "Курганская область",
+  "name": "Правительство Курганской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://fkr45.ru/rss/?gov_id=1&id=1",
+  "region": "Курганская область",
+  "name": "Фонд капитального ремонта Курганской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.kurgan-city.ru/",
+  "region": "Курганская область",
+  "name": "Администрация города Кургана",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gtrk-kurgan.ru",
+  "region": "Курганская область",
+  "name": "ГТРК «Курган» (Вести-Зауралье)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_zauralie",
+  "region": "Курганская область",
+  "name": "ГТРК «Курган» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://45.ru/rss-feeds/rss.xml",
+  "region": "Курганская область",
+  "name": "45.ру — новости Кургана",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "midural.ru",
+  "region": "Свердловская область",
+  "name": "Правительство Свердловской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.fkr66.ru/",
+  "region": "Свердловская область",
+  "name": "Фонд капитального ремонта Свердловской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vesti-ural.ru/rss",
+  "region": "Свердловская область",
+  "name": "ГТРК «Урал» (Вести-Урал)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestiuraltv",
+  "region": "Свердловская область",
+  "name": "Вести-Урал — Telegram",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "admtyumen.ru",
+  "region": "Тюменская область",
+  "name": "Правительство Тюменской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.fkr72.ru/",
+  "region": "Тюменская область",
+  "name": "Фонд капитального ремонта Тюменской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://tyumen-city.ru/",
+  "region": "Тюменская область",
+  "name": "Администрация города Тюмени",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "region-tyumen.ru",
+  "region": "Тюменская область",
+  "name": "ГТРК «Регион-Тюмень»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "GTRK_Region_Tyumen",
+  "region": "Тюменская область",
+  "name": "ГТРК «Регион-Тюмень» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://72.ru/rss-feeds/rss.xml",
+  "region": "Тюменская область",
+  "name": "72.ру — новости недвижимости Тюмени",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://deps.admhmao.ru/news/rss",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "Департамент строительства и архитектуры ХМАО — Югры (Депстрой Югры)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "admhmao.ru",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "Правительство ХМАО — Югры — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fkr86.ru",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "Югорский фонд капитального ремонта",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://admhmansy.ru/",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "Администрация города Ханты-Мансийска",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "ugoriatv.ru",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "ГТРК «Югория» (Вести-Югория)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestiugoria",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "Вести-Югория — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://86.ru/rss-feeds/rss.xml",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "86.ру — новости Югры",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://nv86.ru/",
+  "region": "Ханты-Мансийский АО — Югра",
+  "name": "NV86.ru — Нижневартовск",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "pravmin.gov74.ru",
+  "region": "Челябинская область",
+  "name": "Правительство Челябинской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.fondkapremont74.ru/feed/",
+  "region": "Челябинская область",
+  "name": "Региональный оператор капитального ремонта Челябинской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "cheltvru",
+  "region": "Челябинская область",
+  "name": "Вести Южный Урал — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kapremont74",
+  "region": "Челябинская область",
+  "name": "Фонд капремонта Челябинской области — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "chelmeria",
+  "region": "Челябинская область",
+  "name": "Администрация Челябинска — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://niks74.ru/rss.xml",
+  "region": "Челябинская область",
+  "name": "ГК «НИКС» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://depstroy.yanao.ru/",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Департамент строительства и жилищной политики ЯНАО",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "yanao.ru",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Правительство ЯНАО — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://fondkr89.ru/feed/",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Фонд капитального ремонта МКД в ЯНАО",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--89-6kcaue5b3be7b.xn--p1ai/",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Администрация города Салехарда",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vesti-yamal.ru/rss/",
+  "region": "Ямало-Ненецкий АО",
+  "name": "ГТРК «Ямал» (Вести Ямал)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestiyamal89",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Вести Ямал — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stroim_yamal",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Строим Ямал — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "salekhard_admin",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Администрация Салехарда — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy19.ru/",
+  "region": "Республика Хакасия",
+  "name": "Министерство строительства и жилищно-коммунального хозяйства Республики Хакасия",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://r-19.ru/news/",
+  "region": "Республика Хакасия",
+  "name": "Правительство Республики Хакасия — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://ash19.ru/",
+  "region": "Республика Хакасия",
+  "name": "АШ — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkr22.ru",
+  "region": "Алтайский край",
+  "name": "Фонд капитального ремонта Алтайского края",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "barnaul.org",
+  "region": "Алтайский край",
+  "name": "Администрация Барнаула",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://soyuz22.ru/",
+  "region": "Алтайский край",
+  "name": "ГК «Союз» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "krskstate.ru",
+  "region": "Красноярский край",
+  "name": "Правительство Красноярского края — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "newslab.ru",
+  "region": "Красноярский край",
+  "name": "Newslab — новости",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://irkobl.ru/news/rss/",
+  "region": "Иркутская область",
+  "name": "Правительство Иркутской области — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fkr38.ru",
+  "region": "Иркутская область",
+  "name": "Фонд капитального ремонта Иркутской области",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://admirk.ru/",
+  "region": "Иркутская область",
+  "name": "Администрация Иркутска",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "irk.ru",
+  "region": "Иркутская область",
+  "name": "IRK.ru — новости",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://irk.sibdom.ru/",
+  "region": "Иркутская область",
+  "name": "Иркутск. Недвижимость — СИБДОМ",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://kemobl.ru/news/rss",
+  "region": "Кемеровская область",
+  "name": "Правительство Кемеровской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fkr42.ru/",
+  "region": "Кемеровская область",
+  "name": "Фонд капитального ремонта Кемеровской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://kemerovo.ru/rss",
+  "region": "Кемеровская область",
+  "name": "Администрация Кемерова",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "a42.ru",
+  "region": "Кемеровская область",
+  "name": "A42.ru — новости",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "vse42.ru",
+  "region": "Кемеровская область",
+  "name": "VSE42 — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://nsk.sibdom.ru/",
+  "region": "Новосибирская область",
+  "name": "Новосибирск. Недвижимость — СИБДОМ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://admomsk.ru/web/guest/main",
+  "region": "Омская область",
+  "name": "Администрация Омска",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://omsk.sibdom.ru/",
+  "region": "Омская область",
+  "name": "Омск. Недвижимость — СИБДОМ",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "tomsk.gov.ru",
+  "region": "Томская область",
+  "name": "Администрация Томской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.tomsk.ru/rss",
+  "region": "Томская область",
+  "name": "Администрация Томска",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "tomsk.ru",
+  "region": "Томская область",
+  "name": "TOMSK.RU — новости",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "tolknews.ru",
+  "region": "Томская область",
+  "name": "Толк — новости",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://tomsk.sibdom.ru/",
+  "region": "Томская область",
+  "name": "Томск. Недвижимость — СИБДОМ",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://egov-buryatia.ru/minstroy/",
+  "region": "Республика Бурятия",
+  "name": "Министерство строительства и модернизации ЖКК Республики Бурятия",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://egov-buryatia.ru/press_center/rss/",
+  "region": "Республика Бурятия",
+  "name": "Правительство Республики Бурятия — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://site.fondkr03.ru/rss/?gov_id=1&id=1",
+  "region": "Республика Бурятия",
+  "name": "Фонд капитального ремонта Республики Бурятия",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://ulan-ude-eg.ru/",
+  "region": "Республика Бурятия",
+  "name": "Администрация г. Улан-Удэ",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gorodulanude",
+  "region": "Республика Бурятия",
+  "name": "Администрация г. Улан-Удэ — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://bgtrk.ru/",
+  "region": "Республика Бурятия",
+  "name": "ГТРК «Бурятия» (Вести-Бурятия)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_buryatia",
+  "region": "Республика Бурятия",
+  "name": "ГТРК «Бурятия» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy03",
+  "region": "Республика Бурятия",
+  "name": "Минстрой Республики Бурятия — Telegram",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.baikal-daily.ru/news/rss/",
+  "region": "Республика Бурятия",
+  "name": "Байкал-Дейли — новости Бурятии",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.infpol.ru/export/",
+  "region": "Республика Бурятия",
+  "name": "Информ Полис — новости Бурятии",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://zhuravli-dom.ru/",
+  "region": "Республика Бурятия",
+  "name": "СЗ «Строительная корпорация Республики Бурятия» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://minstroy.sakha.gov.ru/rss.xml",
+  "region": "Республика Саха (Якутия)",
+  "name": "Министерство строительства Республики Саха (Якутия)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "MinstroyYakutia",
+  "region": "Республика Саха (Якутия)",
+  "name": "Минстрой Якутии — Telegram",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fondkr.ru",
+  "region": "Республика Саха (Якутия)",
+  "name": "Фонд капитального ремонта РС(Я)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fondkr_yakutia",
+  "region": "Республика Саха (Якутия)",
+  "name": "Фонд капитального ремонта РС(Я) — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://yakutskcity.ru/",
+  "region": "Республика Саха (Якутия)",
+  "name": "Окружная администрация г. Якутска",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://gtrksakha.ru/rss/",
+  "region": "Республика Саха (Якутия)",
+  "name": "ГТРК «Саха» (Вести Саха)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestisakha",
+  "region": "Республика Саха (Якутия)",
+  "name": "ГТРК «Саха» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ysia.ru/rss",
+  "region": "Республика Саха (Якутия)",
+  "name": "ЯСИА — Якутское-Саха информационное агентство",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yakutsk.ru/category/news/nedvizhimost/feed/",
+  "region": "Республика Саха (Якутия)",
+  "name": "Якутск.ру — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://14.ru/rss-feeds/rss.xml",
+  "region": "Республика Саха (Якутия)",
+  "name": "14.ру — новости Якутска",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://tekta.pro/feed/",
+  "region": "Республика Саха (Якутия)",
+  "name": "СЗ «Текта» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.75.ru/",
+  "region": "Забайкальский край",
+  "name": "Министерство строительства Забайкальского края",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://fondkr75.ru/",
+  "region": "Забайкальский край",
+  "name": "Забайкальский фонд капитального ремонта МКД",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gtrkchita.ru",
+  "region": "Забайкальский край",
+  "name": "ГТРК «Чита» (Вести-Чита)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrk75",
+  "region": "Забайкальский край",
+  "name": "ГТРК «Чита» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://chita.ru/rss-feeds/rss.xml",
+  "region": "Забайкальский край",
+  "name": "Чита.ру — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://kamgov.ru/rss/rss/index?model=news%5CsearchModels%5CNewsSearch&NewsSearch%5Bis_press_checked%5D=1&NewsSearch%5Bpublished%5D=1",
+  "region": "Камчатский край",
+  "name": "Министерство строительства и жилищной политики Камчатского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy41",
+  "region": "Камчатский край",
+  "name": "Минстрой Камчатского края — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kamchatkatv.ru/",
+  "region": "Камчатский край",
+  "name": "ГТРК «Камчатка» (Вести-Камчатка)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_kamchatka",
+  "region": "Камчатский край",
+  "name": "ГТРК «Камчатка» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://primorsky.ru/authorities/executive-agencies/departments/town-planning/",
+  "region": "Приморский край",
+  "name": "Министерство строительства Приморского края",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkr25.ru",
+  "region": "Приморский край",
+  "name": "Фонд капитального ремонта Приморского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kapremont25",
+  "region": "Приморский край",
+  "name": "Фонд капитального ремонта Приморья — Telegram",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vestiprim.ru/rss.xml",
+  "region": "Приморский край",
+  "name": "ГТРК «Владивосток» (Вести: Приморье)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vladivostok1.ru/rss-feeds/rss.xml",
+  "region": "Приморский край",
+  "name": "ВЛАДИВОСТОК1.ру — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://www.farpost.ru/vladivostok/realty/sell_flats/",
+  "region": "Приморский край",
+  "name": "VL.ru — новостройки",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://www.newsvl.ru/rss",
+  "region": "Приморский край",
+  "name": "Newsvl.ru — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "fkr27.ru",
+  "region": "Хабаровский край",
+  "name": "Фонд капитального ремонта Хабаровского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fondkr27",
+  "region": "Хабаровский край",
+  "name": "Фонд капитального ремонта Хабаровского края — Telegram",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vestidv.ru/feed/common",
+  "region": "Хабаровский край",
+  "name": "ГТРК «Дальневосточная» (Вести-Хабаровск)",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.dvnovosti.ru/rss/",
+  "region": "Хабаровский край",
+  "name": "ДВновости — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "hab.aif.ru",
+  "region": "Хабаровский край",
+  "name": "АиФ Хабаровск — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkramur.ru",
+  "region": "Амурская область",
+  "name": "Фонд капитального ремонта Амурской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kapremont28",
+  "region": "Амурская область",
+  "name": "Фонд капремонта Амурской области — Telegram",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gtrkamur.ru",
+  "region": "Амурская область",
+  "name": "ГТРК «Амур» (Вести-Амурская область)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "amur.info",
+  "region": "Амурская область",
+  "name": "Амур.инфо — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "amur.life",
+  "region": "Амурская область",
+  "name": "Amur.Life — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.49gov.ru/",
+  "region": "Магаданская область",
+  "name": "Министерство строительства, ЖКХ и энергетики Магаданской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy49",
+  "region": "Магаданская область",
+  "name": "Минстрой Магаданской области — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://magadangorod.ru/",
+  "region": "Магаданская область",
+  "name": "Администрация г. Магадана",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://vesti-magadan.ru/feed",
+  "region": "Магаданская область",
+  "name": "ГТРК «Магадан» (Вести-Магадан)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestimagadan",
+  "region": "Магаданская область",
+  "name": "Вести-Магадан — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://minstroy.sakhalin.gov.ru/",
+  "region": "Сахалинская область",
+  "name": "Министерство строительства Сахалинской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "fkr65.ru",
+  "region": "Сахалинская область",
+  "name": "Фонд капитального ремонта Сахалинской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fondkapremonta65",
+  "region": "Сахалинская область",
+  "name": "Фонд капитального ремонта Сахалинской области — Telegram",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "gtrk.ru",
+  "region": "Сахалинская область",
+  "name": "ГТРК «Сахалин» (Вести. Сахалин. Курилы)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://www.eao.ru/isp-vlast/departament-stroitelstva-i-zhilishchno-kommunalnogo-khozyaystva-pravitelstva-evreyskoy-avtonomnoy-ob/",
+  "region": "Еврейская автономная область",
+  "name": "Департамент строительства и ЖКХ правительства ЕАО",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://xn--80atapud1a.xn--p1ai/depkomhoz/",
+  "region": "Чукотский АО",
+  "name": "Департамент строительства и ЖКХ Чукотского АО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dom_chukotka",
+  "region": "Чукотский АО",
+  "name": "Департамент строительства и ЖКХ Чукотки — Telegram",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "anadyr.org",
+  "region": "Чукотский АО",
+  "name": "Администрация г. Анадыря",
+  "construction": false
+ }
+]

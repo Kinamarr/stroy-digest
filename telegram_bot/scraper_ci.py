@@ -3,43 +3,18 @@ CI-friendly scraper: no browser, no input(), writes to docs/ for GitHub Pages,
 posts summary to Bitrix24 group feed.
 """
 import os
-import re
 import sys
-import time
 from datetime import datetime
+from html import escape as esc
 from pathlib import Path
 
 import httpx
-from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).parent))
-from keywords import CHANNELS, KEYWORD_CATEGORIES
-from cities import CITIES
+from keywords import KEYWORD_CATEGORIES
+from regional import scrape_regional
+from regions import region_of
 from web_scraper import scrape_all_web, scrape_all_industry
-
-HEADERS = {
-    'User-Agent': (
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-        'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/120.0.0.0 Safari/537.36'
-    )
-}
-
-PHONE_RE = re.compile(
-    r'(?:\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}'
-)
-EMAIL_RE = re.compile(r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}')
-
-OBJECT_KEYWORDS = set(kw for kws in KEYWORD_CATEGORIES.values() for kw in kws)
-
-ACTION_STEMS = {
-    'строит', 'возвод', 'возвед', 'постро', 'приступ',
-    'котлован', 'монолит', 'стройплощ', 'введ', 'разрешени',
-    'закладк', 'первый кам', 'ввод в экс', 'сдан',
-    'застраива', 'реконстру', 'капитальн',
-    'гидроизол', 'водонепрониц', 'дренажн', 'гидротехн',
-    'прокладыва', 'монтаж', 'установк', 'прокладк',
-}
 
 CAT_ICON = {
     'Жилой дом / ЖК':             '🏗',
@@ -47,7 +22,11 @@ CAT_ICON = {
     'Офис / ТЦ':                   '🏢',
     'Гостиница / Отель':           '🏨',
     'Склад / Логистика':           '📦',
-    'Социальный объект':           '🏥',
+    'Школа':                       '🏫',
+    'Детский сад':                 '🧸',
+    'Больница / поликлиника':      '🏥',
+    'ВУЗ / колледж':               '🎓',
+    'Культура':                    '🎭',
     'Спортивный объект':           '🏟',
     'Дорога / Мост':               '🌉',
     'Метро / Подземное':           '🚇',
@@ -61,7 +40,11 @@ CAT_COLOR = {
     'Офис / ТЦ':                   '#58a6ff',
     'Гостиница / Отель':           '#f78166',
     'Склад / Логистика':           '#bc8cff',
-    'Социальный объект':           '#39d353',
+    'Школа':                       '#39d353',
+    'Детский сад':                 '#56d364',
+    'Больница / поликлиника':      '#ff7b72',
+    'ВУЗ / колледж':               '#a5d6ff',
+    'Культура':                    '#db61a2',
     'Спортивный объект':           '#e3b341',
     'Дорога / Мост':               '#79c0ff',
     'Метро / Подземное':           '#d2a8ff',
@@ -70,119 +53,9 @@ CAT_COLOR = {
 }
 
 
-def load_channels() -> list:
-    channels_file = Path(__file__).parent / 'channels.txt'
-    if channels_file.exists():
-        lines = channels_file.read_text(encoding='utf-8').splitlines()
-        channels = [l.strip() for l in lines if l.strip() and not l.strip().startswith('#')]
-        if channels:
-            return channels
-    return CHANNELS
-
-
-def find_contacts(text):
-    phones = list(dict.fromkeys(PHONE_RE.findall(text)))
-    emails = list(dict.fromkeys(EMAIL_RE.findall(text)))
-    return phones, emails
-
-
-def find_cities(text):
-    text_lower = text.lower()
-    return [city for city in CITIES if city.lower() in text_lower]
-
-
-def get_category(matched_kws):
-    for category, kws in KEYWORD_CATEGORIES.items():
-        for kw in matched_kws:
-            if kw in kws:
-                return category
-    return 'Общее'
-
-
-def match_keywords(text: str) -> list:
-    t = text.lower()
-    has_object = any(kw in t for kw in OBJECT_KEYWORDS)
-    has_action = any(stem in t for stem in ACTION_STEMS)
-    if not has_object or not has_action:
-        return []
-    matched_obj = [kw for kw in OBJECT_KEYWORDS if kw in t]
-    matched_act = [s for s in ACTION_STEMS if s in t]
-    return (matched_obj + matched_act)[:6]
-
-
-def scrape_channel(channel: str, pages: int = 3) -> list:
-    channel_name = channel.lstrip('@')
-    results = []
-    url = f'https://t.me/s/{channel_name}'
-
-    for page in range(pages):
-        try:
-            resp = httpx.get(url, headers=HEADERS, timeout=30,
-                             follow_redirects=True, verify=False)
-            resp.raise_for_status()
-        except Exception as e:
-            print(f'  Ошибка загрузки {channel}: {e}')
-            break
-
-        soup = BeautifulSoup(resp.text, 'html.parser')
-        wraps = soup.find_all('div', class_='tgme_widget_message_wrap')
-        if not wraps:
-            break
-
-        min_id = None
-        for wrap in wraps:
-            text_el = wrap.find('div', class_='tgme_widget_message_text')
-            if not text_el:
-                continue
-            text = text_el.get_text(separator='\n').strip()
-            if not text:
-                continue
-
-            matched = match_keywords(text)
-            if not matched:
-                continue
-
-            link_el = wrap.find('a', class_='tgme_widget_message_date')
-            link = link_el['href'] if link_el else f'https://t.me/{channel_name}'
-
-            if link_el:
-                try:
-                    msg_id = int(link.rstrip('/').split('/')[-1])
-                    if min_id is None or msg_id < min_id:
-                        min_id = msg_id
-                except ValueError:
-                    pass
-
-            date_el = wrap.find('time')
-            date_str = date_el.get('datetime', '')[:10] if date_el else ''
-            phones, emails = find_contacts(text)
-            cities = find_cities(text)
-            category = get_category(matched)
-
-            results.append({
-                'channel': channel,
-                'channel_name': channel_name,
-                'text': text,
-                'link': link,
-                'date': date_str,
-                'keywords': matched[:4],
-                'category': category,
-                'cities': cities,
-                'phones': phones,
-                'emails': emails,
-            })
-
-        if min_id and page < pages - 1:
-            url = f'https://t.me/s/{channel_name}?before={min_id}'
-            time.sleep(1.5)
-        else:
-            break
-
-    return results
-
-
 def generate_html(all_results: list, archive_links: list, pages_url: str = '') -> str:
     date_str = datetime.now().strftime('%d.%m.%Y')
+    all_regions  = sorted({r['region'] for r in all_results if r.get('region')})
     all_cities   = sorted({city for r in all_results for city in r['cities']})
     all_channels = sorted({r['channel'] for r in all_results})
     # Все категории из словаря — показываем даже если статей пока нет
@@ -201,27 +74,31 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
         for e in item['emails']:
             contacts_html += f'<a href="mailto:{e}" class="contact email">✉️ {e}</a>'
 
-        cities_data = ','.join(item['cities'])
-        preview = item['text'][:700] + ('...' if len(item['text']) > 700 else '')
+        cities_data = esc(','.join(item['cities']))
+        preview = esc(item['text'][:700] + ('...' if len(item['text']) > 700 else ''))
+        region = item.get('region', '')
         has_contacts = bool(item['phones'] or item['emails'])
         contact_block = f'<div class="contacts">{contacts_html}</div>' if has_contacts else ''
         contact_marker = '<span class="has-contacts-badge">📋 Контакты</span>' if has_contacts else ''
         cat_color = CAT_COLOR.get(item['category'], '#58a6ff')
         cat_icon  = CAT_ICON.get(item['category'], '🏗')
 
-        # Город в шапку карточки — первый из найденных
+        # Город в шапку карточки — первый из найденных, иначе регион источника
         city_badge = ''
         if item['cities']:
             primary_city = item['cities'][0]
             extra = f' +{len(item["cities"])-1}' if len(item['cities']) > 1 else ''
             city_badge = f'<span class="city-badge">📍 {primary_city}{extra}</span>'
+        elif region:
+            city_badge = f'<span class="city-badge">📍 {esc(region)}</span>'
 
         is_industry = item.get('industry', False)
         cards_html += f'''
         <div class="card {'has-contacts' if has_contacts else ''}"
              id="{card_id}"
-             data-channel="{item['channel']}"
+             data-channel="{esc(item['channel'])}"
              data-category="{item['category']}"
+             data-region="{esc(region)}"
              data-cities="{cities_data}"
              data-contacts="{'1' if has_contacts else '0'}"
              data-industry="{'1' if is_industry else '0'}"
@@ -229,7 +106,7 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
           <div class="card-header">
             <span class="cat-badge" style="color:{cat_color};border-color:{cat_color}22;background:{cat_color}18">{cat_icon} {item['category']}</span>
             {city_badge}
-            <span class="channel-badge">{item['channel']}</span>
+            <span class="channel-badge">{esc(item['channel'])}</span>
             {contact_marker}
             <span class="date">{item['date']}</span>
             <button class="fav-btn" onclick="toggleFav(this,'{card_id}')" title="В избранное">☆</button>
@@ -237,10 +114,11 @@ def generate_html(all_results: list, archive_links: list, pages_url: str = '') -
           {contact_block}
           <div class="tags">{kw_html}</div>
           <p class="card-text">{preview}</p>
-          <a href="{item['link']}" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
+          <a href="{esc(item['link'])}" target="_blank" rel="noopener" class="source-link">→ Открыть источник</a>
         </div>'''
 
-    channel_opts = ''.join(f'<option value="{c}">{c}</option>' for c in all_channels)
+    channel_opts = ''.join(f'<option value="{esc(c)}">{esc(c)}</option>' for c in all_channels)
+    region_opts  = ''.join(f'<option value="{esc(c)}">{esc(c)}</option>' for c in all_regions)
     city_opts    = ''.join(f'<option value="{c}">{c}</option>' for c in all_cities)
     cat_opts     = ''.join(
         f'<option value="{c}">{CAT_ICON.get(c,"")} {c}</option>'
@@ -348,7 +226,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
 <div class="header">
   <div>
     <h1>🏗 Стройдайджест</h1>
-    <div class="sub">{date_str} · {total} объектов · {len(all_channels)} каналов</div>
+    <div class="sub">{date_str} · {total} объектов · {len(all_channels)} источников</div>
   </div>
   <div style="display:flex;gap:8px;align-items:center">
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 Обновить данные</button>
@@ -372,6 +250,12 @@ body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgro
     <label>Тип объекта</label>
     <select id="fCat" onchange="applyFilter()">
       <option value="">Все типы</option>{cat_opts}
+    </select>
+  </div>
+  <div style="display:flex;align-items:center;gap:5px">
+    <label>Регион</label>
+    <select id="fReg" onchange="applyFilter()">
+      <option value="">Все регионы</option>{region_opts}
     </select>
   </div>
   <div style="display:flex;align-items:center;gap:5px">
@@ -437,6 +321,7 @@ function applyFilter(){{
   var ch=document.getElementById('fCh').value;
   var cat=document.getElementById('fCat').value;
   var city=document.getElementById('fCity').value;
+  var reg=document.getElementById('fReg').value;
   var onlyCont=document.getElementById('fContacts').checked;
   var favs=loadFavs();
   var cards=document.querySelectorAll('.card');
@@ -447,6 +332,7 @@ function applyFilter(){{
         &&(!ch||c.dataset.channel===ch)
         &&(!cat||c.dataset.category===cat)
         &&(!city||c.dataset.cities.split(',').indexOf(city)!==-1)
+        &&(!reg||c.dataset.region===reg)
         &&(!onlyCont||c.dataset.contacts==='1')
         &&(currentTab!=='favs'||favs[c.id])
         &&(currentTab!=='industry'||c.dataset.industry==='1');
@@ -457,7 +343,7 @@ function applyFilter(){{
   document.getElementById('empty-state').classList.toggle('hidden',visible>0);
 }}
 function resetFilter(){{
-  ['fCh','fCat','fCity'].forEach(function(id){{document.getElementById(id).value='';}});
+  ['fCh','fCat','fCity','fReg'].forEach(function(id){{document.getElementById(id).value='';}});
   document.getElementById('fContacts').checked=false;
   document.getElementById('fSearch').value='';
   applyFilter();
@@ -481,7 +367,7 @@ async function triggerRefresh(){{
     }});
     if(r.status===204){{
       btn.style.color='#3fb950';
-      var secs=540;
+      var secs=660;
       var iv=setInterval(function(){{
         secs--;
         if(secs<=0){{
@@ -574,20 +460,13 @@ def post_to_bitrix(webhook: str, group_id: str, results: list, pages_url: str, d
 
 
 def main():
-    channels = load_channels()
     date_str = datetime.now().strftime('%Y-%m-%d')
     date_display = datetime.now().strftime('%d.%m.%Y')
 
     print(f'Запуск CI-парсера — {date_display}')
-    print(f'Каналов: {len(channels)}')
 
-    all_results = []
-    for channel in channels:
-        print(f'  Читаю {channel}...')
-        results = scrape_channel(channel)
-        print(f'    Найдено: {len(results)} объектов')
-        all_results.extend(results)
-        time.sleep(2)
+    print('\nРегиональные источники (Телеграм, RSS, сайты, Google Новости)...')
+    all_results = scrape_regional()
 
     print('\nПарсю веб-источники...')
     all_results.extend(scrape_all_web())
@@ -595,14 +474,18 @@ def main():
     print('\nПарсю промышленные источники...')
     all_results.extend(scrape_all_industry())
 
+    for item in all_results:
+        if not item.get('region'):
+            item['region'] = region_of(item['cities'])
+
     print(f'\nВсего: {len(all_results)} объектов')
 
     # Папка docs/ в корне репозитория
     repo_root = Path(__file__).parent.parent
-    docs_dir = repo_root / 'docs'
+    # DIGEST_DOCS_DIR — для локальной проверки, чтобы не трогать опубликованный docs/
+    docs_dir = Path(os.environ.get('DIGEST_DOCS_DIR') or repo_root / 'docs')
     archive_dir = docs_dir / 'archive'
-    docs_dir.mkdir(exist_ok=True)
-    archive_dir.mkdir(exist_ok=True)
+    archive_dir.mkdir(parents=True, exist_ok=True)
 
     # Архивные ссылки (последние 14 дней)
     existing = sorted(archive_dir.glob('????-??-??.html'), reverse=True)
