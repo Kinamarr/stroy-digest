@@ -29,7 +29,8 @@ jobs:
           cache: 'pip'
 
       - name: Установка зависимостей
-        run: pip install httpx beautifulsoup4 lxml
+        # googlenewsdecoder не работает с selectolax 1.x — фиксируем версию
+        run: pip install httpx beautifulsoup4 lxml googlenewsdecoder "selectolax<1.0"
 
       - name: Запуск парсера
         env:

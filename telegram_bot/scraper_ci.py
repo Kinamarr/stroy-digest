@@ -12,6 +12,7 @@ import httpx
 
 sys.path.insert(0, str(Path(__file__).parent))
 from keywords import KEYWORD_CATEGORIES
+from enrich import enrich_short_items
 from regional import scrape_regional
 from regions import region_of
 from web_scraper import scrape_all_web, scrape_all_industry
@@ -367,7 +368,7 @@ async function triggerRefresh(){{
     }});
     if(r.status===204){{
       btn.style.color='#3fb950';
-      var secs=660;
+      var secs=900;
       var iv=setInterval(function(){{
         secs--;
         if(secs<=0){{
@@ -477,6 +478,9 @@ def main():
     for item in all_results:
         if not item.get('region'):
             item['region'] = region_of(item['cities'])
+
+    print('\nДозагружаю полный текст статей для новостей-заголовков...')
+    enrich_short_items(all_results)
 
     print(f'\nВсего: {len(all_results)} объектов')
 
