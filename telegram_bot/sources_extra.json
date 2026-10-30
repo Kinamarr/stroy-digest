@@ -1,0 +1,394 @@
+[
+ {
+  "method": "tg",
+  "target": "minstroyRA04",
+  "region": "Республика Алтай",
+  "name": "Минстрой и ЖКХ Республики Алтай",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "elaltay",
+  "region": "Республика Алтай",
+  "name": "Вести Эл Алтай (ГТРК «Горный Алтай»)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "solundar04",
+  "region": "Республика Алтай",
+  "name": "Республика Алтай в Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "Altay_Respublika",
+  "region": "Республика Алтай",
+  "name": "Горно-Алтайск | Республика Алтай",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroyrk",
+  "region": "Республика Крым",
+  "name": "Минстрой Крыма",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minzhkh",
+  "region": "Республика Крым",
+  "name": "Минжилполитики и стройнадзора Крыма (МинЖКХ)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "rk_gov",
+  "region": "Республика Крым",
+  "name": "Республика Крым. Официально",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://crimea.ria.ru/export/rss2/archive/index.xml",
+  "region": "Республика Крым",
+  "name": "РИА Новости Крым",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.crimea.kp.ru/rss/allsections.xml",
+  "region": "Республика Крым",
+  "name": "Комсомольская правда — Крым",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "Crimeainform",
+  "region": "Республика Крым",
+  "name": "Крыминформ",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://mari-el.gov.ru/ministries/minstroy/",
+  "region": "Республика Марий Эл",
+  "name": "Минстрой, архитектуры и ЖКХ Республики Марий Эл",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://pg12.ru/rss",
+  "region": "Республика Марий Эл",
+  "name": "Про Город Йошкар-Ола",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrkmariel",
+  "region": "Республика Марий Эл",
+  "name": "Вести. Марий Эл",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "iamarimedia",
+  "region": "Республика Марий Эл",
+  "name": "МариМедиа",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mediapotok",
+  "region": "Республика Марий Эл",
+  "name": "МедиаПоток | Марий Эл",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.tuvaonline.ru/rss.xml",
+  "region": "Республика Тыва",
+  "name": "Тува-онлайн",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tmgnews",
+  "region": "Республика Тыва",
+  "name": "Тува Медиа Групп",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "khovalyg_live",
+  "region": "Республика Тыва",
+  "name": "Владислав Ховалыг, глава Тувы",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "meriyakyzyla",
+  "region": "Республика Тыва",
+  "name": "Мэрия Кызыла",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sev.gov.ru/info/news/rss.php",
+  "region": "Севастополь",
+  "name": "Правительство Севастополя — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://dks.sev.gov.ru/",
+  "region": "Севастополь",
+  "name": "Департамент капитального строительства Севастополя",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dagsev",
+  "region": "Севастополь",
+  "name": "Департамент архитектуры и градостроительства Севастополя",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "sevastopolofficial",
+  "region": "Севастополь",
+  "name": "Правительство Севастополя",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "razvozhaev",
+  "region": "Севастополь",
+  "name": "Развожаев, губернатор Севастополя",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://sevastopol.su/rss.xml",
+  "region": "Севастополь",
+  "name": "ForPost Севастополь",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "pul69",
+  "region": "Тверская область",
+  "name": "Тверская область. Официально",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tveradm",
+  "region": "Тверская область",
+  "name": "Администрация города Твери",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tverigrad_news",
+  "region": "Тверская область",
+  "name": "Твериград",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tverregion",
+  "region": "Тверская область",
+  "name": "Тверь (новости)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroymo",
+  "region": "Московская область",
+  "name": "Минстрой Московской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mingkh_mo",
+  "region": "Московская область",
+  "name": "Министерство ЖКХ Московской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gsnmo",
+  "region": "Московская область",
+  "name": "Главгосстройнадзор МО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mosoblarch",
+  "region": "Московская область",
+  "name": "Мособлархитектура",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vorobiev_live",
+  "region": "Московская область",
+  "name": "Воробьёв LIVE, губернатор МО",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "podmoskovie",
+  "region": "Московская область",
+  "name": "Подмосковье",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mosregtoday",
+  "region": "Московская область",
+  "name": "Подмосковье сегодня",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "officialmordovia",
+  "region": "Республика Мордовия",
+  "name": "Республика Мордовия (официально)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "saranskadm",
+  "region": "Республика Мордовия",
+  "name": "Администрация Саранска",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "izvmor",
+  "region": "Республика Мордовия",
+  "name": "Известия Мордовии",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stolica_s",
+  "region": "Республика Мордовия",
+  "name": "Столица С | Саранск",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tvrm10",
+  "region": "Республика Мордовия",
+  "name": "10 канал | Мордовия 24",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroypnz",
+  "region": "Пензенская область",
+  "name": "Минстрой, транспорта и дорожного хозяйства Пензенской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mingkh58",
+  "region": "Пензенская область",
+  "name": "Министерство ЖКХ и ГЗН Пензенской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "penzregru",
+  "region": "Пензенская область",
+  "name": "Пензенская область (правительство)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "penzainform",
+  "region": "Пензенская область",
+  "name": "PenzaInform",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "penzanews",
+  "region": "Пензенская область",
+  "name": "PenzaNews",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "goszhilinseao",
+  "region": "Еврейская автономная область",
+  "name": "Госстройжилнадзор ЕАО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "meriyabir",
+  "region": "Еврейская автономная область",
+  "name": "Мэрия Биробиджана",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kostuyk",
+  "region": "Еврейская автономная область",
+  "name": "Мария Костюк, губернатор ЕАО",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "eaomedianews",
+  "region": "Еврейская автономная область",
+  "name": "EAOMedia",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "novostiEAO",
+  "region": "Еврейская автономная область",
+  "name": "Новости ЕАО",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "depstroy35",
+  "region": "Вологодская область",
+  "name": "Минстрой Вологодской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vologdaoblast",
+  "region": "Вологодская область",
+  "name": "Правительство Вологодской области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "smi35",
+  "region": "Вологодская область",
+  "name": "ИА «Вологда Регион»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://newsvo.ru/rss",
+  "region": "Вологодская область",
+  "name": "Новости Вологды (newsvo.ru)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "filimonov_official",
+  "region": "Вологодская область",
+  "name": "Филимонов LIVE, губернатор",
+  "construction": false
+ }
+]

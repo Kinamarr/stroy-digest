@@ -6690,5 +6690,1580 @@
   "region": "Чукотский АО",
   "name": "Администрация г. Анадыря",
   "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "granelle_info",
+  "region": "Москва",
+  "name": "Гранель",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "absrealty",
+  "region": "Москва",
+  "name": "Абсолют",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "Donstroymsk",
+  "region": "Москва",
+  "name": "Донстрой",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "novostroym",
+  "region": "Москва",
+  "name": "Новострой-М (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "glavstroygroup",
+  "region": "Москва",
+  "name": "Главстрой",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://level.ru/news/",
+  "region": "Москва",
+  "name": "Level Group",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "MR_development",
+  "region": "Москва",
+  "name": "MR Group",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mosfr_official",
+  "region": "Москва",
+  "name": "Фонд реновации Москвы",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "strana_com",
+  "region": "Москва",
+  "name": "Страна Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "rgdev_official",
+  "region": "Москва",
+  "name": "РГ-Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "filatofff",
+  "region": "Москва",
+  "name": "Filatoff Inc. (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "krost_company",
+  "region": "Москва",
+  "name": "КРОСТ (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mos_mke",
+  "region": "Москва",
+  "name": "Москомэкспертиза",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.m24.ru/rss.xml",
+  "region": "Москва",
+  "name": "Москва 24",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "akvilongroup",
+  "region": "Санкт-Петербург",
+  "name": "Аквилон Инвест",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "glavstroyspb",
+  "region": "Санкт-Петербург",
+  "name": "Главстрой",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fontankaspb",
+  "region": "Санкт-Петербург",
+  "name": "PN.RU — Telegram-канал",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kga_spb",
+  "region": "Санкт-Петербург",
+  "name": "КГА — Telegram-канал",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://legenda-dom.ru/news",
+  "region": "Санкт-Петербург",
+  "name": "LEGENDA",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "spbprav",
+  "region": "Санкт-Петербург",
+  "name": "Комитет по строительству Правительства Санкт-Петербурга",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "stavni_official",
+  "region": "Санкт-Петербург",
+  "name": "STAVNI",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "sibforum",
+  "region": "Новосибирская область",
+  "name": "Сибирский строительный форум «Стратегии ускорения»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "smssnsk",
+  "region": "Новосибирская область",
+  "name": "ГК СМСС (Сибмонтажспецстрой)",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://apps54.ru/news/",
+  "region": "Новосибирская область",
+  "name": "СРО Ассоциация профессиональных проектировщиков Сибири (АППС)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "e1_news",
+  "region": "Свердловская область",
+  "name": "Стройка Екатеринбург | ЧАТ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "rsgakadem",
+  "region": "Свердловская область",
+  "name": "РСГ-Академическое",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "atlas_development",
+  "region": "Свердловская область",
+  "name": "Атлас Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "stroytek-ek.ru",
+  "region": "Свердловская область",
+  "name": "Стройтэк",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "всеостройке.рф",
+  "region": "Свердловская область",
+  "name": "«Всеостройке.рф»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "etalongroup.ru",
+  "region": "Республика Татарстан",
+  "name": "Эталон",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "http://briz-kazan.ru/rss",
+  "region": "Республика Татарстан",
+  "name": "Бриз",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "tsi_kazan",
+  "region": "Республика Татарстан",
+  "name": "ТСИ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "irg_kzn",
+  "region": "Республика Татарстан",
+  "name": "Институт развития города Казани",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "news116ru",
+  "region": "Республика Татарстан",
+  "name": "Стройка Ремонт Казань (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ngs24_krsk",
+  "region": "Красноярский край",
+  "name": "Новая Стройка Красноярск — Telegram",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "mingrad_no",
+  "region": "Нижегородская область",
+  "name": "Министерство градостроительной деятельности и развития агломераций НО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "domostroynn",
+  "region": "Нижегородская область",
+  "name": "Строители Нижнего Новгорода (@stroyka152)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "levelru",
+  "region": "Нижегородская область",
+  "name": "Level Group (в НН)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "news_74ru",
+  "region": "Челябинская область",
+  "name": "Строительство Стройка Челябинск Чат (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dk_chel",
+  "region": "Челябинская область",
+  "name": "CHEL.DK.RU Деловой квартал (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "azrbru",
+  "region": "Республика Башкортостан",
+  "name": "АСРО «Региональный строительный союз РБ»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "isk_ufa",
+  "region": "Республика Башкортостан",
+  "name": "АО СЗ ИСК г. Уфы",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "dars_ufa",
+  "region": "Республика Башкортостан",
+  "name": "DARS Development",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://chr.rbc.ru/",
+  "region": "Республика Башкортостан",
+  "name": "РБК Татарстан/Башкортостан",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "talanrf",
+  "region": "Республика Башкортостан",
+  "name": "Талан (Уфа)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "bauinvest",
+  "region": "Краснодарский край",
+  "name": "БАУИНВЕСТ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ART_Group_Krd",
+  "region": "Краснодарский край",
+  "name": "ГК АРТ ГРУПП",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gk_usi",
+  "region": "Краснодарский край",
+  "name": "ГК ЮгСтройИнвест",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "avakrasnodar23",
+  "region": "Краснодарский край",
+  "name": "AVA Group",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "incitydevelopment",
+  "region": "Краснодарский край",
+  "name": "ГК ИНСИТИ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "metriks_development",
+  "region": "Краснодарский край",
+  "name": "ГК Метрикс Девелопмент",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "tochno_life",
+  "region": "Краснодарский край",
+  "name": "ГК ТОЧНО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "azkk_ra",
+  "region": "Краснодарский край",
+  "name": "Ассоциация застройщиков Краснодарского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "admkrai",
+  "region": "Краснодарский край",
+  "name": "Госстройнадзор Краснодарского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "darstroy",
+  "region": "Краснодарский край",
+  "name": "Дарстрой",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "develug_vl",
+  "region": "Краснодарский край",
+  "name": "ГК Девелопмент-Юг",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "nedvizhka_krasnodar",
+  "region": "Краснодарский край",
+  "name": "Недвижимость Краснодар",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "neometria_news",
+  "region": "Краснодарский край",
+  "name": "Неометрия (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gk_nvm_south",
+  "region": "Краснодарский край",
+  "name": "ГК НВМ (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "news63ru",
+  "region": "Самарская область",
+  "name": "Работа Самара Стройка (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "news161ru",
+  "region": "Ростовская область",
+  "name": "СРО «Строители Ростовской области» (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ttc.sibadi.org/rss",
+  "region": "Омская область",
+  "name": "«Техника и технологии строительства» (СибАДИ)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ngs55news",
+  "region": "Омская область",
+  "name": "Строительство Омск (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "instep_official",
+  "region": "Воронежская область",
+  "name": "Инстеп",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "stelinvest.ru",
+  "region": "Воронежская область",
+  "name": "Стэл-инвест",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "rcmm_ru",
+  "region": "Воронежская область",
+  "name": "Интернет-журнал «Строительство.RU»",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "adm_vrn",
+  "region": "Воронежская область",
+  "name": "Управление главного архитектора г. Воронежа",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "news59ru",
+  "region": "Пермский край",
+  "name": "Стройка Пермь (чат)",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "perm.brusnika.ru",
+  "region": "Пермский край",
+  "name": "Брусника — Пермь",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "expertsouth",
+  "region": "Волгоградская область",
+  "name": "Эксперт Юг (Telegram)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ggreat_of_development",
+  "region": "Волгоградская область",
+  "name": "Всёостройке.рф (Telegram)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "zhelezno_volgograd",
+  "region": "Волгоградская область",
+  "name": "Железно Волгоград",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "darsdevelopment",
+  "region": "Волгоградская область",
+  "name": "DARS Development",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "мтв.онлайн",
+  "region": "Волгоградская область",
+  "name": "МТВ — телеканал Волгограда",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "monostroy33",
+  "region": "Владимирская область",
+  "name": "СК Монострой — новости",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "abireg",
+  "region": "Воронежская область",
+  "name": "Строительство Воронеж (Воронежская область)",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://dsa.ivanovoobl.ru/rss.php",
+  "region": "Ивановская область",
+  "name": "Департамент строительства и архитектуры Ивановской области",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "kaprem37.ru",
+  "region": "Ивановская область",
+  "name": "Фонд капитального ремонта Ивановской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ivteleradio",
+  "region": "Ивановская область",
+  "name": "Вести Иваново",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ivanovo_nedvizhimost",
+  "region": "Ивановская область",
+  "name": "Строительство и недвижимость Иваново",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kalugar",
+  "region": "Калужская область",
+  "name": "КЖ — главный телеграм-канал Калуги",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestikostroma",
+  "region": "Костромская область",
+  "name": "ВЕСТИ-КОСТРОМА",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kurskadm",
+  "region": "Курская область",
+  "name": "Министерство строительства Курской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gorod_kursk",
+  "region": "Курская область",
+  "name": "Город Курск",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fondlo-48.ru/news/",
+  "region": "Липецкая область",
+  "name": "Фонд защиты прав дольщиков Липецкой области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroymo",
+  "region": "Московская область",
+  "name": "Министерство жилищной политики Московской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gsnmo",
+  "region": "Московская область",
+  "name": "Государственный строительный надзор МО",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://vmo24.ru/rss",
+  "region": "Московская область",
+  "name": "Вести Подмосковья",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mingkh_mo",
+  "region": "Московская область",
+  "name": "Минжилполитики МО",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "fkrmosreg",
+  "region": "Московская область",
+  "name": "Фонд капремонта МО",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "riamo_ru",
+  "region": "Московская область",
+  "name": "РИАМО",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://gji.ryazan.gov.ru/",
+  "region": "Рязанская область",
+  "name": "Госжилинспекция Рязанской области",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kapital62.ru/",
+  "region": "Рязанская область",
+  "name": "ГК «Капитал» (застройщик)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestismolensk",
+  "region": "Смоленская область",
+  "name": "Вести-Смоленск (ГТРК)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vsmolenske",
+  "region": "Смоленская область",
+  "name": "Важное в Смоленске",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "спецмонтаж68.рф",
+  "region": "Тамбовская область",
+  "name": "ГК «Спецмонтаж» (ЖК «Домашний»)",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vesti_tambov",
+  "region": "Тамбовская область",
+  "name": "Вести-Тамбов",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tambov_novosti",
+  "region": "Тамбовская область",
+  "name": "Новости Тамбова",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "zagorodom71",
+  "region": "Тульская область",
+  "name": "СК «Загородом»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tularegion71",
+  "region": "Тульская область",
+  "name": "Правительство Тульской области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "regoperatoryaroslavl",
+  "region": "Ярославская область",
+  "name": "Региональный фонд капремонта Ярославской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "yarnovosti",
+  "region": "Ярославская область",
+  "name": "Новости Ярославля",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "yarlive",
+  "region": "Ярославская область",
+  "name": "Ярославль LIVE",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fond.mos.ru/",
+  "region": "Москва",
+  "name": "Фонд капитального ремонта Москвы",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://fr.mos.ru/news/",
+  "region": "Москва",
+  "name": "Московский фонд реновации",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestikarelia",
+  "region": "Республика Карелия",
+  "name": "ГТРК «Карелия» (Вести-Карелия)",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://stolicaonego.ru/",
+  "region": "Республика Карелия",
+  "name": "Столица на Онего — тег «Строительство»",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "dvinaland.ru",
+  "region": "Архангельская область",
+  "name": "Министерство строительства и архитектуры Архангельской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "arh_29ru",
+  "region": "Архангельская область",
+  "name": "Архангельск — новости (arh.ru)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestipomor",
+  "region": "Архангельская область",
+  "name": "Вести-Поморье — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "smi35",
+  "region": "Вологодская область",
+  "name": "Вести-Вологда — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://maxi-life.ru/news/",
+  "region": "Вологодская область",
+  "name": "Maxi Life — застройщик",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fkr_39",
+  "region": "Калининградская область",
+  "name": "Фонд капитального ремонта Калининградской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrk_kaliningrad",
+  "region": "Калининградская область",
+  "name": "ГТРК «Калининград» (Вести-Калининград)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "klops.ru",
+  "region": "Калининградская область",
+  "name": "Клопс (klops.ru) — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_spb",
+  "region": "Ленинградская область",
+  "name": "ГТРК «Санкт-Петербург» (Вести-ЛО)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "allnews47",
+  "region": "Ленинградская область",
+  "name": "47news — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_murman",
+  "region": "Мурманская область",
+  "name": "ГТРК «Мурман» (Вести-Мурманск)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kapremont53",
+  "region": "Новгородская область",
+  "name": "Фонд капитального ремонта Новгородской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://www.adm.nov.ru/rss",
+  "region": "Новгородская область",
+  "name": "Администрация Великого Новгорода",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "vesti53.ru",
+  "region": "Новгородская область",
+  "name": "ГТРК «Славия» (Вести-Новгород)",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "novgorod.ru",
+  "region": "Новгородская область",
+  "name": "Новгород.ру — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "pskovadmin",
+  "region": "Псковская область",
+  "name": "Администрация города Пскова",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "komstroy_spb",
+  "region": "Санкт-Петербург",
+  "name": "Комитет по строительству Санкт-Петербурга",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gatispb",
+  "region": "Санкт-Петербург",
+  "name": "Государственная административно-техническая инспекция (ГАТИ)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "maikop_adm",
+  "region": "Республика Адыгея",
+  "name": "Администрация МО «Город Майкоп»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://elista.gosuslugi.ru/",
+  "region": "Республика Калмыкия",
+  "name": "Администрация города Элисты",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://astrgorod.ru/rss.xml",
+  "region": "Астраханская область",
+  "name": "Администрация города Астрахани",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "rgn_34",
+  "region": "Волгоградская область",
+  "name": "Правительство Волгоградской области — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://fond34.ru/",
+  "region": "Волгоградская область",
+  "name": "Фонд капитального ремонта Волгоградской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "volgograd_24",
+  "region": "Волгоградская область",
+  "name": "ГТРК «Волгоград-ТРВ» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "fkr161",
+  "region": "Ростовская область",
+  "name": "Фонд капитального ремонта Ростовской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "chernovik",
+  "region": "Республика Дагестан",
+  "name": "Черновик — новости Дагестана",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "pravitelstvokbr",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Правительство КБР — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestikbr",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "ГТРК «Кабардино-Балкария»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kbpravda.ru/rss.xml",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Кабардино-Балкарская правда — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "kavkaz-uzel.eu",
+  "region": "Кабардино-Балкарская Республика",
+  "name": "Кавказский узел — КБР",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "cherkessk09.ru",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Мэрия г. Черкесска",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "arhyz24",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "Архыз 24 — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vestikchr",
+  "region": "Карачаево-Черкесская Республика",
+  "name": "ГТРК «Карачаево-Черкесия» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://vladikavkaz-osetia.ru/",
+  "region": "Республика Северная Осетия-Алания",
+  "name": "Администрация г. Владикавказа",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "fkrchr",
+  "region": "Чеченская Республика",
+  "name": "ФКР ЧР — Telegram",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://stavropol.gosuslugi.ru/",
+  "region": "Ставропольский край",
+  "name": "Администрация г. Ставрополя",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "bashkortostan_gov",
+  "region": "Республика Башкортостан",
+  "name": "Правительство Республики Башкортостан — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ufacityinfo",
+  "region": "Республика Башкортостан",
+  "name": "Администрация ГО г. Уфа",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "b24tv",
+  "region": "Республика Башкортостан",
+  "name": "ГТРК «Башкортостан»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "prime_development",
+  "region": "Республика Башкортостан",
+  "name": "ГК «Прайм Девелопмент» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://mari-el.gov.ru/ministries/minstroy/news/",
+  "region": "Республика Марий Эл",
+  "name": "Министерство строительства, архитектуры и ЖКХ Республики Марий Эл",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://mari-el.gov.ru/news/",
+  "region": "Республика Марий Эл",
+  "name": "Правительство Республики Марий Эл — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "yoshkarola_12reg",
+  "region": "Республика Марий Эл",
+  "name": "Администрация г. Йошкар-Олы",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrkmariel",
+  "region": "Республика Марий Эл",
+  "name": "ГТРК «Марий Эл»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "marpravda",
+  "region": "Республика Марий Эл",
+  "name": "Марийская правда — строительство",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "iamarimedia",
+  "region": "Республика Марий Эл",
+  "name": "Йошкар-Ола — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "officialmordovia",
+  "region": "Республика Мордовия",
+  "name": "Фонд капитального ремонта РМ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "saranskadm",
+  "region": "Республика Мордовия",
+  "name": "Администрация г. Саранска",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrkmordovia",
+  "region": "Республика Мордовия",
+  "name": "ГТРК «Мордовия»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "izvmor",
+  "region": "Республика Мордовия",
+  "name": "Известия Мордовии — строительство",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_rt",
+  "region": "Республика Татарстан",
+  "name": "Фонд ЖКХ РТ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestitatarstan",
+  "region": "Республика Татарстан",
+  "name": "ГТРК «Татарстан»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroyur18",
+  "region": "Удмуртская Республика",
+  "name": "Министерство строительства и ЖКХ Удмуртской Республики",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "udmurt_gov",
+  "region": "Удмуртская Республика",
+  "name": "Фонд капитального ремонта УР",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "udmtv",
+  "region": "Удмуртская Республика",
+  "name": "ГТРК «Удмуртия»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "udmurt_media",
+  "region": "Удмуртская Республика",
+  "name": "Удмуртская правда — строительство",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy21",
+  "region": "Чувашская Республика",
+  "name": "Министерство строительства, архитектуры и ЖКХ Чувашской Республики",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "chuvashia_region",
+  "region": "Чувашская Республика",
+  "name": "Правительство Чувашской Республики — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gcheb",
+  "region": "Чувашская Республика",
+  "name": "Администрация г. Чебоксары",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_chuvashia",
+  "region": "Чувашская Республика",
+  "name": "ГТРК «Чувашия» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "kommers_perm",
+  "region": "Пермский край",
+  "name": "Фонд капитального ремонта Пермского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestiperm",
+  "region": "Пермский край",
+  "name": "ГТРК «Пермь»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroykirov",
+  "region": "Кировская область",
+  "name": "Министерство строительства и ЖКХ Кировской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "simakov_kirov",
+  "region": "Кировская область",
+  "name": "Администрация г. Кирова",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_ko",
+  "region": "Кировская область",
+  "name": "ГТРК «Вятка» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "stroim_kirov",
+  "region": "Кировская область",
+  "name": "Вятка-СЭТ — застройщик",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_no",
+  "region": "Нижегородская область",
+  "name": "Министерство строительства и ЖКХ Нижегородской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "glebnikitin_nn",
+  "region": "Нижегородская область",
+  "name": "Правительство Нижегородской области — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://nntv.tv/rss",
+  "region": "Нижегородская область",
+  "name": "ГТК «Нижний Новгород»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "andornn",
+  "region": "Нижегородская область",
+  "name": "Андор — застройщик",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroy_oren",
+  "region": "Оренбургская область",
+  "name": "Министерство строительства, ЖКХ и энергетики Оренбургской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrkorenburg",
+  "region": "Оренбургская область",
+  "name": "ГТРК «Оренбург»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "mingkh58",
+  "region": "Пензенская область",
+  "name": "Министерство строительства Пензенской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "penzregru",
+  "region": "Пензенская область",
+  "name": "Правительство Пензенской области — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "admpenza",
+  "region": "Пензенская область",
+  "name": "Администрация г. Пензы",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "russia58tv",
+  "region": "Пензенская область",
+  "name": "ГТРК «Пенза»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrksamara",
+  "region": "Самарская область",
+  "name": "ГТРК «Самара»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "samnewbuild",
+  "region": "Самарская область",
+  "name": "Домострой — портал недвижимости",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fkr_saratov",
+  "region": "Саратовская область",
+  "name": "Фонд капитального ремонта Саратовской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gtrksaratov",
+  "region": "Саратовская область",
+  "name": "ГТРК «Саратов» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "ulpravda",
+  "region": "Ульяновская область",
+  "name": "Министерство строительства и ЖКХ Ульяновской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "ulpressa",
+  "region": "Ульяновская область",
+  "name": "Фонд модернизации ЖКК Ульяновской области",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "news73ru",
+  "region": "Ульяновская область",
+  "name": "73.ru — недвижимость",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://kurgan.ru/",
+  "region": "Курганская область",
+  "name": "Курган Сегодня — новости",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "gus.admtyumen.ru",
+  "region": "Тюменская область",
+  "name": "Главное управление строительства Тюменской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "gk_ikar",
+  "region": "Челябинская область",
+  "name": "ГК «ИКАР» — застройщик",
+  "construction": true
+ },
+ {
+  "method": "gnews",
+  "target": "салехард89.рф",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Администрация города Салехарда",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "elaltay",
+  "region": "Республика Алтай",
+  "name": "ГТРК «Горный Алтай»",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "minstroy.rtyva.ru",
+  "region": "Республика Тыва",
+  "name": "Министерство строительства и ЖКХ Республики Тыва",
+  "construction": true
+ },
+ {
+  "method": "html",
+  "target": "https://mkyzyl.ru/",
+  "region": "Республика Тыва",
+  "name": "Администрация Кызыла",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.tuvaonline.ru/rss.xml",
+  "region": "Республика Тыва",
+  "name": "ГТРК «Тыва»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "tuvaonline",
+  "region": "Республика Тыва",
+  "name": "ГТРК «Тыва» — Telegram",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://kapremont19.ru/",
+  "region": "Республика Хакасия",
+  "name": "Фонд капитального ремонта Республики Хакасия",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vesti_khakasia",
+  "region": "Республика Хакасия",
+  "name": "ГТРК «Хакасия»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://abakan.ru/",
+  "region": "Республика Хакасия",
+  "name": "Абакан LIVE — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy22",
+  "region": "Алтайский край",
+  "name": "УправлениеAltайского края по строительству и архитектуре",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "altaigovernment",
+  "region": "Алтайский край",
+  "name": "Правительство Алтайского края — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_altai",
+  "region": "Алтайский край",
+  "name": "ГТРК «Алтай»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "amic_ru",
+  "region": "Алтайский край",
+  "name": "АМИТЕЛ — новости",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://www.amic.ru/rss",
+  "region": "Алтайский край",
+  "name": "Алтайская недвижимость — портал",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://ngs22.ru/rss-feeds/rss.xml",
+  "region": "Алтайский край",
+  "name": "Барнаул. Недвижимость — портал",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "fondkr24ru",
+  "region": "Красноярский край",
+  "name": "Фонд капитального ремонта Красноярского края",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vesti_krsk",
+  "region": "Красноярский край",
+  "name": "ГТРК «Красноярск»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "minstroy38",
+  "region": "Иркутская область",
+  "name": "Министерство строительства и дорожного хозяйства Иркутской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestiirkutsk",
+  "region": "Иркутская область",
+  "name": "ГТРК «Иркутск»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_kuzbass42",
+  "region": "Кемеровская область",
+  "name": "ГТРК «Кузбасс»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://ngs42.ru/rss-feeds/rss.xml",
+  "region": "Кемеровская область",
+  "name": "Кемерово. Недвижимость — СИБДОМ",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "novasiberia",
+  "region": "Новосибирская область",
+  "name": "Правительство Новосибирской области — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "vesti_nsk54",
+  "region": "Новосибирская область",
+  "name": "ГТРК «Новосибирск»",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://54.bn.ru/news/",
+  "region": "Новосибирская область",
+  "name": "Бюллетень Недвижимости — портал",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "kapremont_omsk",
+  "region": "Омская область",
+  "name": "Фонд капитального ремонта Омской области",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "vestiomsk",
+  "region": "Омская область",
+  "name": "ГТРК «Омск»",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "gtrktomsk",
+  "region": "Томская область",
+  "name": "ГТРК «Томск»",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://kamchatkamedia.ru/export/new/news_main18.rss",
+  "region": "Камчатский край",
+  "name": "KamchatkaMedia — новости",
+  "construction": false
+ },
+ {
+  "method": "html",
+  "target": "https://27.bn.ru/news/",
+  "region": "Хабаровский край",
+  "name": "Бюллетень Недвижимости — Хабаровск",
+  "construction": true
+ },
+ {
+  "method": "tg",
+  "target": "minstroyamur",
+  "region": "Амурская область",
+  "name": "Министерство строительства и архитектуры Амурской области",
+  "construction": true
+ },
+ {
+  "method": "rss",
+  "target": "https://sakhalinmedia.ru/export/new/news_main64.rss",
+  "region": "Сахалинская область",
+  "name": "SakhalinMedia — новости",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "prochukotku",
+  "region": "Чукотский АО",
+  "name": "ГТРК «Чукотка» (Вести Чукотка)",
+  "construction": false
  }
 ]

@@ -27,7 +27,9 @@ HEADERS = {
 OBJECT_KEYWORDS = set(kw for kws in KEYWORD_CATEGORIES.values() for kw in kws)
 ACTION_STEMS = {
     'строит', 'возвод', 'возвед', 'постро', 'приступ',
-    'котлован', 'монолит', 'стройплощ', 'введ', 'разрешени',
+    'котлован', 'монолит', 'стройплощ', 'разрешени',
+    'введен в экспл', 'введён в экспл', 'введена в экспл', 'введено в экспл',
+    'введут в экспл', 'ввели в экспл',
     'закладк', 'первый кам', 'ввод в экс', 'сдан',
     'застраива', 'реконстру', 'капитальн',
     'гидроизол', 'водонепрониц', 'дренажн', 'гидротехн',
@@ -37,8 +39,8 @@ ACTION_STEMS = {
 # Ключевые слова с обеих сторон которых не должно быть букв (чтобы 'мост' не ловил
 # 'недвижимость', а 'метро' не ловил 'метров' / 'квадратных метров').
 _LB = r'(?<![а-яёА-ЯЁa-zA-Z0-9])'   # левая граница слова
-_RB_STRICT = {'метро', 'бкл', 'мцд', 'мфц', ' жк ', 'арена',
-              'гэс', 'тэс', 'тэц', 'гок', 'тэс'}  # + правая граница
+_RB_STRICT = {'метро', 'бкл', 'мцд', 'мфц', 'жк', 'мкд', 'арена',
+              'гэс', 'тэс', 'тэц', 'гок'}  # + правая граница
 _OBJ_KW_RE = {
     kw: re.compile(
         _LB + re.escape(kw) + (r'(?![а-яёА-ЯЁa-zA-Z0-9])' if kw in _RB_STRICT else ''),
@@ -55,6 +57,8 @@ NOISE_BLACKLIST = frozenset([
     'ипотечный', 'ипотечная ставка', 'ключевая ставка',
     'квадратный метр стои', 'стоимость квадрат',
     'аналитики подсчит', 'эксперты подсчит',
+    # «карьер» (горный) ≠ «карьера»
+    'карьеру', 'карьерой', 'карьерный рост', 'карьерного рост', 'карьерной лестниц',
 ])
 
 RU_MONTHS = {
@@ -78,6 +82,21 @@ def _obj_matches(t: str) -> list:
     return [kw for kw, pat in _OBJ_KW_RE.items() if pat.search(t)]
 
 
+_ACT_RE_CACHE = {}
+
+
+def act_matches(t: str, stems) -> list:
+    """Глаголы стройки — с начала слова: 'строит' не ловит «настроить», 'строй' — «устройство»."""
+    out = []
+    for s in stems:
+        pat = _ACT_RE_CACHE.get(s)
+        if pat is None:
+            pat = _ACT_RE_CACHE[s] = re.compile(_LB + re.escape(s), re.IGNORECASE)
+        if pat.search(t):
+            out.append(s)
+    return out
+
+
 def match_keywords(text: str) -> list:
     """Строгий фильтр: нужен объект И действие (для общих источников)."""
     if _is_noise(text):
@@ -86,7 +105,7 @@ def match_keywords(text: str) -> list:
     matched_obj = _obj_matches(t)
     if not matched_obj:
         return []
-    matched_act = [s for s in ACTION_STEMS if s in t]
+    matched_act = act_matches(t, ACTION_STEMS)
     if not matched_act:
         return []
     return (matched_obj + matched_act)[:6]
@@ -98,7 +117,7 @@ def match_broad(text: str) -> list:
         return []
     t = text.lower()
     matched_obj = _obj_matches(t)
-    matched_act = [s for s in ACTION_STEMS if s in t]
+    matched_act = act_matches(t, ACTION_STEMS)
     return (matched_obj + matched_act)[:6]
 
 
@@ -493,7 +512,7 @@ def scrape_google_news_rss() -> list:
 
     for query in QUERIES:
         try:
-            enc = urllib.parse.quote(query)
+            enc = urllib.parse.quote(f'{query} when:10d')   # без when: Google отдаёт статьи любых лет
             url = f'https://news.google.com/rss/search?q={enc}&hl=ru&gl=RU&ceid=RU:ru'
             r = _get(url)
             if r.status_code != 200 or len(r.text) < 500:
@@ -824,7 +843,7 @@ def _gnews_industry_query(query: str, seen: set) -> list:
     import urllib.parse
     results = []
     try:
-        enc = urllib.parse.quote(query)
+        enc = urllib.parse.quote(f'{query} when:10d')
         r = _get(f'https://news.google.com/rss/search?q={enc}&hl=ru&gl=RU&ceid=RU:ru')
         items, _ = _parse_rss_xml(r.text)
         for item in items:

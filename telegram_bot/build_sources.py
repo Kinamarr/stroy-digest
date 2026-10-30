@@ -6,16 +6,19 @@
   rss    — у сайта есть RSS/Atom-лента
   html   — ленты нет, но заголовки новостей есть прямо на странице
   gnews  — сайт недоступен напрямую, но его статьи находит Google Новости (site:домен)
+  vk     — открытая группа ВКонтакте (нужен VK_TOKEN — сервисный ключ VK API)
 …или почему его читать нельзя (канала/домена не существует, закрытый чат, сайт закрыт и т.д.).
 
 Запуск (локально, нужен xlrd для .xls):
     python telegram_bot/build_sources.py "Медиа РФ (1).xls"
+    python telegram_bot/build_sources.py "Медиа РФ (1).xls" --vk-only   # только группы ВК
 Результат:
     telegram_bot/sources.json        — рабочий список для парсера
     Проверка источников.xlsx         — отчёт по каждой строке таблицы (для помощницы)
 """
 import asyncio
 import json
+import os
 import re
 import socket
 import sys
@@ -52,11 +55,28 @@ CONSTRUCTION_URL_RE = re.compile(r'stro[iy]|build|nedvizh|realty|zhk|kapremont|f
 
 
 # ── Чтение таблицы ────────────────────────────────────────────────────────────
-def read_media_table(path: Path) -> list:
+class _XlsxSheet:
+    """Лист .xlsx с тем же интерфейсом, что у листа xlrd (name, nrows, row_values)."""
+    def __init__(self, ws):
+        self.name = ws.title
+        self._rows = [['' if v is None else v for v in r] for r in ws.iter_rows(values_only=True)]
+        self.nrows = len(self._rows)
+
+    def row_values(self, i):
+        return self._rows[i]
+
+
+def _sheets(path: Path):
+    if path.suffix.lower() == '.xlsx':
+        import openpyxl
+        return [_XlsxSheet(ws) for ws in openpyxl.load_workbook(path, read_only=True).worksheets]
     import xlrd
-    book = xlrd.open_workbook(str(path))
+    return xlrd.open_workbook(str(path)).sheets()
+
+
+def read_media_table(path: Path) -> list:
     rows = []
-    for sh in book.sheets():
+    for sh in _sheets(path):
         hdr = [str(h).strip() for h in sh.row_values(0)]
         if 'Ссылка' not in hdr:
             continue                       # справочные листы со списком субъектов
@@ -101,6 +121,36 @@ def classify_url(u: str) -> str:
 def tg_handle(u: str):
     m = re.search(r't\.me/(?:s/)?([A-Za-z0-9_]+)', u)
     return m.group(1) if m and m.group(1).lower() not in ('joinchat', 'addlist') else None
+
+
+def vk_name(u: str):
+    m = re.search(r'vk\.(?:com|ru)/([A-Za-z0-9_.]+)', u)
+    return m.group(1).lower() if m else None
+
+
+def check_vk(names: list, token: str) -> dict:
+    """Короткое имя группы → (id, None) если группа открыта, иначе (None, причина)."""
+    found = {}
+    for i in range(0, len(names), 400):
+        r = httpx.post('https://api.vk.com/method/groups.getById', timeout=30, data={
+            'group_ids': ','.join(names[i:i + 400]), 'access_token': token, 'v': '5.199'}).json()
+        if 'error' in r:
+            raise RuntimeError(f"VK API: {r['error'].get('error_msg')}")
+        for g in r['response'].get('groups', []):
+            for key in (g.get('screen_name', ''), f"club{g['id']}", f"public{g['id']}", str(g['id'])):
+                found[key.lower()] = g
+    res = {}
+    for n in names:
+        g = found.get(n)
+        if not g:
+            res[n] = (None, 'группы ВКонтакте с таким адресом не существует (или это личная страница)')
+        elif g.get('deactivated'):
+            res[n] = (None, 'группа ВКонтакте удалена или заблокирована')
+        elif g.get('is_closed'):
+            res[n] = (None, 'закрытая группа ВКонтакте — посты не видны без вступления')
+        else:
+            res[n] = (g['id'], 'ВКонтакте — открытая группа')
+    return res
 
 
 def host_of(u: str) -> str:
@@ -235,6 +285,13 @@ async def run_checks(rows: list):
 
         await asyncio.gather(*[one_gn(h) for h in bad_hosts if dns[h]])
 
+    vk_res = {}
+    vk_token = os.environ.get('VK_TOKEN', '')
+    vk_names = sorted({vk_name(r['url']) for r in rows if r['cls'] == 'vk'} - {None})
+    if vk_token and vk_names:
+        print(f'  проверяю группы ВКонтакте: {len(vk_names)}')
+        vk_res = check_vk(vk_names, vk_token)
+
     # Итог по каждой строке таблицы
     for r in rows:
         c = r['cls']
@@ -260,6 +317,9 @@ async def run_checks(rows: list):
                 else:
                     r.update(method='', target='',
                              note=f'сайт закрыт для зарубежных серверов ({info}) и не индексируется Google Новостями')
+        elif c == 'vk' and vk_res:
+            gid, note = vk_res.get(vk_name(r['url']), (None, 'не удалось разобрать ссылку ВКонтакте'))
+            r.update(method='vk' if gid else '', target=str(gid) if gid else '', note=note)
         else:
             r.update(method='', target='', note={
                 'vk': 'ВКонтакте — нужен ключ доступа VK API (подключим отдельно)',
@@ -304,7 +364,8 @@ def write_report(rows: list, path: Path):
     ws.title = 'Все источники'
     cols = ['Лист', 'Строка', 'Регион', 'Название', 'Ссылка', 'Подключён', 'Как читаем', 'Комментарий']
     ws.append(cols)
-    labels = {'tg': 'Телеграм', 'rss': 'RSS', 'html': 'Страница сайта', 'gnews': 'Google Новости'}
+    labels = {'tg': 'Телеграм', 'rss': 'RSS', 'html': 'Страница сайта', 'gnews': 'Google Новости',
+              'vk': 'ВКонтакте'}
     for r in rows:
         ws.append([r['sheet'], r['row'], r['region'], r['name'], r['url'],
                    'да' if r['method'] else 'нет', labels.get(r['method'], ''), r['note']])
@@ -335,10 +396,34 @@ def write_report(rows: list, path: Path):
     print(f'Отчёт: {path}')
 
 
+def vk_only(rows: list):
+    """Проверяет только группы ВКонтакте и дописывает их в существующий sources.json."""
+    token = os.environ.get('VK_TOKEN', '')
+    if not token:
+        sys.exit('Нужна переменная окружения VK_TOKEN (сервисный ключ VK API).')
+    vk_rows = [r for r in rows if classify_url(r['url']) == 'vk']
+    names = sorted({vk_name(r['url']) for r in vk_rows} - {None})
+    res = check_vk(names, token)
+    path = HERE / 'sources.json'
+    sources = [s for s in json.loads(path.read_text(encoding='utf-8')) if s['method'] != 'vk']
+    seen = set()
+    for r in vk_rows:
+        gid, note = res.get(vk_name(r['url']), (None, ''))
+        if gid and gid not in seen:
+            seen.add(gid)
+            sources.append({'method': 'vk', 'target': str(gid), 'region': r['region'], 'name': r['name'] or str(gid),
+                            'construction': bool(CONSTRUCTION_RE.search(f"{r['name']} {r['kind']}"))})
+    path.write_text(json.dumps(sources, ensure_ascii=False, indent=1), encoding='utf-8')
+    print(f'Групп ВКонтакте в таблице: {len(names)}, открытых и подключённых: {len(seen)}')
+    print(Counter(note for _, note in res.values()).most_common())
+
+
 def main():
     src = Path(sys.argv[1] if len(sys.argv) > 1 else 'Медиа РФ (1).xls')
     rows = read_media_table(src)
     print(f'Строк в таблице: {len(rows)}')
+    if '--vk-only' in sys.argv:
+        return vk_only(rows)
     rows = asyncio.run(run_checks(rows))
     write_sources(rows, HERE / 'sources.json')
     write_report(rows, HERE.parent / 'Проверка источников.xlsx')

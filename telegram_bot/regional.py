@@ -1,17 +1,19 @@
 """
 Региональные источники из sources.json (собирается build_sources.py) + каналы из channels.txt.
 
-Читает всё параллельно, четырьмя способами:
+Читает всё параллельно, пятью способами:
   tg    — веб-лента Телеграм-канала t.me/s/<канал>
   rss   — RSS/Atom-лента сайта
   html  — заголовки-ссылки со страницы сайта
   gnews — Google Новости с запросом site:<домен> (для сайтов, закрытых для зарубежных серверов)
+  vk    — посты открытой группы ВКонтакте через VK API (нужен VK_TOKEN)
 
 Каждой новости проставляется регион источника — так она попадает в фильтр по региону,
 даже если город в тексте не назван.
 """
 import asyncio
 import json
+import os
 import re
 import sys
 from datetime import datetime, timedelta
@@ -24,7 +26,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, str(Path(__file__).parent))
 from regions import region_of
-from web_scraper import ACTION_STEMS, _is_noise, _obj_matches, find_cities, get_category, match_keywords
+from web_scraper import ACTION_STEMS, _is_noise, _obj_matches, act_matches, find_cities, get_category, match_keywords
 
 HERE = Path(__file__).parent
 HEADERS = {
@@ -36,14 +38,47 @@ PHONE_RE = re.compile(r'(?:\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-
 EMAIL_RE = re.compile(r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}')
 
 MAX_AGE_DAYS = 10      # новости старше — не берём
+VK_TOKEN = os.environ.get('VK_TOKEN', '')   # сервисный ключ VK API; без него группы ВК пропускаются
 TG_PAGES = 2           # страниц ленты на канал (~20 постов каждая)
 HTML_MAX_LINKS = 60    # сколько заголовков максимум брать со страницы сайта
 GNEWS_TERMS = 'строительство OR строят OR построят OR возведут OR реконструкция OR стройка OR откроют'
 
 
+def _domain(target: str) -> str:
+    host = urlparse(target if '//' in target else '//' + target).netloc or target
+    return host.lower().removeprefix('www.')
+
+
+def _clean_sources(sources: list) -> list:
+    """Дубли, лишний gnews и федеральные сайты, приписанные к случайному региону."""
+    # Сайт, приписанный к нескольким регионам, — федеральный: регион определяем по тексту новости
+    regions_by_target = {}
+    for s in sources:
+        regions_by_target.setdefault(s['target'].lower().rstrip('/'), set()).add(s.get('region', ''))
+    direct = {_domain(s['target']) for s in sources if s['method'] in ('rss', 'html')}
+    out, seen = [], set()
+    for s in sources:
+        t = s['target'].lower().rstrip('/')
+        if s['method'] == 'gnews' and _domain(t) in direct:
+            continue                                   # сайт и так читается напрямую
+        key = (s['method'], t if s['method'] != 'gnews' else _domain(t))
+        if key in seen:
+            continue
+        seen.add(key)
+        if len(regions_by_target[t]) > 1:
+            s = {**s, 'region': ''}
+        out.append(s)
+    return out
+
+
 def load_sources() -> list:
     path = HERE / 'sources.json'
     sources = json.loads(path.read_text(encoding='utf-8')) if path.exists() else []
+    # Источники, добавленные вручную (не из таблицы «Медиа РФ») — не перезатираются build_sources.py
+    extra = HERE / 'sources_extra.json'
+    if extra.exists():
+        sources += json.loads(extra.read_text(encoding='utf-8'))
+    sources = _clean_sources([s for s in sources if s.get('method') and s.get('target')])
     # Каналы из channels.txt — федеральные и уже проверенные; регион у них определяем по тексту
     known = {s['target'].lower() for s in sources if s['method'] == 'tg'}
     ch_file = HERE / 'channels.txt'
@@ -62,14 +97,16 @@ def load_sources() -> list:
 # но без глагола проходит шум вроде «выкупил помещение в здании театра».
 WIDE_ACTIONS = ACTION_STEMS | {
     'откро', 'откры', 'появ', 'проект', 'планир', 'ремонт', 'достро', 'сдад', 'сдал',
-    'заверш', 'концепц', 'возобнов', 'благоустр', 'строй',
+    'заверш', 'концепц', 'возобнов', 'благоустр', 'строй',   # с начала слова: не «устройство»
 }
 # Школьная/медицинская жизнь, а не стройка
 EXTRA_NOISE = ('отопительн', 'учител', 'школьник', 'фермера', 'выпускник', 'олимпиад', 'вакцин',
                'учебный год', 'урок', 'экзамен',
                # «открыл сезон», «фестиваль открылся» — культурная жизнь, не стройка
-               'фестивал', 'сезон', 'концерт', 'спектакл', 'выставк', 'гастрол', 'премьер', 'чествов',
-               'мошеннич')
+               'фестивал', 'открыл сезон', 'открыли сезон', 'открытие сезона', 'закрытие сезона',
+               'театральн сезон', 'концерт', 'спектакл', 'выставк', 'гастрол', 'чествов', 'мошеннич')
+# «премьера спектакля» — шум, «премьер-министр открыл школу» — нет
+EXTRA_NOISE_RE = re.compile(r'(?<![а-яё])премьер(?:а|у|ой|ы)(?![а-яё])', re.IGNORECASE)
 
 
 def _match(text: str, construction: bool) -> list:
@@ -78,10 +115,10 @@ def _match(text: str, construction: bool) -> list:
     if not construction:
         return match_keywords(text)
     t = text.lower()
-    if _is_noise(text) or any(n in t for n in EXTRA_NOISE):
+    if _is_noise(text) or any(n in t for n in EXTRA_NOISE) or EXTRA_NOISE_RE.search(t):
         return []
     objs = _obj_matches(t)
-    acts = [a for a in WIDE_ACTIONS if a in t]
+    acts = act_matches(t, WIDE_ACTIONS)
     return (objs + acts)[:6] if objs and acts else []
 
 
@@ -227,12 +264,38 @@ async def read_gnews(client, src, cutoff):
     return out
 
 
-READERS = {'tg': read_tg, 'rss': read_rss, 'html': read_html, 'gnews': read_gnews}
-LIMITS = {'tg': 5, 'rss': 25, 'html': 25, 'gnews': 3}
+async def read_vk(client, src, cutoff):
+    """Последние посты открытой группы ВКонтакте через VK API (сервисный ключ VK_TOKEN)."""
+    r = await client.get('https://api.vk.com/method/wall.get', params={
+        'owner_id': f'-{src["target"]}', 'count': 40, 'access_token': VK_TOKEN, 'v': '5.199'})
+    data = r.json()
+    if 'error' in data:
+        raise RuntimeError(data['error'].get('error_msg'))
+    out = []
+    for post in data['response']['items']:
+        date_str = datetime.fromtimestamp(post['date']).strftime('%Y-%m-%d')
+        if not _fresh(date_str, cutoff):
+            continue                    # не break: закреплённый пост бывает старым
+        text = post.get('text') or ''
+        for repost in post.get('copy_history', []):
+            text = text or repost.get('text', '')
+        text = text.strip()
+        matched = _match(text, src['construction']) if text else []
+        if matched:
+            link = f'https://vk.com/wall-{src["target"]}_{post["id"]}'
+            out.append(_make(src, text, link, date_str, matched, contacts=True))
+    return out
+
+
+READERS = {'tg': read_tg, 'rss': read_rss, 'html': read_html, 'gnews': read_gnews, 'vk': read_vk}
+LIMITS = {'tg': 5, 'rss': 25, 'html': 25, 'gnews': 3, 'vk': 3}
 
 
 def _title_key(item: dict) -> str:
     first = item['text'].split('\n', 1)[0]
+    # Короткая первая строка — шапка канала («⚡️Новости Волгограда», «#стройка»), а не заголовок
+    if len(first.strip()) < 25:
+        first = item['text'][:120]
     # «Владислав Овчинский: дом построят…» и «Дом построят…» — одна новость
     first = re.sub(r'^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+:\s*', '', first).lower()
     return re.sub(r'[^а-яёa-z0-9]', '', first)[:70]
@@ -257,8 +320,11 @@ async def _scrape_all(sources: list, cutoff: str):
                     stats[m][1] += 1
                 if m == 'gnews':
                     await asyncio.sleep(1)     # Google не любит частые запросы
+                elif m == 'vk':
+                    await asyncio.sleep(1)     # лимит VK API — 3 запроса в секунду
 
-        await asyncio.gather(*[one(s) for s in sources if s['method'] in READERS])
+        active = [s for s in sources if s['method'] in READERS and (s['method'] != 'vk' or VK_TOKEN)]
+        await asyncio.gather(*[one(s) for s in active])
     return results, stats
 
 
@@ -267,7 +333,8 @@ def scrape_regional() -> list:
     cutoff = (datetime.now() - timedelta(days=MAX_AGE_DAYS)).strftime('%Y-%m-%d')
     print(f'  Источников: {len(sources)} (новости с {cutoff})')
     raw, stats = asyncio.run(_scrape_all(sources, cutoff))
-    names = {'tg': 'Телеграм', 'rss': 'RSS', 'html': 'Страницы сайтов', 'gnews': 'Google Новости'}
+    names = {'tg': 'Телеграм', 'rss': 'RSS', 'html': 'Страницы сайтов', 'gnews': 'Google Новости',
+             'vk': 'ВКонтакте'}
     for m, (n, err, found) in stats.items():
         print(f'    {names[m]:16} источников: {n:4}  ошибок: {err:3}  новостей: {found}')
 

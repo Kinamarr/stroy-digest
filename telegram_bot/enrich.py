@@ -18,6 +18,7 @@ import time
 import httpx
 from bs4 import BeautifulSoup
 
+from quality import trim_to_sentence
 from regional import EMAIL_RE, HEADERS, PHONE_RE
 
 SHORT_TEXT = 250          # короче — считаем, что у новости только заголовок
@@ -81,7 +82,7 @@ async def _enrich_one(client, item, sem_gn, sem_web, deadline):
     body = _extract(r.text)
     if len(body) < 200 or not _same_story(title, body):
         return False
-    body = body[:BODY_CHARS]
+    body = trim_to_sentence(body[:BODY_CHARS])
     item['text'] = f'{title}\n{body}'
     item['link'] = str(r.url)
     item['phones'] = list(dict.fromkeys(item.get('phones', []) + PHONE_RE.findall(body)))

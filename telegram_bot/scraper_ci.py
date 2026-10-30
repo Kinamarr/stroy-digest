@@ -13,6 +13,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).parent))
 from keywords import KEYWORD_CATEGORIES
 from enrich import enrich_short_items
+from quality import finalize, prefilter
 from regional import scrape_regional
 from regions import region_of
 from web_scraper import scrape_all_web, scrape_all_industry
@@ -467,7 +468,11 @@ def main():
     print(f'Запуск CI-парсера — {date_display}')
 
     print('\nРегиональные источники (Телеграм, RSS, сайты, Google Новости)...')
-    all_results = scrape_regional()
+    try:
+        all_results = scrape_regional()
+    except Exception as e:          # битый sources.json не должен срывать весь выпуск
+        print(f'  Ошибка региональных источников: {e}')
+        all_results = []
 
     print('\nПарсю веб-источники...')
     all_results.extend(scrape_all_web())
@@ -479,16 +484,22 @@ def main():
         if not item.get('region'):
             item['region'] = region_of(item['cities'])
 
-    print('\nДозагружаю полный текст статей для новостей-заголовков...')
-    enrich_short_items(all_results)
-
-    print(f'\nВсего: {len(all_results)} объектов')
-
     # Папка docs/ в корне репозитория
     repo_root = Path(__file__).parent.parent
     # DIGEST_DOCS_DIR — для локальной проверки, чтобы не трогать опубликованный docs/
     docs_dir = Path(os.environ.get('DIGEST_DOCS_DIR') or repo_root / 'docs')
     archive_dir = docs_dir / 'archive'
+
+    print('\nКонтроль качества...')
+    # Прошлые выпуски — всегда из опубликованного архива, даже при локальной проверке
+    all_results = prefilter(all_results, repo_root / 'docs' / 'archive')
+
+    print('\nДозагружаю полный текст статей для новостей-заголовков...')
+    enrich_short_items(all_results)
+    all_results = finalize(all_results)
+
+    print(f'\nВсего: {len(all_results)} объектов')
+
     archive_dir.mkdir(parents=True, exist_ok=True)
 
     # Архивные ссылки (последние 14 дней)

@@ -37,6 +37,7 @@ jobs:
           BITRIX_WEBHOOK:  ${{ secrets.BITRIX_WEBHOOK }}
           BITRIX_GROUP_ID: ${{ secrets.BITRIX_GROUP_ID }}
           PAGES_URL:       ${{ secrets.PAGES_URL }}
+          VK_TOKEN:        ${{ secrets.VK_TOKEN }}
         run: python telegram_bot/scraper_ci.py
 
       - name: Публикация в GitHub Pages
