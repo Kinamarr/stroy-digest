@@ -390,5 +390,61 @@
   "region": "Вологодская область",
   "name": "Филимонов LIVE, губернатор",
   "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yamal-media.ru/rss",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Ямал-Медиа — RSS",
+  "construction": false
+ },
+ {
+  "method": "rss",
+  "target": "https://yanao.ru/bitrix/rss.php?ID=6&LANG=s1&TYPE=press_center&LIMIT=50",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Правительство ЯНАО — пресс-центр (RSS)",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "yamalmedia_89",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Ямал-Медиа — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "sever_press",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Север-Пресс — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "YANAO_official",
+  "region": "Ямало-Ненецкий АО",
+  "name": "ЯМАЛ. Официально — Telegram",
+  "construction": false
+ },
+ {
+  "method": "tg",
+  "target": "yanao_ru",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Правительство ЯНАО — Telegram",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "nur-yanao.ru",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Администрация Нового Уренгоя",
+  "construction": false
+ },
+ {
+  "method": "gnews",
+  "target": "admnoyabrsk.ru",
+  "region": "Ямало-Ненецкий АО",
+  "name": "Администрация Ноябрьска",
+  "construction": false
  }
 ]
